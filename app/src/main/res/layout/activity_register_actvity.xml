@@ -9,7 +9,7 @@
     tools:layout_editor_absoluteY="84dp">
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btnRegister1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/black"
@@ -121,6 +121,7 @@
         app:layout_constraintVertical_bias="0.328" />
 
     <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -146,7 +147,7 @@
     </RadioGroup>
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/editTxtFirstName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -159,7 +160,7 @@
         app:layout_constraintVertical_bias="0.303" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/editTxtLastName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -172,7 +173,7 @@
         app:layout_constraintVertical_bias="0.383" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/textDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -185,7 +186,7 @@
         app:layout_constraintVertical_bias="0.463" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/editTxtRegEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -198,7 +199,7 @@
         app:layout_constraintVertical_bias="0.544" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/editTxtRegPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -211,7 +212,7 @@
         app:layout_constraintVertical_bias="0.629" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName7"
+        android:id="@+id/editTxtConPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
