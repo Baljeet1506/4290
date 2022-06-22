@@ -10,6 +10,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RealtorAndViewer">
         <activity
+            android:name=".RecommendedRealtor"
+            android:exported="false" />
+        <activity
+            android:name=".MortgageCalculator"
+            android:exported="false" />
+        <activity
+            android:name=".FavoritePage"
+            android:exported="false" />
+        <activity
+            android:name=".FindProperties"
+            android:exported="false" />
+        <activity
+            android:name=".FindRealtor"
+            android:exported="false" />
+        <activity
+            android:name=".RealtorHome"
+            android:exported="false" />
+        <activity
+            android:name=".UserHome"
+            android:exported="false" />
+        <activity
             android:name=".DatabaseHelper"
             android:exported="false" />
         <activity
