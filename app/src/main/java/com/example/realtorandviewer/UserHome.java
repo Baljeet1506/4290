@@ -19,6 +19,7 @@ public class UserHome extends AppCompatActivity {
         Button recommendedRealtorsBtn = findViewById(R.id.recommendedRealtorBtn);
         Button favoriteBtn = findViewById(R.id.favoritePageBtn);
         Button mortgageCalBtn = findViewById(R.id.mortgageCalculatorBtn);
+        Button findPropertiesBtn = findViewById(R.id.findPropertiesBtn);
 
         logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +53,13 @@ public class UserHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), MortgageCalculator.class));
+            }
+        });
+
+        findPropertiesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), FindProperties.class));
             }
         });
 

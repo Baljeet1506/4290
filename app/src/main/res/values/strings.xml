@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">Realtor and Viewer</string>
+    <string name="mortgage_calculator">Mortgage Calculator</string>
+
+    //Mortgage Calculator Page
+    <string name="purchase_price">Purchase Price</string>
+    <string name="down_payment">Down Payment</string>
+    <string name="amortization_period">Amortization Period \n(In Years)</string>
+    <string name="interest_rate">Interest Rate</string>
+    <string name="monthly_payment">Monthly Payment</string>
+    <string name="calculate_button">Calculate</string>
+
+    //Home Screen After login
+    <string name="btnLogout">Logout</string>
+    <string name="btnFindRealtor">Find Realtor</string>
+    <string name="btnRecommendedRealtor">Recommended Realtors</string>
+    <string name="btnFavoritePage">Favorite Page</string>
+    <string name="btnMortgageCalculator">Mortgage Calculator</string>
+    <string name="btnFindProperties">Find Properties</string>
+
+
+
+
+
 </resources>

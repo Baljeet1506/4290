@@ -7,79 +7,94 @@
     tools:context=".UserHome">
 
     <Button
-        android:id="@+id/btnLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/findPropertiesBtn"
+        android:layout_width="283dp"
+        android:layout_height="65dp"
         android:backgroundTint="@color/black"
-        android:text="Logout"
+        android:text="@string/btnFindProperties"
         android:textAllCaps="false"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.385"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.175" />
+        app:layout_constraintVertical_bias="0.866" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="283dp"
+        android:layout_height="65dp"
+        android:backgroundTint="@color/black"
+        android:text="@string/btnLogout"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.238" />
 
     <Button
         android:id="@+id/findRealtorBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="283dp"
+        android:layout_height="65dp"
         android:backgroundTint="@color/black"
-        android:text="Find Realtor"
+        android:text="@string/btnFindRealtor"
         android:textAllCaps="false"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.331"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.235" />
+        app:layout_constraintVertical_bias="0.358" />
 
     <Button
         android:id="@+id/mortgageCalculatorBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="283dp"
+        android:layout_height="65dp"
         android:backgroundTint="@color/black"
-        android:text="Mortagage Calculator"
+        android:text="@string/btnMortgageCalculator"
         android:textAllCaps="false"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.367"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.62" />
+        app:layout_constraintVertical_bias="0.734" />
 
     <Button
         android:id="@+id/favoritePageBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="283dp"
+        android:layout_height="65dp"
         android:backgroundTint="@color/black"
         android:textAllCaps="false"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.367"
+        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.459"
-        tools:text="Favorite Page" />
+        app:layout_constraintVertical_bias="0.6"
+        tools:text="@string/btnFavoritePage" />
 
     <Button
         android:id="@+id/recommendedRealtorBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="283dp"
+        android:layout_height="65dp"
         android:backgroundTint="@color/black"
-        android:text="Recommended Realtors"
+        android:text="@string/btnRecommendedRealtor"
         android:textAllCaps="false"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.367"
+        app:layout_constraintHorizontal_bias="0.304"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.33" />
+        app:layout_constraintVertical_bias="0.474" />
 
     <TextView
         android:id="@+id/textView11"

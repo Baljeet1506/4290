@@ -37,7 +37,7 @@ public class LoginActvity extends AppCompatActivity {
                     if(checkUserPass==true){
                         Toast.makeText(LoginActvity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
                         String name = DB.getViewerName(userEmail, pass);
-                        Intent intent  = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent intent  = new Intent(getApplicationContext(), UserHome.class);
                         intent.putExtra("Viewer Name", name);
                         startActivity(intent);
                     }else{
