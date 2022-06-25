@@ -2,6 +2,11 @@
     <string name="app_name">Realtor and Viewer</string>
     <string name="mortgage_calculator">Mortgage Calculator</string>
 
+    <string name="my_listings">My Listings</string>
+    <string name="past_sales">Past Sales</string>
+    <string name="favourites">Favourites</string>
+    <string name="resources">Resources</string>
+
     //Mortgage Calculator Page
     <string name="purchase_price">Purchase Price</string>
     <string name="down_payment">Down Payment</string>
@@ -9,17 +14,33 @@
     <string name="interest_rate">Interest Rate</string>
     <string name="monthly_payment">Monthly Payment</string>
     <string name="calculate_button">Calculate</string>
+    <string name="profile">Profile</string>
 
-    //Home Screen After login
-    <string name="btnLogout">Logout</string>
-    <string name="btnFindRealtor">Find Realtor</string>
-    <string name="btnRecommendedRealtor">Recommended Realtors</string>
-    <string name="btnFavoritePage">Favorite Page</string>
-    <string name="btnMortgageCalculator">Mortgage Calculator</string>
-    <string name="btnFindProperties">Find Properties</string>
+    <string name="property_list">Property List</string>
 
+    <string name="nav_profile_button">profile navigation button</string>
+    <string name="nav_calculator_button">mortgage calculator navigation button</string>
+    <string name="nav_find_properties_button">find properties navigation button</string>
+    <string name="nav_find_realtors_button">find realtors navigation button</string>
 
+    <string name="logo_large">large logo image</string>
+    <string name="logo_medium">medium logo image</string>
+    <string name="logo_small">small logo image</string>
 
+    <string name="login">login</string>
+    <string name="register">register</string>
+    <string name="cancel">cancel</string>
+
+    <string name="email">email</string>
+    <string name="password">password</string>
+    <string name="password_confirm">confirm password</string>
+
+    <string name="name_first">first name</string>
+    <string name="name_last">last name</string>
+    <string name="phone_number">phone number</string>
+
+    <string name="sign_up_as_realtor">as Realtor</string>
+    <string name="sign_up_as_viewer">as Viewer</string>
 
 
 </resources>
