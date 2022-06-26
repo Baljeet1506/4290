@@ -20,8 +20,8 @@ public class LoginActvity extends AppCompatActivity {
         setContentView(R.layout.activity_login_actvity);
         email = findViewById(R.id.editTxtEmail);
         password = findViewById(R.id.editTxtPassword);
-        btnLogin = findViewById(R.id.btnRegister1);
-        btnRegister = findViewById(R.id.btnRegister);
+        btnLogin = findViewById(R.id.btnRegister);
+        btnRegister = findViewById(R.id.btnLogin);
         DB = new DatabaseHelper(this);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {

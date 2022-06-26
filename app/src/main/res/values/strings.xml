@@ -42,5 +42,18 @@
     <string name="sign_up_as_realtor">as Realtor</string>
     <string name="sign_up_as_viewer">as Viewer</string>
 
+    <string name="forgot_password">forgot password?</string>
+    <string name="company">company</string>
+    <string name="address">address</string>
+    <string name="bed">bed</string>
+    <string name="bath">bath</string>
+    <string name="square_footage">square_footage</string>
+
+    <string name="search_property">property search</string>
+    <string name="search_realtor">realtor search</string>
+
+    <string name="edit_profile">Edit Profile</string>
+    <string name="upload_profile_picture">Upload a picture</string>
+
 
 </resources>

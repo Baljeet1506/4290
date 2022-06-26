@@ -38,7 +38,7 @@ public class RegisterActvity extends AppCompatActivity {
         email = findViewById(R.id.editTxtRegEmail);
         password = findViewById(R.id.editTxtRegPassword);
         confirmPassword = findViewById(R.id.editTxtConPassword);
-        btnRegister1 = findViewById(R.id.btnRegister1);
+        btnRegister1 = findViewById(R.id.btnRegister);
         DB = new DatabaseHelper(this);
 
         date = findViewById(R.id.textDate);

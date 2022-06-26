@@ -50,11 +50,11 @@
         app:layout_constraintVertical_bias="0.692" />
 
     <Button
-        android:id="@+id/btnRegister1"
+        android:id="@+id/btnRegister"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:backgroundTint="@color/white"
-        android:text="@string/login"
+        android:text="@string/register"
         android:textAllCaps="false"
         android:textColor="#135519"
         android:textSize="14sp"
@@ -84,11 +84,11 @@
         app:layout_constraintVertical_bias="0.758" />
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnLogin"
         android:layout_width="100dp"
         android:layout_height="40dp"
         android:backgroundTint="@color/green"
-        android:text="@string/register"
+        android:text="@string/login"
         android:textAllCaps="false"
         android:textSize="14sp"
         app:cornerRadius="20dp"
@@ -98,6 +98,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.871" />
+
+    <TextView
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="33dp"
+        android:text="@string/forgot_password"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.929" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
