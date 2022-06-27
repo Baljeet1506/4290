@@ -21,7 +21,12 @@ public class RealtorHome extends AppCompatActivity {
         Button pastSalesBtn = findViewById(R.id.PastSalesBtn);
        Button resourcesBtn = findViewById(R.id.resourcesBtn);
 
+
+        ImageButton findRealtorBtn = findViewById(R.id.findRealtorBtn);
+        ImageButton mortgageCalBtn = findViewById(R.id.mortgageCalculatorBtn);
+        ImageButton findPropertiesBtn = findViewById(R.id.findPropertiesBtn);
         ImageButton profileBtn = findViewById(R.id.profileBtn);
+       // ImageButton profileBtn = findViewById(R.id.profileBtn);
 
        favouriteBtn.setOnClickListener(new View.OnClickListener() {
         @Override
@@ -47,6 +52,33 @@ public class RealtorHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), ResourcesPage.class));
+            }
+        });
+
+        findRealtorBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), FindRealtor.class));
+            }
+        });
+
+        mortgageCalBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), MortgageCalculator.class));
+            }
+        });
+
+        findPropertiesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), FindProperties.class));
+            }
+        });
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), editProfile.class));
             }
         });
 
