@@ -47,7 +47,7 @@
     <string name="address">address</string>
     <string name="bed">bed</string>
     <string name="bath">bath</string>
-    <string name="square_footage">square_footage</string>
+    <string name="square_footage">square footage</string>
 
     <string name="search_property">property search</string>
     <string name="search_realtor">realtor search</string>
