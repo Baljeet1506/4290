@@ -23,23 +23,23 @@
 
     <EditText
         android:id="@+id/editTxtEmail8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="179dp"
+        android:layout_height="57dp"
         android:ems="10"
         android:hint="Land Size"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.626" />
+        app:layout_constraintVertical_bias="0.6" />
 
     <EditText
         android:id="@+id/editTxtEmail10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="182dp"
+        android:layout_height="58dp"
         android:ems="10"
         android:hint="beds"
         android:inputType="textEmailAddress"
@@ -49,27 +49,27 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintVertical_bias="0.481" />
 
     <EditText
         android:id="@+id/editTxtEmail11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="172dp"
+        android:layout_height="55dp"
         android:ems="10"
         android:hint="baths"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.962"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.626" />
+        app:layout_constraintVertical_bias="0.599" />
 
     <EditText
         android:id="@+id/editTxtEmail12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="176dp"
+        android:layout_height="51dp"
         android:ems="10"
         android:hint="Age"
         android:inputType="textEmailAddress"
@@ -79,12 +79,12 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.721" />
+        app:layout_constraintVertical_bias="0.703" />
 
     <EditText
         android:id="@+id/editTxtEmail14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="182dp"
+        android:layout_height="54dp"
         android:ems="10"
         android:hint="Type"
         android:inputType="textEmailAddress"
@@ -98,23 +98,23 @@
 
     <EditText
         android:id="@+id/editTxtEmail15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="174dp"
+        android:layout_height="52dp"
         android:ems="10"
         android:hint="Title"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.92"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806" />
+        app:layout_constraintVertical_bias="0.805" />
 
     <EditText
         android:id="@+id/editTxtEmail13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="182dp"
+        android:layout_height="58dp"
         android:ems="10"
         android:hint="Floor Size"
         android:inputType="textEmailAddress"
@@ -124,12 +124,12 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.721" />
+        app:layout_constraintVertical_bias="0.704" />
 
     <EditText
         android:id="@+id/editTxtEmail9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="181dp"
+        android:layout_height="55dp"
         android:ems="10"
         android:hint="Price"
         android:inputType="textEmailAddress"
@@ -143,8 +143,8 @@
 
     <EditText
         android:id="@+id/editTxtEmail2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="183dp"
+        android:layout_height="61dp"
         android:ems="10"
         android:hint="Postal Code"
         android:inputType="textEmailAddress"
@@ -158,23 +158,23 @@
 
     <EditText
         android:id="@+id/editTxtEmail7"
-        android:layout_width="176dp"
-        android:layout_height="44dp"
+        android:layout_width="177dp"
+        android:layout_height="53dp"
         android:ems="10"
         android:hint="Unit Number"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.068"
+        app:layout_constraintHorizontal_bias="0.008"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.181" />
+        app:layout_constraintVertical_bias="0.18" />
 
     <EditText
         android:id="@+id/editTxtEmail3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="182dp"
+        android:layout_height="55dp"
         android:ems="10"
         android:hint="Province"
         android:inputType="textEmailAddress"
@@ -188,8 +188,8 @@
 
     <EditText
         android:id="@+id/editTxtEmail4"
-        android:layout_width="193dp"
-        android:layout_height="38dp"
+        android:layout_width="172dp"
+        android:layout_height="47dp"
         android:ems="10"
         android:hint="City"
         android:inputType="textEmailAddress"
@@ -203,33 +203,33 @@
 
     <EditText
         android:id="@+id/editTxtEmail5"
-        android:layout_width="184dp"
-        android:layout_height="43dp"
+        android:layout_width="177dp"
+        android:layout_height="50dp"
         android:ems="10"
         android:hint="Street"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.035"
+        app:layout_constraintHorizontal_bias="0.008"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.284" />
+        app:layout_constraintVertical_bias="0.276" />
 
     <EditText
         android:id="@+id/editTxtEmail6"
-        android:layout_width="170dp"
-        android:layout_height="45dp"
+        android:layout_width="168dp"
+        android:layout_height="57dp"
         android:ems="10"
         android:hint="House Number"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.932"
+        app:layout_constraintHorizontal_bias="0.962"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18" />
+        app:layout_constraintVertical_bias="0.177" />
 
     <TextView
         android:id="@+id/textView43"

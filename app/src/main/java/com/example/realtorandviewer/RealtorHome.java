@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class RealtorHome extends AppCompatActivity {
@@ -16,10 +17,11 @@ public class RealtorHome extends AppCompatActivity {
         setContentView(R.layout.activity_realtor_home);
         Button LogOut = findViewById(R.id.logoutBtn2);
         Button favouriteBtn = findViewById(R.id.favouriteBtn);
-       Button myListingsBtn = findViewById(R.id.recommendedRealtorBtn);
-        Button pastSalesBtn = findViewById(R.id.findPropertiesBtn1);
+       Button myListingsBtn = findViewById(R.id.myListingsBtn);
+        Button pastSalesBtn = findViewById(R.id.PastSalesBtn);
        Button resourcesBtn = findViewById(R.id.resourcesBtn);
 
+        ImageButton profileBtn = findViewById(R.id.profileBtn);
 
        favouriteBtn.setOnClickListener(new View.OnClickListener() {
         @Override

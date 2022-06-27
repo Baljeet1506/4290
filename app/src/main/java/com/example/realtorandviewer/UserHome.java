@@ -1,13 +1,9 @@
 package com.example.realtorandviewer;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -27,8 +23,8 @@ public class UserHome extends AppCompatActivity {
         ImageButton profileBtn = findViewById(R.id.profileBtn);
 
         Button favouriteBtn = findViewById(R.id.favouriteBtn);
-        Button myListingsBtn = findViewById(R.id.recommendedRealtorBtn);
-        Button pastSalesBtn = findViewById(R.id.findPropertiesBtn1);
+        Button myListingsBtn = findViewById(R.id.myListingsBtn);
+        Button pastSalesBtn = findViewById(R.id.PastSalesBtn);
         Button resourcesBtn = findViewById(R.id.resourcesBtn);
 
 
@@ -78,6 +74,12 @@ public class UserHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), FindProperties.class));
+            }
+        });
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), editProfile.class));
             }
         });
 

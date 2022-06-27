@@ -106,7 +106,7 @@
         app:layout_constraintVertical_bias="0.816" />
 
     <Button
-        android:id="@+id/recommendedRealtorBtn"
+        android:id="@+id/myListingsBtn"
         android:layout_width="150dp"
         android:layout_height="120dp"
         android:layout_marginEnd="16dp"
@@ -127,7 +127,7 @@
         app:layout_constraintVertical_bias="0.554" />
 
     <Button
-        android:id="@+id/findPropertiesBtn1"
+        android:id="@+id/PastSalesBtn"
         android:layout_width="150dp"
         android:layout_height="120dp"
         android:layout_marginStart="16dp"
@@ -181,7 +181,7 @@
         android:text="@string/name_first"
         android:textAlignment="viewStart"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/recommendedRealtorBtn"
+        app:layout_constraintBottom_toTopOf="@+id/myListingsBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
@@ -193,7 +193,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/company"
-        app:layout_constraintBottom_toTopOf="@+id/recommendedRealtorBtn"
+        app:layout_constraintBottom_toTopOf="@+id/myListingsBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.09"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
@@ -205,7 +205,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/email"
-        app:layout_constraintBottom_toTopOf="@+id/recommendedRealtorBtn"
+        app:layout_constraintBottom_toTopOf="@+id/myListingsBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.081"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
@@ -217,7 +217,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/phone_number"
-        app:layout_constraintBottom_toTopOf="@+id/recommendedRealtorBtn"
+        app:layout_constraintBottom_toTopOf="@+id/myListingsBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.106"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
@@ -232,7 +232,7 @@
         android:text="@string/name_last"
         android:textAlignment="viewStart"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/recommendedRealtorBtn"
+        app:layout_constraintBottom_toTopOf="@+id/myListingsBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toEndOf="@+id/firstNameText"

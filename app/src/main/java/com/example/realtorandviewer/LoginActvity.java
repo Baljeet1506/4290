@@ -50,10 +50,19 @@ public class LoginActvity extends AppCompatActivity {
                     Boolean checkUserPass = DB.checkEmailPassword(userEmail, pass);
                     if (checkUserPass == true) {
                         Toast.makeText(LoginActvity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
+                        String RadioButton = "";
+                        if (realtorBtn.isChecked()) {
+                            RadioButton += realtorBtn.getText().toString() ;
+                            startActivity(new Intent(getApplicationContext(), RealtorHome.class));
+                        }
+                        else if (viewerBtn.isChecked()){
+                            RadioButton += viewerBtn.getText().toString() ;
+                            startActivity(new Intent(getApplicationContext(), UserHome.class));
+                        }
                         String name = DB.getViewerName(userEmail, pass);
-                        Intent intent = new Intent(getApplicationContext(), UserHome.class);
-                        intent.putExtra("Viewer Name", name);
-                        startActivity(intent);
+                       //Intent intent = new Intent(getApplicationContext(), UserHome.class);
+                      // intent.putExtra("Viewer Name", name);
+                       // startActivity(intent);
                     } else {
                         Toast.makeText(LoginActvity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
                     }

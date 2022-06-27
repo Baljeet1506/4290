@@ -91,10 +91,19 @@ public class RegisterActvity extends AppCompatActivity {
                             Boolean insert = DB.insertData(userFirstName, userLastName, userEmail, userPass);
                             if(insert==true){
                                 Toast.makeText(RegisterActvity.this, "Registered successfully", Toast.LENGTH_SHORT).show();
-                                Intent intent = new Intent(getApplicationContext(),RealtorHome.class);
+                                String RadioButton = "";
+                                if (realtorBtn.isChecked()) {
+                                    RadioButton += realtorBtn.getText().toString() ;
+                                    startActivity(new Intent(getApplicationContext(), RealtorHome.class));
+                                }
+                                else if (viewerBtn.isChecked()){
+                                    RadioButton += viewerBtn.getText().toString() ;
+                                       startActivity(new Intent(getApplicationContext(), UserHome.class));
+                                }
+                                //Intent intent = new Intent(getApplicationContext(),RealtorHome.class);
                                 String name = DB.getViewerName(userEmail, userPass);
-                                intent.putExtra("Viewer Name", name);
-                                startActivity(intent);
+                                //intent.putExtra("Viewer Name", name);
+                               // startActivity(intent);
                             }else{
                                 Toast.makeText(RegisterActvity.this, "Registration failed", Toast.LENGTH_SHORT).show();
                             }
