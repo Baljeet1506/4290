@@ -22,7 +22,7 @@
         app:srcCompat="@drawable/revlogolarge" />
 
     <Button
-        android:id="@+id/registerBtn"
+        android:id="@+id/BtnRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"

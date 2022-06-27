@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RealtorAndViewer">
         <activity
+            android:name=".addListings"
+            android:exported="false" />
+        <activity
+            android:name=".CodeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ForgotActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ResourcesPage"
+            android:exported="false" />
+        <activity
+            android:name=".MyPastSalesPage"
+            android:exported="false" />
+        <activity
+            android:name=".MyListingsPage"
+            android:exported="false" />
+        <activity
             android:name=".RecommendedRealtor"
             android:exported="false" />
         <activity
@@ -34,13 +52,13 @@
             android:name=".DatabaseHelper"
             android:exported="false" />
         <activity
-            android:name=".LoginActvity"
-            android:exported="false" />
-        <activity
             android:name=".RegisterActvity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActvity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

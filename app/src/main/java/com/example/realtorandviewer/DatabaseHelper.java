@@ -19,8 +19,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String PASSWORD = "PASSWORD";
     public static final String FIRST_NAME = "FIRST_NAME";
     public static final String LAST_NAME = "LAST_NAME";
-    public static final String GENDER = "GENDER";
-    public static final String DATE_OF_BIRTH = "DATE_OF_BIRTH";
+  //  public static final String GENDER = "GENDER";
+    //public static final String DATE_OF_BIRTH = "DATE_OF_BIRTH";
 
     // Database Information
     static final String DB_NAME = "R&V.DB";
@@ -38,7 +38,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("create Table VIEWERS(FIRST_NAME TEXT, LAST_NAME TEXT, GENDER TEXT, DATE_OF_BIRTH TEXT," +
+        db.execSQL("create Table VIEWERS(FIRST_NAME TEXT, LAST_NAME TEXT, " +
                 " EMAIL TEXT primary key, PASSWORD TEXT)");
     }
 
@@ -48,12 +48,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public Boolean insertData(String FIRST_NAME, String LAST_NAME, String GENDER, String DATE_OF_BIRTH, String EMAIL, String PASSWORD) {
+    public Boolean insertData(String FIRST_NAME, String LAST_NAME, String EMAIL, String PASSWORD) {
         ContentValues contentValue = new ContentValues();
         contentValue.put(DatabaseHelper.FIRST_NAME, FIRST_NAME);
         contentValue.put(DatabaseHelper.LAST_NAME, LAST_NAME);
-        contentValue.put(DatabaseHelper.GENDER, GENDER);
-        contentValue.put(DatabaseHelper.DATE_OF_BIRTH, DATE_OF_BIRTH);
+       // contentValue.put(DatabaseHelper.GENDER, GENDER);
+       // contentValue.put(DatabaseHelper.DATE_OF_BIRTH, DATE_OF_BIRTH);
         contentValue.put(DatabaseHelper.EMAIL, EMAIL);
         contentValue.put(DatabaseHelper.PASSWORD, PASSWORD);
         long result = database.insert(DatabaseHelper.TABLE_NAME, null, contentValue);
