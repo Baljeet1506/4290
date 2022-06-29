@@ -16,8 +16,7 @@ import android.widget.Toast;
 public class LoginActvity extends AppCompatActivity {
     EditText email, password;
     RadioGroup radioGroup;
-    RadioButton realtorBtn;
-    RadioButton viewerBtn;
+    RadioButton realtorBtn, viewerBtn;
     Button btnLogin, btnRegister;
     DatabaseHelper DB;
     Button forgotPassword;
