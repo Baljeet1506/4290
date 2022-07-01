@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
@@ -25,7 +26,7 @@ public class RegisterActvity extends AppCompatActivity implements View.OnClickLi
     EditText firstName, lastName, email, password, confirmPassword;
     RadioGroup radioGroup;
     RadioButton realtorBtn, viewerBtn;
-    Button btnRegister2;
+    Button BackToLoginBtn, btnRegister2;
     private FirebaseAuth mAuth;
     ProgressBar progressBar;
 
@@ -44,12 +45,21 @@ public class RegisterActvity extends AppCompatActivity implements View.OnClickLi
         viewerBtn = findViewById(R.id.viewerBtn);
 
         //confirmPassword = findViewById(R.id.editTxtConPassword);
-        btnRegister2 = findViewById(R.id.btnRegister2);
+        btnRegister2 = findViewById(R.id.btnRegister);
         btnRegister2.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
 
         progressBar = findViewById(R.id.progressBar2);
+
+        BackToLoginBtn = findViewById(R.id.btnCancel);
+
+        BackToLoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), LoginActvity.class));
+            }
+        });
 
     }
 
@@ -58,7 +68,7 @@ public class RegisterActvity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.btnRegister2:
+            case R.id.btnRegister:
                 //startActivity(new Intent(this, LoginActvity.class));
                 registerUser();
                 break;

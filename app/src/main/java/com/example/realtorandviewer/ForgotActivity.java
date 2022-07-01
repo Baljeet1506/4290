@@ -9,6 +9,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -18,7 +19,8 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class ForgotActivity extends AppCompatActivity {
-    Button BackToLoginBtn, resetBtn;
+    Button resetBtn;
+    ImageButton BackToLoginBtn;
     private EditText emailEditText;
     private ProgressBar progressBar;
 
@@ -32,7 +34,7 @@ public class ForgotActivity extends AppCompatActivity {
         emailEditText = (EditText) findViewById(R.id.emailReset);
         progressBar = (ProgressBar) findViewById(R.id.progressBar3);
         resetBtn = findViewById(R.id.ResetBtn);
-        BackToLoginBtn = findViewById(R.id.loginBtn1);
+        BackToLoginBtn = findViewById(R.id.forgotBackBtn);
 
         auth = FirebaseAuth.getInstance();
 

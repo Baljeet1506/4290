@@ -6,52 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".ForgotActivity">
 
-    <Button
-        android:id="@+id/ResetBtn"
-        android:layout_width="380dp"
-        android:layout_height="70dp"
-        android:backgroundTint="@color/green"
-        android:text="Reset My Password"
-        android:textAllCaps="false"
-        android:textSize="26sp"
-        app:cornerRadius="20dp"
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="300dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="128dp"
+        android:contentDescription="@string/logo_medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.468" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/revlogosmall" />
+
+    <ImageButton
+        android:id="@+id/forgotBackBtn"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/findPropertiesBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.024"
+        app:srcCompat="@drawable/backbutton" />
 
     <Button
-        android:id="@+id/loginBtn1"
-        android:layout_width="380dp"
-        android:layout_height="70dp"
+        android:id="@+id/ResetBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
         android:backgroundTint="@color/green"
-        android:text="Return to Login Page"
+        android:fontFamily="@font/roboto_slab"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:text="Reset password"
         android:textAllCaps="false"
-        android:textSize="26sp"
-        app:cornerRadius="20dp"
+        android:textSize="16sp"
+        app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.644" />
+        app:layout_constraintVertical_bias="0.619" />
 
     <EditText
         android:id="@+id/emailReset"
-        android:layout_width="380dp"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_textinput"
         android:ems="10"
-        android:hint="Enter Your Email"
+        android:fontFamily="@font/roboto_slab"
+        android:hint="Enter your email"
         android:inputType="textEmailAddress"
-        android:textSize="24sp"
+        android:textAlignment="center"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.311" />
+        app:layout_constraintVertical_bias="0.464" />
 
     <ProgressBar
         android:id="@+id/progressBar3"
@@ -61,10 +81,10 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.219"
+        app:layout_constraintVertical_bias="0.048"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

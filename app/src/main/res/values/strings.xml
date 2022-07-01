@@ -28,9 +28,9 @@
     <string name="logo_medium">medium logo image</string>
     <string name="logo_small">small logo image</string>
 
-    <string name="login">Login</string>
-    <string name="register">Register</string>
-    <string name="cancel">Cancel</string>
+    <string name="login">login</string>
+    <string name="register">register</string>
+    <string name="cancel">cancel</string>
 
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -43,7 +43,7 @@
     <string name="sign_up_as_realtor">as Realtor</string>
     <string name="sign_up_as_viewer">as Viewer</string>
 
-    <string name="forgot_password">Forgot Password?</string>
+    <string name="forgot_password">forgot password?</string>
     <string name="company">company</string>
     <string name="address">address</string>
     <string name="bed">bed</string>
