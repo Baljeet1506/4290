@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "71840201501",
+    "project_id": "info4290-c9e92",
+    "storage_bucket": "info4290-c9e92.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:71840201501:android:a45a83f7b65fa115a23ff4",
+        "android_client_info": {
+          "package_name": "com.example.realtorandviewer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "71840201501-0h1862i29jisgqhg15b8q4jflonmq2f8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD15FdQD9tUTKk9B_OQvKvmMOr0LzlExH4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "71840201501-0h1862i29jisgqhg15b8q4jflonmq2f8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

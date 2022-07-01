@@ -1,25 +1,35 @@
 package com.example.realtorandviewer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.TextView;
 import android.widget.Toast;
 
-public class LoginActvity extends AppCompatActivity {
-    EditText email, password;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+
+public class LoginActvity extends AppCompatActivity implements View.OnClickListener {
+    EditText editTextEmail, editTextPassword;
     RadioGroup radioGroup;
     RadioButton realtorBtn, viewerBtn;
-    Button btnLogin, btnRegister;
-    DatabaseHelper DB;
-    Button forgotPassword;
+    Button btnLogin, btnRegister1, forgotPassword;
+    private FirebaseAuth mAuth;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,98 +38,91 @@ public class LoginActvity extends AppCompatActivity {
         realtorBtn = findViewById(R.id.relatorBtn);
         viewerBtn = findViewById(R.id.viewerBtn);
         radioGroup = findViewById(R.id.radioGroup);
-        email = findViewById(R.id.editTxtEmail);
-        password = findViewById(R.id.editTxtPassword);
+        editTextEmail = findViewById(R.id.editTxtEmail);
+        editTextPassword = findViewById(R.id.editTxtPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        btnRegister = findViewById(R.id.btnRegister);
+        btnRegister1 = findViewById(R.id.btnRegister1);
         forgotPassword = findViewById(R.id.forgotPassword);
 
-        DB = new DatabaseHelper(this);
+        btnLogin.setOnClickListener(this);
+        btnRegister1.setOnClickListener(this);
+        forgotPassword.setOnClickListener(this);
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
+        progressBar = findViewById(R.id.progressBar1);
+
+        mAuth = FirebaseAuth.getInstance();
+    }
+
+
+    @SuppressLint("NonConstantResourceId")
+    @Override
+    public void onClick(View v) {
+
+        switch (v.getId()) {
+            case R.id.btnRegister1:
+                startActivity(new Intent(this, RegisterActvity.class));
+                break;
+            case R.id.btnLogin:
+                userLogin();
+                break;
+
+            case R.id.forgotPassword:
+                startActivity(new Intent(this, ForgotActivity.class));
+                break;
+        }
+    }
+
+    private void userLogin() {
+
+        String email = editTextEmail.getText().toString();
+        String password = editTextPassword.getText().toString();
+
+        if (email.isEmpty()) {
+            editTextEmail.setError("Email is required");
+            editTextEmail.requestFocus();
+            return;
+        }
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            editTextEmail.setError("Please provide a valid email");
+            editTextEmail.requestFocus();
+            return;
+        }
+
+        if (password.isEmpty()) {
+            editTextPassword.setError("Password is required");
+            editTextPassword.requestFocus();
+            return;
+        }
+
+        if (password.length() < 6) {
+            editTextPassword.setError("Min password length should be 6 characters");
+            editTextPassword.requestFocus();
+        }
+
+        progressBar.setVisibility(View.VISIBLE);
+
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
-            public void onClick(View v) {
-                validateEmailAddress(email);
-                String userEmail = email.getText().toString();
-                String pass = password.getText().toString();
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()) {
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                if (userEmail.equals("") || pass.equals(""))
-                    Toast.makeText(LoginActvity.this, "Please enter all the fields", Toast.LENGTH_SHORT).show();
-                else {
-                    Boolean checkUserPass = DB.checkEmailPassword(userEmail, pass);
-                    if (checkUserPass == true) {
-                        Toast.makeText(LoginActvity.this, "Sign in successful", Toast.LENGTH_SHORT).show();
-                        String RadioButton = "";
-                        if (realtorBtn.isChecked()) {
-                            RadioButton += realtorBtn.getText().toString() ;
-                            startActivity(new Intent(getApplicationContext(), RealtorHome.class));
-                        }
-                        else if (viewerBtn.isChecked()){
-                            RadioButton += viewerBtn.getText().toString() ;
-                            startActivity(new Intent(getApplicationContext(), UserHome.class));
-                        }
-                        String name = DB.getViewerName(userEmail, pass);
-                       //Intent intent = new Intent(getApplicationContext(), UserHome.class);
-                      // intent.putExtra("Viewer Name", name);
-                       // startActivity(intent);
+                    if (user.isEmailVerified()) {
+
+                        startActivity(new Intent(LoginActvity.this, UserHome.class));
                     } else {
-                        Toast.makeText(LoginActvity.this, "Invalid Credentials", Toast.LENGTH_SHORT).show();
+
+                        user.sendEmailVerification();
+                        Toast.makeText(LoginActvity.this, "Check your email to verify your account", Toast.LENGTH_SHORT).show();
                     }
-                }
-                if (email.getText().toString().equals("") && password.getText().toString().equals("")&& realtorBtn.equals("realtorBtn")){
-                    Intent intent = new Intent(LoginActvity.this, RealtorHome.class);
-                    startActivity(intent);
-                }
-                else if (email.getText().toString().equals("") && password.getText().toString().equals("")&& viewerBtn.equals("viewerBtn")){
-                    Intent intent = new Intent(LoginActvity.this, UserHome.class);
-                    startActivity(intent);
-                }
-                String RadioButton = "";
 
-                if (realtorBtn.isChecked()) {
-                    RadioButton += realtorBtn.getText().toString() ;
-                  //  startActivity(new Intent(getApplicationContext(), RealtorHome.class));
-                }
-                else if (viewerBtn.isChecked()){
-                    RadioButton += viewerBtn.getText().toString() ;
-                  //  startActivity(new Intent(getApplicationContext(), UserHome.class));
+                } else {
+                    Toast.makeText(LoginActvity.this, "Failed to Login", Toast.LENGTH_SHORT).show();
                 }
             }
         });
 
-
-        btnRegister.setOnClickListener(new View.OnClickListener()
-
-        {
-            @Override
-            public void onClick (View view){
-                startActivity(new Intent(getApplicationContext(), RegisterActvity.class));
-            }
-        });
-
-        forgotPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ForgotActivity.class));
-            }
-        });
     }
 
-    private boolean validateEmailAddress(EditText email){
-
-        String emailInput = email.getText().toString();
-
-        if(!emailInput.isEmpty() && Patterns.EMAIL_ADDRESS.matcher(emailInput).matches()){
-            Toast.makeText(this, "Email Validated Successfully", Toast.LENGTH_SHORT).show();
-            return true;
-        }
-
-        else {
-            Toast.makeText(this, "Invalid Email Address", Toast.LENGTH_SHORT).show();
-            return false;
-        }
-    }
-
-
-    }
-
+}

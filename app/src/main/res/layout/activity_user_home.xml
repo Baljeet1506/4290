@@ -10,19 +10,19 @@
 
     <Button
         android:id="@+id/logoutBtn"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:backgroundTint="@color/green"
         android:text="Logout"
         android:textAllCaps="false"
-        android:textSize="14sp"
+        android:textSize="20sp"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintHorizontal_bias="0.947"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.292" />
+        app:layout_constraintVertical_bias="0.188" />
 
     <ImageButton
         android:id="@+id/profileBtn"
@@ -175,7 +175,7 @@
         tools:layout_editor_absoluteY="19dp" />
 
     <TextView
-        android:id="@+id/firstNameText"
+        android:id="@+id/firstNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/name_first"
@@ -189,53 +189,29 @@
         app:layout_constraintVertical_bias="0.1" />
 
     <TextView
-        android:id="@+id/companyNameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/company"
-        app:layout_constraintBottom_toTopOf="@+id/myListingsBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.09"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.242" />
-
-    <TextView
-        android:id="@+id/companyNameText2"
+        android:id="@+id/emailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/email"
+        android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/myListingsBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.081"
+        app:layout_constraintHorizontal_bias="0.083"
         app:layout_constraintStart_toEndOf="@+id/imageView5"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.306" />
+        app:layout_constraintVertical_bias="0.255" />
 
     <TextView
-        android:id="@+id/companyNameText3"
+        android:id="@+id/lastNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/phone_number"
-        app:layout_constraintBottom_toTopOf="@+id/myListingsBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.106"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.37" />
-
-    <TextView
-        android:id="@+id/lastNameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:text="@string/name_last"
         android:textAlignment="viewStart"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/myListingsBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.13"
-        app:layout_constraintStart_toEndOf="@+id/firstNameText"
+        app:layout_constraintStart_toEndOf="@+id/firstNameTextView"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.1" />
 
