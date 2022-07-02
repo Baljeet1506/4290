@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), RegisterActvity.class));
+                startActivity(new Intent(getApplicationContext(), RegisterRealtor.class));
             }
         });
     }

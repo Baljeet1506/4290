@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterActvity"
+    tools:context=".RegisterRealtor"
     tools:layout_editor_absoluteX="23dp"
     tools:layout_editor_absoluteY="84dp">
 
@@ -22,40 +22,13 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/revlogosmall" />
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.018">
-
-        <RadioButton
-            android:id="@+id/relatorBtn"
-            android:layout_width="155dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_slab"
-            android:text="@string/sign_up_as_realtor" />
-
-        <RadioButton
-            android:id="@+id/viewerBtn"
-            android:layout_width="157dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_slab"
-            android:text="@string/sign_up_as_viewer" />
-    </RadioGroup>
-
     <EditText
         android:id="@+id/editTxtFirstName"
         android:layout_width="350dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="380dp"
         android:background="@drawable/rounded_textinput"
         android:ems="10"
         android:fontFamily="@font/roboto_slab"
@@ -65,10 +38,8 @@
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintHorizontal_bias="0.482"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnRegister"
@@ -84,10 +55,10 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintHorizontal_bias="0.859"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.943" />
+        app:layout_constraintVertical_bias="0.95" />
 
     <Button
         android:id="@+id/btnCancel"
@@ -104,17 +75,17 @@
         app:cornerRadius="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
+        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.943"
+        app:layout_constraintVertical_bias="0.95"
         app:strokeColor="#BDBDBD"
         app:strokeWidth="2dp" />
 
     <EditText
         android:id="@+id/editTxtLastName"
         android:layout_width="350dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
@@ -133,9 +104,9 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/textPhoneNumber"
+        android:id="@+id/editTextPhNumber"
         android:layout_width="350dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
@@ -154,30 +125,9 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTxtConPassword"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/rounded_textinput"
-        android:ems="10"
-        android:fontFamily="@font/roboto_slab"
-        android:hint="@string/password_confirm"
-        android:inputType="textPassword"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.482"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtRegPassword"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <EditText
         android:id="@+id/editTxtRegPassword"
         android:layout_width="350dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
@@ -198,7 +148,7 @@
     <EditText
         android:id="@+id/editTxtRegEmail"
         android:layout_width="350dp"
-        android:layout_height="40dp"
+        android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
@@ -213,7 +163,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textPhoneNumber"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhNumber"
         app:layout_constraintVertical_bias="0.0" />
 
     <ProgressBar
@@ -224,10 +174,10 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.471"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.024"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

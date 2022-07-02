@@ -11,8 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,11 +19,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RegisterActvity extends AppCompatActivity implements View.OnClickListener {
+public class RegisterViewer extends AppCompatActivity implements View.OnClickListener {
 
-    EditText firstName, lastName, email, password, confirmPassword;
-    RadioGroup radioGroup;
-    RadioButton realtorBtn, viewerBtn;
+    EditText firstName, lastName, email, password;
     Button BackToLoginBtn, btnRegister2;
     private FirebaseAuth mAuth;
     ProgressBar progressBar;
@@ -33,33 +29,21 @@ public class RegisterActvity extends AppCompatActivity implements View.OnClickLi
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register_actvity);
+        setContentView(R.layout.activity_register_viewer);
 
-        firstName = findViewById(R.id.editTxtFirstName);
-        lastName = findViewById(R.id.editTxtLastName);
-        email = findViewById(R.id.editTxtRegEmail);
-        password = findViewById(R.id.editTxtRegPassword);
+        firstName = findViewById(R.id.editTextFnameViewer);
+        lastName = findViewById(R.id.editTextLnameViewer);
+        email = findViewById(R.id.editTextEmailViewer);
+        password = findViewById(R.id.editTextPasswordViewer);
 
-        radioGroup = findViewById(R.id.radioGroup);
-        realtorBtn = findViewById(R.id.relatorBtn);
-        viewerBtn = findViewById(R.id.viewerBtn);
-
-        //confirmPassword = findViewById(R.id.editTxtConPassword);
-        btnRegister2 = findViewById(R.id.btnRegister);
+        btnRegister2 = findViewById(R.id.btnRegisterViewer);
         btnRegister2.setOnClickListener(this);
+        BackToLoginBtn = findViewById(R.id.btnCancelViewer);
+        BackToLoginBtn.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
 
-        progressBar = findViewById(R.id.progressBar2);
-
-        BackToLoginBtn = findViewById(R.id.btnCancel);
-
-        BackToLoginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), LoginActvity.class));
-            }
-        });
+        progressBar = findViewById(R.id.progressBarViewer);
 
     }
 
@@ -68,12 +52,15 @@ public class RegisterActvity extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.btnRegister:
-                //startActivity(new Intent(this, LoginActvity.class));
+            case R.id.btnRegisterViewer:
                 registerUser();
                 break;
-
+            case R.id.btnCancelViewer:
+                startActivity(new Intent(getApplicationContext(), RegType.class));
+                break;
         }
+
+
     }
 
     private void registerUser() {
@@ -82,6 +69,7 @@ public class RegisterActvity extends AppCompatActivity implements View.OnClickLi
         String userLastName = lastName.getText().toString();
         String userEmail = email.getText().toString();
         String userPass = password.getText().toString();
+        Integer userType = 2;
 
         if (userFirstName.isEmpty()) {
             firstName.setError("First name is required");
@@ -125,7 +113,7 @@ public class RegisterActvity extends AppCompatActivity implements View.OnClickLi
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
-                            User user = new User(userFirstName, userLastName, userEmail);
+                            User user = new User(userFirstName, userLastName, userEmail, userType);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -133,24 +121,20 @@ public class RegisterActvity extends AppCompatActivity implements View.OnClickLi
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
-
-                                                Toast.makeText(RegisterActvity.this, "User is registered successfully", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(RegisterViewer.this, "User is registered successfully", Toast.LENGTH_SHORT).show();
                                                 progressBar.setVisibility(View.GONE);
+                                                startActivity(new Intent(getApplicationContext(), LoginActvity.class));
                                             } else {
-                                                Toast.makeText(RegisterActvity.this, "Failed to register - Try again", Toast.LENGTH_SHORT).show();
+                                                Toast.makeText(RegisterViewer.this, "Failed to register - Try again", Toast.LENGTH_SHORT).show();
                                                 progressBar.setVisibility(View.GONE);
                                             }
                                         }
                                     });
                         } else {
-                            Toast.makeText(RegisterActvity.this, "Failed to register - Try again", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(RegisterViewer.this, "Failed to register - Try again", Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }
                 });
     }
 }
-
-
-
-

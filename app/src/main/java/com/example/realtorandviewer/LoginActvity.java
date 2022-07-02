@@ -60,12 +60,11 @@ public class LoginActvity extends AppCompatActivity implements View.OnClickListe
 
         switch (v.getId()) {
             case R.id.btnRegister1:
-                startActivity(new Intent(this, RegisterActvity.class));
+                startActivity(new Intent(this, RegType.class));
                 break;
             case R.id.btnLogin:
                 userLogin();
                 break;
-
             case R.id.forgotPassword:
                 startActivity(new Intent(this, ForgotActivity.class));
                 break;
