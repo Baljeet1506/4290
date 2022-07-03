@@ -3,11 +3,13 @@ package com.example.realtorandviewer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -22,6 +24,31 @@ public class MortgageCalculator extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mortgage_calculator);
+
+        ImageButton findRealtorBtn = findViewById(R.id.findRealtorBtn);
+        ImageButton findPropertiesBtn = findViewById(R.id.findPropertiesBtn);
+        ImageButton profileBtn = findViewById(R.id.profileBtn);
+
+        findRealtorBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), FindRealtor.class));
+            }
+        });
+
+        findPropertiesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), FindProperties.class));
+            }
+        });
+
+        profileBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), UserHome.class));
+            }
+        });
 
         purchasePrice = findViewById(R.id.editTextPurchasePrice);
         downPayment = findViewById(R.id.editTextDownPayment);

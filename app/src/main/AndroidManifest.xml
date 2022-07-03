@@ -63,9 +63,6 @@
             android:name=".RegisterRealtor"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
-            android:exported="false" />
-        <activity
             android:name=".LoginActvity"
             android:exported="true">
             <intent-filter>

@@ -7,10 +7,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class RegType extends AppCompatActivity implements View.OnClickListener {
 
     Button btnRealtor, btnViewer;
+    ImageButton BackToLoginBtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +25,15 @@ public class RegType extends AppCompatActivity implements View.OnClickListener {
 
         btnRealtor.setOnClickListener(this);
         btnViewer.setOnClickListener(this);
+
+        BackToLoginBtn = findViewById(R.id.registerBackBtn);
+
+        BackToLoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), LoginActvity.class));
+            }
+        });
     }
 
     @SuppressLint("NonConstantResourceId")

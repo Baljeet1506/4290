@@ -1,16 +1,15 @@
 package com.example.realtorandviewer;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -39,7 +38,6 @@ public class UserHome extends AppCompatActivity {
         ImageButton findRealtorBtn = findViewById(R.id.findRealtorBtn);
         ImageButton mortgageCalBtn = findViewById(R.id.mortgageCalculatorBtn);
         ImageButton findPropertiesBtn = findViewById(R.id.findPropertiesBtn);
-        ImageButton profileBtn = findViewById(R.id.profileBtn);
 
         Button favouriteBtn = findViewById(R.id.favouriteBtn);
         Button myListingsBtn = findViewById(R.id.myListingsBtn);
@@ -123,12 +121,6 @@ public class UserHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), FindProperties.class));
-            }
-        });
-        profileBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), editProfile.class));
             }
         });
 

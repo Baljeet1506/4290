@@ -1,11 +1,11 @@
 package com.example.realtorandviewer;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class FindProperties extends AppCompatActivity {
 
@@ -14,9 +14,9 @@ public class FindProperties extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_properties);
 
-        ImageButton findRealtorBtn = findViewById(R.id.findRealtorBtn2);
-        ImageButton mortgageCalBtn = findViewById(R.id.mortgageCalculatorBtn2);
-        ImageButton profileBtn = findViewById(R.id.profileBtn2);
+        ImageButton findRealtorBtn = findViewById(R.id.findRealtorBtn);
+        ImageButton mortgageCalBtn = findViewById(R.id.mortgageCalculatorBtn);
+        ImageButton profileBtn = findViewById(R.id.profileBtn);
 
         findRealtorBtn.setOnClickListener(new View.OnClickListener() {
             @Override

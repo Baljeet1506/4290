@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 public class FindRealtor extends AppCompatActivity {
@@ -15,9 +14,9 @@ public class FindRealtor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_realtor);
 
-        ImageButton findPropertiesBtn = findViewById(R.id.findPropertiesBtn1);
-        ImageButton mortgageCalBtn = findViewById(R.id.mortgageCalculatorBtn1);
-        ImageButton profileBtn = findViewById(R.id.profileBtn1);
+        ImageButton findPropertiesBtn = findViewById(R.id.findPropertiesBtn);
+        ImageButton mortgageCalBtn = findViewById(R.id.mortgageCalculatorBtn);
+        ImageButton profileBtn = findViewById(R.id.profileBtn);
 
         findPropertiesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
