@@ -155,7 +155,7 @@
         android:background="@drawable/shape_rounded_textinput"
         android:ems="10"
         android:fontFamily="@font/roboto_slab"
-        android:hint="@string/email"
+        android:hint="@string/realtoremail"
         android:inputType="textEmailAddress"
         android:textAlignment="center"
         android:textSize="14sp"

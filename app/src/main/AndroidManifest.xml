@@ -14,6 +14,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RealtorAndViewer">
         <activity
+            android:name=".ViewPropertiesPage"
+            android:exported="false" />
+        <activity
+            android:name=".PlanFinancePage"
+            android:exported="false" />
+        <activity
+            android:name=".PurchasedPage"
+            android:exported="false" />
+        <activity
+            android:name=".MakeAnOfferPage"
+            android:exported="false" />
+        <activity
+            android:name=".PrepareToBuyPage"
+            android:exported="false" />
+        <activity
+            android:name=".ResourcePageUser"
+            android:exported="false" />
+        <activity
+            android:name=".OfferPage"
+            android:exported="false" />
+        <activity
+            android:name=".MarketingPage"
+            android:exported="false" />
+        <activity
+            android:name=".ListingPage"
+            android:exported="false" />
+        <activity
+            android:name=".PreparingPage"
+            android:exported="false" />
+        <activity
             android:name=".RegisterViewer"
             android:exported="false" />
         <activity

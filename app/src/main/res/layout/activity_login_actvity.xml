@@ -17,22 +17,7 @@
         app:layout_constraintHorizontal_bias="0.493"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499">
-
-        <RadioButton
-            android:id="@+id/relatorBtn"
-            android:layout_width="155dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_slab"
-            android:text="@string/sign_up_as_realtor" />
-
-        <RadioButton
-            android:id="@+id/viewerBtn"
-            android:layout_width="157dp"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_slab"
-            android:text="@string/sign_up_as_viewer" />
-    </RadioGroup>
+        app:layout_constraintVertical_bias="0.499"/>
 
     <ImageView
         android:id="@+id/imageView3"

@@ -98,7 +98,7 @@ public class UserHome extends AppCompatActivity {
         resourcesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ResourcesPage.class));
+                startActivity(new Intent(getApplicationContext(), ResourcePageUser.class));
             }
         });
 

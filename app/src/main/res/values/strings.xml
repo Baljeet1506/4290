@@ -16,6 +16,7 @@
     <string name="monthly_payment">Monthly Payment</string>
     <string name="calculate_button">Calculate</string>
     <string name="profile">Profile</string>
+    <string name="realtoremail">_@realtor.ca</string>
 
     <string name="property_list">Property List</string>
 

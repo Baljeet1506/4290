@@ -21,6 +21,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class LoginActvity extends AppCompatActivity implements View.OnClickListener {
@@ -35,8 +39,8 @@ public class LoginActvity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_actvity);
-        realtorBtn = findViewById(R.id.relatorBtn);
-        viewerBtn = findViewById(R.id.viewerBtn);
+        //  realtorBtn = findViewById(R.id.relatorBtn);
+        // viewerBtn = findViewById(R.id.viewerBtn);
         radioGroup = findViewById(R.id.radioGroup);
         editTextEmail = findViewById(R.id.editTxtEmail);
         editTextPassword = findViewById(R.id.editTxtPassword);
@@ -76,6 +80,7 @@ public class LoginActvity extends AppCompatActivity implements View.OnClickListe
         String email = editTextEmail.getText().toString();
         String password = editTextPassword.getText().toString();
 
+
         if (email.isEmpty()) {
             editTextEmail.setError("Email is required");
             editTextEmail.requestFocus();
@@ -107,8 +112,29 @@ public class LoginActvity extends AppCompatActivity implements View.OnClickListe
                 if (task.isSuccessful()) {
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-                    if (user.isEmailVerified()) {
 
+
+
+                    if (user.isEmailVerified()) {
+                      /*  String uid = task.getResult().getUser().getUid();
+                        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+                        firebaseDatabase.getReference().child("User").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                int userType = snapshot.getValue(Integer.class);
+                                if (userType == 1) {
+                                    startActivity(new Intent(LoginActvity.this, RealtorHome.class));
+                                }
+                                if (userType == 2) {
+                                    startActivity(new Intent(LoginActvity.this, UserHome.class));
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+
+                            }
+                        });*/
                         startActivity(new Intent(LoginActvity.this, UserHome.class));
                     } else {
 
