@@ -7,7 +7,7 @@
     tools:context=".addListings">
 
     <Button
-        android:id="@+id/btnLogin2"
+        android:id="@+id/btnAddListing"
         android:layout_width="189dp"
         android:layout_height="54dp"
         android:backgroundTint="@color/green"
@@ -21,13 +21,29 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.932" />
 
+    <Button
+        android:id="@+id/btnCancelListing"
+        android:layout_width="117dp"
+        android:layout_height="58dp"
+        android:backgroundTint="@color/green"
+        android:text="Cancel"
+        android:textAllCaps="false"
+        android:textSize="14sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.054"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
     <EditText
-        android:id="@+id/editTxtEmail8"
+        android:id="@+id/editTextLand"
         android:layout_width="179dp"
         android:layout_height="57dp"
         android:ems="10"
         android:hint="Land Size"
-        android:inputType="textEmailAddress"
+        android:inputType="numberDecimal"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,12 +53,12 @@
         app:layout_constraintVertical_bias="0.6" />
 
     <EditText
-        android:id="@+id/editTxtEmail10"
+        android:id="@+id/editTextBeds"
         android:layout_width="182dp"
         android:layout_height="58dp"
         android:ems="10"
         android:hint="beds"
-        android:inputType="textEmailAddress"
+        android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,12 +68,12 @@
         app:layout_constraintVertical_bias="0.481" />
 
     <EditText
-        android:id="@+id/editTxtEmail11"
+        android:id="@+id/editTextBaths"
         android:layout_width="172dp"
         android:layout_height="55dp"
         android:ems="10"
         android:hint="baths"
-        android:inputType="textEmailAddress"
+        android:inputType="numberDecimal"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,12 +83,12 @@
         app:layout_constraintVertical_bias="0.599" />
 
     <EditText
-        android:id="@+id/editTxtEmail12"
+        android:id="@+id/editTextAge"
         android:layout_width="176dp"
         android:layout_height="51dp"
         android:ems="10"
         android:hint="Age"
-        android:inputType="textEmailAddress"
+        android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,12 +98,12 @@
         app:layout_constraintVertical_bias="0.703" />
 
     <EditText
-        android:id="@+id/editTxtEmail14"
+        android:id="@+id/editTextType"
         android:layout_width="182dp"
         android:layout_height="54dp"
         android:ems="10"
         android:hint="Type"
-        android:inputType="textEmailAddress"
+        android:inputType="textPersonName"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,12 +113,12 @@
         app:layout_constraintVertical_bias="0.806" />
 
     <EditText
-        android:id="@+id/editTxtEmail15"
+        android:id="@+id/editTextTitle"
         android:layout_width="174dp"
         android:layout_height="52dp"
         android:ems="10"
         android:hint="Title"
-        android:inputType="textEmailAddress"
+        android:inputType="textPersonName"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,12 +128,12 @@
         app:layout_constraintVertical_bias="0.805" />
 
     <EditText
-        android:id="@+id/editTxtEmail13"
+        android:id="@+id/editTextFloorSize"
         android:layout_width="182dp"
         android:layout_height="58dp"
         android:ems="10"
         android:hint="Floor Size"
-        android:inputType="textEmailAddress"
+        android:inputType="numberDecimal"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,12 +143,12 @@
         app:layout_constraintVertical_bias="0.704" />
 
     <EditText
-        android:id="@+id/editTxtEmail9"
+        android:id="@+id/editTextPrice"
         android:layout_width="181dp"
         android:layout_height="55dp"
         android:ems="10"
         android:hint="Price"
-        android:inputType="textEmailAddress"
+        android:inputType="numberDecimal"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -142,12 +158,12 @@
         app:layout_constraintVertical_bias="0.483" />
 
     <EditText
-        android:id="@+id/editTxtEmail2"
+        android:id="@+id/editTextPostal"
         android:layout_width="183dp"
         android:layout_height="61dp"
         android:ems="10"
         android:hint="Postal Code"
-        android:inputType="textEmailAddress"
+        android:inputType="textPostalAddress"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -157,27 +173,27 @@
         app:layout_constraintVertical_bias="0.379" />
 
     <EditText
-        android:id="@+id/editTxtEmail7"
+        android:id="@+id/editTextUnitNum"
         android:layout_width="177dp"
         android:layout_height="53dp"
         android:ems="10"
         android:hint="Unit Number"
-        android:inputType="textEmailAddress"
+        android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.008"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.18" />
+        app:layout_constraintVertical_bias="0.175" />
 
     <EditText
-        android:id="@+id/editTxtEmail3"
+        android:id="@+id/editTextProvince"
         android:layout_width="182dp"
         android:layout_height="55dp"
         android:ems="10"
         android:hint="Province"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -187,12 +203,12 @@
         app:layout_constraintVertical_bias="0.379" />
 
     <EditText
-        android:id="@+id/editTxtEmail4"
+        android:id="@+id/editTextCity"
         android:layout_width="172dp"
         android:layout_height="47dp"
         android:ems="10"
         android:hint="City"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -202,12 +218,12 @@
         app:layout_constraintVertical_bias="0.281" />
 
     <EditText
-        android:id="@+id/editTxtEmail5"
+        android:id="@+id/editTextStreet"
         android:layout_width="177dp"
         android:layout_height="50dp"
         android:ems="10"
         android:hint="Street"
-        android:inputType="textEmailAddress"
+        android:inputType="text"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -217,12 +233,12 @@
         app:layout_constraintVertical_bias="0.276" />
 
     <EditText
-        android:id="@+id/editTxtEmail6"
+        android:id="@+id/editTextHouseNum"
         android:layout_width="168dp"
         android:layout_height="57dp"
         android:ems="10"
         android:hint="House Number"
-        android:inputType="textEmailAddress"
+        android:inputType="number"
         android:textAlignment="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
