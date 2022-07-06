@@ -85,7 +85,7 @@ public class MortgageCalculator extends AppCompatActivity {
                     //formula to calculate the monthly mortgage payment
                     float payment = (float) ((priceAfterDownPayment * userInterestRate) / (1 - Math.pow(1 + userInterestRate, -userAmortPeriod)));
 
-                    monthlyPayment.setText("$" + String.valueOf(payment));
+                    monthlyPayment.setText("$" + payment);
 
 
                 }

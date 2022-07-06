@@ -86,14 +86,10 @@
             android:name=".UserHome"
             android:exported="false" />
         <activity
-            android:name=".DatabaseHelper"
-            android:exported="false"
-            tools:ignore="Instantiatable" />
-        <activity
             android:name=".RegisterRealtor"
             android:exported="false" />
         <activity
-            android:name=".LoginActvity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -31,8 +31,8 @@ public class ForgotActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot);
 
-        emailEditText = (EditText) findViewById(R.id.emailReset);
-        progressBar = (ProgressBar) findViewById(R.id.progressBar3);
+        emailEditText = findViewById(R.id.emailReset);
+        progressBar = findViewById(R.id.progressBar3);
         resetBtn = findViewById(R.id.ResetBtn);
         BackToLoginBtn = findViewById(R.id.forgotBackBtn);
 
@@ -49,7 +49,7 @@ public class ForgotActivity extends AppCompatActivity {
         BackToLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), LoginActvity.class));
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
             }
         });
     }
@@ -75,7 +75,7 @@ public class ForgotActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                    // Toast.makeText(ForgotActivity.this, "Check your email to reset your password", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(), LoginActvity.class));
+                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 } else {
                     Toast.makeText(ForgotActivity.this, "Try Again", Toast.LENGTH_LONG).show();
                 }

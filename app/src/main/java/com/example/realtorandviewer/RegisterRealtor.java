@@ -134,7 +134,7 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
 
                                                 Toast.makeText(RegisterRealtor.this, "User is registered successfully", Toast.LENGTH_SHORT).show();
                                                 progressBar.setVisibility(View.GONE);
-                                                startActivity(new Intent(getApplicationContext(), LoginActvity.class));
+                                                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                                             } else {
                                                 Toast.makeText(RegisterRealtor.this, "Failed to register - Try again", Toast.LENGTH_SHORT).show();
                                                 progressBar.setVisibility(View.GONE);

@@ -12,8 +12,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,10 +25,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class LoginActvity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     EditText editTextEmail, editTextPassword;
-    RadioGroup radioGroup;
-    RadioButton realtorBtn, viewerBtn;
     Button btnLogin, btnRegister1, forgotPassword;
     private FirebaseAuth mAuth;
     ProgressBar progressBar;
@@ -39,9 +35,7 @@ public class LoginActvity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_actvity);
-        //  realtorBtn = findViewById(R.id.relatorBtn);
-        // viewerBtn = findViewById(R.id.viewerBtn);
-        radioGroup = findViewById(R.id.radioGroup);
+
         editTextEmail = findViewById(R.id.editTxtEmail);
         editTextPassword = findViewById(R.id.editTxtPassword);
         btnLogin = findViewById(R.id.btnLogin);
@@ -56,7 +50,6 @@ public class LoginActvity extends AppCompatActivity implements View.OnClickListe
 
         mAuth = FirebaseAuth.getInstance();
     }
-
 
     @SuppressLint("NonConstantResourceId")
     @Override
@@ -112,21 +105,20 @@ public class LoginActvity extends AppCompatActivity implements View.OnClickListe
                 if (task.isSuccessful()) {
                     FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-
-
-
                     if (user.isEmailVerified()) {
-                      /*  String uid = task.getResult().getUser().getUid();
+
+                        String uid = task.getResult().getUser().getUid();
+
                         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-                        firebaseDatabase.getReference().child("User").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
+                        firebaseDatabase.getReference().child("Users").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 int userType = snapshot.getValue(Integer.class);
                                 if (userType == 1) {
-                                    startActivity(new Intent(LoginActvity.this, RealtorHome.class));
+                                    startActivity(new Intent(LoginActivity.this, RealtorHome.class));
                                 }
                                 if (userType == 2) {
-                                    startActivity(new Intent(LoginActvity.this, UserHome.class));
+                                    startActivity(new Intent(LoginActivity.this, UserHome.class));
                                 }
                             }
 
@@ -134,16 +126,16 @@ public class LoginActvity extends AppCompatActivity implements View.OnClickListe
                             public void onCancelled(@NonNull DatabaseError error) {
 
                             }
-                        });*/
-                        startActivity(new Intent(LoginActvity.this, UserHome.class));
+                        });
+
                     } else {
 
                         user.sendEmailVerification();
-                        Toast.makeText(LoginActvity.this, "Check your email to verify your account", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "Check your email to verify your account", Toast.LENGTH_SHORT).show();
                     }
 
                 } else {
-                    Toast.makeText(LoginActvity.this, "Failed to Login", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "Failed to Login", Toast.LENGTH_SHORT).show();
                 }
             }
         });

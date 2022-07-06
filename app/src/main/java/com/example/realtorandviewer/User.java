@@ -9,13 +9,6 @@ public class User {
 
     }
 
-    public int getUserType(){
-        return userType;
-    }
-
-    public void setUserType(int userType){
-        this.userType = userType;
-    }
     //Constructor for Realtor user type
     public  User(String firstName, String lastName, String email, String phNumber, int userType){
 

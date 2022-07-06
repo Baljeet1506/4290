@@ -128,7 +128,7 @@ public class UserHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(UserHome.this, LoginActvity.class));
+                startActivity(new Intent(UserHome.this, LoginActivity.class));
 
             }
         });
