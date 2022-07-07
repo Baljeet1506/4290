@@ -4,6 +4,11 @@ public class Properties {
 
     String unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
 
+
+    public Properties() {
+
+    }
+
     public String getUnitNumber() {
         return unitNumber;
     }
@@ -115,29 +120,5 @@ public class Properties {
     public void setTitle(String title) {
         this.title = title;
     }
-
-    public Properties() {
-
-    }
-
-
-/*    public Properties(String unitNumber, String houseNumber, String street, String city, String province, String postal, String price, String beds, String landSize, String baths, String floorSize, String age, String type, String title) {
-
-        this.unitNumber = unitNumber;
-        this.houseNumber = houseNumber;
-        this.street = street;
-        this.city = city;
-        this.province = province;
-        this.postal = postal;
-        this.price = price;
-        this.beds = beds;
-        this.landSize = landSize;
-        this.baths = baths;
-        this.floorSize = floorSize;
-        this.age = age;
-        this.type = type;
-        this.title = title;
-
-    }*/
 
 }
