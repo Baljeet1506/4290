@@ -11,8 +11,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,7 +21,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterRealtor extends AppCompatActivity implements View.OnClickListener {
 
-    EditText firstName, lastName, email, password,phNumber;
+    EditText firstName, lastName, email, password, phNumber;
     Button BackToLoginBtn, btnRegister2;
     private FirebaseAuth mAuth;
     ProgressBar progressBar;
@@ -123,7 +121,7 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
-                            User user = new User(userFirstName, userLastName, userEmail,userPhone, userType);
+                            User user = new User(userFirstName, userLastName, userEmail, userPhone, userType);
 
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
