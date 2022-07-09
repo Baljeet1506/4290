@@ -11,7 +11,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Property Purchased"
+        android:textColor="#0E930E"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -23,12 +25,43 @@
         android:id="@+id/textView70"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#E4E2E2"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:text="Your offer has been accepted and you can’t wait to move in … don’t break out the bubbly just yet; you still have to close the deal. Your REALTOR® and lawyer will do most of the closing work, but here’s a checklist to follow: Immediately begin satisfying any conditions of the agreement that require action on your part. Your REALTOR® can fill out the documents confirming the conditions have been satisfied. Ask your lawyer to begin searching title to the property. This can take a while, so make sure you allow ample time. Well before closing, arrange your homeowner’s insurance to kick in on your closing date. Your insurance broker will give you a “binder letter” certifying that you’re covered. You can’t get a mortgage without this letter."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.329" />
+        app:layout_constraintVertical_bias="0.343" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/green"
+        android:text="Resources Page"
+        app:iconTint="@color/green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.754" />
+
+    <Button
+        android:id="@+id/backButton1"
+        android:layout_width="170dp"
+        android:layout_height="47dp"
+        android:backgroundTint="@color/green"
+        android:text="Home Page"
+        app:iconTint="@color/green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.933"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.754" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
