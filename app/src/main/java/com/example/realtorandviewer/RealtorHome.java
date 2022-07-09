@@ -33,7 +33,7 @@ public class RealtorHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_realtor_home);
-        Button LogOut = findViewById(R.id.logoutBtn2);
+        Button LogOut = findViewById(R.id.logoutBtn);
         Button favouriteBtn = findViewById(R.id.favouriteBtn);
         Button myListingsBtn = findViewById(R.id.myListingsBtn);
         Button pastSalesBtn = findViewById(R.id.PastSalesBtn);
@@ -44,10 +44,10 @@ public class RealtorHome extends AppCompatActivity {
         ImageButton findPropertiesBtn = findViewById(R.id.findPropertiesBtn);
         ImageButton profileBtn = findViewById(R.id.profileBtn);
 
-        firstNameText = findViewById(R.id.firstNameText);
-        lastNameText = findViewById(R.id.lastNameText);
-        realtorEmailText = findViewById(R.id.realtorEmailText);
-        realtorPhoneNum = findViewById(R.id.realtorPhoneText);
+        firstNameText = findViewById(R.id.firstNameTextView);
+        lastNameText = findViewById(R.id.lastNameTextView);
+        realtorEmailText = findViewById(R.id.realtorEmailTextView);
+        realtorPhoneNum = findViewById(R.id.realtorPhoneTextView);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
