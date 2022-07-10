@@ -3,7 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_add_listings.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_add_listings.xml" value="0.33" />
         <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_code.xml" value="0.25" />
         <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_database_helper.xml" value="0.13240740740740742" />
         <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_edit_profile.xml" value="0.33" />
@@ -15,7 +15,8 @@
         <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_main.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_make_an_offer_page.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_marketing_page.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_mortgage_calculator.xml" value="0.25" />
+        <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_mortgage_calculator.xml" value="0.33" />
+        <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_my_listings_page.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_plan_finance_page.xml" value="0.33" />
         <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_prepare_to_buy_page.xml" value="0.33" />
         <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_preparing_page.xml" value="0.36666666666666664" />
@@ -24,6 +25,7 @@
         <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_recommended_realtor.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_reg_type.xml" value="0.22509057971014493" />
         <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_register_actvity.xml" value="0.33" />
+        <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_register_realtor.xml" value="0.33" />
         <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_register_type.xml" value="0.33" />
         <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_register_viewer.xml" value="0.33" />
         <entry key="..\:/Users/hempreeta/StudioProjects/4290/app/src/main/res/layout/activity_resource_page_user.xml" value="0.36666666666666664" />
