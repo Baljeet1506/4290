@@ -27,7 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     EditText editTextEmail, editTextPassword;
-    Button btnLogin, btnRegister1, forgotPassword;
+    Button btnLogin, btnRegister, btnForgotPassword;
     private FirebaseAuth mAuth;
     ProgressBar progressBar;
 
@@ -36,15 +36,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_actvity);
 
-        editTextEmail = findViewById(R.id.editTxtEmail);
-        editTextPassword = findViewById(R.id.editTxtPassword);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextPassword = findViewById(R.id.editTextPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        btnRegister1 = findViewById(R.id.btnRegister1);
-        forgotPassword = findViewById(R.id.forgotPassword);
+        btnRegister = findViewById(R.id.btnRegister);
+        btnForgotPassword = findViewById(R.id.btnForgotPassword);
 
         btnLogin.setOnClickListener(this);
-        btnRegister1.setOnClickListener(this);
-        forgotPassword.setOnClickListener(this);
+        btnRegister.setOnClickListener(this);
+        btnForgotPassword.setOnClickListener(this);
 
         progressBar = findViewById(R.id.progressBar1);
 
@@ -56,23 +56,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.btnRegister1:
+            case R.id.btnRegister:
                 startActivity(new Intent(this, RegType.class));
                 break;
             case R.id.btnLogin:
                 userLogin();
                 break;
-            case R.id.forgotPassword:
+            case R.id.btnForgotPassword:
                 startActivity(new Intent(this, ForgotActivity.class));
                 break;
         }
     }
 
     private void userLogin() {
-
         String email = editTextEmail.getText().toString();
         String password = editTextPassword.getText().toString();
-
 
         if (email.isEmpty()) {
             editTextEmail.setError("Email is required");

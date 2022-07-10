@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class ResourcePageUser extends AppCompatActivity {
 
@@ -19,8 +20,7 @@ public class ResourcePageUser extends AppCompatActivity {
         Button ViewPropertiesBtn = findViewById(R.id.ViewProperties);
         Button MakeAnOfferBtn = findViewById(R.id.MakeAnOffer);
         Button PurchasedBtn = findViewById(R.id.ClosePurchase);
-
-
+        ImageButton BackBtn = findViewById(R.id.btnBack);
 
         PrepareToBuyBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +54,13 @@ public class ResourcePageUser extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), PurchasedPage.class));
+            }
+        });
+
+        BackBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), UserHome.class));
             }
         });
     }
