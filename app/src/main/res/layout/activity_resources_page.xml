@@ -6,6 +6,91 @@
     android:layout_height="match_parent"
     tools:context=".ResourcesPage">
 
+    <Button
+        android:id="@+id/Preparing"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="324dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/roboto_slab"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Preparing "
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton9"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/Offer"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="100dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/roboto_slab"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Offer"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView15"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/Marketing"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="96dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/roboto_slab"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Marketing"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.063"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton12"
+        app:strokeWidth="2dp" />
+
+    <Button
+        android:id="@+id/Listing"
+        android:layout_width="160dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="320dp"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/roboto_slab"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Listing"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton11"
+        app:layout_constraintVertical_bias="0.685"
+        app:strokeWidth="2dp" />
+
     <ImageButton
         android:id="@+id/forgotBackBtn3"
         android:layout_width="48dp"
@@ -93,16 +178,18 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textView71"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_slab"
         android:text="Tips for Realtors"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintVertical_bias="0.039" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/barrier2"
@@ -116,7 +203,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="21dp"
-        tools:layout_editor_absoluteY="199dp"
+        tools:layout_editor_absoluteY="205dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageButton
@@ -132,7 +219,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="217dp"
-        tools:layout_editor_absoluteY="189dp"
+        tools:layout_editor_absoluteY="205dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageButton
@@ -142,58 +229,5 @@
         tools:layout_editor_absoluteX="21dp"
         tools:layout_editor_absoluteY="433dp"
         tools:srcCompat="@tools:sample/avatars" />
-
-    <Button
-        android:id="@+id/Preparing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/green"
-        android:text="Preparing"
-        app:iconTint="@color/green"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.116"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.206" />
-
-    <Button
-        android:id="@+id/Marketing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/green"
-        android:text="Marketing"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.173"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.563" />
-
-    <Button
-        android:id="@+id/Listing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/green"
-        android:text="Listing "
-        app:layout_constraintBottom_toBottomOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.789"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.206" />
-
-    <Button
-        android:id="@+id/Offer"
-        android:layout_width="108dp"
-        android:layout_height="49dp"
-        android:backgroundTint="@color/green"
-        android:text="Offer"
-        app:layout_constraintBottom_toBottomOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.762"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.548" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
