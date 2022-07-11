@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         switch (v.getId()) {
             case R.id.btnRegister:
-                startActivity(new Intent(this, RegType.class));
+                startActivity(new Intent(this, RegisterTypePage.class));
                 break;
             case R.id.btnLogin:
                 userLogin();
@@ -113,10 +113,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 int userType = snapshot.getValue(Integer.class);
                                 if (userType == 1) {
-                                    startActivity(new Intent(LoginActivity.this, RealtorHome.class));
+                                    startActivity(new Intent(LoginActivity.this, HomePageRealtor.class));
                                 }
                                 if (userType == 2) {
-                                    startActivity(new Intent(LoginActivity.this, UserHome.class));
+                                    startActivity(new Intent(LoginActivity.this, HomePageViewer.class));
                                 }
                             }
 

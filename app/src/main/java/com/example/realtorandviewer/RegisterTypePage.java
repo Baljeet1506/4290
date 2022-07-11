@@ -9,11 +9,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class RegType extends AppCompatActivity implements View.OnClickListener {
+public class RegisterTypePage extends AppCompatActivity implements View.OnClickListener {
 
     Button btnRealtor, btnViewer;
     ImageButton BackToLoginBtn;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

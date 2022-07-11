@@ -29,7 +29,7 @@
             android:name=".PrepareToBuyPage"
             android:exported="false" />
         <activity
-            android:name=".ResourcePageUser"
+            android:name=".ResourcesPageViewer"
             android:exported="false" />
         <activity
             android:name=".OfferPage"
@@ -41,13 +41,13 @@
             android:name=".ListingPage"
             android:exported="false" />
         <activity
-            android:name=".PreparingPage"
+            android:name=".PrepareToSellPage"
             android:exported="false" />
         <activity
             android:name=".RegisterViewer"
             android:exported="false" />
         <activity
-            android:name=".RegType"
+            android:name=".RegisterTypePage"
             android:exported="false" />
         <activity
             android:name=".addListings"
@@ -56,7 +56,7 @@
             android:name=".ForgotActivity"
             android:exported="false" />
         <activity
-            android:name=".ResourcesPage"
+            android:name=".ResourcesPageRealtor"
             android:exported="false" />
         <activity
             android:name=".MyPastSalesPage"
@@ -80,10 +80,10 @@
             android:name=".FindRealtor"
             android:exported="false" />
         <activity
-            android:name=".RealtorHome"
+            android:name=".HomePageRealtor"
             android:exported="false" />
         <activity
-            android:name=".UserHome"
+            android:name=".HomePageViewer"
             android:exported="false" />
         <activity
             android:name=".RegisterRealtor"

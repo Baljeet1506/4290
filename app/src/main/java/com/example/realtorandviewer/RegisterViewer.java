@@ -56,7 +56,7 @@ public class RegisterViewer extends AppCompatActivity implements View.OnClickLis
                 registerUser();
                 break;
             case R.id.btnCancelViewer:
-                startActivity(new Intent(getApplicationContext(), RegType.class));
+                startActivity(new Intent(getApplicationContext(), RegisterTypePage.class));
                 break;
         }
 

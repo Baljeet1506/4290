@@ -8,12 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class ResourcesPage extends AppCompatActivity {
+public class ResourcesPageRealtor extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resources_page);
+        setContentView(R.layout.activity_resources_page_realtor);
 
         ImageButton findRealtorBtn = findViewById(R.id.findRealtorBtn);
         ImageButton mortgageCalBtn = findViewById(R.id.mortgageCalculatorBtn);
@@ -46,14 +46,14 @@ public class ResourcesPage extends AppCompatActivity {
         profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), UserHome.class));
+                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
             }
         });
 
        PreparingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), PreparingPage.class));
+                startActivity(new Intent(getApplicationContext(), PrepareToSellPage.class));
             }
         });
 

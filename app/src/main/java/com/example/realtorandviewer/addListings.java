@@ -10,6 +10,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -23,7 +24,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class addListings extends AppCompatActivity implements View.OnClickListener {
 
     EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
-    Button btnAddListing, btnCancelListing;
+    Button btnAddListing;
+    ImageButton btnBack;
     DatabaseReference ref;
     Properties listing;
 
@@ -49,8 +51,8 @@ public class addListings extends AppCompatActivity implements View.OnClickListen
 
         btnAddListing = findViewById(R.id.btnAddListing);
         btnAddListing.setOnClickListener(this);
-        btnCancelListing = findViewById(R.id.btnCancelListing);
-        btnCancelListing.setOnClickListener(this);
+
+
 
         listing = new Properties();
 
@@ -59,18 +61,12 @@ public class addListings extends AppCompatActivity implements View.OnClickListen
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
-
-
         switch (v.getId()) {
             case R.id.btnAddListing:
                 addListing();
                 break;
-            case R.id.btnCancelListing:
-                startActivity(new Intent(getApplicationContext(), MyListingsPage.class));
-                break;
         }
     }
-
 
     private void addListing() {
 

@@ -57,7 +57,7 @@
         android:fontFamily="@font/roboto_slab"
         android:text="Property Purchased"
         android:textColor="#0E930E"
-        android:textSize="20sp"
+        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideTop"
         app:layout_constraintEnd_toStartOf="@+id/guideRight"
@@ -78,7 +78,10 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:showDividers="middle"
+            android:divider="@drawable/spacing_small">
 
             <TextView
                 android:id="@+id/textView70"
@@ -88,10 +91,9 @@
                 android:background="#FFFFFF"
                 android:fontFamily="@font/roboto_slab"
                 android:lineSpacingExtra="12sp"
-                android:padding="20dp"
                 android:paddingRight="20dp"
                 android:text="Your offer has been accepted and you can’t wait to move in … don’t break out the bubbly just yet; you still have to close the deal. Your REALTOR® and lawyer will do most of the closing work, but here’s a checklist to follow: Immediately begin satisfying any conditions of the agreement that require action on your part. Your REALTOR® can fill out the documents confirming the conditions have been satisfied. Ask your lawyer to begin searching title to the property. This can take a while, so make sure you allow ample time. Well before closing, arrange your homeowner’s insurance to kick in on your closing date. Your insurance broker will give you a “binder letter” certifying that you’re covered. You can’t get a mortgage without this letter."
-                android:textSize="16sp"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
