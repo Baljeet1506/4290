@@ -7,16 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class PurchasedPage extends AppCompatActivity {
+public class PrepareToSellPage extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_purchased_page);
+        setContentView(R.layout.activity_prepare_to_sell_page);
 
-        ImageButton backButton = findViewById(R.id.btnBack);
+        ImageButton BackBtn = findViewById(R.id.btnBack);
 
-        backButton.setOnClickListener(new View.OnClickListener() {
+        BackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), ResourcesPageViewer.class));

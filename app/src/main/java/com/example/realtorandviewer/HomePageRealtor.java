@@ -1,5 +1,8 @@
 package com.example.realtorandviewer;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,9 +10,6 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -19,34 +19,35 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class UserHome extends AppCompatActivity {
+public class HomePageRealtor extends AppCompatActivity {
 
-    private Button logout;
-    TextView firstNameTextView, lastNameTextView, emailTextView;
+    TextView firstNameText, lastNameText, realtorEmailText, realtorPhoneNum;
 
     private FirebaseUser user;
     private DatabaseReference reference;
 
     private String userID;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_home);
-
-        logout = findViewById(R.id.logoutBtn);
-        ImageButton findRealtorBtn = findViewById(R.id.findRealtorBtn);
-        ImageButton mortgageCalBtn = findViewById(R.id.mortgageCalculatorBtn);
-        ImageButton findPropertiesBtn = findViewById(R.id.findPropertiesBtn);
-
+        setContentView(R.layout.activity_home_realtor);
+        Button LogOut = findViewById(R.id.logoutBtn);
         Button favouriteBtn = findViewById(R.id.favouriteBtn);
         Button myListingsBtn = findViewById(R.id.myListingsBtn);
         Button pastSalesBtn = findViewById(R.id.PastSalesBtn);
         Button resourcesBtn = findViewById(R.id.resourcesBtn);
 
-        firstNameTextView = findViewById(R.id.firstNameTextView);
-        lastNameTextView = findViewById(R.id.lastNameTextView);
-        emailTextView = findViewById(R.id.emailTextView);
+        ImageButton findRealtorBtn = findViewById(R.id.findRealtorBtn);
+        ImageButton mortgageCalBtn = findViewById(R.id.mortgageCalculatorBtn);
+        ImageButton findPropertiesBtn = findViewById(R.id.findPropertiesBtn);
+        ImageButton profileBtn = findViewById(R.id.profileBtn);
+
+        firstNameText = findViewById(R.id.firstNameTextView);
+        lastNameText = findViewById(R.id.lastNameTextView);
+        realtorEmailText = findViewById(R.id.realtorEmailTextView);
+        realtorPhoneNum = findViewById(R.id.realtorPhoneTextView);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
@@ -62,16 +63,18 @@ public class UserHome extends AppCompatActivity {
                     String firstName = userProfile.firstName;
                     String lastName = userProfile.lastName;
                     String email = userProfile.email;
+                    String phone = userProfile.phNumber;
 
-                    firstNameTextView.setText(firstName);
-                    lastNameTextView.setText(lastName);
-                    emailTextView.setText(email);
+                    firstNameText.setText(firstName);
+                    lastNameText.setText(lastName);
+                    realtorEmailText.setText(email);
+                    realtorPhoneNum.setText(phone);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(UserHome.this, "The User info did not load", Toast.LENGTH_SHORT).show();
+                Toast.makeText(HomePageRealtor.this, "The User info did not load", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -98,10 +101,9 @@ public class UserHome extends AppCompatActivity {
         resourcesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ResourcePageUser.class));
+                startActivity(new Intent(getApplicationContext(), ResourcesPageRealtor.class));
             }
         });
-
 
         findRealtorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,21 +125,22 @@ public class UserHome extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), FindProperties.class));
             }
         });
-
-        logout.setOnClickListener(new View.OnClickListener() {
+        profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(UserHome.this, LoginActivity.class));
-
+                startActivity(new Intent(getApplicationContext(), editProfile.class));
             }
         });
 
+        LogOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentL = new Intent(HomePageRealtor.this, LoginActivity.class);
+                startActivity(intentL);
+                finish();
+                Toast.makeText(HomePageRealtor.this, "Successfully logout", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
-
-
 }
-
-
-

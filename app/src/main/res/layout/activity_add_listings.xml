@@ -84,7 +84,7 @@
             <EditText
                 android:id="@+id/editTextUnitNum"
                 android:layout_width="match_parent"
-                android:layout_height="53dp"
+                android:layout_height="@dimen/text_input_height"
                 android:background="@drawable/shape_rounded_textinput"
                 android:ems="10"
                 android:hint="Unit Number"
@@ -100,7 +100,7 @@
             <EditText
                 android:id="@+id/editTextHouseNum"
                 android:layout_width="match_parent"
-                android:layout_height="57dp"
+                android:layout_height="@dimen/text_input_height"
                 android:background="@drawable/shape_rounded_textinput"
                 android:ems="10"
                 android:hint="House Number"
@@ -116,7 +116,7 @@
             <EditText
                 android:id="@+id/editTextStreet"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="@dimen/text_input_height"
                 android:background="@drawable/shape_rounded_textinput"
                 android:ems="10"
                 android:hint="Street"
@@ -132,7 +132,7 @@
             <EditText
                 android:id="@+id/editTextCity"
                 android:layout_width="match_parent"
-                android:layout_height="47dp"
+                android:layout_height="@dimen/text_input_height"
                 android:background="@drawable/shape_rounded_textinput"
                 android:ems="10"
                 android:hint="City"
@@ -148,7 +148,7 @@
             <EditText
                 android:id="@+id/editTextProvince"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="@dimen/text_input_height"
                 android:background="@drawable/shape_rounded_textinput"
                 android:ems="10"
                 android:hint="Province"
@@ -164,7 +164,7 @@
             <EditText
                 android:id="@+id/editTextPostal"
                 android:layout_width="match_parent"
-                android:layout_height="61dp"
+                android:layout_height="@dimen/text_input_height"
                 android:background="@drawable/shape_rounded_textinput"
                 android:ems="10"
                 android:hint="Postal Code"
@@ -180,7 +180,7 @@
             <EditText
                 android:id="@+id/editTextPrice"
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
+                android:layout_height="@dimen/text_input_height"
                 android:background="@drawable/shape_rounded_textinput"
                 android:ems="10"
                 android:hint="Price"
@@ -204,13 +204,13 @@
 
                 <EditText
                     android:id="@+id/editTextBeds"
-                    android:layout_height="58dp"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_height="@dimen/text_input_height"
                     android:layout_marginStart="-10dp"
-                    android:gravity="center"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_rounded_textinput"
                     android:ems="10"
+                    android:gravity="center"
                     android:hint="beds"
                     android:inputType="number"
                     android:textAlignment="center"
@@ -223,13 +223,13 @@
 
                 <EditText
                     android:id="@+id/editTextBaths"
-                    android:layout_height="55dp"
                     android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_height="@dimen/text_input_height"
                     android:layout_marginRight="10dp"
-                    android:gravity="center"
+                    android:layout_weight="1"
                     android:background="@drawable/shape_rounded_textinput"
                     android:ems="10"
+                    android:gravity="center"
                     android:hint="baths"
                     android:inputType="numberDecimal"
                     android:textAlignment="center"
@@ -247,7 +247,7 @@
             <EditText
                 android:id="@+id/editTextLand"
                 android:layout_width="match_parent"
-                android:layout_height="57dp"
+                android:layout_height="@dimen/text_input_height"
                 android:background="@drawable/shape_rounded_textinput"
                 android:ems="10"
                 android:hint="Land Size"
@@ -263,7 +263,7 @@
             <EditText
                 android:id="@+id/editTextFloorSize"
                 android:layout_width="match_parent"
-                android:layout_height="58dp"
+                android:layout_height="@dimen/text_input_height"
                 android:background="@drawable/shape_rounded_textinput"
                 android:ems="10"
                 android:hint="Floor Size"
@@ -279,7 +279,7 @@
             <EditText
                 android:id="@+id/editTextAge"
                 android:layout_width="match_parent"
-                android:layout_height="51dp"
+                android:layout_height="@dimen/text_input_height"
                 android:background="@drawable/shape_rounded_textinput"
                 android:ems="10"
                 android:hint="Age"
@@ -295,7 +295,7 @@
             <EditText
                 android:id="@+id/editTextType"
                 android:layout_width="match_parent"
-                android:layout_height="54dp"
+                android:layout_height="@dimen/text_input_height"
                 android:background="@drawable/shape_rounded_textinput"
                 android:ems="10"
                 android:hint="Type"
@@ -311,7 +311,7 @@
             <EditText
                 android:id="@+id/editTextTitle"
                 android:layout_width="match_parent"
-                android:layout_height="52dp"
+                android:layout_height="@dimen/text_input_height"
                 android:background="@drawable/shape_rounded_textinput"
                 android:ems="10"
                 android:hint="Title"
@@ -331,51 +331,22 @@
     </ScrollView>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <Button
         android:id="@+id/btnAddListing"
-        android:layout_width="189dp"
-        android:layout_height="54dp"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/button_height"
         android:backgroundTint="@color/green"
-        android:text="Add Listings"
+        android:fontFamily="@font/roboto_slab"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="Add Listing"
         android:textAllCaps="false"
-        android:textSize="14sp"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnCancelListing"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.86"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnCancelListing"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <Button
-        android:id="@+id/btnCancelListing"
-        android:layout_width="117dp"
-        android:layout_height="58dp"
-        android:backgroundTint="@color/green"
-        android:text="Cancel"
-        android:textAllCaps="false"
-        android:textSize="14sp"
+        android:textSize="16sp"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideLeft"
-        app:layout_constraintTop_toTopOf="@+id/guideBottom"
-        app:layout_constraintVertical_bias="0.448" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideBottom" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

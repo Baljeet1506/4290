@@ -6,6 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".ViewPropertiesPage">
 
+    <ImageButton
+        android:id="@+id/btnBack3"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#00FFFFFF"
+        android:contentDescription="back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/backbutton" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLeft"
         android:layout_width="wrap_content"
@@ -42,13 +58,14 @@
         android:fontFamily="@font/roboto_slab"
         android:text="View Properties"
         android:textColor="#0E930E"
-        android:textSize="20sp"
+        android:textSize="@dimen/h1"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideTop"
         app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="@+id/guideLeft"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.978" />
-
+        app:layout_constraintVertical_bias="1.0" />
 
     <ScrollView
         android:id="@+id/scrollView5"
@@ -73,41 +90,14 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_slab"
                 android:text="Look for properties"
-                android:textSize="20sp"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.129"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.545" />
-
-            <TextView
-                android:id="@+id/textView60"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
-                android:text="Good Realtor"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.118"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.223" />
-
-            <TextView
-                android:id="@+id/textView61"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
-                android:text="A REALTOR® can review your wants and needs to help you determine your price range, as well as answer questions about the markets you’re interested in and help you compare homes and neighbourhoods. Your REALTOR® can also provide access to exclusive listing information, preview properties to ensure you’re only shown homes that meet your needs and budget and make appointments and walk you through homes that interest you."
-                android:lineSpacingExtra="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.453"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.338" />
 
             <TextView
                 android:id="@+id/textView62"
@@ -147,6 +137,36 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.696" />
+
+            <TextView
+                android:id="@+id/textView60"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_slab"
+                android:text="Good Realtor"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.118"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.223" />
+
+            <TextView
+                android:id="@+id/textView61"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_slab"
+                android:text="A REALTOR® can review your wants and needs to help you determine your price range, as well as answer questions about the markets you’re interested in and help you compare homes and neighbourhoods. Your REALTOR® can also provide access to exclusive listing information, preview properties to ensure you’re only shown homes that meet your needs and budget and make appointments and walk you through homes that interest you."
+                android:lineSpacingExtra="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.453"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.338" />
+
         </LinearLayout>
     </ScrollView>
 

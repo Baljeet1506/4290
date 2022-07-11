@@ -7,66 +7,6 @@
     tools:context=".FindRealtor">
 
     <TextView
-        android:id="@+id/textView35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/name_first"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.222"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/phone_number"
-        app:layout_constraintBottom_toTopOf="@+id/textView33"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView35"
-        app:layout_constraintTop_toBottomOf="@+id/textView36"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/email"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView7"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView32"
-        app:layout_constraintTop_toTopOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView34"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/name_last"
-        app:layout_constraintBottom_toBottomOf="@+id/textView35"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.156"
-        app:layout_constraintStart_toEndOf="@+id/textView35"
-        app:layout_constraintTop_toTopOf="@+id/textView35"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView36"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/company"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView35"
-        app:layout_constraintTop_toBottomOf="@+id/textView35"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
         android:id="@+id/textView30"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -184,18 +124,6 @@
         app:layout_constraintVertical_bias="0.078"
         app:srcCompat="@drawable/realtor2" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/searchFilterBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.137"
-        app:srcCompat="@drawable/realtor3" />
-
     <TextView
         android:id="@+id/textView17"
         android:layout_width="wrap_content"
@@ -244,38 +172,42 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
+
         <ImageButton
             android:id="@+id/searchFilterBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_width="@dimen/button_height"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="6dp"
             android:background="@drawable/shape_circle"
-            app:layout_constraintBottom_toTopOf="@+id/findRealtorBtn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintBottom_toBottomOf="@+id/editText"
+            app:layout_constraintEnd_toStartOf="@+id/editText"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.452"
+            app:layout_constraintTop_toTopOf="@+id/editText"
+            app:layout_constraintVertical_bias="0.666"
             app:srcCompat="@drawable/filter" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editText"
-            android:layout_width="275dp"
-            android:layout_height="34dp"
-            android:layout_marginEnd="32dp"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/text_input_height"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="6dp"
             android:background="@drawable/shape_rounded_textinput"
             android:fontFamily="@font/roboto_slab"
             android:hint="@string/search_realtor"
             android:textAlignment="center"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/searchFilterBtn"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/findRealtorBtn"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.652"
-            app:layout_constraintStart_toEndOf="@+id/imageButton"
-            app:layout_constraintTop_toTopOf="@+id/searchFilterBtn"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/searchFilterBtn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.422" />
 
         <ImageButton
             android:id="@+id/profileBtn"
@@ -288,7 +220,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/mortgageCalculatorBtn"
             app:layout_constraintTop_toTopOf="@+id/mortgageCalculatorBtn"
-            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/profile" />
 
         <ImageButton
@@ -308,7 +239,7 @@
             android:id="@+id/findRealtorBtn"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="6dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_realtors_button"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -316,7 +247,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.988"
+            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/realtorsselect" />
 
         <ImageButton
@@ -330,7 +261,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/findRealtorBtn"
             app:layout_constraintTop_toTopOf="@+id/findRealtorBtn"
-            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/properties" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

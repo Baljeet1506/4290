@@ -6,6 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".MortgageCalculator">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.85" />
 
     <TextView
         android:id="@+id/textView16"
@@ -13,173 +40,198 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_slab"
         android:text="@string/mortgage_calculator"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView6"
+        app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideLeft"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.071" />
+        app:layout_constraintVertical_bias="0.557" />
 
-    <EditText
-        android:id="@+id/editTextPurchasePrice"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_rounded_textinput"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="@+id/textView18"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.828"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView18"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:fontFamily="@font/roboto_slab"
-        android:text="@string/purchase_price"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.036"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.223" />
-
-    <EditText
-        android:id="@+id/editTextDownPayment"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_rounded_textinput"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="@+id/textView19"
-        app:layout_constraintEnd_toEndOf="parent"
+    <ScrollView
+        android:id="@+id/scrollView6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guideRight"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextPurchasePrice"
-        app:layout_constraintTop_toTopOf="@+id/textView19"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@+id/guideLeft"
+        app:layout_constraintTop_toTopOf="@+id/guideTop"
+        app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/roboto_slab"
-        android:text="@string/down_payment"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView18"
-        app:layout_constraintVertical_bias="0.0" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/spacing_medium"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:showDividers="middle">
 
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="147dp"
-        android:layout_height="55dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/roboto_slab"
-        android:text="@string/amortization_period"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView19"
-        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="129dp"
-        android:layout_height="23dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/roboto_slab"
-        android:text="@string/interest_rate"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView20"
-        app:layout_constraintVertical_bias="0.0" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:fontFamily="@font/roboto_slab"
-        android:text="@string/monthly_payment"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView18"
-        app:layout_constraintTop_toBottomOf="@+id/textView21"
-        app:layout_constraintVertical_bias="0.011" />
+                <TextView
+                    android:id="@+id/textView18"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_slab"
+                    android:gravity="center"
+                    android:text="@string/purchase_price"
+                    android:textSize="16sp" />
 
-    <EditText
-        android:id="@+id/editTextAmortPeriod"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_rounded_textinput"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="@+id/textView20"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextPurchasePrice"
-        app:layout_constraintTop_toTopOf="@+id/textView20"
-        app:layout_constraintVertical_bias="0.0" />
+                <EditText
+                    android:id="@+id/editTextPurchasePrice"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView19"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_slab"
+                    android:gravity="center"
+                    android:text="@string/down_payment"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/editTextDownPayment"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView20"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_slab"
+                    android:gravity="center"
+                    android:text="@string/amortization_period"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/editTextAmortPeriod"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView21"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_slab"
+                    android:gravity="center"
+                    android:text="@string/interest_rate"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/editTextInterestRate"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:inputType="numberDecimal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_slab"
+                    android:gravity="center"
+                    android:text="@string/monthly_payment"
+                    android:textSize="16sp" />
+
+                <EditText
+                    android:id="@+id/monthlyPayment"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:layout_weight="1"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:textSize="20sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
 
     <Button
         android:id="@+id/btnCalculate"
-        android:layout_width="174dp"
-        android:layout_height="65dp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
         android:backgroundTint="@color/green"
         android:fontFamily="@font/roboto_slab"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:stateListAnimator="@null"
         android:text="@string/calculate_button"
         android:textAllCaps="false"
-        app:cornerRadius="40dp"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916" />
-
-    <EditText
-        android:id="@+id/editTextInterestRate"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_rounded_textinput"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintBottom_toBottomOf="@+id/textView21"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextPurchasePrice"
-        app:layout_constraintTop_toTopOf="@+id/textView21"
+        app:layout_constraintTop_toTopOf="@+id/guideBottom"
         app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/monthlyPayment"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shape_rounded_textinput"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/textView22"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/editTextPurchasePrice"
-        app:layout_constraintTop_toTopOf="@+id/textView22"
-        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/navigation"
@@ -190,15 +242,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/profileBar"
+        app:layout_constraintTop_toTopOf="@+id/guideBottom"
         app:layout_constraintVertical_bias="1.0">
 
         <ImageButton
             android:id="@+id/profileBtn"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="16dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_profile_button"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -206,6 +256,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/mortgageCalculatorBtn"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/profile" />
 
         <ImageButton
@@ -225,7 +276,7 @@
             android:id="@+id/findRealtorBtn"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="8dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_realtors_button"
             app:layout_constraintBottom_toBottomOf="@+id/findPropertiesBtn"
@@ -247,7 +298,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/findRealtorBtn"
             app:layout_constraintTop_toTopOf="@+id/mortgageCalculatorBtn"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/properties" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

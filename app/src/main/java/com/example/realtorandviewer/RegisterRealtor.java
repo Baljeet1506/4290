@@ -59,7 +59,7 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
                 registerUser();
                 break;
             case R.id.btnCancel:
-                startActivity(new Intent(getApplicationContext(), RegType.class));
+                startActivity(new Intent(getApplicationContext(), RegisterTypePage.class));
                 break;
         }
     }

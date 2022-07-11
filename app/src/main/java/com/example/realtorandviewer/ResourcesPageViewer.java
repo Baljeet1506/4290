@@ -8,12 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class ResourcePageUser extends AppCompatActivity {
+public class ResourcesPageViewer extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resource_page_user);
+        setContentView(R.layout.activity_resource_page_viewer);
 
         Button PrepareToBuyBtn = findViewById(R.id.PrepareToBuy);
         Button PlanFinanceBtn = findViewById(R.id.PlanFinance);
@@ -60,7 +60,7 @@ public class ResourcePageUser extends AppCompatActivity {
         BackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), UserHome.class));
+                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
             }
         });
     }
