@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class PlanFinancePage extends AppCompatActivity {
 
@@ -13,20 +14,12 @@ public class PlanFinancePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_plan_finance_page);
-        Button backButton = findViewById(R.id.backButton);
-        Button homeButton = findViewById(R.id.backButton1);
+        ImageButton backButton = findViewById(R.id.btnBack);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), ResourcePageUser.class));
-            }
-        });
-
-        homeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), UserHome.class));
             }
         });
     }
