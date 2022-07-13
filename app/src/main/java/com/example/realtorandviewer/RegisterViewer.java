@@ -56,7 +56,7 @@ public class RegisterViewer extends AppCompatActivity implements View.OnClickLis
                 registerUser();
                 break;
             case R.id.btnCancelViewer:
-                startActivity(new Intent(getApplicationContext(), RegisterTypePage.class));
+                startActivity(new Intent(getApplicationContext(), RegisteringType.class));
                 break;
         }
 
@@ -123,7 +123,7 @@ public class RegisterViewer extends AppCompatActivity implements View.OnClickLis
                                             if (task.isSuccessful()) {
                                                 Toast.makeText(RegisterViewer.this, "User is registered successfully", Toast.LENGTH_SHORT).show();
                                                 progressBar.setVisibility(View.GONE);
-                                                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                                                startActivity(new Intent(getApplicationContext(), Login.class));
                                             } else {
                                                 Toast.makeText(RegisterViewer.this, "Failed to register - Try again", Toast.LENGTH_SHORT).show();
                                                 progressBar.setVisibility(View.GONE);

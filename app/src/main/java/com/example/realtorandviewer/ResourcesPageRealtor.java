@@ -53,28 +53,28 @@ public class ResourcesPageRealtor extends AppCompatActivity {
        PreparingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), PrepareToSellPage.class));
+                startActivity(new Intent(getApplicationContext(), ResourceRealtorPrepareToSell.class));
             }
         });
 
        ListingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ListingPage.class));
+                startActivity(new Intent(getApplicationContext(), ResourceRealtorListing.class));
             }
         });
 
         MarketingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MarketingPage.class));
+                startActivity(new Intent(getApplicationContext(), ResourceRealtorMarketing.class));
             }
         });
 
         OfferBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), OfferPage.class));
+                startActivity(new Intent(getApplicationContext(), ResourceRealtorOffer.class));
             }
         });
     }

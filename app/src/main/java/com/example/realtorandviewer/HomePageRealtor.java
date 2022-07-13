@@ -81,21 +81,21 @@ public class HomePageRealtor extends AppCompatActivity {
         favouriteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), FavoritePage.class));
+                startActivity(new Intent(getApplicationContext(), Favourites.class));
             }
         });
 
         myListingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MyListingsPage.class));
+                startActivity(new Intent(getApplicationContext(), RealtorListings.class));
             }
         });
 
         pastSalesBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MyPastSalesPage.class));
+                startActivity(new Intent(getApplicationContext(), RealtorPastSales.class));
             }
         });
         resourcesBtn.setOnClickListener(new View.OnClickListener() {
@@ -128,14 +128,14 @@ public class HomePageRealtor extends AppCompatActivity {
         profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), editProfile.class));
+                startActivity(new Intent(getApplicationContext(), EditProfile.class));
             }
         });
 
         LogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intentL = new Intent(HomePageRealtor.this, LoginActivity.class);
+                Intent intentL = new Intent(HomePageRealtor.this, Login.class);
                 startActivity(intentL);
                 finish();
                 Toast.makeText(HomePageRealtor.this, "Successfully logout", Toast.LENGTH_SHORT).show();

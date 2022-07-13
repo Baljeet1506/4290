@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class FavoritePage extends AppCompatActivity {
+public class Favourites extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

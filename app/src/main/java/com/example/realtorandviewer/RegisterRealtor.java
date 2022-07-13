@@ -59,7 +59,7 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
                 registerUser();
                 break;
             case R.id.btnCancel:
-                startActivity(new Intent(getApplicationContext(), RegisterTypePage.class));
+                startActivity(new Intent(getApplicationContext(), RegisteringType.class));
                 break;
         }
     }
@@ -132,7 +132,7 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
 
                                                 Toast.makeText(RegisterRealtor.this, "User is registered successfully", Toast.LENGTH_SHORT).show();
                                                 progressBar.setVisibility(View.GONE);
-                                                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                                                startActivity(new Intent(getApplicationContext(), Login.class));
                                             } else {
                                                 Toast.makeText(RegisterRealtor.this, "Failed to register - Try again", Toast.LENGTH_SHORT).show();
                                                 progressBar.setVisibility(View.GONE);

@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewPropertiesPage">
+    tools:context=".ResourceRealtorOffer">
 
     <ImageButton
-        android:id="@+id/btnBack3"
+        android:id="@+id/forgotBackBtn5"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="back"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,17 +52,17 @@
 
 
     <TextView
-        android:id="@+id/textView58"
+        android:id="@+id/textView86"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_slab"
-        android:text="View Properties"
-        android:textColor="#0E930E"
+        android:text="The Offer"
+        android:textColor="@color/light_green"
         android:textSize="@dimen/h1"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/guideTop"
         app:layout_constraintEnd_toStartOf="@+id/guideRight"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/guideLeft"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
@@ -73,8 +73,10 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideBottom"
         app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/guideLeft"
-        app:layout_constraintTop_toTopOf="@+id/guideTop">
+        app:layout_constraintTop_toTopOf="@+id/guideTop"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -85,97 +87,112 @@
             android:showDividers="middle">
 
             <TextView
-                android:id="@+id/textView59"
+                android:id="@+id/textView88"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_slab"
-                android:text="Look for properties"
+                android:text="Receive an offer"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="@dimen/h3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.129"
+                app:layout_constraintHorizontal_bias="0.146"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.545" />
+                app:layout_constraintVertical_bias="0.13" />
+
 
             <TextView
-                android:id="@+id/textView62"
+                android:id="@+id/textView89"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_slab"
-                android:lineSpacingExtra="@dimen/line_spacing_small"
-                android:text="CheckOut Find Properties in our app"
-                android:textSize="@dimen/normal_text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.086"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.63" />
-
-            <TextView
-                android:id="@+id/textView63"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
-                android:lineSpacingExtra="@dimen/line_spacing_small"
-                android:text="Check realestate ads"
-                android:textSize="@dimen/normal_text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.089"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.785" />
-
-            <TextView
-                android:id="@+id/textView64"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
-                android:lineSpacingExtra="@dimen/line_spacing_small"
-                android:text="Go to open houses"
-                android:textSize="@dimen/normal_text"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.086"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.696" />
-
-            <TextView
-                android:id="@+id/textView60"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
-                android:text="Good Realtor"
+                android:text="Give advice to your client"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="@dimen/h3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.118"
+                app:layout_constraintHorizontal_bias="0.205"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.223" />
+                app:layout_constraintVertical_bias="0.186" />
 
             <TextView
-                android:id="@+id/textView61"
+                android:id="@+id/textView92"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_slab"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
-                android:text="A REALTOR® can review your wants and needs to help you determine your price range, as well as answer questions about the markets you’re interested in and help you compare homes and neighbourhoods. Your REALTOR® can also provide access to exclusive listing information, preview properties to ensure you’re only shown homes that meet your needs and budget and make appointments and walk you through homes that interest you."
+                android:text="You can advice your client if the received offer is good or not. What is going to happen once the accepted or if they don't like the price they can reject the offer. whatever best for them just explain it to them."
                 android:textSize="@dimen/normal_text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.453"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.338" />
+                app:layout_constraintVertical_bias="0.277" />
+
+            <TextView
+                android:id="@+id/textView90"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_slab"
+                android:text="Negotiation"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="@dimen/h3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.127"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.44" />
+
+            <TextView
+                android:id="@+id/textView91"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_slab"
+                android:lineSpacingExtra="@dimen/line_spacing_small"
+                android:text="Negotiating a property sale is considered one of the most intimidating aspects of the home buying process. "
+                android:textSize="@dimen/normal_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.526" />
+
+            <TextView
+                android:id="@+id/textView87"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_slab"
+                android:text="Close Sale"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="@dimen/h3"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.154"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.636" />
+
+            <TextView
+                android:id="@+id/textView93"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_slab"
+                android:lineSpacingExtra="@dimen/line_spacing_small"
+                android:text="By the time your client accept an offer, you will  advise your client for reporting requirements by  the federal agency responsible for administering Canada’s Money Laundering and Terrorist Financing legislation and regulations. Before closing the sale, you are required by federal law to complete a client identification form and must ask the client  for verified ID such as a driver’s license or passport. "
+                android:textSize="@dimen/normal_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0" />
 
         </LinearLayout>
     </ScrollView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

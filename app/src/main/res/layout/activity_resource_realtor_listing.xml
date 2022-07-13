@@ -4,17 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlanFinancePage">
+    tools:context=".ResourceRealtorListing">
 
     <ImageButton
-        android:id="@+id/btnBack"
+        android:id="@+id/forgotBackBtn8"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="back"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,6 +51,20 @@
         app:layout_constraintGuide_percent="0.95" />
 
 
+    <TextView
+        android:id="@+id/textView77"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_slab"
+        android:text="Listing clients home"
+        android:textColor="@color/light_green"
+        android:textSize="@dimen/h1"
+        app:layout_constraintBottom_toTopOf="@+id/guideTop"
+        app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintStart_toStartOf="@+id/guideLeft"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <ScrollView
         android:id="@+id/scrollView5"
         android:layout_width="0dp"
@@ -63,121 +77,71 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:divider="@drawable/spacing_small"
             android:orientation="vertical"
             android:padding="10dp"
-            android:showDividers="middle">
+            android:showDividers="middle"
+            android:divider="@drawable/spacing_small">
 
             <TextView
-                android:id="@+id/textView52"
+                android:id="@+id/textView78"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_slab"
-                android:text="Mortgage Plan"
-                android:textColor="#0E930E"
-                android:textSize="20sp"
+                android:text="Make Sure Client sign a listing agreement "
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="@dimen/h3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.114"
+                app:layout_constraintHorizontal_bias="0.555"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.34" />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView53"
+                android:id="@+id/textView81"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_slab"
-                android:text="Affordability"
-                android:textColor="#0E930E"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.139"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.154" />
-
-            <TextView
-                android:id="@+id/textView54"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:text=" To secure your new home, you’ll likely need to calculate your expenses, income, debt but before you do, take a look at how much you can afford each month. "
-                android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.238" />
-
-            <TextView
-                android:id="@+id/textView55"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:text="A mortgage is a loan that can help you cover the cost of buying a home. you can use our mortgage calculator to check your monthly payments."
-                android:textSize="15sp"
+                android:lineSpacingExtra="@dimen/line_spacing_small"
+                android:text="Signing a listing agreement officially gives you the green light to start selling the property. The agreement serves three main purposes:  It defines your relationship. It provides detailed information about  the property which can be placed on a real estate board’s MLS System. It forms the basis for drafting offers on the property"
+                android:textSize="@dimen/normal_text"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.427" />
+                app:layout_constraintVertical_bias="0.807" />
 
             <TextView
-                android:id="@+id/textView57"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp"
-                android:text=" 1. Letter of employment, \n 2. List of your assets , \n 3. List of your liabilities,\n 4. Social Insurance Number, \n 5. Your chequing account number."
-                android:textSize="15sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.645" />
-
-            <TextView
-                android:id="@+id/textView56"
+                android:id="@+id/textView79"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_slab"
-                android:text="Apply for Mortgage"
-                android:textColor="#0E930E"
-                android:textSize="20sp"
+                android:text="Set the right price"
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="@dimen/h3"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.067"
+                app:layout_constraintHorizontal_bias="0.204"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.519" />
+                app:layout_constraintVertical_bias="0.254" />
 
-
+            <TextView
+                android:id="@+id/textView103"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_slab"
+                android:lineSpacingExtra="@dimen/line_spacing_small"
+                android:text="You can help clients to set the right value of the property. "
+                android:textSize="@dimen/normal_text"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.345" />
         </LinearLayout>
     </ScrollView>
-
-    <TextView
-        android:id="@+id/textView38"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_slab"
-        android:text="Finance Planning"
-        android:textColor="#0E930E"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/guideTop"
-        app:layout_constraintEnd_toStartOf="@+id/guideRight"
-        app:layout_constraintStart_toStartOf="@+id/guideLeft"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

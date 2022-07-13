@@ -18,7 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class ForgotActivity extends AppCompatActivity {
+public class Forgot extends AppCompatActivity {
     Button resetBtn;
     ImageButton BackToLoginBtn;
     private EditText emailEditText;
@@ -49,7 +49,7 @@ public class ForgotActivity extends AppCompatActivity {
         BackToLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
             }
         });
     }
@@ -75,9 +75,9 @@ public class ForgotActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
                    // Toast.makeText(ForgotActivity.this, "Check your email to reset your password", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                    startActivity(new Intent(getApplicationContext(), Login.class));
                 } else {
-                    Toast.makeText(ForgotActivity.this, "Try Again", Toast.LENGTH_LONG).show();
+                    Toast.makeText(Forgot.this, "Try Again", Toast.LENGTH_LONG).show();
                 }
             }
         });

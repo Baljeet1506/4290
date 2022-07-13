@@ -25,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class Login extends AppCompatActivity implements View.OnClickListener {
     EditText editTextEmail, editTextPassword;
     Button btnLogin, btnRegister, btnForgotPassword;
     private FirebaseAuth mAuth;
@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_actvity);
+        setContentView(R.layout.activity_login);
 
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
@@ -57,13 +57,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         switch (v.getId()) {
             case R.id.btnRegister:
-                startActivity(new Intent(this, RegisterTypePage.class));
+                startActivity(new Intent(this, RegisteringType.class));
                 break;
             case R.id.btnLogin:
                 userLogin();
                 break;
             case R.id.btnForgotPassword:
-                startActivity(new Intent(this, ForgotActivity.class));
+                startActivity(new Intent(this, Forgot.class));
                 break;
         }
     }
@@ -113,10 +113,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 int userType = snapshot.getValue(Integer.class);
                                 if (userType == 1) {
-                                    startActivity(new Intent(LoginActivity.this, HomePageRealtor.class));
+                                    startActivity(new Intent(Login.this, HomePageRealtor.class));
                                 }
                                 if (userType == 2) {
-                                    startActivity(new Intent(LoginActivity.this, HomePageViewer.class));
+                                    startActivity(new Intent(Login.this, HomePageViewer.class));
                                 }
                             }
 
@@ -129,11 +129,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     } else {
 
                         user.sendEmailVerification();
-                        Toast.makeText(LoginActivity.this, "Check your email to verify your account", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Login.this, "Check your email to verify your account", Toast.LENGTH_SHORT).show();
                     }
 
                 } else {
-                    Toast.makeText(LoginActivity.this, "Failed to Login", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, "Failed to Login", Toast.LENGTH_SHORT).show();
                 }
             }
         });

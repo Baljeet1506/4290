@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
-public class RegisterTypePage extends AppCompatActivity implements View.OnClickListener {
+public class RegisteringType extends AppCompatActivity implements View.OnClickListener {
 
     Button btnRealtor, btnViewer;
     ImageButton BackToLoginBtn;
@@ -30,7 +30,7 @@ public class RegisterTypePage extends AppCompatActivity implements View.OnClickL
         BackToLoginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), Login.class));
             }
         });
     }

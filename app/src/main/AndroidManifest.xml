@@ -14,55 +14,55 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RealtorAndViewer">
         <activity
-            android:name=".ViewPropertiesPage"
+            android:name=".ResourceViewerViewProperties"
             android:exported="false" />
         <activity
-            android:name=".PlanFinancePage"
+            android:name=".ResourceViewerPlanFinance"
             android:exported="false" />
         <activity
-            android:name=".PurchasedPage"
+            android:name=".ResourceViewerPurchased"
             android:exported="false" />
         <activity
-            android:name=".MakeAnOfferPage"
+            android:name=".ResourceViewerMakeAnOffer"
             android:exported="false" />
         <activity
-            android:name=".PrepareToBuyPage"
+            android:name=".ResourceViewerPrepareToBuy"
             android:exported="false" />
         <activity
             android:name=".ResourcesPageViewer"
             android:exported="false" />
         <activity
-            android:name=".OfferPage"
+            android:name=".ResourceRealtorOffer"
             android:exported="false" />
         <activity
-            android:name=".MarketingPage"
+            android:name=".ResourceRealtorMarketing"
             android:exported="false" />
         <activity
-            android:name=".ListingPage"
+            android:name=".ResourceRealtorListing"
             android:exported="false" />
         <activity
-            android:name=".PrepareToSellPage"
+            android:name=".ResourceRealtorPrepareToSell"
             android:exported="false" />
         <activity
             android:name=".RegisterViewer"
             android:exported="false" />
         <activity
-            android:name=".RegisterTypePage"
+            android:name=".RegisteringType"
             android:exported="false" />
         <activity
-            android:name=".addListings"
+            android:name=".RealtorAddListings"
             android:exported="false" />
         <activity
-            android:name=".ForgotActivity"
+            android:name=".Forgot"
             android:exported="false" />
         <activity
             android:name=".ResourcesPageRealtor"
             android:exported="false" />
         <activity
-            android:name=".MyPastSalesPage"
+            android:name=".RealtorPastSales"
             android:exported="false" />
         <activity
-            android:name=".MyListingsPage"
+            android:name=".RealtorListings"
             android:exported="false" />
         <activity
             android:name=".RecommendedRealtor"
@@ -71,7 +71,7 @@
             android:name=".MortgageCalculator"
             android:exported="false" />
         <activity
-            android:name=".FavoritePage"
+            android:name=".Favourites"
             android:exported="false" />
         <activity
             android:name=".FindProperties"
@@ -89,7 +89,7 @@
             android:name=".RegisterRealtor"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Login"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

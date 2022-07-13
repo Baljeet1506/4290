@@ -5,24 +5,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class MyListingsPage extends AppCompatActivity {
+public class RealtorListings extends AppCompatActivity {
   //  FloatingActionButton listingsBtn = findViewById(R.id.listingsBtn);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_listings_page);
+        setContentView(R.layout.activity_realtor_my_listings);
 
+        ImageButton btnBack = findViewById(R.id.btnBack);
         ImageButton findRealtorBtn = findViewById(R.id.findRealtorBtn);
         ImageButton mortgageCalBtn = findViewById(R.id.mortgageCalculatorBtn);
         ImageButton findPropertiesBtn = findViewById(R.id.findPropertiesBtn);
         ImageButton profileBtn = findViewById(R.id.profileBtn);
         FloatingActionButton listingsBtn = findViewById(R.id.listingsBtn);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+            }
+        });
 
         findRealtorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,14 +52,14 @@ public class MyListingsPage extends AppCompatActivity {
         profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), editProfile.class));
+                startActivity(new Intent(getApplicationContext(), EditProfile.class));
             }
         });
 
         listingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), addListings.class));
+                startActivity(new Intent(getApplicationContext(), RealtorAddListings.class));
             }
         });
 
