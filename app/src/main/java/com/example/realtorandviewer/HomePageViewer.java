@@ -39,11 +39,10 @@ public class HomePageViewer extends AppCompatActivity {
         ImageButton mortgageCalBtn = findViewById(R.id.mortgageCalculatorBtn);
         ImageButton findPropertiesBtn = findViewById(R.id.findPropertiesBtn);
 
-        ImageButton BackBtn = findViewById(R.id.btnBack);
-
         Button favouriteBtn = findViewById(R.id.favouriteBtn);
         Button recommendedRealtorBtn = findViewById(R.id.recommendedRealtorBtn);
         Button resourcesBtn = findViewById(R.id.resourcesBtn);
+        Button findPropsBtn1 = findViewById(R.id.findPropsBtn);
 
         firstNameTextView = findViewById(R.id.firstNameTextView);
         lastNameTextView = findViewById(R.id.lastNameTextView);
@@ -76,24 +75,18 @@ public class HomePageViewer extends AppCompatActivity {
             }
         });
 
-        BackBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
-            }
-        });
 
         favouriteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), FavoritePage.class));
+                startActivity(new Intent(getApplicationContext(), Favourites.class));
             }
         });
 
         recommendedRealtorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MyListingsPage.class));
+                startActivity(new Intent(getApplicationContext(), RecommendedRealtor.class));
             }
         });
 
@@ -104,6 +97,12 @@ public class HomePageViewer extends AppCompatActivity {
             }
         });
 
+        findPropsBtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ViewerFindProps.class));
+            }
+        });
 
         findRealtorBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -130,7 +129,7 @@ public class HomePageViewer extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(HomePageViewer.this, LoginActivity.class));
+                startActivity(new Intent(HomePageViewer.this, Login.class));
 
             }
         });

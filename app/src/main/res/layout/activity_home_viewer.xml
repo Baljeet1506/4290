@@ -125,7 +125,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
-        android:id="@+id/PastSalesBtn"
+        android:id="@+id/findPropsBtn"
         android:layout_width="150dp"
         android:layout_height="120dp"
         android:backgroundTint="#FFFFFF"
@@ -155,7 +155,7 @@
         android:typeface="normal"
         app:cornerRadius="12dp"
         app:layout_constraintBottom_toTopOf="@+id/favouriteBtn"
-        app:layout_constraintEnd_toStartOf="@+id/PastSalesBtn"
+        app:layout_constraintEnd_toStartOf="@+id/findPropsBtn"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />

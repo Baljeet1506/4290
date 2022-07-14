@@ -1,32 +1,56 @@
 package com.example.realtorandviewer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
-public class ResourcesPageRealtor extends AppCompatActivity {
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+import java.util.List;
+
+public class RealtorListings extends AppCompatActivity {
+
+  private RecyclerView mRecyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resources_page_realtor);
+        setContentView(R.layout.activity_realtor_my_listings);
 
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_listings);
+        new FirebaseDatabaseHelper().readListings(new FirebaseDatabaseHelper.DataStatus() {
+            @Override
+            public void DataIsLoaded(List<Listings> listingsList, List<String> keys) {
+                new RecyclerView_Config().setConfig(mRecyclerView, RealtorListings.this, listingsList, keys);
+            }
+
+            @Override
+            public void DataIsInserted() {
+
+            }
+
+            @Override
+            public void DataIsUpdated() {
+
+            }
+
+            @Override
+            public void DataIsDeleted() {
+
+            }
+        });
+
+        ImageButton btnBack = findViewById(R.id.btnBack);
         ImageButton findRealtorBtn = findViewById(R.id.findRealtorBtn);
         ImageButton mortgageCalBtn = findViewById(R.id.mortgageCalculatorBtn);
         ImageButton findPropertiesBtn = findViewById(R.id.findPropertiesBtn);
         ImageButton profileBtn = findViewById(R.id.profileBtn);
+        FloatingActionButton listingsBtn = findViewById(R.id.listingsBtn);
 
-        Button PreparingBtn = findViewById(R.id.Preparing);
-        Button ListingBtn = findViewById(R.id.Listing);
-        Button MarketingBtn = findViewById(R.id.Marketing);
-        Button OfferBtn = findViewById(R.id.Offer);
-        ImageButton backBtn = findViewById(R.id.forgotBackBtn3);
-
-        backBtn.setOnClickListener(new View.OnClickListener() {
+        btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
@@ -54,36 +78,16 @@ public class ResourcesPageRealtor extends AppCompatActivity {
         profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+                startActivity(new Intent(getApplicationContext(), EditProfile.class));
             }
         });
 
-       PreparingBtn.setOnClickListener(new View.OnClickListener() {
+        listingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ResourceRealtorPrepareToSell.class));
+                startActivity(new Intent(getApplicationContext(), RealtorAddListings.class));
             }
         });
 
-       ListingBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ResourceRealtorListing.class));
-            }
-        });
-
-        MarketingBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ResourceRealtorMarketing.class));
-            }
-        });
-
-        OfferBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ResourceRealtorOffer.class));
-            }
-        });
     }
 }

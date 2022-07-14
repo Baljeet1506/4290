@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Favourites">
+    tools:context=".RecommendedRealtor">
 
     <ImageButton
-        android:id="@+id/favoriteBackBtn"
+        android:id="@+id/btnBack"
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
         android:layout_marginBottom="32dp"
         android:backgroundTint="#00FFFFFF"
+        android:clickable="true"
         android:contentDescription="back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,69 +22,47 @@
         app:layout_constraintVertical_bias="0.024"
         app:srcCompat="@drawable/backbutton" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName8"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLeft"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Home address"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.92"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.29" />
-
-    <EditText
-        android:id="@+id/editTextTextPersonName10"
         android:layout_width="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideRight"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Realtor name"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.92"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52" />
-
-    <ImageView
-        android:id="@+id/imageView14"
         android:layout_width="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideTop"
         android:layout_height="wrap_content"
-        android:layout_marginTop="328dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/realtor1" />
-
-    <ImageView
-        android:id="@+id/imageView13"
         android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12"
+        />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideBottom"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.054"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.272"
-        app:srcCompat="@drawable/property04" />
+        android:layout_width="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88"
+        />
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/textView43"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Favorite Page"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.535"
-        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/roboto_slab"
+        android:text="Recommended Realtors"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideTop"
+        app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintStart_toStartOf="@+id/guideLeft"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.05" />
+        app:layout_constraintVertical_bias="0.606" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/navigation"
@@ -153,5 +132,6 @@
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/properties" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

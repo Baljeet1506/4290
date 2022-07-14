@@ -7,22 +7,20 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class RecommendedRealtor extends AppCompatActivity {
-
-    ImageButton btnBack;
+public class ResourceRealtorListing extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_viewer_recommended_realtor);
+        setContentView(R.layout.activity_resource_realtor_listing);
 
-        btnBack = findViewById(R.id.btnBack);
-
-        btnBack.setOnClickListener(new View.OnClickListener() {
+        ImageButton BackBtn = findViewById(R.id.forgotBackBtn8);
+        BackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+                startActivity(new Intent(getApplicationContext(), ResourcesPageRealtor.class));
             }
         });
+
     }
 }
