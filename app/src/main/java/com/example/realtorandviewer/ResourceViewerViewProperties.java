@@ -16,7 +16,7 @@ public class ResourceViewerViewProperties extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resource_viewer_view_properties);
 
-        btnBack = findViewById(R.id.btnBack);
+        btnBack = findViewById(R.id.btnBack3);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override

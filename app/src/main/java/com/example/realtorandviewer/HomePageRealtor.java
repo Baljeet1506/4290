@@ -36,7 +36,7 @@ public class HomePageRealtor extends AppCompatActivity {
         Button LogOut = findViewById(R.id.logoutBtn);
         Button favouriteBtn = findViewById(R.id.favouriteBtn);
         Button myListingsBtn = findViewById(R.id.myListingsBtn);
-        Button pastSalesBtn = findViewById(R.id.PastSalesBtn);
+        Button pastSalesBtn = findViewById(R.id.findPropsBtn);
         Button resourcesBtn = findViewById(R.id.resourcesBtn);
 
         ImageButton findRealtorBtn = findViewById(R.id.findRealtorBtn);
@@ -81,7 +81,7 @@ public class HomePageRealtor extends AppCompatActivity {
         favouriteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Favourites.class));
+                startActivity(new Intent(getApplicationContext(), RealtorFavoritesBtn.class));
             }
         });
 

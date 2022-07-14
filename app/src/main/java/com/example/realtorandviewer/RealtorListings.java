@@ -1,6 +1,7 @@
 package com.example.realtorandviewer;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,13 +10,38 @@ import android.widget.ImageButton;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class RealtorListings extends AppCompatActivity {
-  //  FloatingActionButton listingsBtn = findViewById(R.id.listingsBtn);
+import java.util.List;
 
+public class RealtorListings extends AppCompatActivity {
+
+  private RecyclerView mRecyclerView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_realtor_my_listings);
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_listings);
+        new FirebaseDatabaseHelper().readListings(new FirebaseDatabaseHelper.DataStatus() {
+            @Override
+            public void DataIsLoaded(List<Listings> listingsList, List<String> keys) {
+                new RecyclerView_Config().setConfig(mRecyclerView, RealtorListings.this, listingsList, keys);
+            }
+
+            @Override
+            public void DataIsInserted() {
+
+            }
+
+            @Override
+            public void DataIsUpdated() {
+
+            }
+
+            @Override
+            public void DataIsDeleted() {
+
+            }
+        });
 
         ImageButton btnBack = findViewById(R.id.btnBack);
         ImageButton findRealtorBtn = findViewById(R.id.findRealtorBtn);

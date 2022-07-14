@@ -63,6 +63,11 @@
         <entry key="..\:/Users/jaykh/StudioProjects/RealtorandViewer/app/src/main/res/layout/activity_mortgage_calculator.xml" value="0.2" />
         <entry key="..\:/Users/jaykh/StudioProjects/RealtorandViewer/app/src/main/res/layout/activity_register_actvity.xml" value="0.264" />
         <entry key="..\:/Users/jaykh/StudioProjects/RealtorandViewer/app/src/main/res/layout/activity_user_home.xml" value="0.2" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_favourites.xml" value="0.234375" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_find_properties.xml" value="0.24615384615384617" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_find_props.xml" value="0.25" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_find_realtor.xml" value="0.25" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_home_viewer.xml" value="0.25" />
         <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_listing_page.xml" value="0.25" />
         <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_make_an_offer_page.xml" value="0.25" />
         <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_marketing_page.xml" value="0.25" />
@@ -71,9 +76,24 @@
         <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_prepare_to_buy_page.xml" value="0.25" />
         <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_preparing_page.xml" value="0.25" />
         <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_purchased_page.xml" value="0.25" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_realtor_favorites_btn.xml" value="0.25" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_realtor_my_listings.xml" value="0.234375" />
         <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_register_viewer.xml" value="0.25" />
         <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_resource_page_user.xml" value="0.25" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_resource_realtor_listing.xml" value="0.234375" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_resource_realtor_marketing.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_resource_realtor_offer.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_resource_realtor_prepare_to_sell.xml" value="0.23333333333333334" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_resource_viewer_make_an_offer.xml" value="0.175" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_resource_viewer_plan_finance.xml" value="0.175" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_resource_viewer_prepare_to_buy.xml" value="0.175" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_resource_viewer_purchased.xml" value="0.175" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_resource_viewer_view_properties.xml" value="0.175" />
         <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_resources_page.xml" value="0.25" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_resources_page_realtor.xml" value="0.264" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_viewer_find_props.xml" value="0.25" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/activity_viewer_recommended_realtor.xml" value="0.25" />
+        <entry key="..\:/Users/kaurb/AndroidStudioProjects/4290/app/src/main/res/layout/listings_list_item.xml" value="0.2" />
         <entry key="..\:/Users/kaurb/AndroidStudioProjects/RealtorandViewer/app/src/main/res/layout/activity_add_listings.xml" value="0.2359375" />
         <entry key="..\:/Users/kaurb/AndroidStudioProjects/RealtorandViewer/app/src/main/res/layout/activity_code.xml" value="0.1685185185185185" />
         <entry key="..\:/Users/kaurb/AndroidStudioProjects/RealtorandViewer/app/src/main/res/layout/activity_code_activity.xml" value="0.2359375" />

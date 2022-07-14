@@ -42,6 +42,7 @@ public class HomePageViewer extends AppCompatActivity {
         Button favouriteBtn = findViewById(R.id.favouriteBtn);
         Button recommendedRealtorBtn = findViewById(R.id.recommendedRealtorBtn);
         Button resourcesBtn = findViewById(R.id.resourcesBtn);
+        Button findPropsBtn1 = findViewById(R.id.findPropsBtn);
 
         firstNameTextView = findViewById(R.id.firstNameTextView);
         lastNameTextView = findViewById(R.id.lastNameTextView);
@@ -96,6 +97,12 @@ public class HomePageViewer extends AppCompatActivity {
             }
         });
 
+        findPropsBtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ViewerFindProps.class));
+            }
+        });
 
         findRealtorBtn.setOnClickListener(new View.OnClickListener() {
             @Override

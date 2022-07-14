@@ -24,6 +24,14 @@ public class ResourcesPageRealtor extends AppCompatActivity {
         Button ListingBtn = findViewById(R.id.Listing);
         Button MarketingBtn = findViewById(R.id.Marketing);
         Button OfferBtn = findViewById(R.id.Offer);
+        ImageButton backBtn = findViewById(R.id.forgotBackBtn3);
+
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+            }
+        });
 
         findRealtorBtn.setOnClickListener(new View.OnClickListener() {
             @Override

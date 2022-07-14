@@ -19,7 +19,7 @@ public class ResourceRealtorPrepareToSell extends AppCompatActivity {
         BackBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ResourcesPageViewer.class));
+                startActivity(new Intent(getApplicationContext(), ResourcesPageRealtor.class));
             }
         });
 

@@ -14,6 +14,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RealtorAndViewer">
         <activity
+            android:name=".RealtorFavoritesBtn"
+            android:exported="false" />
+        <activity
+            android:name=".ViewerFindProps"
+            android:exported="false" />
+        <activity
             android:name=".ResourceViewerViewProperties"
             android:exported="false" />
         <activity

@@ -15,12 +15,12 @@ public class ResourceViewerMakeAnOffer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resource_viewer_make_an_offer);
-        btnBack = findViewById(R.id.btnBack);
+        btnBack = findViewById(R.id.forgotBackBtn7);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), RealtorListings.class));
+                startActivity(new Intent(getApplicationContext(), ResourcesPageViewer.class));
             }
         });
 
