@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardUseCompatPadding="true"
+    android:elevation="10dp"
     app:cardCornerRadius="10dp"
-    android:elevation="10dp">
+    app:cardUseCompatPadding="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -20,6 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto_slab"
             android:text="Type"
             android:textColor="#000"
             android:textSize="25sp"
@@ -31,14 +30,15 @@
             android:id="@+id/price_txtView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/type_txtView"
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto_slab"
             android:text="Price"
             android:textColor="#000"
-            android:layout_below="@+id/type_txtView"
             android:textSize="25sp"
-            android:textStyle="bold"
 
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/street_txtView" />
@@ -50,10 +50,10 @@
             android:layout_below="@+id/price_txtView"
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto_slab"
             android:text="House Number"
             android:textColor="#000"
             android:textSize="25sp" />
-
 
         <TextView
             android:id="@+id/landSize_txtView"
@@ -65,6 +65,7 @@
             android:layout_marginLeft="272dp"
             android:layout_marginEnd="31dp"
             android:layout_marginBottom="2dp"
+            android:fontFamily="@font/roboto_slab"
             android:text="Sq ft"
             android:textColor="#000"
             android:textSize="25sp"
@@ -93,14 +94,11 @@
             android:layout_below="@+id/houseNumber_txtView"
             android:layout_marginLeft="10dp"
             android:layout_marginEnd="16dp"
+            android:fontFamily="@font/roboto_slab"
             android:text="City"
             android:textColor="#000"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
     </RelativeLayout>
-
-
-
 </androidx.cardview.widget.CardView>
