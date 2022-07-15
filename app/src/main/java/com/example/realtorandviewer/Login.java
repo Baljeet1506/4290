@@ -31,6 +31,8 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     private FirebaseAuth mAuth;
     ProgressBar progressBar;
 
+    public static int uType = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,9 +115,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 int userType = snapshot.getValue(Integer.class);
                                 if (userType == 1) {
+                                    uType = 1;
                                     startActivity(new Intent(Login.this, HomePageRealtor.class));
                                 }
                                 if (userType == 2) {
+                                    uType = 2;
                                     startActivity(new Intent(Login.this, HomePageViewer.class));
                                 }
                             }

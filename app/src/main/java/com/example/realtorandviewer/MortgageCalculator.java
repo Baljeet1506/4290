@@ -46,7 +46,14 @@ public class MortgageCalculator extends AppCompatActivity {
         profileBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+
+                if(Login.uType == 1) {
+
+                    startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+                } else {
+                    startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+                }
+
             }
         });
 
