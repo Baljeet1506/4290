@@ -52,12 +52,22 @@ public class RealtorListings extends AppCompatActivity {
         profileBtn = findViewById(R.id.btnProfile);
         FloatingActionButton listingsBtn = findViewById(R.id.listingsBtn);
 
-        backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageRealtor.class)));
+        backBtn.setOnClickListener(view -> {
+            if (Login.uType == 1) {
+                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+            } else
+                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+        });
 
         findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
         findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
         mortgageCalBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
-        profileBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageViewer.class)));
+        profileBtn.setOnClickListener(view -> {
+            if (Login.uType == 1) {
+                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+            } else
+                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+        });
 
         listingsBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorAddListings.class)));
     }

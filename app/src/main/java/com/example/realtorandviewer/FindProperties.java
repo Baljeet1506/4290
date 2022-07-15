@@ -20,7 +20,12 @@ public class FindProperties extends AppCompatActivity {
 
         findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
         mortgageCalculatorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
-        profileBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageViewer.class)));
+        profileBtn.setOnClickListener(view -> {
+            if (Login.uType == 1) {
+                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+            } else
+                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+        });
 
 
     }

@@ -32,7 +32,12 @@ public class MortgageCalculator extends AppCompatActivity {
 
         findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
         findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
-        profileBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageViewer.class)));
+        profileBtn.setOnClickListener(view -> {
+            if(Login.uType == 1){
+                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+            } else
+            startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+        });
 
         purchasePrice = findViewById(R.id.editTextPurchasePrice);
         downPayment = findViewById(R.id.editTextDownPayment);

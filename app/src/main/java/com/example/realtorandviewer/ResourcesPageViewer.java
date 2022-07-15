@@ -29,12 +29,22 @@ public class ResourcesPageViewer extends AppCompatActivity {
         closingPurchaseBtn = findViewById(R.id.btnClosingPurchase);
 
         backBtn = findViewById(R.id.btnBack);
-        backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageViewer.class)));
+        backBtn.setOnClickListener(view -> {
+            if (Login.uType == 1) {
+                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+            } else
+                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+        });
 
         findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
         findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
         mortgageCalculatorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
-        profileBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageViewer.class)));
+        profileBtn.setOnClickListener(view -> {
+            if (Login.uType == 1) {
+                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+            } else
+                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+        });
 
         preparingToBuyBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerPrepareToBuy.class)));
         financePlanningBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerPlanFinance.class)));

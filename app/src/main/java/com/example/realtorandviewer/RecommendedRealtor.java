@@ -15,6 +15,11 @@ public class RecommendedRealtor extends AppCompatActivity {
         setContentView(R.layout.activity_viewer_recommended_realtor);
 
         backBtn = findViewById(R.id.btnBack);
-        backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageViewer.class)));
+        backBtn.setOnClickListener(view -> {
+            if (Login.uType == 1) {
+                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+            } else
+                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+        });
     }
 }

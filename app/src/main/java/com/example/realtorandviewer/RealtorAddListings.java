@@ -140,7 +140,7 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         }
 
         //progressBar.setVisibility(View.VISIBLE);
-        ref = FirebaseDatabase.getInstance().getReference().child("Properties");
+        ref = FirebaseDatabase.getInstance().getReference().child("Properties").child(Login.uID_);
 
         listing.setUnitNumber(unitNumber_);
         listing.setHouseNumber(houseNumber_);

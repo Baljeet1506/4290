@@ -28,12 +28,22 @@ public class ResourcesPageRealtor extends AppCompatActivity {
         theOfferBtn = findViewById(R.id.btnTheOffer);
 
         backBtn = findViewById(R.id.btnBack);
-        backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageViewer.class)));
+        backBtn.setOnClickListener(view -> {
+            if (Login.uType == 1) {
+                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+            } else
+                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+        });
 
         findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
         findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
         mortgageCalculatorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
-        profileBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageViewer.class)));
+        profileBtn.setOnClickListener(view -> {
+            if (Login.uType == 1) {
+                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+            } else
+                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+        });
 
         preparingToSellBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceRealtorPrepareToSell.class)));
         listingBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceRealtorListing.class)));
