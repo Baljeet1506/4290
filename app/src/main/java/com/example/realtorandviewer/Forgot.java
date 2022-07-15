@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Forgot extends AppCompatActivity {
     Button resetBtn;
-    ImageButton BackToLoginBtn, btnBack;
+    ImageButton backBtn;
     private EditText emailEditText;
     private ProgressBar progressBar;
 
@@ -33,8 +33,8 @@ public class Forgot extends AppCompatActivity {
 
         emailEditText = findViewById(R.id.emailReset);
         progressBar = findViewById(R.id.progressBar3);
-        resetBtn = findViewById(R.id.ResetBtn);
-        btnBack = findViewById(R.id.btnBack);
+        resetBtn = findViewById(R.id.btnReset);
+        backBtn = findViewById(R.id.btnBack);
 
         auth = FirebaseAuth.getInstance();
 
@@ -47,7 +47,7 @@ public class Forgot extends AppCompatActivity {
             }
         });
 
-        BackToLoginBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Login.class)));
+        backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Login.class)));
     }
 
     private void resetPassword() {

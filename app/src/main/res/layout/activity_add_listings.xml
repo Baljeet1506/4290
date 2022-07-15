@@ -74,7 +74,7 @@
             app:layout_constraintStart_toEndOf="@+id/btnBack"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.407" />
+            app:layout_constraintVertical_bias="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
@@ -374,7 +374,7 @@
         android:insetBottom="0dp"
         android:text="@string/add_listing"
         android:textAllCaps="false"
-        android:textSize="16sp"
+        android:textSize="@dimen/button_font_size"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

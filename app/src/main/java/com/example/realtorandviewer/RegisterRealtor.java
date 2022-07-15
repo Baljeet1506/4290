@@ -10,12 +10,12 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,7 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegisterRealtor extends AppCompatActivity implements View.OnClickListener {
 
     EditText firstName, lastName, email, password, phNumber;
-    Button BackToLoginBtn, btnRegister2;
+    Button cancelBtn, registerBtn;
+    ImageButton backBtn;
     private FirebaseAuth mAuth;
     ProgressBar progressBar;
 
@@ -38,35 +39,37 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
         password = findViewById(R.id.editTxtRegPassword);
         phNumber = findViewById(R.id.editTextPhNumber);
 
+        registerBtn = findViewById(R.id.btnRegisterRealtor);
+        registerBtn.setOnClickListener(this);
 
-        btnRegister2 = findViewById(R.id.btnRegister);
-        btnRegister2.setOnClickListener(this);
-        BackToLoginBtn = findViewById(R.id.btnCancel);
-        BackToLoginBtn.setOnClickListener(this);
+        cancelBtn = findViewById(R.id.btnCancelRealtor);
+        cancelBtn.setOnClickListener(this);
+
+        backBtn = findViewById(R.id.btnBack);
+        backBtn.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
 
-        progressBar = findViewById(R.id.progressBar2);
-
-
+        progressBar = findViewById(R.id.progressBar);
     }
 
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
-
         switch (v.getId()) {
-            case R.id.btnRegister:
+            case R.id.btnRegisterRealtor:
                 registerUser();
                 break;
-            case R.id.btnCancel:
+            case R.id.btnCancelRealtor:
+                startActivity(new Intent(getApplicationContext(), RegisteringType.class));
+                break;
+            case R.id.btnBack:
                 startActivity(new Intent(getApplicationContext(), RegisteringType.class));
                 break;
         }
     }
 
     private void registerUser() {
-
         String userFirstName = firstName.getText().toString();
         String userLastName = lastName.getText().toString();
         String userEmail = email.getText().toString();
@@ -79,37 +82,31 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
             firstName.requestFocus();
             return;
         }
-
         if (userLastName.isEmpty()) {
             lastName.setError("Last name is required");
             lastName.requestFocus();
             return;
         }
-
         if (userEmail.isEmpty()) {
             email.setError("Email is required");
             email.requestFocus();
             return;
         }
-
         if (userPhone.isEmpty()) {
             phNumber.setError("Phone number is required");
             phNumber.requestFocus();
             return;
         }
-
         if (userPass.isEmpty()) {
             password.setError("Password is required");
             password.requestFocus();
             return;
         }
-
         if (!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
             email.setError("Please provide a valid email");
             email.requestFocus();
             return;
         }
-
         if (userPass.length() < 6) {
             password.setError("Min password length should be 6 characters");
             password.requestFocus();

@@ -79,7 +79,7 @@
             app:layout_constraintStart_toEndOf="@+id/btnBack"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.407" />
+            app:layout_constraintVertical_bias="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ImageView
@@ -208,7 +208,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/btnCancel"
+        android:id="@+id/btnCancelRealtor"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:backgroundTint="@color/white"
@@ -224,7 +224,7 @@
         android:textSize="16sp"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnRegister"
+        app:layout_constraintEnd_toStartOf="@+id/btnRegisterRealtor"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideLeft"
         app:layout_constraintTop_toBottomOf="@+id/scrollView3"
@@ -232,7 +232,7 @@
         app:strokeWidth="2dp" />
 
     <Button
-        android:id="@+id/btnRegister"
+        android:id="@+id/btnRegisterRealtor"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:backgroundTint="@color/green"
@@ -245,11 +245,11 @@
         android:textAllCaps="false"
         android:textSize="16sp"
         app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnCancel"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCancelRealtor"
         app:layout_constraintEnd_toStartOf="@+id/guideRight"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnCancel"
-        app:layout_constraintTop_toTopOf="@+id/btnCancel" />
+        app:layout_constraintStart_toEndOf="@+id/btnCancelRealtor"
+        app:layout_constraintTop_toTopOf="@+id/btnCancelRealtor" />
 
     <ProgressBar
         android:id="@+id/progressBar2"

@@ -40,7 +40,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
         editTextEmail = findViewById(R.id.editTextEmail);
         editTextPassword = findViewById(R.id.editTextPassword);
         btnLogin = findViewById(R.id.btnLogin);
-        btnRegister = findViewById(R.id.btnRegister);
+        btnRegister = findViewById(R.id.btnRegisterRealtor);
         btnForgotPassword = findViewById(R.id.btnForgotPassword);
 
         btnLogin.setOnClickListener(this);
@@ -57,7 +57,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
 
         switch (v.getId()) {
-            case R.id.btnRegister:
+            case R.id.btnRegisterRealtor:
                 startActivity(new Intent(this, RegisteringType.class));
                 break;
             case R.id.btnLogin:

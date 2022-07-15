@@ -6,9 +6,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 public class ResourcesPageViewer extends AppCompatActivity {
-    Button prepareToBuyBtn, planFinanceBtn, viewPropertiesBtn, makeAnOfferBtn, purchasedBtn;
+    CardView preparingToBuyBtn, financePlanningBtn, viewPropertiesBtn, makeAnOfferBtn, closingPurchaseBtn;
     ImageButton findRealtorBtn, findPropertiesBtn, mortgageCalculatorBtn, profileBtn, backBtn;
 
     @Override
@@ -21,24 +22,24 @@ public class ResourcesPageViewer extends AppCompatActivity {
         findPropertiesBtn = findViewById(R.id.btnFindProperties);
         profileBtn = findViewById(R.id.btnProfile);
 
-        prepareToBuyBtn = findViewById(R.id.PrepareToBuy);
-        planFinanceBtn = findViewById(R.id.PlanFinance);
-        viewPropertiesBtn = findViewById(R.id.ViewProperties);
-        makeAnOfferBtn = findViewById(R.id.MakeAnOffer);
-        purchasedBtn = findViewById(R.id.ClosePurchase);
+        preparingToBuyBtn = findViewById(R.id.btnPreparingToBuy);
+        financePlanningBtn = findViewById(R.id.btnFinancePlanning);
+        viewPropertiesBtn = findViewById(R.id.btnViewProperties);
+        makeAnOfferBtn = findViewById(R.id.btnMakeAnOffer);
+        closingPurchaseBtn = findViewById(R.id.btnClosingPurchase);
 
         backBtn = findViewById(R.id.btnBack);
         backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageViewer.class)));
-
-        prepareToBuyBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerPrepareToBuy.class)));
-        planFinanceBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerPlanFinance.class)));
-        viewPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerViewProperties.class)));
-        makeAnOfferBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerMakeAnOffer.class)));
-        purchasedBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerPurchased.class)));
 
         findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
         findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
         mortgageCalculatorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
         profileBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageViewer.class)));
+
+        preparingToBuyBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerPrepareToBuy.class)));
+        financePlanningBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerPlanFinance.class)));
+        viewPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerViewProperties.class)));
+        makeAnOfferBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerMakeAnOffer.class)));
+        closingPurchaseBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerPurchased.class)));
     }
 }

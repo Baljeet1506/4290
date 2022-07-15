@@ -7,6 +7,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
@@ -22,7 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 public class RegisterViewer extends AppCompatActivity implements View.OnClickListener {
 
     EditText firstName, lastName, email, password;
-    Button BackToLoginBtn, btnRegister2;
+    Button cancelBtn, registerBtn;
+    ImageButton backBtn;
     private FirebaseAuth mAuth;
     ProgressBar progressBar;
 
@@ -36,10 +38,14 @@ public class RegisterViewer extends AppCompatActivity implements View.OnClickLis
         email = findViewById(R.id.editTextEmailViewer);
         password = findViewById(R.id.editTextPasswordViewer);
 
-        btnRegister2 = findViewById(R.id.btnRegisterViewer);
-        btnRegister2.setOnClickListener(this);
-        BackToLoginBtn = findViewById(R.id.btnCancelViewer);
-        BackToLoginBtn.setOnClickListener(this);
+        registerBtn = findViewById(R.id.btnRegisterViewer);
+        registerBtn.setOnClickListener(this);
+
+        cancelBtn = findViewById(R.id.btnCancelViewer);
+        cancelBtn.setOnClickListener(this);
+
+        backBtn = findViewById(R.id.btnBack);
+        backBtn.setOnClickListener(this);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -55,6 +61,9 @@ public class RegisterViewer extends AppCompatActivity implements View.OnClickLis
                 registerUser();
                 break;
             case R.id.btnCancelViewer:
+                startActivity(new Intent(getApplicationContext(), RegisteringType.class));
+                break;
+            case R.id.btnBack:
                 startActivity(new Intent(getApplicationContext(), RegisteringType.class));
                 break;
         }

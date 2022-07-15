@@ -104,4 +104,16 @@
     <string name="realtor_favourites">Realtor Favourites</string>
     <string name="find_props">Find Props</string>
 
+    <!-- Resources -->
+    <string name="listing_homes">Listing</string>
+    <string name="marketing_the_property">Marketing</string>
+    <string name="the_offer">The Offer</string>
+    <string name="prepare_to_sell">Preparing to Sell</string>
+    <string name="make_an_offer">Making an Offer</string>
+    <string name="finance_planning">Finance Planning</string>
+    <string name="prepare_to_buy">Preparing to Buy</string>
+    <string name="property_purchased">Closing the Purchase</string>
+    <string name="view_properties">View Properties</string>
+
+
 </resources>

@@ -6,273 +6,315 @@
     android:layout_height="match_parent"
     tools:context=".ResourcesPageViewer">
 
-    <ImageButton
-        android:id="@+id/btnBack"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="#00FFFFFF"
-        android:contentDescription="back"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024"
-        app:srcCompat="@drawable/back" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.93" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.12" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88" />
-
-    <TextView
-        android:id="@+id/textView37"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_slab"
-        android:text="Tips for Viewers"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.039" />
+        app:layout_constraintTop_toBottomOf="@+id/titleBar">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:padding="@dimen/spacing_small">
+
+            <View
+                android:id="@+id/strut"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerHorizontal="true" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnPreparingToBuy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/strut"
+                android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/spacing_small"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/favourites"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="11dp"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="@string/prepare_to_buy"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h1"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/resource_preparing_to_buy" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnViewProperties"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/strut"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="@dimen/spacing_small"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginEnd="@dimen/spacing_small"
+                android:layout_marginBottom="@dimen/spacing_small"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/view_properties"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="11dp"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="@string/view_properties"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h1"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/resource_view_properties" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnFinancePlanning"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/strut"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/btnViewProperties"
+                android:layout_margin="@dimen/spacing_small"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/resources"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="11dp"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="@string/finance_planning"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h1"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/resource_finance_planning" />
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnMakeAnOffer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnPreparingToBuy"
+                android:layout_alignStart="@id/strut"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/spacing_small"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/past_sales"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="11dp"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="@string/make_an_offer"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h1"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/resource_make_an_offer" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnClosingPurchase"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnFinancePlanning"
+                android:layout_alignEnd="@id/strut"
+                android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/spacing_small"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/past_sales"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="11dp"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="@string/property_purchased"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h1"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/resource_close_purchase" />
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout6"
-        android:layout_width="wrap_content"
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:background="#333333"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/constraintLayout5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageButton
+            android:id="@+id/btnProfile"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/nav_profile_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnMortgageCalculator"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/profile_select" />
+
+        <ImageButton
+            android:id="@+id/btnMortgageCalculator"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/nav_calculator_button"
+            app:layout_constraintBottom_toBottomOf="@+id/btnProfile"
+            app:layout_constraintEnd_toStartOf="@+id/btnProfile"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnFindProperties"
+            app:layout_constraintTop_toTopOf="@+id/btnProfile"
+            app:srcCompat="@drawable/calculator" />
+
+        <ImageButton
+            android:id="@+id/btnFindRealtors"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/nav_find_realtors_button"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFindProperties"
+            app:layout_constraintEnd_toStartOf="@+id/btnFindProperties"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnFindProperties"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/realtors" />
+
+        <ImageButton
+            android:id="@+id/btnFindProperties"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/nav_find_properties_button"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMortgageCalculator"
+            app:layout_constraintEnd_toStartOf="@+id/btnMortgageCalculator"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnFindRealtors"
+            app:layout_constraintTop_toTopOf="@+id/btnMortgageCalculator"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/properties" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_square"
+        android:elevation="@dimen/spacing_large"
+        app:layout_constraintBottom_toTopOf="@+id/content_scrolling"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView37"
-        app:layout_constraintVertical_bias="0.037">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
-            android:id="@+id/imageView15"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:layout_constraintBottom_toTopOf="@+id/PrepareToBuy"
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/back"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/placeholder_image" />
+            app:srcCompat="@drawable/back" />
 
-        <Button
-            android:id="@+id/PrepareToBuy"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:backgroundTint="@color/white"
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_slab"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:text="Preparing "
+            android:text="Tips for Viewers"
             android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textSize="12sp"
-            app:cornerRadius="20dp"
+            android:textColor="@color/green"
+            android:textSize="@dimen/h1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView15"
-            app:strokeWidth="2dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout6"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout6">
-
-        <ImageView
-            android:id="@+id/imageView18"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:layout_constraintBottom_toTopOf="@+id/PlanFinance"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/placeholder_image" />
-
-        <Button
-            android:id="@+id/PlanFinance"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:backgroundTint="@color/white"
-            android:fontFamily="@font/roboto_slab"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:text="Finance Planning"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textSize="12sp"
-            app:cornerRadius="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView18"
-            app:strokeWidth="2dp" />
+            app:layout_constraintVertical_bias="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/constraintLayout7"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout6"
-        app:layout_constraintVertical_bias="0.098">
-
-        <ImageView
-            android:id="@+id/imageView17"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:layout_constraintBottom_toTopOf="@+id/ViewProperties"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/placeholder_image" />
-
-        <Button
-            android:id="@+id/ViewProperties"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:backgroundTint="@color/white"
-            android:fontFamily="@font/roboto_slab"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:text="View Properties"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textSize="12sp"
-            app:cornerRadius="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView17"
-            app:strokeWidth="2dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout8"
-        app:layout_constraintTop_toTopOf="@+id/constraintLayout8">
-
-        <ImageView
-            android:id="@+id/imageView16"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:layout_constraintBottom_toTopOf="@+id/MakeAnOffer"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/placeholder_image" />
-
-        <Button
-            android:id="@+id/MakeAnOffer"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:backgroundTint="@color/white"
-            android:fontFamily="@font/roboto_slab"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:text="Make an offer"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textSize="12sp"
-            app:cornerRadius="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView16"
-            app:strokeWidth="2dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout8"
-        app:layout_constraintVertical_bias="0.18">
-
-        <ImageView
-            android:id="@+id/imageView19"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            app:layout_constraintBottom_toTopOf="@+id/ClosePurchase"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/placeholder_image" />
-
-        <Button
-            android:id="@+id/ClosePurchase"
-            android:layout_width="160dp"
-            android:layout_height="40dp"
-            android:backgroundTint="@color/white"
-            android:fontFamily="@font/roboto_slab"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:text="Purchased"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textSize="12sp"
-            app:cornerRadius="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView19"
-            app:strokeWidth="2dp" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

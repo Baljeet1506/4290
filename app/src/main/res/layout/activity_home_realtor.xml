@@ -258,7 +258,6 @@
                 android:layout_alignStart="@id/strut"
                 android:layout_alignParentEnd="true"
                 android:layout_margin="@dimen/spacing_small"
-                android:layout_toEndOf="@id/btnMyListings"
                 android:backgroundTint="#FFFFFF"
                 android:fontFamily="@font/roboto_slab"
                 android:text="@string/past_sales"
