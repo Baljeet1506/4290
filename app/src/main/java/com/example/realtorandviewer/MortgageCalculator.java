@@ -63,9 +63,23 @@ public class MortgageCalculator extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                if (TextUtils.isEmpty(purchasePrice.getText().toString()) || TextUtils.isEmpty(downPayment.getText().toString()) || TextUtils.isEmpty(amortPeriod.getText().toString()) || TextUtils.isEmpty(interestRate.getText().toString())) {
-                    Snackbar.make(v, "Please enter all the fields", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                if (TextUtils.isEmpty(purchasePrice.getText().toString())) {
+                    purchasePrice.setError("Purchase Price is required");
+                    purchasePrice.requestFocus();
+                } else if (TextUtils.isEmpty(downPayment.getText().toString())) {
+                    downPayment.setError("Down Payment is required");
+                    downPayment.requestFocus();
+
+                } else if (TextUtils.isEmpty(amortPeriod.getText().toString())) {
+                    amortPeriod.setError("Please enter in amortization");
+                    amortPeriod.requestFocus();
+
+
+                } else if (TextUtils.isEmpty(interestRate.getText().toString())) {
+                    interestRate.setError("Interest rate is required");
+                    interestRate.requestFocus();
+
+
                 } else {
                     //Store the user input values
                     double userPurchasePrice = Double.parseDouble(purchasePrice.getText().toString());

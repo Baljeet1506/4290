@@ -6,7 +6,8 @@ public class Listings {
     private String city;
     private String price;
 
-    public Listings(){}
+    public Listings() {
+    }
 
     public Listings(String houseNumber, String street, String city, String price) {
         this.houseNumber = houseNumber;
