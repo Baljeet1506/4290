@@ -9,16 +9,16 @@ import android.widget.ImageButton;
 
 public class ViewerFindProps extends AppCompatActivity {
 
-    ImageButton btnBack;
+    ImageButton backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_viewer_find_props);
 
-        btnBack = findViewById(R.id.btnBack2);
+        backBtn = findViewById(R.id.btnBack);
 
-        btnBack.setOnClickListener(new View.OnClickListener() {
+        backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
