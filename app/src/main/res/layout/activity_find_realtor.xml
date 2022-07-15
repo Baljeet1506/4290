@@ -6,159 +6,209 @@
     android:layout_height="match_parent"
     tools:context=".FindRealtor">
 
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/name_first"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="@dimen/spacing_small"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.222"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/phone_number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView30"
-        app:layout_constraintTop_toBottomOf="@+id/textView31"
-        app:layout_constraintVertical_bias="0.054" />
-
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/email"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView30"
-        app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/name_last"
-        app:layout_constraintBottom_toBottomOf="@+id/textView30"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.156"
-        app:layout_constraintStart_toEndOf="@+id/textView30"
-        app:layout_constraintTop_toTopOf="@+id/textView30"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/company"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView30"
-        app:layout_constraintTop_toBottomOf="@+id/textView30"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/email"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toTopOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/phone_number"
-        app:layout_constraintBottom_toTopOf="@+id/textView26"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-
-
-
-
-
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/realtor1" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.078"
-        app:srcCompat="@drawable/realtor2" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:showDividers="middle">
 
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/name_first"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.222"
-        app:layout_constraintStart_toEndOf="@+id/imageView4"
-        app:layout_constraintTop_toTopOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.0" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="11dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="11dp">
 
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/company"
-        app:layout_constraintBottom_toTopOf="@+id/textView25"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/textView17"
-        app:layout_constraintTop_toBottomOf="@+id/textView17"
-        app:layout_constraintVertical_bias="0.0" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/name_last"
-        app:layout_constraintBottom_toBottomOf="@+id/textView17"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
-        app:layout_constraintStart_toEndOf="@+id/textView17"
-        app:layout_constraintTop_toTopOf="@+id/textView17"
-        app:layout_constraintVertical_bias="0.0" />
+                    <ImageView
+                        android:id="@+id/user_image"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="@string/property_image"
+                        android:paddingStart="@dimen/spacing_small"
+                        android:paddingTop="@dimen/spacing_small"
+                        android:paddingEnd="0dp"
+                        android:paddingBottom="@dimen/spacing_small"
+                        app:srcCompat="@drawable/placeholder_user" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/spacing_medium"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/first_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_slab"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="@dimen/spacing_small"
+                            android:text="@string/name_first"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/h4" />
+
+                        <TextView
+                            android:id="@+id/last_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/first_name"
+                            android:fontFamily="@font/roboto_slab"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="@dimen/spacing_small"
+                            android:text="@string/name_last"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/h4" />
+
+                        <TextView
+                            android:id="@+id/company"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/first_name"
+                            android:fontFamily="@font/roboto_slab"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="@dimen/spacing_small"
+                            android:text="@string/company"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/h4" />
+
+                        <TextView
+                            android:id="@+id/phone_number"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/company"
+                            android:fontFamily="@font/roboto_slab"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="@dimen/spacing_small"
+                            android:text="@string/phone_number"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/h4" />
+
+                        <TextView
+                            android:id="@+id/email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/phone_number"
+                            android:fontFamily="@font/roboto_slab"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="@dimen/spacing_small"
+                            android:text="@string/email"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/h4" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="11dp"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="11dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/user_image2"
+                        android:layout_width="100dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center_vertical"
+                        android:contentDescription="@string/property_image"
+                        android:paddingStart="@dimen/spacing_small"
+                        android:paddingTop="@dimen/spacing_small"
+                        android:paddingEnd="0dp"
+                        android:paddingBottom="@dimen/spacing_small"
+                        app:srcCompat="@drawable/placeholder_user" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/spacing_medium"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/first_name2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/roboto_slab"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="@dimen/spacing_small"
+                            android:text="@string/name_first"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/h4" />
+
+                        <TextView
+                            android:id="@+id/last_name2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/first_name2"
+                            android:fontFamily="@font/roboto_slab"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="@dimen/spacing_small"
+                            android:text="@string/name_last"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/h4" />
+
+                        <TextView
+                            android:id="@+id/company2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/first_name2"
+                            android:fontFamily="@font/roboto_slab"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="@dimen/spacing_small"
+                            android:text="@string/company"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/h4" />
+
+                        <TextView
+                            android:id="@+id/phone_number2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/company2"
+                            android:fontFamily="@font/roboto_slab"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="@dimen/spacing_small"
+                            android:text="@string/phone_number"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/h4" />
+
+                        <TextView
+                            android:id="@+id/email2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/phone_number2"
+                            android:fontFamily="@font/roboto_slab"
+                            android:paddingStart="0dp"
+                            android:paddingEnd="@dimen/spacing_small"
+                            android:text="@string/email"
+                            android:textAlignment="center"
+                            android:textSize="@dimen/h4" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/navigation"
@@ -171,7 +221,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
-
 
         <ImageButton
             android:id="@+id/searchFilterBtn"
@@ -202,7 +251,7 @@
             android:hint="@string/search_realtor"
             android:textAlignment="center"
             android:textSize="14sp"
-            app:layout_constraintBottom_toTopOf="@+id/findRealtorBtn"
+            app:layout_constraintBottom_toTopOf="@+id/btnFindRealtors"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/searchFilterBtn"
@@ -210,60 +259,59 @@
             app:layout_constraintVertical_bias="0.422" />
 
         <ImageButton
-            android:id="@+id/profileBtn"
+            android:id="@+id/btnProfile"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_profile_button"
-            app:layout_constraintBottom_toBottomOf="@+id/mortgageCalculatorBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMortgageCalculator"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/mortgageCalculatorBtn"
-            app:layout_constraintTop_toTopOf="@+id/mortgageCalculatorBtn"
+            app:layout_constraintStart_toEndOf="@+id/btnMortgageCalculator"
+            app:layout_constraintTop_toTopOf="@+id/btnMortgageCalculator"
             app:srcCompat="@drawable/profile" />
 
         <ImageButton
-            android:id="@+id/mortgageCalculatorBtn"
+            android:id="@+id/btnMortgageCalculator"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_calculator_button"
-            app:layout_constraintBottom_toBottomOf="@+id/findPropertiesBtn"
-            app:layout_constraintEnd_toStartOf="@+id/profileBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFindProperties"
+            app:layout_constraintEnd_toStartOf="@+id/btnProfile"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/findPropertiesBtn"
-            app:layout_constraintTop_toTopOf="@+id/findPropertiesBtn"
+            app:layout_constraintStart_toEndOf="@+id/btnFindProperties"
+            app:layout_constraintTop_toTopOf="@+id/btnFindProperties"
             app:srcCompat="@drawable/calculator" />
 
         <ImageButton
-            android:id="@+id/findRealtorBtn"
+            android:id="@+id/btnFindRealtors"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginBottom="6dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_realtors_button"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/findPropertiesBtn"
+            app:layout_constraintEnd_toStartOf="@+id/btnFindProperties"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/realtorsselect" />
+            app:srcCompat="@drawable/realtors_select" />
 
         <ImageButton
-            android:id="@+id/findPropertiesBtn"
+            android:id="@+id/btnFindProperties"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_properties_button"
-            app:layout_constraintBottom_toBottomOf="@+id/findRealtorBtn"
-            app:layout_constraintEnd_toStartOf="@+id/mortgageCalculatorBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFindRealtors"
+            app:layout_constraintEnd_toStartOf="@+id/btnMortgageCalculator"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/findRealtorBtn"
-            app:layout_constraintTop_toTopOf="@+id/findRealtorBtn"
+            app:layout_constraintStart_toEndOf="@+id/btnFindRealtors"
+            app:layout_constraintTop_toTopOf="@+id/btnFindRealtors"
             app:srcCompat="@drawable/properties" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

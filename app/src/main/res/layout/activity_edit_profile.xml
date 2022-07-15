@@ -4,241 +4,296 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D9D9D9"
-    android:backgroundTint="#D9D9D9"
     tools:context=".HomePageViewer">
 
-    <TextView
-        android:id="@+id/firstNameText2"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/edit_profile"
-        android:textAlignment="viewStart"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_square"
+        android:elevation="@dimen/spacing_large"
+        app:layout_constraintBottom_toTopOf="@+id/profile_section"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toEndOf="@+id/imageButton3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
-
-    <TextView
-        android:id="@+id/firstNameText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/upload_profile_picture"
-        android:textAlignment="viewStart"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageButton4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.775"
-        app:layout_constraintStart_toEndOf="@+id/imageButton3"
-        app:layout_constraintTop_toTopOf="@+id/imageButton4"
-        app:layout_constraintVertical_bias="0.565" />
-
-    <EditText
-        android:id="@+id/editTxtFirstName2"
-        android:layout_width="200dp"
-        android:layout_height="25dp"
-        android:background="@drawable/shape_rounded_textinput"
-        android:ems="10"
-        android:fontFamily="serif"
-        android:hint="@string/name_first"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/companyNameText"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.82"
-        app:layout_constraintStart_toEndOf="@+id/companyNameText"
-        app:layout_constraintTop_toTopOf="@+id/companyNameText"
-        app:layout_constraintVertical_bias="0.336" />
-
-    <EditText
-        android:id="@+id/editTxtLastName2"
-        android:layout_width="200dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/shape_rounded_textinput"
-        android:ems="10"
-        android:fontFamily="serif"
-        android:hint="@string/name_last"
-        android:inputType="textPersonName"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/companyNameText4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/companyNameText4"
-        app:layout_constraintTop_toTopOf="@+id/companyNameText4"
-        app:layout_constraintVertical_bias="0.395" />
-
-    <EditText
-        android:id="@+id/textPhoneNumber2"
-        android:layout_width="200dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/shape_rounded_textinput"
-        android:ems="10"
-        android:fontFamily="serif"
-        android:hint="@string/phone_number"
-        android:inputType="phone"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/companyNameText5"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/companyNameText5"
-        app:layout_constraintTop_toTopOf="@+id/companyNameText5"
-        app:layout_constraintVertical_bias="0.465" />
-
-    <EditText
-        android:id="@+id/editTxtRegEmail2"
-        android:layout_width="200dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="16dp"
-        android:background="@drawable/shape_rounded_textinput"
-        android:ems="10"
-        android:fontFamily="serif"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toBottomOf="@+id/companyNameText6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/companyNameText6"
-        app:layout_constraintTop_toTopOf="@+id/companyNameText6"
-        app:layout_constraintVertical_bias="0.545" />
-
-    <ImageButton
-        android:id="@+id/profileBtn"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="#00FFFFFF"
-        android:contentDescription="@string/nav_profile_button"
-        app:layout_constraintBottom_toBottomOf="@+id/mortgageCalculatorBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/mortgageCalculatorBtn"
-        app:layout_constraintTop_toTopOf="@+id/mortgageCalculatorBtn"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/profileselect" />
-
-    <ImageButton
-        android:id="@+id/mortgageCalculatorBtn"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="#00FFFFFF"
-        android:contentDescription="@string/nav_calculator_button"
-        app:layout_constraintBottom_toBottomOf="@+id/findPropertiesBtn"
-        app:layout_constraintEnd_toStartOf="@+id/profileBtn"
-        app:layout_constraintStart_toEndOf="@+id/findPropertiesBtn"
-        app:layout_constraintTop_toTopOf="@+id/findPropertiesBtn"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/calculator" />
-
-    <ImageButton
-        android:id="@+id/findRealtorBtn"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        android:backgroundTint="#00FFFFFF"
-        android:contentDescription="@string/nav_find_realtors_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/findPropertiesBtn"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.965"
-        app:srcCompat="@drawable/realtors" />
+        app:layout_constraintVertical_bias="0.0">
 
-    <ImageButton
-        android:id="@+id/findPropertiesBtn"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:backgroundTint="#00FFFFFF"
-        android:contentDescription="@string/nav_find_properties_button"
-        app:layout_constraintBottom_toBottomOf="@+id/findRealtorBtn"
-        app:layout_constraintEnd_toStartOf="@+id/mortgageCalculatorBtn"
-        app:layout_constraintStart_toEndOf="@+id/findRealtorBtn"
-        app:layout_constraintTop_toTopOf="@+id/findRealtorBtn"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/properties" />
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/back" />
 
-    <ImageView
-        android:id="@+id/imageView5"
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_slab"
+            android:text="@string/add_listing"
+            android:textAllCaps="false"
+            android:textColor="@color/green"
+            android:textSize="@dimen/h1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.407" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="40sp"
+        android:backgroundTint="@color/green"
+        android:fontFamily="@font/roboto_slab"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:paddingLeft="24dp"
+        android:paddingRight="24dp"
+        android:stateListAnimator="@null"
+        android:text="@string/save"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideLeft"
+        app:layout_constraintTop_toTopOf="@+id/guideBottom" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/user"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="88dp" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07" />
 
-    <TextView
-        android:id="@+id/companyNameText"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/name_first"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.8" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/profile_section"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/content_scrolling"
+        app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideLeft"
+        app:layout_constraintTop_toBottomOf="@id/titleBar"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageButton
+            android:id="@+id/add_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.131"
+            app:layout_constraintStart_toEndOf="@+id/profile_picture"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.517"
+            app:srcCompat="@drawable/plus_square" />
+
+        <TextView
+            android:id="@+id/upload_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_slab"
+            android:text="@string/upload_profile_picture"
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/h3"
+            app:layout_constraintBottom_toBottomOf="@+id/add_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.222"
+            app:layout_constraintStart_toEndOf="@+id/add_image"
+            app:layout_constraintTop_toTopOf="@+id/add_image"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/profile_picture"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/placeholder_user" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/content_scrolling"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideLeft"
+        app:layout_constraintTop_toBottomOf="@+id/profile_section"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@drawable/spacing_medium"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_small"
+            android:showDividers="middle">
+
+            <EditText
+                android:id="@+id/editTextFirstName"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_input_height"
+                android:background="@drawable/shape_rounded_textinput"
+                android:ems="10"
+                android:fontFamily="@font/roboto_slab"
+                android:hint="@string/name_first"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textSize="@dimen/h3"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextLastName"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_input_height"
+                android:background="@drawable/shape_rounded_textinput"
+                android:ems="10"
+                android:fontFamily="@font/roboto_slab"
+                android:hint="@string/name_last"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textSize="@dimen/h3"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_editor_absoluteY="320dp" />
+
+            <EditText
+                android:id="@+id/editTextPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_input_height"
+                android:background="@drawable/shape_rounded_textinput"
+                android:ems="10"
+                android:fontFamily="@font/roboto_slab"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:textAlignment="center"
+                android:textSize="@dimen/h3"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_editor_absoluteY="410dp" />
+
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/text_input_height"
+                android:background="@drawable/shape_rounded_textinput"
+                android:ems="10"
+                android:fontFamily="@font/roboto_slab"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:textAlignment="center"
+                android:textSize="@dimen/h3"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:layout_editor_absoluteY="490dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#333333"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:layout_constraintVertical_bias="0.058" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
-    <TextView
-        android:id="@+id/companyNameText4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="@string/name_last"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/companyNameText"
-        app:layout_constraintTop_toBottomOf="@+id/companyNameText"
-        app:layout_constraintVertical_bias="0.077" />
+        <ImageButton
+            android:id="@+id/btnProfile"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/nav_profile_button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnMortgageCalculator"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/profile_select" />
 
-    <TextView
-        android:id="@+id/companyNameText5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="@string/phone_number"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/companyNameText4"
-        app:layout_constraintTop_toBottomOf="@+id/companyNameText4"
-        app:layout_constraintVertical_bias="0.091" />
+        <ImageButton
+            android:id="@+id/btnMortgageCalculator"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/nav_calculator_button"
+            app:layout_constraintBottom_toBottomOf="@+id/btnProfile"
+            app:layout_constraintEnd_toStartOf="@+id/btnProfile"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnFindProperties"
+            app:layout_constraintTop_toTopOf="@+id/btnProfile"
+            app:srcCompat="@drawable/calculator" />
 
-    <TextView
-        android:id="@+id/companyNameText6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:text="@string/email"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/companyNameText5"
-        app:layout_constraintTop_toBottomOf="@+id/companyNameText5"
-        app:layout_constraintVertical_bias="0.085" />
+        <ImageButton
+            android:id="@+id/btnFindRealtors"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/nav_find_realtors_button"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFindProperties"
+            app:layout_constraintEnd_toStartOf="@+id/btnFindProperties"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnFindProperties"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/realtors" />
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/backbutton"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="16dp" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/plussquare"
-        tools:layout_editor_absoluteX="185dp"
-        tools:layout_editor_absoluteY="115dp" />
-
+        <ImageButton
+            android:id="@+id/btnFindProperties"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/nav_find_properties_button"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMortgageCalculator"
+            app:layout_constraintEnd_toStartOf="@+id/btnMortgageCalculator"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnFindRealtors"
+            app:layout_constraintTop_toTopOf="@+id/btnMortgageCalculator"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/properties" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

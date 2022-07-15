@@ -14,13 +14,12 @@
         android:layout_marginTop="16dp"
         android:backgroundTint="#00FFFFFF"
         android:contentDescription="back"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/backbutton" />
+        app:srcCompat="@drawable/back" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLeft"
@@ -49,7 +48,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.95" />
-
 
     <TextView
         android:id="@+id/textView80"
@@ -233,5 +231,4 @@
                 app:layout_constraintVertical_bias="0.173" />
         </LinearLayout>
     </ScrollView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

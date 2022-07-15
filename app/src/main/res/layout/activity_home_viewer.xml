@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D9D9D9"
-    android:backgroundTint="#D9D9D9"
+    android:background="#EEEEEE"
     tools:context=".HomePageViewer">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout2"
+        android:id="@+id/profile_section"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
+        android:elevation="12dp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -20,23 +20,50 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
-            android:id="@+id/imageView5"
+        <Button
+            android:id="@+id/btnLogout"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="32dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/roboto_slab"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:paddingLeft="0dp"
+            android:paddingRight="0dp"
+            android:text="@string/logout"
+            android:textAllCaps="false"
+            android:textColor="#000000"
+            android:textSize="11sp"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:strokeColor="#AAAAAA"
+            app:strokeWidth="2dp" />
+
+        <ImageView
+            android:id="@+id/user_picture"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/profile_picture"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/user" />
+            app:srcCompat="@drawable/placeholder_user" />
 
         <TextView
-            android:id="@+id/firstNameTextView"
+            android:id="@+id/textFirstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_slab"
@@ -44,30 +71,15 @@
             android:textAlignment="viewStart"
             android:textColor="#000000"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+            app:layout_constraintBottom_toBottomOf="@+id/user_picture"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.108"
-            app:layout_constraintStart_toEndOf="@+id/imageView5"
-            app:layout_constraintTop_toTopOf="@+id/imageView5"
+            app:layout_constraintStart_toEndOf="@+id/user_picture"
+            app:layout_constraintTop_toTopOf="@+id/user_picture"
             app:layout_constraintVertical_bias="0.17" />
 
         <TextView
-            android:id="@+id/emailTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_slab"
-            android:text="@string/email"
-            android:textColor="#6A6A6A"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/firstNameTextView"
-            app:layout_constraintTop_toBottomOf="@+id/firstNameTextView"
-            app:layout_constraintVertical_bias="0.411" />
-
-        <TextView
-            android:id="@+id/lastNameTextView"
+            android:id="@+id/textLastName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -76,126 +88,192 @@
             android:textAlignment="viewStart"
             android:textColor="#000000"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/firstNameTextView"
+            app:layout_constraintBottom_toBottomOf="@+id/textFirstName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/firstNameTextView"
-            app:layout_constraintTop_toTopOf="@+id/firstNameTextView"
+            app:layout_constraintStart_toEndOf="@+id/textFirstName"
+            app:layout_constraintTop_toTopOf="@+id/textFirstName"
             app:layout_constraintVertical_bias="0.101" />
 
-        <ImageButton
-            android:id="@+id/editProfileBtn"
+        <TextView
+            android:id="@+id/textEmail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:background="#FFFFFF"
-            app:layout_constraintBottom_toTopOf="@+id/logoutBtn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/editbutton" />
-
-        <Button
-            android:id="@+id/logoutBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="5dp"
-            android:layout_marginBottom="5dp"
-            android:backgroundTint="@color/white"
             android:fontFamily="@font/roboto_slab"
-            android:paddingLeft="10dp"
-            android:paddingTop="2dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="2dp"
-            android:text="Logout"
-            android:textAllCaps="false"
-            android:textColor="#000000"
-            android:textSize="12sp"
-            app:cornerRadius="20dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="@string/email"
+            android:textColor="#6A6A6A"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/user_picture"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            app:strokeWidth="1dp" />
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textFirstName"
+            app:layout_constraintTop_toBottomOf="@+id/textFirstName"
+            app:layout_constraintVertical_bias="0.411" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Button
-        android:id="@+id/findPropsBtn"
-        android:layout_width="150dp"
-        android:layout_height="120dp"
-        android:backgroundTint="#FFFFFF"
-        android:fontFamily="@font/roboto_slab"
-        android:text="Find Property"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:typeface="normal"
-        app:cornerRadius="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/recommendedRealtorBtn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/recommendedRealtorBtn"
-        app:layout_constraintTop_toTopOf="@+id/recommendedRealtorBtn" />
-
-    <Button
-        android:id="@+id/recommendedRealtorBtn"
-        android:layout_width="150dp"
-        android:layout_height="120dp"
-        android:backgroundTint="#FFFFFF"
-        android:fontFamily="@font/roboto_slab"
-        android:text="Recommended Realtor"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:typeface="normal"
-        app:cornerRadius="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/favouriteBtn"
-        app:layout_constraintEnd_toStartOf="@+id/findPropsBtn"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
-
-    <Button
-        android:id="@+id/favouriteBtn"
-        android:layout_width="150dp"
-        android:layout_height="120dp"
-        android:backgroundTint="#FFFFFF"
-        android:fontFamily="@font/roboto_slab"
-        android:text="@string/favourites"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:typeface="normal"
-        app:cornerRadius="12dp"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
-        app:layout_constraintEnd_toStartOf="@+id/resourcesBtn"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recommendedRealtorBtn" />
-
-    <Button
-        android:id="@+id/resourcesBtn"
-        android:layout_width="150dp"
-        android:layout_height="120dp"
-        android:backgroundTint="#FFFFFF"
-        android:fontFamily="@font/roboto_slab"
-        android:text="@string/resources"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textColor="#000000"
-        android:typeface="normal"
-        app:cornerRadius="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/favouriteBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/favouriteBtn"
-        app:layout_constraintTop_toTopOf="@+id/favouriteBtn" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profile_section">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/spacing_small"
+            app:layout_constraintBottom_toTopOf="@+id/navigation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profile_section"
+            app:layout_constraintVertical_bias="0.0">
+
+            <View
+                android:id="@+id/strut"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_centerHorizontal="true" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnFavourites"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/strut"
+                android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/spacing_small"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/favourites"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="11dp"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="@string/favourites"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h1"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/icon_heart" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnResources"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/strut"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/spacing_small"
+                android:layout_toEndOf="@id/btnFavourites"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/resources"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="11dp"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="@string/resources"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h1"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/icon_resources" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnRecommendedRealtors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnFavourites"
+                android:layout_alignEnd="@id/strut"
+                android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/spacing_small"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/my_listings"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="11dp"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="@string/recommended_realtors"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h1"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/icon_recommend" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/other"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnFavourites"
+                android:layout_alignStart="@id/strut"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/spacing_small"
+                android:layout_toEndOf="@id/btnRecommendedRealtors"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/past_sales"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="11dp"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="other"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h1"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/icon_other" />
+            </androidx.cardview.widget.CardView>
+        </RelativeLayout>
+    </ScrollView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/navigation"
@@ -210,7 +288,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <ImageButton
-            android:id="@+id/profileBtn"
+            android:id="@+id/btnProfile"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
@@ -218,52 +296,51 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/mortgageCalculatorBtn"
+            app:layout_constraintStart_toEndOf="@+id/btnMortgageCalculator"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/profileselect" />
+            app:srcCompat="@drawable/profile_select" />
 
         <ImageButton
-            android:id="@+id/mortgageCalculatorBtn"
+            android:id="@+id/btnMortgageCalculator"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_calculator_button"
-            app:layout_constraintBottom_toBottomOf="@+id/profileBtn"
-            app:layout_constraintEnd_toStartOf="@+id/profileBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/btnProfile"
+            app:layout_constraintEnd_toStartOf="@+id/btnProfile"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/findPropertiesBtn"
-            app:layout_constraintTop_toTopOf="@+id/profileBtn"
+            app:layout_constraintStart_toEndOf="@+id/btnFindProperties"
+            app:layout_constraintTop_toTopOf="@+id/btnProfile"
             app:srcCompat="@drawable/calculator" />
 
         <ImageButton
-            android:id="@+id/findRealtorBtn"
+            android:id="@+id/btnFindRealtors"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginBottom="8dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_realtors_button"
-            app:layout_constraintBottom_toBottomOf="@+id/findPropertiesBtn"
-            app:layout_constraintEnd_toStartOf="@+id/findPropertiesBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFindProperties"
+            app:layout_constraintEnd_toStartOf="@+id/btnFindProperties"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/findPropertiesBtn"
+            app:layout_constraintTop_toTopOf="@+id/btnFindProperties"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/realtors" />
 
         <ImageButton
-            android:id="@+id/findPropertiesBtn"
+            android:id="@+id/btnFindProperties"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_properties_button"
-            app:layout_constraintBottom_toBottomOf="@+id/mortgageCalculatorBtn"
-            app:layout_constraintEnd_toStartOf="@+id/mortgageCalculatorBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMortgageCalculator"
+            app:layout_constraintEnd_toStartOf="@+id/btnMortgageCalculator"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/findRealtorBtn"
-            app:layout_constraintTop_toTopOf="@+id/mortgageCalculatorBtn"
+            app:layout_constraintStart_toEndOf="@+id/btnFindRealtors"
+            app:layout_constraintTop_toTopOf="@+id/btnMortgageCalculator"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/properties" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

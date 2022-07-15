@@ -1,89 +1,39 @@
 package com.example.realtorandviewer;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class ResourcesPageRealtor extends AppCompatActivity {
+    Button preparingBtn, listingBtn, marketingBtn, offerBtn;
+    ImageButton findRealtorBtn, findPropertiesBtn, mortgageCalculatorBtn, profileBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resources_page_realtor);
 
-        ImageButton findRealtorBtn = findViewById(R.id.findRealtorBtn);
-        ImageButton mortgageCalBtn = findViewById(R.id.mortgageCalculatorBtn);
-        ImageButton findPropertiesBtn = findViewById(R.id.findPropertiesBtn);
-        ImageButton profileBtn = findViewById(R.id.profileBtn);
+        findRealtorBtn = findViewById(R.id.btnFindRealtors);
+        mortgageCalculatorBtn = findViewById(R.id.btnMortgageCalculator);
+        findPropertiesBtn = findViewById(R.id.btnFindProperties);
+        profileBtn = findViewById(R.id.btnProfile);
 
-        Button PreparingBtn = findViewById(R.id.Preparing);
-        Button ListingBtn = findViewById(R.id.Listing);
-        Button MarketingBtn = findViewById(R.id.Marketing);
-        Button OfferBtn = findViewById(R.id.Offer);
-        ImageButton backBtn = findViewById(R.id.forgotBackBtn3);
+        preparingBtn = findViewById(R.id.Preparing);
+        listingBtn = findViewById(R.id.Listing);
+        marketingBtn = findViewById(R.id.Marketing);
+        offerBtn = findViewById(R.id.Offer);
 
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
-            }
-        });
+        findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
+        findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
+        mortgageCalculatorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
+        profileBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageViewer.class)));
 
-        findRealtorBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), FindRealtor.class));
-            }
-        });
-        findPropertiesBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), FindProperties.class));
-            }
-        });
-        mortgageCalBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MortgageCalculator.class));
-            }
-        });
-        profileBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
-            }
-        });
-
-       PreparingBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ResourceRealtorPrepareToSell.class));
-            }
-        });
-
-       ListingBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ResourceRealtorListing.class));
-            }
-        });
-
-        MarketingBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ResourceRealtorMarketing.class));
-            }
-        });
-
-        OfferBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ResourceRealtorOffer.class));
-            }
-        });
+        preparingBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceRealtorPrepareToSell.class)));
+        listingBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceRealtorListing.class)));
+        marketingBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceRealtorMarketing.class)));
+        offerBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceRealtorOffer.class)));
     }
 }

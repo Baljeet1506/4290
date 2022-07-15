@@ -11,4 +11,9 @@
     <dimen name="h4">16sp</dimen>
     <dimen name="normal_text">14sp</dimen>
     <dimen name="line_spacing_small">8sp</dimen>
+    <dimen name="placeholder_height">100dp</dimen>
+    <dimen name="placeholder_width">100dp</dimen>
+    <dimen name="icon_scale">0.6</dimen>
+
+
 </resources>

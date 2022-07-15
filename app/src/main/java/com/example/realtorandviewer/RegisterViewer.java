@@ -1,8 +1,5 @@
 package com.example.realtorandviewer;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -31,8 +31,8 @@ public class RegisterViewer extends AppCompatActivity implements View.OnClickLis
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_viewer);
 
-        firstName = findViewById(R.id.editTextFnameViewer);
-        lastName = findViewById(R.id.editTextLnameViewer);
+        firstName = findViewById(R.id.editTextFirstNameViewer);
+        lastName = findViewById(R.id.editTextLastNameViewer);
         email = findViewById(R.id.editTextEmailViewer);
         password = findViewById(R.id.editTextPasswordViewer);
 
@@ -50,7 +50,6 @@ public class RegisterViewer extends AppCompatActivity implements View.OnClickLis
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
-
         switch (v.getId()) {
             case R.id.btnRegisterViewer:
                 registerUser();
@@ -59,12 +58,9 @@ public class RegisterViewer extends AppCompatActivity implements View.OnClickLis
                 startActivity(new Intent(getApplicationContext(), RegisteringType.class));
                 break;
         }
-
-
     }
 
     private void registerUser() {
-
         String userFirstName = firstName.getText().toString();
         String userLastName = lastName.getText().toString();
         String userEmail = email.getText().toString();
@@ -76,31 +72,26 @@ public class RegisterViewer extends AppCompatActivity implements View.OnClickLis
             firstName.requestFocus();
             return;
         }
-
         if (userLastName.isEmpty()) {
             lastName.setError("Last name is required");
             lastName.requestFocus();
             return;
         }
-
         if (userEmail.isEmpty()) {
             email.setError("Email is required");
             email.requestFocus();
             return;
         }
-
         if (userPass.isEmpty()) {
             password.setError("Password is required");
             password.requestFocus();
             return;
         }
-
         if (!Patterns.EMAIL_ADDRESS.matcher(userEmail).matches()) {
             email.setError("Please provide a valid email");
             email.requestFocus();
             return;
         }
-
         if (userPass.length() < 6) {
             password.setError("Min password length should be 6 characters");
             password.requestFocus();

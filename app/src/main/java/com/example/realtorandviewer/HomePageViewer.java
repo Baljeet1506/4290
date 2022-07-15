@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,8 +22,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class HomePageViewer extends AppCompatActivity {
 
-    private Button logout;
-    TextView firstNameTextView, lastNameTextView, emailTextView;
+    private Button logoutBtn;
+    ImageButton findRealtorBtn, findPropertiesBtn, mortgageCalcBtn;
+    TextView firstNameText, lastNameText, emailText;
+    CardView favouritesBtn, recommendedRealtorBtn, resourcesBtn;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -34,19 +37,19 @@ public class HomePageViewer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_viewer);
 
-        logout = findViewById(R.id.logoutBtn);
-        ImageButton findRealtorBtn = findViewById(R.id.findRealtorBtn);
-        ImageButton mortgageCalBtn = findViewById(R.id.mortgageCalculatorBtn);
-        ImageButton findPropertiesBtn = findViewById(R.id.findPropertiesBtn);
+        logoutBtn = findViewById(R.id.btnLogout);
 
-        Button favouriteBtn = findViewById(R.id.favouriteBtn);
-        Button recommendedRealtorBtn = findViewById(R.id.recommendedRealtorBtn);
-        Button resourcesBtn = findViewById(R.id.resourcesBtn);
-        Button findPropsBtn1 = findViewById(R.id.findPropsBtn);
+        findRealtorBtn = findViewById(R.id.btnFindRealtors);
+        mortgageCalcBtn = findViewById(R.id.btnMortgageCalculator);
+        findPropertiesBtn = findViewById(R.id.btnFindProperties);
 
-        firstNameTextView = findViewById(R.id.firstNameTextView);
-        lastNameTextView = findViewById(R.id.lastNameTextView);
-        emailTextView = findViewById(R.id.emailTextView);
+        favouritesBtn = findViewById(R.id.btnFavourites);
+        recommendedRealtorBtn = findViewById(R.id.btnRecommendedRealtors);
+        resourcesBtn = findViewById(R.id.btnResources);
+
+        firstNameText = findViewById(R.id.textFirstName);
+        lastNameText = findViewById(R.id.textLastName);
+        emailText = findViewById(R.id.textEmail);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("Users");
@@ -56,16 +59,14 @@ public class HomePageViewer extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User userProfile = snapshot.getValue(User.class);
-
                 if (userProfile != null) {
-
                     String firstName = userProfile.firstName;
                     String lastName = userProfile.lastName;
                     String email = userProfile.email;
 
-                    firstNameTextView.setText(firstName);
-                    lastNameTextView.setText(lastName);
-                    emailTextView.setText(email);
+                    firstNameText.setText(firstName);
+                    lastNameText.setText(lastName);
+                    emailText.setText(email);
                 }
             }
 
@@ -75,69 +76,24 @@ public class HomePageViewer extends AppCompatActivity {
             }
         });
 
+        favouritesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Favourites.class)));
+        recommendedRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RecommendedRealtor.class)));
+        resourcesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourcesPageViewer.class)));
 
-        favouriteBtn.setOnClickListener(new View.OnClickListener() {
+        findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
+        findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
+        mortgageCalcBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
+
+        logoutBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), Favourites.class));
+                Intent intentL = new Intent(HomePageViewer.this, Login.class);
+                startActivity(intentL);
+                finish();
+                Toast.makeText(HomePageViewer.this, "Successful Logout", Toast.LENGTH_SHORT).show();
             }
         });
-
-        recommendedRealtorBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), RecommendedRealtor.class));
-            }
-        });
-
-        resourcesBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ResourcesPageViewer.class));
-            }
-        });
-
-        findPropsBtn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), ViewerFindProps.class));
-            }
-        });
-
-        findRealtorBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), FindRealtor.class));
-            }
-        });
-
-        mortgageCalBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), MortgageCalculator.class));
-            }
-        });
-
-        findPropertiesBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), FindProperties.class));
-            }
-        });
-
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(HomePageViewer.this, Login.class));
-
-            }
-        });
-
-
     }
-
-
 }
 
 

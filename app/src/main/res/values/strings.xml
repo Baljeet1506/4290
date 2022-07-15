@@ -1,62 +1,6 @@
 <resources>
     <string name="app_name">Realtor and Viewer</string>
 
-
-    <string name="my_listings">My Listings</string>
-    <string name="past_sales">Past Sales</string>
-    <string name="favourites">Favourites</string>
-    <string name="resources">Resources</string>
-
-    //Mortgage Calculator Page
-    <string name="mortgage_calculator">Mortgage Calculator</string>
-    <string name="purchase_price">Purchase Price $</string>
-    <string name="down_payment">Down Payment $</string>
-    <string name="amortization_period">Amortization \nPeriod (In Years)</string>
-    <string name="interest_rate">Interest Rate %</string>
-    <string name="monthly_payment">Monthly Payment</string>
-    <string name="calculate_button">Calculate</string>
-    <string name="profile">Profile</string>
-    <string name="realtoremail">_@realtor.ca</string>
-
-    <string name="property_list">Property List</string>
-
-    <string name="nav_profile_button">profile navigation button</string>
-    <string name="nav_calculator_button">mortgage calculator navigation button</string>
-    <string name="nav_find_properties_button">find properties navigation button</string>
-    <string name="nav_find_realtors_button">find realtors navigation button</string>
-
-    <string name="logo_large">large logo image</string>
-    <string name="logo_medium">medium logo image</string>
-    <string name="logo_small">small logo image</string>
-
-    <string name="login">login</string>
-    <string name="register">register</string>
-    <string name="cancel">cancel</string>
-
-    <string name="email">Email</string>
-    <string name="password">Password</string>
-    <string name="password_confirm">Confirm Password</string>
-
-    <string name="name_first">First Name</string>
-    <string name="name_last">Last Name</string>
-    <string name="phone_number">Phone Number</string>
-
-    <string name="sign_up_as_realtor">as Realtor</string>
-    <string name="sign_up_as_viewer">as Viewer</string>
-
-    <string name="forgot_password">forgot password?</string>
-    <string name="company">company</string>
-    <string name="address">address</string>
-    <string name="bed">bed</string>
-    <string name="bath">bath</string>
-    <string name="square_footage">square footage</string>
-
-    <string name="search_property">property search</string>
-    <string name="search_realtor">realtor search</string>
-
-    <string name="edit_profile">Edit Profile</string>
-    <string name="upload_profile_picture">Upload a picture</string>
-    <string name="title_activity_register_type">RegisterType</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
@@ -66,5 +10,98 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
+    <!-- Menu Options -->
+    <string name="favourites">Favourites</string>
+    <string name="resources">Resources</string>
+    <string name="my_listings">My Listings</string>
+    <string name="past_sales">Past Sales</string>
+    <string name="recommended_realtors">Recomm. Realtors</string>
+
+    <!-- Realtor Options -->
+    <string name="add_listing">Add Listing</string>
+
+    <!-- Mortgage Calculator -->
+    <string name="mortgage_calculator">Mortgage Calculator</string>
+    <string name="purchase_price">Purchase Price $</string>
+    <string name="down_payment">Down Payment $</string>
+    <string name="amortization_period">Amortization \nPeriod (In Years)</string>
+    <string name="interest_rate">Interest Rate %</string>
+    <string name="monthly_payment">Monthly Payment</string>
+    <string name="calculate_button">Calculate</string>
+    <string name="profile">Profile</string>
+    <string name="realtor_email">_@realtor.ca</string>
+
+    <!-- Navigation -->
+    <string name="nav_profile_button">Profile Button</string>
+    <string name="nav_calculator_button">Mortgage calculator Button</string>
+    <string name="nav_find_properties_button">Find Properties Button</string>
+    <string name="nav_find_realtors_button">Find Realtors Button</string>
+
+    <!-- Logo -->
+    <string name="logo_large">Large Logo Image</string>
+    <string name="logo_medium">Medium Logo Image</string>
+    <string name="logo_small">Small Logo Image</string>
+
+    <!-- Search -->
+    <string name="search_property">Property Search</string>
+    <string name="search_realtor">Realtor Search</string>
+    <string name="filter">Filter</string>
+
+    <!-- User -->
+    <string name="profile_picture">User Profile Picture</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="upload_profile_picture">Upload a picture</string>
+    <string name="company">Company</string>
+    <string name="name_first">First Name</string>
+    <string name="name_last">Last Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="email">Email</string>
+
+    <!-- Property -->
+    <string name="property_image">Property Image</string>
+    <string name="unit_number">Unit Number</string>
+    <string name="house_number">House Number</string>
+    <string name="street">Street</string>
+    <string name="city">City</string>
+    <string name="province">Province</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="price">Price</string>
+    <string name="beds">Beds</string>
+    <string name="baths">Baths</string>
+    <string name="land_size">Land Size</string>
+    <string name="floor_size">Floor Size</string>
+    <string name="age">Age</string>
+    <string name="type">Type</string>
+    <string name="title">Title</string>
+    <string name="property_list">Property List</string>
+
+    <!-- Regular Buttons -->
+    <string name="back">Back</string>
+    <string name="save">Save</string>
+    <string name="login">Login</string>
+    <string name="logout">Logout</string>
+    <string name="cancel">Cancel</string>
+    <string name="register">Register</string>
+    <string name="settings">Settings</string>
+    <string name="forgot_password">Forgot Password</string>
+
+    <!-- Register Page -->
+    <string name="register_type">Register Type</string>
+    <string name="register_as">Register as:</string>
+    <string name="sign_up_as_realtor">As Realtor</string>
+    <string name="sign_up_as_viewer">As Viewer</string>
+    <string name="register_realtor">Realtor Registration</string>
+    <string name="register_viewer">Viewer Registration</string>
+    <string name="password">Password</string>
+    <string name="password_confirm">Confirm Password</string>
+
+    <!-- Forgot -->
+    <string name="enter_email">Enter your email</string>
+    <string name="reset_password">Reset Password</string>
+
+
+    <!-- UNSORTED BELOW HERE -->
+    <string name="realtor_favourites">Realtor Favourites</string>
+    <string name="find_props">Find Props</string>
 
 </resources>

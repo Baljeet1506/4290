@@ -8,17 +8,15 @@ import android.view.View;
 import android.widget.ImageButton;
 
 public class RealtorPastSales extends AppCompatActivity {
-
-    ImageButton btnBack;
+    ImageButton backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_realtor_my_past_sales);
 
-        btnBack = findViewById(R.id.btnBack);
-
-        btnBack.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageRealtor.class)));
+        backBtn = findViewById(R.id.btnBack);
+        backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageRealtor.class)));
 
     }
 }

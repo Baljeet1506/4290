@@ -1,7 +1,5 @@
 package com.example.realtorandviewer;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,14 +9,16 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RealtorAddListings extends AppCompatActivity implements View.OnClickListener {
 
     EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
-    Button btnAddListing;
-    ImageButton btnBack;
+    Button addListingBtn;
+    ImageButton backBtn;
     DatabaseReference ref;
     Properties listing;
 
@@ -27,7 +27,7 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_listings);
 
-        btnBack = findViewById(R.id.btnBack);
+        backBtn = findViewById(R.id.btnBack);
 
         unitNumber = findViewById(R.id.editTextUnitNum);
         houseNumber = findViewById(R.id.editTextHouseNum);
@@ -44,18 +44,12 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         type = findViewById(R.id.editTextType);
         title = findViewById(R.id.editTextTitle);
 
-        btnAddListing = findViewById(R.id.btnAddListing);
-        btnAddListing.setOnClickListener(this);
+        addListingBtn = findViewById(R.id.btnAddListing);
+        addListingBtn.setOnClickListener(this);
 
-        btnBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), RealtorListings.class));
-            }
-        });
+        backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorListings.class)));
 
         listing = new Properties();
-
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -69,7 +63,6 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
     }
 
     private void addListing() {
-
         String unitNumber_ = unitNumber.getText().toString();
         String houseNumber_ = houseNumber.getText().toString();
         String street_ = street.getText().toString();
@@ -90,67 +83,56 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
             houseNumber.requestFocus();
             return;
         }
-
         if (street_.isEmpty()) {
             street.setError("Street is required");
             street.requestFocus();
             return;
         }
-
         if (city_.isEmpty()) {
             city.setError("City is required");
             city.requestFocus();
             return;
         }
-
         if (province_.isEmpty()) {
             province.setError("Province is required");
             province.requestFocus();
             return;
         }
-
         if (postal_.isEmpty()) {
             postal.setError("Postal code is required");
             postal.requestFocus();
             return;
         }
-
         if (price_.isEmpty()) {
             price.setError("Price is required");
             price.requestFocus();
             return;
         }
-
         if (beds_.isEmpty()) {
             beds.setError("Number of Bedrooms is required");
             beds.requestFocus();
             return;
         }
-
         if (baths_.isEmpty()) {
             baths.setError("Number of Bathrooms is required");
             baths.requestFocus();
             return;
         }
-
         if (floorSize_.isEmpty()) {
             floorSize.setError("Floor size is required");
             floorSize.requestFocus();
             return;
         }
-
         if (age_.isEmpty()) {
             age.setError("Age is required");
             age.requestFocus();
             return;
         }
-
         if (type_.isEmpty()) {
             type.setError("Type of property is required");
             type.requestFocus();
             return;
         }
-
         if (title_.isEmpty()) {
             title.setError("Title is required");
             title.requestFocus();
@@ -158,8 +140,7 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         }
 
         //progressBar.setVisibility(View.VISIBLE);
-
-        ref = FirebaseDatabase.getInstance().getReference().child("Properties").child(Login.uID_);
+        ref = FirebaseDatabase.getInstance().getReference().child("Properties");
 
         listing.setUnitNumber(unitNumber_);
         listing.setHouseNumber(houseNumber_);
@@ -179,8 +160,5 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         ref.push().setValue(listing);
         Toast.makeText(RealtorAddListings.this, "Listing is added successfully", Toast.LENGTH_LONG).show();
         startActivity(new Intent(getApplicationContext(), RealtorListings.class));
-
-
     }
-
 }

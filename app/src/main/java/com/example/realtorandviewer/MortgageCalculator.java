@@ -17,6 +17,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class MortgageCalculator extends AppCompatActivity {
 
     Button btnCalculate;
+    ImageButton findRealtorBtn, findPropertiesBtn, profileBtn;
     EditText purchasePrice, downPayment, amortPeriod, interestRate;
     TextView monthlyPayment;
 
@@ -25,37 +26,13 @@ public class MortgageCalculator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mortgage_calculator);
 
-        ImageButton findRealtorBtn = findViewById(R.id.findRealtorBtn);
-        ImageButton findPropertiesBtn = findViewById(R.id.findPropertiesBtn);
-        ImageButton profileBtn = findViewById(R.id.profileBtn);
+        findRealtorBtn = findViewById(R.id.btnFindRealtors);
+        findPropertiesBtn = findViewById(R.id.btnFindProperties);
+        profileBtn = findViewById(R.id.btnProfile);
 
-        findRealtorBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), FindRealtor.class));
-            }
-        });
-
-        findPropertiesBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(), FindProperties.class));
-            }
-        });
-
-        profileBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                if(Login.uType == 1) {
-
-                    startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
-                } else {
-                    startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
-                }
-
-            }
-        });
+        findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
+        findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
+        profileBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageViewer.class)));
 
         purchasePrice = findViewById(R.id.editTextPurchasePrice);
         downPayment = findViewById(R.id.editTextDownPayment);
@@ -65,28 +42,22 @@ public class MortgageCalculator extends AppCompatActivity {
         monthlyPayment = findViewById(R.id.monthlyPayment);
 
         btnCalculate.setOnClickListener(new View.OnClickListener() {
-
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-
                 if (TextUtils.isEmpty(purchasePrice.getText().toString())) {
                     purchasePrice.setError("Purchase Price is required");
                     purchasePrice.requestFocus();
                 } else if (TextUtils.isEmpty(downPayment.getText().toString())) {
                     downPayment.setError("Down Payment is required");
                     downPayment.requestFocus();
-
                 } else if (TextUtils.isEmpty(amortPeriod.getText().toString())) {
                     amortPeriod.setError("Please enter in amortization");
                     amortPeriod.requestFocus();
 
-
                 } else if (TextUtils.isEmpty(interestRate.getText().toString())) {
                     interestRate.setError("Interest rate is required");
                     interestRate.requestFocus();
-
-
                 } else {
                     //Store the user input values
                     double userPurchasePrice = Double.parseDouble(purchasePrice.getText().toString());
@@ -107,8 +78,6 @@ public class MortgageCalculator extends AppCompatActivity {
                     float payment = (float) ((priceAfterDownPayment * userInterestRate) / (1 - Math.pow(1 + userInterestRate, -userAmortPeriod)));
 
                     monthlyPayment.setText("$" + payment);
-
-
                 }
             }
         });

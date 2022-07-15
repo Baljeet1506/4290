@@ -36,8 +36,54 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.85" />
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_slab"
+            android:text="@string/register_realtor"
+            android:textColor="@color/green"
+            android:textSize="@dimen/h1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.407" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/logo"
         android:layout_width="300dp"
         android:layout_height="110dp"
         android:contentDescription="@string/logo_medium"
@@ -47,7 +93,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideLeft"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.53"
-        app:srcCompat="@drawable/revlogosmall" />
+        app:srcCompat="@drawable/rev_logo_medium" />
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -84,7 +130,7 @@
                 app:layout_constraintEnd_toStartOf="@+id/guideRight"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/guideLeft"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3"
+                app:layout_constraintTop_toBottomOf="@+id/logo"
                 app:layout_constraintVertical_bias="0.224" />
 
             <EditText
@@ -130,7 +176,7 @@
                 android:background="@drawable/shape_rounded_textinput"
                 android:ems="10"
                 android:fontFamily="@font/roboto_slab"
-                android:hint="@string/realtoremail"
+                android:hint="@string/realtor_email"
                 android:inputType="textEmailAddress"
                 android:textAlignment="center"
                 android:textSize="14sp"
@@ -205,7 +251,6 @@
         app:layout_constraintStart_toEndOf="@+id/btnCancel"
         app:layout_constraintTop_toTopOf="@+id/btnCancel" />
 
-
     <ProgressBar
         android:id="@+id/progressBar2"
         style="?android:attr/progressBarStyleLarge"
@@ -219,5 +264,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.316"
         tools:ignore="MissingConstraints" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

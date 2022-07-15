@@ -6,23 +6,55 @@
     android:layout_height="match_parent"
     tools:context=".RealtorPastSales">
 
-    <ImageButton
-        android:id="@+id/btnBack"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="#00FFFFFF"
-        android:contentDescription="back"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024"
-        app:srcCompat="@drawable/backbutton" />
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_slab"
+            android:text="@string/past_sales"
+            android:textColor="@color/green"
+            android:textSize="@dimen/h1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.407" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <EditText
-        android:id="@+id/editTextTextPersonName6"
+        android:id="@+id/editTextPersonName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -49,18 +81,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.402" />
 
-    <TextView
-        android:id="@+id/textView45"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="My past sales"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.442"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/navigation"
         android:layout_width="match_parent"
@@ -73,7 +93,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <ImageButton
-            android:id="@+id/profileBtn"
+            android:id="@+id/btnProfile"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginTop="12dp"
@@ -83,49 +103,49 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/mortgageCalculatorBtn"
+            app:layout_constraintStart_toEndOf="@+id/btnMortgageCalculator"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/profileselect" />
+            app:srcCompat="@drawable/profile_select" />
 
         <ImageButton
-            android:id="@+id/mortgageCalculatorBtn"
+            android:id="@+id/btnMortgageCalculator"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_calculator_button"
-            app:layout_constraintBottom_toBottomOf="@+id/profileBtn"
-            app:layout_constraintEnd_toStartOf="@+id/profileBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/btnProfile"
+            app:layout_constraintEnd_toStartOf="@+id/btnProfile"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/findPropertiesBtn"
-            app:layout_constraintTop_toTopOf="@+id/profileBtn"
+            app:layout_constraintStart_toEndOf="@+id/btnFindProperties"
+            app:layout_constraintTop_toTopOf="@+id/btnProfile"
             app:srcCompat="@drawable/calculator" />
 
         <ImageButton
-            android:id="@+id/findRealtorBtn"
+            android:id="@+id/btnFindRealtors"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginBottom="16dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_realtors_button"
-            app:layout_constraintBottom_toBottomOf="@+id/findPropertiesBtn"
-            app:layout_constraintEnd_toStartOf="@+id/findPropertiesBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFindProperties"
+            app:layout_constraintEnd_toStartOf="@+id/btnFindProperties"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/findPropertiesBtn"
+            app:layout_constraintTop_toTopOf="@+id/btnFindProperties"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/realtors" />
 
         <ImageButton
-            android:id="@+id/findPropertiesBtn"
+            android:id="@+id/btnFindProperties"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_properties_button"
-            app:layout_constraintBottom_toBottomOf="@+id/mortgageCalculatorBtn"
-            app:layout_constraintEnd_toStartOf="@+id/mortgageCalculatorBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMortgageCalculator"
+            app:layout_constraintEnd_toStartOf="@+id/btnMortgageCalculator"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/findRealtorBtn"
-            app:layout_constraintTop_toTopOf="@+id/mortgageCalculatorBtn"
+            app:layout_constraintStart_toEndOf="@+id/btnFindRealtors"
+            app:layout_constraintTop_toTopOf="@+id/btnMortgageCalculator"
             app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/properties" />
     </androidx.constraintlayout.widget.ConstraintLayout>

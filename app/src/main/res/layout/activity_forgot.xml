@@ -25,44 +25,94 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.4" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.8" />
+        app:layout_constraintGuide_percent="0.74" />
 
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="300dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="128dp"
-        android:contentDescription="@string/logo_medium"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideRight"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="@+id/guideLeft"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/revlogosmall" />
-
-    <ImageButton
-        android:id="@+id/forgotBackBtn"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:backgroundTint="#00FFFFFF"
-        android:contentDescription="back"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_square"
+        android:elevation="@dimen/spacing_large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024"
-        app:srcCompat="@drawable/backbutton" />
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_slab"
+            android:text="@string/forgot_password"
+            android:textAllCaps="false"
+            android:textColor="@color/green"
+            android:textSize="@dimen/h1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.407" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:contentDescription="@string/logo_medium"
+        app:layout_constraintBottom_toTopOf="@+id/guideTop"
+        app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guideLeft"
+        app:layout_constraintTop_toBottomOf="@+id/titleBar"
+        app:layout_constraintVertical_bias="0.416"
+        app:srcCompat="@drawable/rev_logo_medium" />
+
+    <EditText
+        android:id="@+id/emailReset"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/text_input_height"
+        android:layout_margin="10dp"
+        android:autofillHints="emailAddress"
+        android:background="@drawable/shape_rounded_textinput"
+        android:ems="10"
+        android:fontFamily="@font/roboto_slab"
+        android:hint="@string/enter_email"
+        android:inputType="textEmailAddress"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideBottom"
+        app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="@+id/guideLeft"
+        app:layout_constraintTop_toTopOf="@+id/guideTop"
+        app:layout_constraintVertical_bias="0.25" />
 
     <Button
         android:id="@+id/ResetBtn"
@@ -74,7 +124,7 @@
         android:insetBottom="0dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
-        android:text="Reset Password"
+        android:text="@string/reset_password"
         android:textAllCaps="false"
         android:textSize="16sp"
         app:cornerRadius="20dp"
@@ -83,25 +133,6 @@
         app:layout_constraintStart_toStartOf="@+id/guideLeft"
         app:layout_constraintTop_toTopOf="@+id/guideBottom"
         app:layout_constraintVertical_bias="0.377" />
-
-    <EditText
-        android:id="@+id/emailReset"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/text_input_height"
-        android:background="@drawable/shape_rounded_textinput"
-        android:ems="10"
-        android:fontFamily="@font/roboto_slab"
-        android:hint="Enter your email"
-        android:inputType="textEmailAddress"
-        android:layout_margin="10dp"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        app:layout_constraintBottom_toTopOf="@+id/guideBottom"
-        app:layout_constraintEnd_toStartOf="@+id/guideRight"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideLeft"
-        app:layout_constraintTop_toTopOf="@+id/guideTop"
-        app:layout_constraintVertical_bias="0.238" />
 
     <ProgressBar
         android:id="@+id/progressBar3"
@@ -116,5 +147,4 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.483"
         tools:ignore="MissingConstraints" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -20,36 +20,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.024"
-        app:srcCompat="@drawable/backbutton" />
+        app:srcCompat="@drawable/back" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideLeft"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07"
-        />
+        app:layout_constraintGuide_percent="0.07" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideRight"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.93"
-        />
+        app:layout_constraintGuide_percent="0.93" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideTop"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.12"
-        />
+        app:layout_constraintGuide_percent="0.12" />
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideBottom"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88"
-        />
+        app:layout_constraintGuide_percent="0.88" />
 
     <TextView
         android:id="@+id/textView43"
@@ -77,7 +73,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <ImageButton
-            android:id="@+id/profileBtn"
+            android:id="@+id/btnProfile"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
@@ -85,53 +81,51 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/mortgageCalculatorBtn"
+            app:layout_constraintStart_toEndOf="@+id/btnMortgageCalculator"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/profileselect" />
+            app:srcCompat="@drawable/profile_select" />
 
         <ImageButton
-            android:id="@+id/mortgageCalculatorBtn"
+            android:id="@+id/btnMortgageCalculator"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_calculator_button"
-            app:layout_constraintBottom_toBottomOf="@+id/profileBtn"
-            app:layout_constraintEnd_toStartOf="@+id/profileBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/btnProfile"
+            app:layout_constraintEnd_toStartOf="@+id/btnProfile"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/findPropertiesBtn"
-            app:layout_constraintTop_toTopOf="@+id/profileBtn"
+            app:layout_constraintStart_toEndOf="@+id/btnFindProperties"
+            app:layout_constraintTop_toTopOf="@+id/btnProfile"
             app:srcCompat="@drawable/calculator" />
 
         <ImageButton
-            android:id="@+id/findRealtorBtn"
+            android:id="@+id/btnFindRealtors"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:layout_marginBottom="8dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_realtors_button"
-            app:layout_constraintBottom_toBottomOf="@+id/findPropertiesBtn"
-            app:layout_constraintEnd_toStartOf="@+id/findPropertiesBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFindProperties"
+            app:layout_constraintEnd_toStartOf="@+id/btnFindProperties"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/findPropertiesBtn"
+            app:layout_constraintTop_toTopOf="@+id/btnFindProperties"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/realtors" />
 
         <ImageButton
-            android:id="@+id/findPropertiesBtn"
+            android:id="@+id/btnFindProperties"
             android:layout_width="48dp"
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_properties_button"
-            app:layout_constraintBottom_toBottomOf="@+id/mortgageCalculatorBtn"
-            app:layout_constraintEnd_toStartOf="@+id/mortgageCalculatorBtn"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMortgageCalculator"
+            app:layout_constraintEnd_toStartOf="@+id/btnMortgageCalculator"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/findRealtorBtn"
-            app:layout_constraintTop_toTopOf="@+id/mortgageCalculatorBtn"
+            app:layout_constraintStart_toEndOf="@+id/btnFindRealtors"
+            app:layout_constraintTop_toTopOf="@+id/btnMortgageCalculator"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/properties" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
