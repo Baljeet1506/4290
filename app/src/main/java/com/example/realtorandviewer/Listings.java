@@ -5,15 +5,19 @@ public class Listings {
     private String street;
     private String city;
     private String price;
-
+    private String type;
+    private String landSize;
     public Listings() {
     }
 
-    public Listings(String houseNumber, String street, String city, String price) {
+
+    public Listings(String houseNumber, String street, String city, String price, String type, String landSize) {
         this.houseNumber = houseNumber;
         this.street = street;
         this.city = city;
         this.price = price;
+        this.type = type;
+        this.landSize = landSize;
     }
 
     public String getHouseNumber() {
@@ -47,4 +51,12 @@ public class Listings {
     public void setPrice(String price) {
         this.price = price;
     }
+
+    public String getType() { return type; }
+
+    public void setType(String type) { this.type = type; }
+
+    public String getLandSize() { return landSize; }
+
+    public void setLandSize(String landSize) { this.landSize = landSize; }
 }

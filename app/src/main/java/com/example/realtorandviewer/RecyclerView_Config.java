@@ -27,6 +27,8 @@ public class RecyclerView_Config {
         private TextView street;
         private TextView city;
         private TextView price;
+        private TextView type;
+        private TextView landSize;
 
         private String key;
 
@@ -38,6 +40,8 @@ public class RecyclerView_Config {
             street = (TextView) itemView.findViewById(R.id.street_txtView);
             city = (TextView) itemView.findViewById(R.id.city_txtView);
             price = (TextView) itemView.findViewById(R.id.price_txtView);
+            type = (TextView) itemView.findViewById(R.id.type_txtView);
+            landSize = (TextView) itemView.findViewById(R.id.landSize_txtView);
         }
 
         public void bind(Listings listings, String key){
@@ -45,6 +49,8 @@ public class RecyclerView_Config {
             street.setText(listings.getStreet());
             city.setText(listings.getCity());
             price.setText(listings.getPrice());
+            type.setText(listings.getType());
+            landSize.setText(listings.getLandSize());
         }
     }
 
