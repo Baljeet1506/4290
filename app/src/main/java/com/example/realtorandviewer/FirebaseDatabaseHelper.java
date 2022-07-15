@@ -25,7 +25,7 @@ public class FirebaseDatabaseHelper {
 
     public FirebaseDatabaseHelper() {
         mDatabase = FirebaseDatabase.getInstance();
-        mReferenceListings = mDatabase.getReference("Properties");
+        mReferenceListings = mDatabase.getReference("Properties").child(Login.uID_);
 
     }
 

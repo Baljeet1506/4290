@@ -32,6 +32,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     ProgressBar progressBar;
 
     public static int uType = 0;
+    public static String uID_ = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,6 +109,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                     if (user.isEmailVerified()) {
 
                         String uid = task.getResult().getUser().getUid();
+                        uID_ = uid;
 
                         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
                         firebaseDatabase.getReference().child("Users").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
