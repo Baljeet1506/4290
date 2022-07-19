@@ -14,7 +14,7 @@
 
         <TextView
             android:id="@+id/uNum_Text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:text="Unit Number"
@@ -24,9 +24,9 @@
 
         <TextView
             android:id="@+id/houseNum_Text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/uNum_Text"
+            android:layout_toEndOf="@id/uNum_Text"
             android:layout_marginLeft="10dp"
             android:text="House Number"
             android:textColor="#000"
@@ -35,7 +35,7 @@
 
         <TextView
             android:id="@+id/street_Text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/houseNum_Text"
             android:layout_marginLeft="10dp"
@@ -45,17 +45,19 @@
 
         <TextView
             android:id="@+id/city_Text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/street_Text"
-            android:layout_marginLeft="10dp"
+            android:layout_below="@id/houseNum_Text"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@id/street_Text"
             android:text="City"
             android:textColor="#000"
             android:textSize="25sp" />
 
         <TextView
             android:id="@+id/province_Text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/city_Text"
             android:layout_marginLeft="10dp"
@@ -65,17 +67,19 @@
 
         <TextView
             android:id="@+id/postal_Text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/province_Text"
-            android:layout_marginLeft="10dp"
+            android:layout_below="@id/city_Text"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="2dp"
+            android:layout_toRightOf="@id/province_Text"
             android:text="Postal"
             android:textColor="#000"
             android:textSize="25sp" />
 
         <TextView
             android:id="@+id/price_Text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/postal_Text"
             android:layout_marginLeft="10dp"
@@ -84,8 +88,20 @@
             android:textSize="25sp" />
 
         <TextView
+            android:id="@+id/age_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/postal_Text"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="3dp"
+            android:layout_toRightOf="@id/price_Text"
+            android:text="Age"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
             android:id="@+id/beds_Text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/price_Text"
             android:layout_marginLeft="10dp"
@@ -94,8 +110,20 @@
             android:textSize="25sp" />
 
         <TextView
+            android:id="@+id/baths_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/age_Text"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="-1dp"
+            android:layout_toRightOf="@id/beds_Text"
+            android:text="Baths"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
             android:id="@+id/land_Text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/beds_Text"
             android:layout_marginLeft="10dp"
@@ -103,41 +131,24 @@
             android:textColor="#000"
             android:textSize="25sp" />
 
-        <TextView
-            android:id="@+id/baths_Text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/land_Text"
-            android:layout_marginLeft="10dp"
-            android:text="Baths"
-            android:textColor="#000"
-            android:textSize="25sp" />
 
         <TextView
             android:id="@+id/floor_Text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/baths_Text"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@id/land_Text"
             android:text="Floor Size"
             android:textColor="#000"
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/age_Text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/floor_Text"
-            android:layout_marginLeft="10dp"
-            android:text="Age"
-            android:textColor="#000"
-            android:textSize="25sp" />
-
-        <TextView
             android:id="@+id/type_Text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/age_Text"
+            android:layout_below="@id/land_Text"
             android:layout_marginLeft="10dp"
             android:text="Type"
             android:textColor="#000"
@@ -145,10 +156,12 @@
 
         <TextView
             android:id="@+id/title_Text"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/type_Text"
-            android:layout_marginLeft="10dp"
+            android:layout_below="@id/floor_Text"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="-1dp"
+            android:layout_toRightOf="@id/type_Text"
             android:text="Title"
             android:textColor="#000"
             android:textSize="25sp" />

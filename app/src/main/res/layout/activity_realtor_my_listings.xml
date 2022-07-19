@@ -155,8 +155,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recview"
-        android:layout_width="409dp"
-        android:layout_height="474dp"
+        android:layout_width="412dp"
+        android:layout_height="590dp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
