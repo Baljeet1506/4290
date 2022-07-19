@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="10dp"
-    app:cardCornerRadius="10dp"
+    android:elevation="5dp"
+    app:cardCornerRadius="5dp"
     app:cardUseCompatPadding="true">
 
     <RelativeLayout
@@ -13,92 +13,147 @@
         android:padding="15dp">
 
         <TextView
-            android:id="@+id/type_txtView"
+            android:id="@+id/uNum_Text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/roboto_slab"
-            android:text="Type"
+            android:text="Unit Number"
             android:textColor="#000"
             android:textSize="25sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/price_txtView"
+            android:id="@+id/houseNum_Text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/type_txtView"
+            android:layout_below="@id/uNum_Text"
             android:layout_marginLeft="10dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/roboto_slab"
-            android:text="Price"
-            android:textColor="#000"
-            android:textSize="25sp"
-
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/street_txtView" />
-
-        <TextView
-            android:id="@+id/houseNumber_txtView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/price_txtView"
-            android:layout_marginLeft="10dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/roboto_slab"
             android:text="House Number"
             android:textColor="#000"
             android:textSize="25sp" />
 
-        <TextView
-            android:id="@+id/landSize_txtView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/price_txtView"
-            android:layout_alignEnd="@+id/price_txtView"
-            android:layout_alignBottom="@+id/price_txtView"
-            android:layout_marginLeft="272dp"
-            android:layout_marginEnd="31dp"
-            android:layout_marginBottom="2dp"
-            android:fontFamily="@font/roboto_slab"
-            android:text="Sq ft"
-            android:textColor="#000"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/street_txtView"
-            android:layout_width="140dp"
-            android:layout_height="33dp"
-            android:layout_above="@+id/houseNumber_txtView"
-            android:layout_alignEnd="@+id/type_txtView"
-            android:layout_marginLeft="275dp"
-            android:layout_marginEnd="26dp"
-            android:layout_marginBottom="-32dp"
-            android:text="Street"
-            android:textColor="#000"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/city_txtView"
+            android:id="@+id/street_Text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/houseNumber_txtView"
+            android:layout_below="@id/houseNum_Text"
             android:layout_marginLeft="10dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="@font/roboto_slab"
+            android:text="Street"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/city_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/street_Text"
+            android:layout_marginLeft="10dp"
             android:text="City"
             android:textColor="#000"
-            android:textSize="25sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/province_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/city_Text"
+            android:layout_marginLeft="10dp"
+            android:text="Province"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/postal_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/province_Text"
+            android:layout_marginLeft="10dp"
+            android:text="Postal"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/price_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/postal_Text"
+            android:layout_marginLeft="10dp"
+            android:text="Price"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/beds_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/price_Text"
+            android:layout_marginLeft="10dp"
+            android:text="Beds"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/land_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/beds_Text"
+            android:layout_marginLeft="10dp"
+            android:text="Land Size"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/baths_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/land_Text"
+            android:layout_marginLeft="10dp"
+            android:text="Baths"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/floor_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/baths_Text"
+            android:layout_marginLeft="10dp"
+            android:text="Floor Size"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/age_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/floor_Text"
+            android:layout_marginLeft="10dp"
+            android:text="Age"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/type_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/age_Text"
+            android:layout_marginLeft="10dp"
+            android:text="Type"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+        <TextView
+            android:id="@+id/title_Text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/type_Text"
+            android:layout_marginLeft="10dp"
+            android:text="Title"
+            android:textColor="#000"
+            android:textSize="25sp" />
+
+
     </RelativeLayout>
+
 </androidx.cardview.widget.CardView>

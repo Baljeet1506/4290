@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -15,35 +18,24 @@ public class RealtorListings extends AppCompatActivity {
     //  FloatingActionButton listingsBtn = findViewById(R.id.listingsBtn);
     ImageButton backBtn, findRealtorBtn, mortgageCalBtn, findPropertiesBtn, profileBtn;
 
-    private RecyclerView mRecyclerView;
+    RecyclerView recview;
+    myadapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_realtor_my_listings);
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_listings);
-        new FirebaseDatabaseHelper().readListings(new FirebaseDatabaseHelper.DataStatus() {
-            @Override
-            public void DataIsLoaded(List<Listings> listingsList, List<String> keys) {
-                new RecyclerView_Config().setConfig(mRecyclerView, RealtorListings.this, listingsList, keys);
-            }
+        recview = (RecyclerView) findViewById(R.id.recview);
+        recview.setLayoutManager(new LinearLayoutManager(this));
 
-            @Override
-            public void DataIsInserted() {
+        FirebaseRecyclerOptions<Properties> options =
+                new FirebaseRecyclerOptions.Builder<Properties>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Properties").child(Login.uID_), Properties.class)
+                        .build();
 
-            }
-
-            @Override
-            public void DataIsUpdated() {
-
-            }
-
-            @Override
-            public void DataIsDeleted() {
-
-            }
-        });
+        adapter = new myadapter(options);
+        recview.setAdapter(adapter);
 
         backBtn = findViewById(R.id.btnBack);
         findRealtorBtn = findViewById(R.id.btnFindRealtors);
@@ -71,4 +63,17 @@ public class RealtorListings extends AppCompatActivity {
 
         listingsBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorAddListings.class)));
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
+    }
+
 }
