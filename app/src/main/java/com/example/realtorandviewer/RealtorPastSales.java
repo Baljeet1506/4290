@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class RealtorPastSales extends AppCompatActivity {
     ImageButton backBtn;
 
@@ -22,6 +24,9 @@ public class RealtorPastSales extends AppCompatActivity {
             } else
                 startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
         });
+
+        FloatingActionButton addPastSaleBtn = findViewById(R.id.addPastSaleBtn);
+        addPastSaleBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorAddPastSale.class)));
 
     }
 }

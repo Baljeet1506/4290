@@ -1,5 +1,7 @@
 package com.example.realtorandviewer;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,46 +11,42 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RealtorAddListings extends AppCompatActivity implements View.OnClickListener {
+public class RealtorAddPastSale extends AppCompatActivity implements View.OnClickListener {
 
     EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
-    Button addListingBtn;
-    ImageButton backBtn;
+    Button addPastSaleBtn;
+    ImageButton backBtnPast;
     DatabaseReference ref;
     Properties listing;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_listings);
+        setContentView(R.layout.activity_realtor_add_past_sale);
 
-        backBtn = findViewById(R.id.btnBack);
+        unitNumber = findViewById(R.id.etPastUnitNum);
+        houseNumber = findViewById(R.id.etPastHouseNum);
+        street = findViewById(R.id.etPastStreet);
+        city = findViewById(R.id.etPastCity);
+        province = findViewById(R.id.etPastProvince);
+        postal = findViewById(R.id.etPastPostal);
+        price = findViewById(R.id.etPastPrice);
+        beds = findViewById(R.id.etPastBeds);
+        landSize = findViewById(R.id.etPastLand);
+        baths = findViewById(R.id.etPastBaths);
+        floorSize = findViewById(R.id.etPastFloorSize);
+        age = findViewById(R.id.etPastAge);
+        type = findViewById(R.id.etPastType);
+        title = findViewById(R.id.etPastTitle);
 
-        unitNumber = findViewById(R.id.editTextUnitNum);
-        houseNumber = findViewById(R.id.editTextHouseNum);
-        street = findViewById(R.id.editTextStreet);
-        city = findViewById(R.id.editTextCity);
-        province = findViewById(R.id.editTextProvince);
-        postal = findViewById(R.id.editTextPostal);
-        price = findViewById(R.id.editTextPrice);
-        beds = findViewById(R.id.editTextBeds);
-        landSize = findViewById(R.id.editTextLand);
-        baths = findViewById(R.id.editTextBaths);
-        floorSize = findViewById(R.id.editTextFloorSize);
-        age = findViewById(R.id.editTextAge);
-        type = findViewById(R.id.editTextType);
-        title = findViewById(R.id.editTextTitle);
+        addPastSaleBtn = findViewById(R.id.btnAddPastSale);
+        addPastSaleBtn.setOnClickListener(this);
 
-        addListingBtn = findViewById(R.id.btnAddListing);
-        addListingBtn.setOnClickListener(this);
-
-        backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorListings.class)));
-
+        backBtnPast = findViewById(R.id.btnBackPast);
+        backBtnPast.setOnClickListener(this);
         listing = new Properties();
     }
 
@@ -56,13 +54,17 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btnAddListing:
-                addListing();
+            case R.id.btnAddPastSale:
+                addPastSale();
+                break;
+            case R.id.btnBackPast:
+                startActivity(new Intent(getApplicationContext(), RealtorPastSales.class));
                 break;
         }
     }
 
-    private void addListing() {
+    private void addPastSale() {
+
         String unitNumber_ = unitNumber.getText().toString();
         String houseNumber_ = houseNumber.getText().toString();
         String street_ = street.getText().toString();
@@ -146,8 +148,7 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
             return;
         }
 
-        //progressBar.setVisibility(View.VISIBLE);
-        ref = FirebaseDatabase.getInstance().getReference().child("Properties").child(Login.uID_);
+        ref = FirebaseDatabase.getInstance().getReference().child("PastSales").child(Login.uID_);
 
         listing.setUnitNumber(unitNumber_);
         listing.setHouseNumber(houseNumber_);
@@ -165,7 +166,8 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         listing.setTitle(title_);
 
         ref.push().setValue(listing);
-        Toast.makeText(RealtorAddListings.this, "Listing is added successfully", Toast.LENGTH_LONG).show();
-        startActivity(new Intent(getApplicationContext(), RealtorListings.class));
+        Toast.makeText(RealtorAddPastSale.this, "Listing is added successfully", Toast.LENGTH_LONG).show();
+        startActivity(new Intent(getApplicationContext(), RealtorPastSales.class));
+
     }
 }
