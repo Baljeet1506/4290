@@ -82,7 +82,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.92"
-        app:srcCompat="@drawable/plus_square" />
+        app:srcCompat="@drawable/plus_square"
+        android:focusable="true" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/navigation"
@@ -154,7 +155,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recview"
+        android:id="@+id/recViewMyListings"
         android:layout_width="412dp"
         android:layout_height="590dp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"

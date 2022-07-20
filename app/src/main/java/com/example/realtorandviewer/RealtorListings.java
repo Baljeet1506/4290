@@ -15,9 +15,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.List;
 
 public class RealtorListings extends AppCompatActivity {
-    //  FloatingActionButton listingsBtn = findViewById(R.id.listingsBtn);
-    ImageButton backBtn, findRealtorBtn, mortgageCalBtn, findPropertiesBtn, profileBtn;
 
+    ImageButton backBtn, findRealtorBtn, mortgageCalBtn, findPropertiesBtn, profileBtn;
     RecyclerView recview;
     myadapter adapter;
 
@@ -26,7 +25,7 @@ public class RealtorListings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_realtor_my_listings);
 
-        recview = (RecyclerView) findViewById(R.id.recview);
+        recview = (RecyclerView) findViewById(R.id.recViewMyListings);
         recview.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions<Properties> options =
