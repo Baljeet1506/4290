@@ -2,7 +2,7 @@ package com.example.realtorandviewer;
 
 public class Properties {
 
-    String unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
+    String unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title, uID;
 
 
     public Properties() {
@@ -24,6 +24,13 @@ public class Properties {
         this.age = age;
         this.type = type;
         this.title = title;
+    }
+    public String getuID() {
+        return uID;
+    }
+
+    public void setuID(String uID) {
+        this.uID = uID;
     }
 
     public String getUnitNumber() {

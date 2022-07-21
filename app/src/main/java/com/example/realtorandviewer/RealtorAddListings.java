@@ -179,6 +179,7 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         listing.setAge(age_);
         listing.setType(type_);
         listing.setTitle(title_);
+        listing.setuID(Login.uID_);
         ref2.push().setValue(listing);
 
         Toast.makeText(RealtorAddListings.this, "Listing is added successfully", Toast.LENGTH_LONG).show();
