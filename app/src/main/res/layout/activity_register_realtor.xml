@@ -224,7 +224,7 @@
         android:textSize="16sp"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnRegisterRealtor"
+        app:layout_constraintEnd_toStartOf="@+id/btn_RegisterRealtor"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideLeft"
         app:layout_constraintTop_toBottomOf="@+id/scrollView3"
@@ -232,7 +232,7 @@
         app:strokeWidth="2dp" />
 
     <Button
-        android:id="@+id/btnRegisterRealtor"
+        android:id="@+id/btn_RegisterRealtor"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:backgroundTint="@color/green"

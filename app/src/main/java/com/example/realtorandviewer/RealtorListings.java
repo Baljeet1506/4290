@@ -30,7 +30,7 @@ public class RealtorListings extends AppCompatActivity {
 
         FirebaseRecyclerOptions<Properties> options =
                 new FirebaseRecyclerOptions.Builder<Properties>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Properties").child(Login.uID_), Properties.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_), Properties.class)
                         .build();
 
         adapter = new myadapter(options);

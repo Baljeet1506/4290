@@ -19,7 +19,7 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
     EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
     Button addListingBtn;
     ImageButton backBtn;
-    DatabaseReference ref;
+    DatabaseReference ref1, ref2;
     Properties listing;
 
     @Override
@@ -147,8 +147,7 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         }
 
         //progressBar.setVisibility(View.VISIBLE);
-        ref = FirebaseDatabase.getInstance().getReference().child("Properties").child(Login.uID_);
-
+        ref1 = FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_);
         listing.setUnitNumber(unitNumber_);
         listing.setHouseNumber(houseNumber_);
         listing.setStreet(street_);
@@ -163,8 +162,25 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         listing.setAge(age_);
         listing.setType(type_);
         listing.setTitle(title_);
+        ref1.push().setValue(listing);
 
-        ref.push().setValue(listing);
+        ref2 = FirebaseDatabase.getInstance().getReference().child("AllProperties");
+        listing.setUnitNumber(unitNumber_);
+        listing.setHouseNumber(houseNumber_);
+        listing.setStreet(street_);
+        listing.setCity(city_);
+        listing.setProvince(province_);
+        listing.setPostal(postal_);
+        listing.setPrice(price_);
+        listing.setBeds(beds_);
+        listing.setLandSize(landSize_);
+        listing.setBaths(baths_);
+        listing.setFloorSize(floorSize_);
+        listing.setAge(age_);
+        listing.setType(type_);
+        listing.setTitle(title_);
+        ref2.push().setValue(listing);
+
         Toast.makeText(RealtorAddListings.this, "Listing is added successfully", Toast.LENGTH_LONG).show();
         startActivity(new Intent(getApplicationContext(), RealtorListings.class));
     }

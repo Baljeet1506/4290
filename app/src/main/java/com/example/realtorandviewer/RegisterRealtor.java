@@ -39,7 +39,7 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
         password = findViewById(R.id.editTxtRegPassword);
         phNumber = findViewById(R.id.editTextPhNumber);
 
-        registerBtn = findViewById(R.id.btnRegisterRealtor);
+        registerBtn = findViewById(R.id.btn_RegisterRealtor);
         registerBtn.setOnClickListener(this);
 
         cancelBtn = findViewById(R.id.btnCancelRealtor);
@@ -50,14 +50,14 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
 
         mAuth = FirebaseAuth.getInstance();
 
-        progressBar = findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.progressBar2);
     }
 
     @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.btnRegisterRealtor:
+            case R.id.btn_RegisterRealtor:
                 registerUser();
                 break;
             case R.id.btnCancelRealtor:
@@ -127,7 +127,6 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
-
                                                 Toast.makeText(RegisterRealtor.this, "User is registered successfully", Toast.LENGTH_SHORT).show();
                                                 progressBar.setVisibility(View.GONE);
                                                 startActivity(new Intent(getApplicationContext(), Login.class));
