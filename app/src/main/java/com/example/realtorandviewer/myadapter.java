@@ -1,15 +1,23 @@
 package com.example.realtorandviewer;
 
+import android.annotation.SuppressLint;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.FirebaseDatabase;
+import com.orhanobut.dialogplus.DialogPlus;
+import com.orhanobut.dialogplus.ViewHolder;
 
 public class myadapter extends FirebaseRecyclerAdapter<Properties, myadapter.myviewholder> {
 
@@ -18,7 +26,7 @@ public class myadapter extends FirebaseRecyclerAdapter<Properties, myadapter.myv
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull Properties Properties) {
+    protected void onBindViewHolder(@NonNull final myviewholder holder, @SuppressLint("RecyclerView") final int position, @NonNull final Properties Properties) {
 
         holder.unitNumber.setText(Properties.getUnitNumber());
         holder.houseNumber.setText(Properties.getHouseNumber());
@@ -35,6 +43,45 @@ public class myadapter extends FirebaseRecyclerAdapter<Properties, myadapter.myv
         holder.type.setText(Properties.getType());
         holder.title.setText(Properties.getTitle());
 
+        holder.edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(holder.houseNumber.getContext(), "Testing the button", Toast.LENGTH_LONG).show();
+                final DialogPlus dialogPlus = DialogPlus.newDialog(holder.houseNumber.getContext())
+                        .setContentHolder(new ViewHolder(R.layout.dialogcontent))
+                        .setExpanded(true, 1100)
+                        .create();
+                dialogPlus.show();
+            }
+        });
+
+        holder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(holder.houseNumber.getContext());
+                builder.setTitle("Delete Panel");
+                builder.setMessage("Delete...?");
+
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_)
+                                .child(getRef(position).getKey()).removeValue();
+                    }
+                });
+
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                    }
+                });
+
+                builder.show();
+            }
+        });
+
+
     }
 
     @NonNull
@@ -42,13 +89,13 @@ public class myadapter extends FirebaseRecyclerAdapter<Properties, myadapter.myv
     public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listings_list_item, parent, false);
-
         return new myviewholder(view);
     }
 
     class myviewholder extends RecyclerView.ViewHolder {
 
         TextView unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
+        Button edit, delete;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
@@ -67,6 +114,9 @@ public class myadapter extends FirebaseRecyclerAdapter<Properties, myadapter.myv
             age = (TextView) itemView.findViewById(R.id.age_Text);
             type = (TextView) itemView.findViewById(R.id.type_Text);
             title = (TextView) itemView.findViewById(R.id.title_Text);
+
+            edit = (Button) itemView.findViewById(R.id.editListingBtn);
+            delete = (Button) itemView.findViewById(R.id.deleteListingBtn);
 
 
         }
