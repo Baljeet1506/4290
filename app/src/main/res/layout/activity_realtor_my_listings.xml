@@ -4,163 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#D9D9D9"
-    android:elevation="20dp"
+
     tools:context=".RealtorListings">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/titleBar"
-        android:layout_width="match_parent"
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/shape_square"
-        android:elevation="@dimen/spacing_large"
+        android:layout_alignParentTop="true"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search Here"
+        app:layout_constraintBottom_toTopOf="@+id/recViewMyListings"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="@string/back"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/back" />
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_slab"
-            android:text="@string/my_listings"
-            android:textAllCaps="false"
-            android:textColor="@color/green"
-            android:textSize="@dimen/h1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnBack"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.93" />
+        tools:ignore="MissingConstraints" />
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+ <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/listingsBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:clickable="true"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
+
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.907"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.92"
-        app:srcCompat="@drawable/plus_square"
-        android:focusable="true" />
+        app:srcCompat="@drawable/plus_square" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#333333"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
-
-        <ImageButton
-            android:id="@+id/btnProfile"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:backgroundTint="#00FFFFFF"
-            android:contentDescription="@string/nav_profile_button"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnMortgageCalculator"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/profile_select" />
-
-        <ImageButton
-            android:id="@+id/btnMortgageCalculator"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:backgroundTint="#00FFFFFF"
-            android:contentDescription="@string/nav_calculator_button"
-            app:layout_constraintBottom_toBottomOf="@+id/btnProfile"
-            app:layout_constraintEnd_toStartOf="@+id/btnProfile"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnFindProperties"
-            app:layout_constraintTop_toTopOf="@+id/btnProfile"
-            app:srcCompat="@drawable/calculator" />
-
-        <ImageButton
-            android:id="@+id/btnFindRealtors"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_marginBottom="8dp"
-            android:backgroundTint="#00FFFFFF"
-            android:contentDescription="@string/nav_find_realtors_button"
-            app:layout_constraintBottom_toBottomOf="@+id/btnFindProperties"
-            app:layout_constraintEnd_toStartOf="@+id/btnFindProperties"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/btnFindProperties"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/realtors" />
-
-        <ImageButton
-            android:id="@+id/btnFindProperties"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:backgroundTint="#00FFFFFF"
-            android:contentDescription="@string/nav_find_properties_button"
-            app:layout_constraintBottom_toBottomOf="@+id/btnMortgageCalculator"
-            app:layout_constraintEnd_toStartOf="@+id/btnMortgageCalculator"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnFindRealtors"
-            app:layout_constraintTop_toTopOf="@+id/btnMortgageCalculator"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/properties" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recViewMyListings"
-        android:layout_width="412dp"
-        android:layout_height="590dp"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        android:layout_width="353dp"
+        android:layout_height="403dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleBar"
-        app:layout_constraintVertical_bias="0.489" />
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,27 +3,30 @@ package com.example.realtorandviewer;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
 
-public class myadapter extends FirebaseRecyclerAdapter<Properties, myadapter.myviewholder> {
+import java.util.HashMap;
+import java.util.Map;
 
-    public myadapter(@NonNull FirebaseRecyclerOptions<Properties> options) {
+public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.myviewholder> {
+
+    public myadapter2(@NonNull FirebaseRecyclerOptions<Properties> options) {
         super(options);
     }
 
@@ -55,7 +58,79 @@ public class myadapter extends FirebaseRecyclerAdapter<Properties, myadapter.myv
                         .create();
 
 
+                View myview=dialogPlus.getHolderView();
+                final EditText unitNumber=myview.findViewById(R.id.uNumber);
+                final EditText houseNumber=myview.findViewById(R.id.hNumber);
+                final EditText street=myview.findViewById(R.id.street);
+                final EditText city=myview.findViewById(R.id.city);
+                final EditText province=myview.findViewById(R.id.province);
+                final EditText postal=myview.findViewById(R.id.postal);
+                final EditText price=myview.findViewById(R.id.price);
+                final EditText beds=myview.findViewById(R.id.beds);
+                final EditText baths=myview.findViewById(R.id.baths);
+                final EditText landSize=myview.findViewById(R.id.landSize);
+              /*  final EditText floorSize=myview.findViewById(R.id.floorSize);
+                final EditText type=myview.findViewById(R.id.type);
+                final EditText age=myview.findViewById(R.id.age);*/
+               // final EditText title=myview.findViewById(R.id.title);
+
+
+                Button submit=myview.findViewById(R.id.usubmit);
+
+                unitNumber.setText(Properties.getUnitNumber());
+                houseNumber.setText(Properties.getHouseNumber());
+                street.setText(Properties.getStreet());
+                city.setText(Properties.getCity());
+                province.setText(Properties.getProvince());
+                postal.setText(Properties.getPostal());
+                price.setText(Properties.getPrice());
+                beds.setText(Properties.getBeds());
+                baths.setText(Properties.getBaths());
+                landSize.setText(Properties.getLandSize());
+               /* floorSize.setText(Properties.getFloorSize());
+                type.setText(Properties.getType());
+                age.setText(Properties.getAge());*/
+               // title.setText(Properties.getTitle());
+
                 dialogPlus.show();
+
+               submit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Map<String,Object> map=new HashMap<>();
+                        map.put("unitNumber",unitNumber.getText().toString());
+                        map.put("houseNumber",houseNumber.getText().toString());
+                        map.put("Street",street.getText().toString());
+                        map.put("City",city.getText().toString());
+                        map.put("Province",province.getText().toString());
+                        map.put("Postal",postal.getText().toString());
+                        map.put("Price",price.getText().toString());
+                        map.put("Beds",beds.getText().toString());
+                        map.put("Baths",baths.getText().toString());
+                        map.put("LandSize",landSize.getText().toString());
+                      /* map.put("Floor",floorSize.getText().toString());
+                        map.put("Type",type.getText().toString());
+                        map.put("Age",age.getText().toString());
+                        map.put("Title",title.getText().toString());*/
+
+                        FirebaseDatabase.getInstance().getReference().child("MyProperties")
+                                .child(getRef(position).getKey()).updateChildren(map)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        dialogPlus.dismiss();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        dialogPlus.dismiss();
+                                    }
+                                });
+                    }
+                });
+
+
             }
         });
 
@@ -69,7 +144,7 @@ public class myadapter extends FirebaseRecyclerAdapter<Properties, myadapter.myv
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        FirebaseDatabase.getInstance().getReference().child("PastSales").child(Login.uID_)
+                        FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_)
                                 .child(getRef(position).getKey()).removeValue();
                     }
                 });
