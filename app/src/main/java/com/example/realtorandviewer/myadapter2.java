@@ -54,7 +54,7 @@ public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.m
               // Toast.makeText(holder.houseNumber.getContext(), "Testing the button", Toast.LENGTH_LONG).show();
                 final DialogPlus dialogPlus = DialogPlus.newDialog(holder.houseNumber.getContext())
                         .setContentHolder(new ViewHolder(R.layout.dialogcontent1))
-                        .setExpanded(true, 1100)
+                        .setExpanded(true, 2000)
                         .create();
 
 
@@ -113,7 +113,7 @@ public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.m
                         map.put("Age",age.getText().toString());
                         map.put("Title",title.getText().toString());*/
 
-                        FirebaseDatabase.getInstance().getReference().child("MyProperties")
+                        FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_)
                                 .child(getRef(position).getKey()).updateChildren(map)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override

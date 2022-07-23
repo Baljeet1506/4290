@@ -170,9 +170,9 @@
             android:id="@+id/editListingBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/floor_Text"
-            android:layout_marginLeft="80dp"
-            android:layout_toRightOf="@id/title_Text"
+            android:layout_below="@id/baths_Text"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@id/floor_Text"
             android:text="EDIT" />
 
         <Button
@@ -180,7 +180,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/postal_Text"
-            android:layout_marginLeft="80dp"
+            android:layout_marginLeft="20dp"
             android:layout_toRightOf="@id/age_Text"
             android:text="DELETE" />
 
