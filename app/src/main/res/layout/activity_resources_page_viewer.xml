@@ -273,7 +273,7 @@
         android:id="@+id/titleBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_square"
+        android:background="@drawable/shape_rounded_bottom"
         android:elevation="@dimen/spacing_large"
         app:layout_constraintBottom_toTopOf="@+id/content_scrolling"
         app:layout_constraintEnd_toEndOf="parent"

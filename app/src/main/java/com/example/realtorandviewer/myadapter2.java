@@ -3,6 +3,7 @@ package com.example.realtorandviewer;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,10 +55,10 @@ public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.m
             public void onClick(View view) {
                 // Toast.makeText(holder.houseNumber.getContext(), "Testing the button", Toast.LENGTH_LONG).show();
                 final DialogPlus dialogPlus = DialogPlus.newDialog(holder.houseNumber.getContext())
+                        .setContentBackgroundResource(R.color.transparent)
                         .setContentHolder(new ViewHolder(R.layout.dialogcontent1))
-                        .setExpanded(true, 2000)
+                        .setExpanded(true, 1200)
                         .create();
-
 
                 View myview = dialogPlus.getHolderView();
                 final EditText unitNumber = myview.findViewById(R.id.uNumber);

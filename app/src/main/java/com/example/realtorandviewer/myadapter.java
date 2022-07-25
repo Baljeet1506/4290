@@ -51,8 +51,9 @@ public class myadapter extends FirebaseRecyclerAdapter<Properties, myadapter.myv
             public void onClick(View view) {
               // Toast.makeText(holder.houseNumber.getContext(), "Testing the button", Toast.LENGTH_LONG).show();
                 final DialogPlus dialogPlus = DialogPlus.newDialog(holder.houseNumber.getContext())
+                        .setContentBackgroundResource(R.color.transparent)
                         .setContentHolder(new ViewHolder(R.layout.dialogcontent1))
-                        .setExpanded(true, 1100)
+                        .setExpanded(true, 1200)
                         .create();
 
 
