@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -51,31 +52,31 @@ public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.m
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              // Toast.makeText(holder.houseNumber.getContext(), "Testing the button", Toast.LENGTH_LONG).show();
+                // Toast.makeText(holder.houseNumber.getContext(), "Testing the button", Toast.LENGTH_LONG).show();
                 final DialogPlus dialogPlus = DialogPlus.newDialog(holder.houseNumber.getContext())
                         .setContentHolder(new ViewHolder(R.layout.dialogcontent1))
                         .setExpanded(true, 2000)
                         .create();
 
 
-                View myview=dialogPlus.getHolderView();
-                final EditText unitNumber=myview.findViewById(R.id.uNumber);
-                final EditText houseNumber=myview.findViewById(R.id.hNumber);
-                final EditText street=myview.findViewById(R.id.street);
-                final EditText city=myview.findViewById(R.id.city);
-                final EditText province=myview.findViewById(R.id.province);
-                final EditText postal=myview.findViewById(R.id.postal);
-                final EditText price=myview.findViewById(R.id.price);
-                final EditText beds=myview.findViewById(R.id.beds);
-                final EditText baths=myview.findViewById(R.id.baths);
-                final EditText landSize=myview.findViewById(R.id.landSize);
-              /*  final EditText floorSize=myview.findViewById(R.id.floorSize);
-                final EditText type=myview.findViewById(R.id.type);
-                final EditText age=myview.findViewById(R.id.age);*/
-               // final EditText title=myview.findViewById(R.id.title);
+                View myview = dialogPlus.getHolderView();
+                final EditText unitNumber = myview.findViewById(R.id.uNumber);
+                final EditText houseNumber = myview.findViewById(R.id.hNumber);
+                final EditText street = myview.findViewById(R.id.street);
+                final EditText city = myview.findViewById(R.id.city);
+                final EditText province = myview.findViewById(R.id.province);
+                final EditText postal = myview.findViewById(R.id.postal);
+                final EditText price = myview.findViewById(R.id.price);
+                final EditText beds = myview.findViewById(R.id.beds);
+                final EditText baths = myview.findViewById(R.id.baths);
+                final EditText landSize = myview.findViewById(R.id.landSize);
+                final EditText floorSize = myview.findViewById(R.id.floorSize);
+                final EditText type = myview.findViewById(R.id.type);
+                final EditText age = myview.findViewById(R.id.age);
+                final EditText title = myview.findViewById(R.id.title);
 
 
-                Button submit=myview.findViewById(R.id.usubmit);
+                Button submit = myview.findViewById(R.id.usubmit);
 
                 unitNumber.setText(Properties.getUnitNumber());
                 houseNumber.setText(Properties.getHouseNumber());
@@ -87,31 +88,31 @@ public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.m
                 beds.setText(Properties.getBeds());
                 baths.setText(Properties.getBaths());
                 landSize.setText(Properties.getLandSize());
-               /* floorSize.setText(Properties.getFloorSize());
+                floorSize.setText(Properties.getFloorSize());
                 type.setText(Properties.getType());
-                age.setText(Properties.getAge());*/
-               // title.setText(Properties.getTitle());
+                age.setText(Properties.getAge());
+                title.setText(Properties.getTitle());
 
                 dialogPlus.show();
 
-               submit.setOnClickListener(new View.OnClickListener() {
+                submit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        Map<String,Object> map=new HashMap<>();
-                        map.put("unitNumber",unitNumber.getText().toString());
-                        map.put("houseNumber",houseNumber.getText().toString());
-                        map.put("Street",street.getText().toString());
-                        map.put("City",city.getText().toString());
-                        map.put("Province",province.getText().toString());
-                        map.put("Postal",postal.getText().toString());
-                        map.put("Price",price.getText().toString());
-                        map.put("Beds",beds.getText().toString());
-                        map.put("Baths",baths.getText().toString());
-                        map.put("LandSize",landSize.getText().toString());
-                      /* map.put("Floor",floorSize.getText().toString());
-                        map.put("Type",type.getText().toString());
-                        map.put("Age",age.getText().toString());
-                        map.put("Title",title.getText().toString());*/
+                        Map<String, Object> map = new HashMap<>();
+                        map.put("unitNumber", unitNumber.getText().toString());
+                        map.put("houseNumber", houseNumber.getText().toString());
+                        map.put("Street", street.getText().toString());
+                        map.put("City", city.getText().toString());
+                        map.put("Province", province.getText().toString());
+                        map.put("Postal", postal.getText().toString());
+                        map.put("Price", price.getText().toString());
+                        map.put("Beds", beds.getText().toString());
+                        map.put("Baths", baths.getText().toString());
+                        map.put("LandSize", landSize.getText().toString());
+                        map.put("Floor", floorSize.getText().toString());
+                        map.put("Type", type.getText().toString());
+                        map.put("Age", age.getText().toString());
+                        map.put("Title", title.getText().toString());
 
                         FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_)
                                 .child(getRef(position).getKey()).updateChildren(map)
@@ -164,7 +165,6 @@ public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.m
     }
 
 
-
     @NonNull
     @Override
     public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -176,7 +176,7 @@ public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.m
     class myviewholder extends RecyclerView.ViewHolder {
 
         TextView unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
-        Button edit, delete;
+        ImageButton edit, delete;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
@@ -196,8 +196,8 @@ public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.m
             type = (TextView) itemView.findViewById(R.id.type_Text);
             title = (TextView) itemView.findViewById(R.id.title_Text);
 
-            edit = (Button) itemView.findViewById(R.id.editListingBtn);
-            delete = (Button) itemView.findViewById(R.id.deleteListingBtn);
+            edit = (ImageButton) itemView.findViewById(R.id.editListingBtn);
+            delete = (ImageButton) itemView.findViewById(R.id.deleteListingBtn);
 
 
         }

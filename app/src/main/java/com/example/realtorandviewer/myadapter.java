@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -101,7 +102,7 @@ public class myadapter extends FirebaseRecyclerAdapter<Properties, myadapter.myv
     class myviewholder extends RecyclerView.ViewHolder {
 
         TextView unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
-        Button edit, delete;
+        ImageButton edit, delete;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
@@ -121,8 +122,8 @@ public class myadapter extends FirebaseRecyclerAdapter<Properties, myadapter.myv
             type = (TextView) itemView.findViewById(R.id.type_Text);
             title = (TextView) itemView.findViewById(R.id.title_Text);
 
-            edit = (Button) itemView.findViewById(R.id.editListingBtn);
-            delete = (Button) itemView.findViewById(R.id.deleteListingBtn);
+            edit = (ImageButton) itemView.findViewById(R.id.editListingBtn);
+            delete = (ImageButton) itemView.findViewById(R.id.deleteListingBtn);
 
 
         }

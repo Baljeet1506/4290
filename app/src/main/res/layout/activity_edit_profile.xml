@@ -6,21 +6,54 @@
     android:layout_height="match_parent"
     tools:context=".HomePageViewer">
 
-    <include
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/titleBar"
-        layout="@layout/titlebar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_square"
+        android:elevation="@dimen/spacing_large"
         app:layout_constraintBottom_toTopOf="@+id/profile_section"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/back" />
 
         <TextView
             android:id="@+id/title"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="dfsdf" />
-    </include>
+            android:fontFamily="@font/roboto_slab"
+            android:text="@string/add_listing"
+            android:textAllCaps="false"
+            android:textColor="@color/green"
+            android:textSize="@dimen/h1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Button
         android:id="@+id/save"
@@ -71,10 +104,9 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/content_scrolling"
         app:layout_constraintEnd_toStartOf="@+id/guideRight"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideLeft"
         app:layout_constraintTop_toBottomOf="@id/titleBar"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/guideLeft">
 
         <ImageButton
             android:id="@+id/add_image"
