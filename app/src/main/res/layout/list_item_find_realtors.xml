@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="11dp"
+    app:cardCornerRadius="12dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp">
+
+
+        <TextView
+            android:id="@+id/firstname_Text_FindRealtor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:fontFamily="@font/roboto_slab"
+            android:text="First Name"
+            android:textColor="#000"
+            android:textSize="@dimen/h1" />
+
+        <TextView
+            android:id="@+id/lastname_Text_FindProperties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/firstname_Text_FindRealtor"
+            android:fontFamily="@font/roboto_slab"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:text="Last Name"
+            android:textColor="#000"
+            android:textSize="@dimen/h1" />
+
+        <TextView
+            android:id="@+id/phoneNumber_Text_FindProperties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lastname_Text_FindProperties"
+            android:fontFamily="@font/roboto_slab"
+            android:paddingEnd="10dp"
+            android:text="Phone Number"
+            android:textColor="#000"
+            android:textSize="@dimen/h1" />
+
+        <TextView
+            android:id="@+id/email_Text_FindProperties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phoneNumber_Text_FindProperties"
+            android:fontFamily="@font/roboto_slab"
+            android:paddingEnd="10dp"
+            android:text="Email"
+            android:textColor="#000"
+            android:textSize="@dimen/h1" />
+
+<!--        <TextView
+            android:id="@+id/userType_Text_FindProperties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phoneNumber_Text_FindProperties"
+            android:layout_toEndOf="@id/email_Text_FindProperties"
+            android:fontFamily="@font/roboto_slab"
+            android:paddingEnd="10dp"
+            android:text="Email"
+            android:textColor="#000"
+            android:textSize="@dimen/h1"
+             />-->
+
+
+        <ImageButton
+            android:id="@+id/favouriteListingsBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="#00FFFFFF"
+            android:src="@drawable/edit"
+            android:text="Add to Favourites" />
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
+

@@ -111,6 +111,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
                         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
                         firebaseDatabase.getReference().child("Users").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
+
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {
                                 int userType = snapshot.getValue(Integer.class);
