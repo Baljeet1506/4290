@@ -8,13 +8,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recViewFindProperties"
-        android:layout_width="349dp"
-        android:layout_height="538dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.378" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/navigation"
@@ -28,40 +29,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
-        <ImageButton
-            android:id="@+id/searchFilterBtn"
-            android:layout_width="@dimen/button_height"
-            android:layout_height="@dimen/button_height"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="6dp"
-            android:background="@drawable/shape_circle"
-            android:contentDescription="@string/filter"
-            app:layout_constraintBottom_toBottomOf="@+id/editText"
-            app:layout_constraintEnd_toStartOf="@+id/editText"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/editText"
-            app:layout_constraintVertical_bias="0.666"
-            app:srcCompat="@drawable/filter" />
-
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editText"
             android:layout_width="0dp"
             android:layout_height="@dimen/text_input_height"
-            android:layout_marginTop="12dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginBottom="6dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/shape_rounded_textinput"
             android:fontFamily="@font/roboto_slab"
             android:hint="@string/search_property"
             android:textAlignment="center"
-            android:textSize="14sp"
+            android:textSize="@dimen/h4"
             app:layout_constraintBottom_toTopOf="@+id/btnFindRealtors"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/searchFilterBtn"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.422" />
 

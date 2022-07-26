@@ -9,8 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="152dp"
-        android:padding="15dp">
+        android:layout_height="152dp">
 
 
         <TextView
@@ -18,6 +17,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:layout_marginTop="@dimen/spacing_small"
             android:fontFamily="@font/roboto_slab"
             android:text="First Name"
             android:textColor="#000"
@@ -33,29 +34,22 @@
             android:paddingEnd="10dp"
             android:text="Last Name"
             android:textColor="#000"
-            android:textSize="@dimen/h1" />
+            android:textSize="@dimen/h1"
+            android:layout_marginTop="@dimen/spacing_small"/>
 
         <TextView
             android:id="@+id/phoneNumber_Text_FindProperties"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/lastname_Text_FindProperties"
+            android:layout_alignStart="@+id/firstname_Text_FindRealtor"
+            android:layout_marginStart="0dp"
             android:fontFamily="@font/roboto_slab"
+            android:paddingStart="0dp"
             android:paddingEnd="10dp"
             android:text="Phone Number"
             android:textColor="#000"
-            android:textSize="@dimen/h1" />
-
-        <TextView
-            android:id="@+id/email_Text_FindProperties"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/phoneNumber_Text_FindProperties"
-            android:fontFamily="@font/roboto_slab"
-            android:paddingEnd="10dp"
-            android:text="Email"
-            android:textColor="#000"
-            android:textSize="@dimen/h1" />
+            android:textSize="@dimen/h3" />
 
         <!--        <TextView
             android:id="@+id/userType_Text_FindProperties"
@@ -71,13 +65,30 @@
              />-->
 
 
+        <TextView
+            android:id="@+id/email_Text_FindProperties"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phoneNumber_Text_FindProperties"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/roboto_slab"
+            android:paddingEnd="10dp"
+            android:paddingStart="0dp"
+            android:text="Email"
+            android:textColor="#000"
+            android:textSize="@dimen/h3" />
+
         <ImageButton
             android:id="@+id/favouriteListingsBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:background="#00FFFFFF"
-            android:src="@drawable/edit"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:src="@drawable/heart_empty"
             android:text="Add to Favourites" />
 
     </RelativeLayout>

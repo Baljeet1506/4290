@@ -24,11 +24,13 @@
             android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:background="#00FFFFFF"
             android:contentDescription="@string/back"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -41,8 +43,8 @@
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_slab"
-            android:text="@string/add_listing"
+            android:fontFamily="@font/roboto"
+            android:text="@string/edit_profile"
             android:textAllCaps="false"
             android:textColor="@color/green"
             android:textSize="@dimen/h1"
@@ -60,7 +62,7 @@
         android:layout_width="wrap_content"
         android:layout_height="40sp"
         android:backgroundTint="@color/green"
-        android:fontFamily="@font/roboto_slab"
+        android:fontFamily="@font/roboto"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:paddingLeft="24dp"
@@ -103,10 +105,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/content_scrolling"
-        app:layout_constraintEnd_toStartOf="@+id/guideRight"
-        app:layout_constraintTop_toBottomOf="@id/titleBar"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideLeft">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleBar">
 
         <ImageButton
             android:id="@+id/add_image"
@@ -115,10 +117,10 @@
             android:background="#00FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.131"
+            app:layout_constraintHorizontal_bias="0.125"
             app:layout_constraintStart_toEndOf="@+id/profile_picture"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.517"
+            app:layout_constraintVertical_bias="0.504"
             app:srcCompat="@drawable/plus_square" />
 
         <TextView
@@ -140,12 +142,15 @@
             android:id="@+id/profile_picture"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/placeholder_user" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

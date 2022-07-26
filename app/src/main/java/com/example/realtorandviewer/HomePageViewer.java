@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class HomePageViewer extends AppCompatActivity {
 
-    private Button logoutBtn;
+    private ImageButton logoutBtn;
     ImageButton findRealtorBtn, findPropertiesBtn, mortgageCalcBtn;
     TextView firstNameText, lastNameText, emailText;
     CardView favouritesBtn, recommendedRealtorBtn, resourcesBtn;

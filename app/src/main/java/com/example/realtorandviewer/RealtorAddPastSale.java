@@ -18,7 +18,7 @@ public class RealtorAddPastSale extends AppCompatActivity implements View.OnClic
 
     EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
     Button addPastSaleBtn;
-    ImageButton backBtnPast;
+    ImageButton backBtn;
     DatabaseReference ref;
     Properties listing;
 
@@ -45,8 +45,8 @@ public class RealtorAddPastSale extends AppCompatActivity implements View.OnClic
         addPastSaleBtn = findViewById(R.id.btnAddPastSale);
         addPastSaleBtn.setOnClickListener(this);
 
-        backBtnPast = findViewById(R.id.btnBackPast);
-        backBtnPast.setOnClickListener(this);
+        backBtn = findViewById(R.id.btnBack);
+        backBtn.setOnClickListener(this);
         listing = new Properties();
     }
 
@@ -57,7 +57,7 @@ public class RealtorAddPastSale extends AppCompatActivity implements View.OnClic
             case R.id.btnAddPastSale:
                 addPastSale();
                 break;
-            case R.id.btnBackPast:
+            case R.id.btnBack:
                 startActivity(new Intent(getApplicationContext(), RealtorPastSales.class));
                 break;
         }

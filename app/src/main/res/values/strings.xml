@@ -15,7 +15,7 @@
     <string name="resources">Resources</string>
     <string name="my_listings">My Listings</string>
     <string name="past_sales">My Past Sales</string>
-    <string name="recommended_realtors">Recomm. Realtors</string>
+    <string name="recommended_realtors">Rec. Realtors</string>
 
     <!-- Realtor Options -->
     <string name="add_listing">Add Listing</string>
@@ -114,6 +114,10 @@
     <string name="prepare_to_buy">Preparing to Buy</string>
     <string name="property_purchased">Closing the Purchase</string>
     <string name="view_properties">View Properties</string>
+
+    <string name="textbox">Textbox</string>
+    <string name="update">Update</string>
+    <string name="description">Description</string>
 
 
 </resources>

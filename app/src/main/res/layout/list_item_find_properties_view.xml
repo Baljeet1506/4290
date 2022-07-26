@@ -9,9 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="15dp">
-
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/price_Text_FindProperties"
@@ -19,6 +17,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:fontFamily="@font/roboto_slab"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginStart="@dimen/spacing_small"
             android:text="Price"
             android:textColor="#000"
             android:textSize="@dimen/h1" />
@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/price_Text_FindProperties"
             android:fontFamily="@font/roboto_slab"
+            android:layout_marginStart="@dimen/spacing_small"
             android:text="#"
             android:textColor="#000"
             android:textSize="@dimen/h3" />
@@ -75,6 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/beds_Text_FindProperties"
+            android:layout_marginStart="@dimen/spacing_small"
             android:fontFamily="@font/roboto_slab"
             android:text="Unit Number"
             android:textColor="#000"
@@ -123,6 +125,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/uNum_Text_FindProperties"
+            android:layout_marginStart="@dimen/spacing_small"
             android:fontFamily="@font/roboto_slab"
             android:text="City"
             android:textColor="#000"
@@ -171,6 +174,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/city_Text_FindProperties"
+            android:layout_marginStart="@dimen/spacing_small"
             android:fontFamily="@font/roboto_slab"
             android:paddingStart="0dp"
             android:paddingEnd="8dp"
@@ -222,7 +226,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/land_Text_FindProperties"
+            android:layout_marginStart="@dimen/spacing_small"
             android:layout_marginTop="0dp"
+            android:layout_marginBottom="@dimen/spacing_small"
             android:fontFamily="@font/roboto_slab"
             android:paddingStart="0dp"
             android:paddingEnd="5dp"
@@ -270,17 +276,16 @@
             android:textColor="#000"
             android:textSize="@dimen/h3" />
 
-
         <ImageButton
-            android:id="@+id/favouriteListingsBtn"
+            android:id="@+id/favListingBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/land_Text_FindProperties"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:background="#00FFFFFF"
-            android:src="@drawable/edit"
-            android:text="Add to Favourites" />
-
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:src="@drawable/heart_empty" />
 
     </RelativeLayout>
 

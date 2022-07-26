@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="10dp"
+    android:background="@drawable/shape_rounded_top"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/titleBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_rounded_square"
+        android:elevation="5dp"
+        app:layout_constraintBottom_toTopOf="@+id/content_scrolling"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/titleBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/roboto"
+            android:text="@string/edit_profile"
+            android:textAllCaps="false"
+            android:textColor="@color/green"
+            android:textSize="@dimen/h1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ScrollView
+        android:id="@+id/content_scrolling"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@drawable/spacing_medium"
+            android:orientation="vertical"
+            android:padding="@dimen/spacing_small"
+            android:showDividers="middle">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/a"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:fontFamily="@font/roboto_slab"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/name_first"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/textFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/textbox"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textColorHint="#00FFFFFF"
+                    android:textSize="@dimen/h4"
+                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck,DuplicateSpeakableTextCheck" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/b"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:fontFamily="@font/roboto_slab"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/name_last"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/textLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/textbox"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textColorHint="#00FFFFFF"
+                    android:textSize="@dimen/h4"
+                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/c"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:fontFamily="@font/roboto_slab"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/phone_number"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/textPhoneNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/textbox"
+                    android:importantForAutofill="no"
+                    android:inputType="phone"
+                    android:textAlignment="center"
+                    android:textColorHint="#00FFFFFF"
+                    android:textSize="@dimen/h4"
+                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/d"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:fontFamily="@font/roboto_slab"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/email"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/textEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/textbox"
+                    android:importantForAutofill="no"
+                    android:inputType="textEmailAddress"
+                    android:textAlignment="center"
+                    android:textColorHint="#00FFFFFF"
+                    android:textSize="@dimen/h4"
+                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/e"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:fontFamily="@font/roboto_slab"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/description"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/textbox"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textColorHint="#00FFFFFF"
+                    android:textSize="@dimen/h4"
+                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/usubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_height"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/roboto"
+                android:insetLeft="0dp"
+                android:insetTop="0dp"
+                android:insetRight="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="32dp"
+                android:paddingRight="32dp"
+                android:text="@string/update"
+                android:textAllCaps="false"
+                android:textSize="@dimen/button_font_size"
+                app:cornerRadius="20dp"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
+

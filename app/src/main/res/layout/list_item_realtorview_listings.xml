@@ -9,8 +9,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="15dp">
+        android:layout_height="wrap_content">
 
 
         <TextView
@@ -18,6 +17,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_marginLeft="@dimen/spacing_small"
+            android:layout_marginTop="@dimen/spacing_small"
             android:layout_toStartOf="@id/deleteListingBtn"
             android:fontFamily="@font/roboto_slab"
             android:text="Price"
@@ -29,6 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/price_Text"
+            android:layout_marginLeft="@dimen/spacing_small"
             android:fontFamily="@font/roboto_slab"
             android:text="#"
             android:textColor="#000"
@@ -76,6 +78,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/beds_Text"
+            android:layout_marginLeft="@dimen/spacing_small"
             android:fontFamily="@font/roboto_slab"
             android:text="Unit Number"
             android:textColor="#000"
@@ -124,6 +127,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/uNum_Text"
+            android:layout_marginLeft="@dimen/spacing_small"
             android:fontFamily="@font/roboto_slab"
             android:text="City"
             android:textColor="#000"
@@ -172,6 +176,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/city_Text"
+            android:layout_marginLeft="@dimen/spacing_small"
             android:fontFamily="@font/roboto_slab"
             android:paddingStart="0dp"
             android:paddingEnd="8dp"
@@ -223,7 +228,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/land_Text"
+            android:layout_marginLeft="@dimen/spacing_small"
             android:layout_marginTop="0dp"
+            android:layout_marginBottom="@dimen/spacing_small"
             android:fontFamily="@font/roboto_slab"
             android:paddingStart="0dp"
             android:paddingEnd="5dp"
@@ -275,20 +282,28 @@
             android:id="@+id/deleteListingBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:background="#00FFFFFF"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
             android:src="@drawable/cancel"
             android:text="DELETE" />
 
-        <ImageButton
+        <Button
             android:id="@+id/editListingBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/land_Text"
+            android:layout_width="60dp"
+            android:layout_height="24dp"
+            android:layout_alignBottom="@+id/title_Text"
             android:layout_alignParentEnd="true"
-            android:background="#00FFFFFF"
-            android:src="@drawable/edit"
-            android:text="EDIT" />
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:backgroundTint="@color/green"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:text="Edit"
+            android:textAllCaps="false"
+            android:textSize="12sp"
+            app:cornerRadius="15dp" />
 
 
     </RelativeLayout>
