@@ -5,14 +5,33 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class FindProperties extends AppCompatActivity {
     ImageButton findRealtorBtn, mortgageCalculatorBtn, profileBtn;
+    RecyclerView recview;
+    myAdapterFindProperties adapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_properties);
+
+        recview = (RecyclerView) findViewById(R.id.recViewFindProperties);
+        recview.setLayoutManager(new LinearLayoutManager(this));
+
+        FirebaseRecyclerOptions<Properties> options =
+                new FirebaseRecyclerOptions.Builder<Properties>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("AllProperties"), Properties.class)
+                        .build();
+
+        adapter = new myAdapterFindProperties(options);
+        recview.setAdapter(adapter);
 
         findRealtorBtn = findViewById(R.id.btnFindRealtors);
         mortgageCalculatorBtn = findViewById(R.id.btnMortgageCalculator);
@@ -28,5 +47,17 @@ public class FindProperties extends AppCompatActivity {
         });
 
 
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 }

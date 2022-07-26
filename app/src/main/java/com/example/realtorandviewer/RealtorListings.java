@@ -2,33 +2,23 @@ package com.example.realtorandviewer;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.SearchView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.google.firebase.database.DatabaseReference;
+
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class RealtorListings extends AppCompatActivity {
 
    // ImageButton backBtn, findRealtorBtn, mortgageCalBtn, findPropertiesBtn, profileBtn;
     RecyclerView recview;
-    myadapter2 adapter;
+    myAdapterMyListings adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +36,7 @@ public class RealtorListings extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_), Properties.class)
                         .build();
 
-        adapter = new myadapter2(options1);
+        adapter = new myAdapterMyListings(options1);
         recview.setAdapter(adapter);
 
        /* backBtn = findViewById(R.id.btnBack);
@@ -122,7 +112,7 @@ public class RealtorListings extends AppCompatActivity {
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("MyProperties").orderByChild("type").startAt(s).endAt(s+"\uf8ff"), Properties.class)
                         .build();
 
-        adapter=new myadapter2(options1);
+        adapter=new myAdapterMyListings(options1);
         adapter.startListening();
         recview.setAdapter(adapter);
 

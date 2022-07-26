@@ -3,7 +3,6 @@ package com.example.realtorandviewer;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,9 +25,9 @@ import com.orhanobut.dialogplus.ViewHolder;
 import java.util.HashMap;
 import java.util.Map;
 
-public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.myviewholder> {
+public class myAdapterMyPastSales extends FirebaseRecyclerAdapter<Properties, myAdapterMyPastSales.myviewholder> {
 
-    public myadapter2(@NonNull FirebaseRecyclerOptions<Properties> options) {
+    public myAdapterMyPastSales(@NonNull FirebaseRecyclerOptions<Properties> options) {
         super(options);
     }
 
@@ -56,28 +55,27 @@ public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.m
                 // Toast.makeText(holder.houseNumber.getContext(), "Testing the button", Toast.LENGTH_LONG).show();
                 final DialogPlus dialogPlus = DialogPlus.newDialog(holder.houseNumber.getContext())
                         .setContentBackgroundResource(R.color.transparent)
-                        .setContentHolder(new ViewHolder(R.layout.dialogcontent1))
-                        .setExpanded(true, 1200)
+                        .setContentHolder(new ViewHolder(R.layout.dialog_content_my_past_sales))
+                        .setExpanded(true, 1400)
                         .create();
 
                 View myview = dialogPlus.getHolderView();
-                final EditText unitNumber = myview.findViewById(R.id.uNumber);
-                final EditText houseNumber = myview.findViewById(R.id.hNumber);
-                final EditText street = myview.findViewById(R.id.street);
-                final EditText city = myview.findViewById(R.id.city);
-                final EditText province = myview.findViewById(R.id.province);
-                final EditText postal = myview.findViewById(R.id.postal);
-                final EditText price = myview.findViewById(R.id.price);
-                final EditText beds = myview.findViewById(R.id.beds);
-                final EditText baths = myview.findViewById(R.id.baths);
-                final EditText landSize = myview.findViewById(R.id.landSize);
-                final EditText floorSize = myview.findViewById(R.id.floorSize);
-                final EditText type = myview.findViewById(R.id.type);
-                final EditText age = myview.findViewById(R.id.age);
-                final EditText title = myview.findViewById(R.id.title);
+                final EditText unitNumber = myview.findViewById(R.id.uNumber_Dialog_Past);
+                final EditText houseNumber = myview.findViewById(R.id.hNumber_Dialog_Past);
+                final EditText street = myview.findViewById(R.id.street_Dialog_Past);
+                final EditText city = myview.findViewById(R.id.city_Dialog_Past);
+                final EditText province = myview.findViewById(R.id.province_Dialog_Past);
+                final EditText postal = myview.findViewById(R.id.postal_Dialog_Past);
+                final EditText price = myview.findViewById(R.id.price_Dialog_Past);
+                final EditText beds = myview.findViewById(R.id.beds_Dialog_Past);
+                final EditText baths = myview.findViewById(R.id.baths_Dialog_Past);
+                final EditText landSize = myview.findViewById(R.id.landSize_Dialog_Past);
+                final EditText floorSize = myview.findViewById(R.id.floorSize_Dialog_Past);
+                final EditText type = myview.findViewById(R.id.type_Dialog_Past);
+                final EditText age = myview.findViewById(R.id.age_Dialog_Past);
+                final EditText title = myview.findViewById(R.id.title_Dialog_Past);
 
-
-                Button submit = myview.findViewById(R.id.usubmit);
+                Button submit = myview.findViewById(R.id.usubmit_Dialog_Past);
 
                 unitNumber.setText(Properties.getUnitNumber());
                 houseNumber.setText(Properties.getHouseNumber());
@@ -115,7 +113,7 @@ public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.m
                         map.put("Age", age.getText().toString());
                         map.put("Title", title.getText().toString());
 
-                        FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_)
+                        FirebaseDatabase.getInstance().getReference().child("PastSales").child(Login.uID_)
                                 .child(getRef(position).getKey()).updateChildren(map)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override
@@ -131,8 +129,6 @@ public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.m
                                 });
                     }
                 });
-
-
             }
         });
 
@@ -140,13 +136,13 @@ public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.m
             @Override
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(holder.houseNumber.getContext());
-                builder.setTitle("Delete Panel");
-                builder.setMessage("Delete...?");
+                builder.setTitle("Delete");
+                builder.setMessage("Are you sure you want to remove this?");
 
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_)
+                        FirebaseDatabase.getInstance().getReference().child("PastSales").child(Login.uID_)
                                 .child(getRef(position).getKey()).removeValue();
                     }
                 });
@@ -161,16 +157,13 @@ public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.m
                 builder.show();
             }
         });
-
-
     }
-
 
     @NonNull
     @Override
     public myviewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.listings_list_item, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_realtorview_listings, parent, false);
         return new myviewholder(view);
     }
 
@@ -200,9 +193,6 @@ public class myadapter2 extends FirebaseRecyclerAdapter<Properties, myadapter2.m
             edit = (ImageButton) itemView.findViewById(R.id.editListingBtn);
             delete = (ImageButton) itemView.findViewById(R.id.deleteListingBtn);
 
-
         }
     }
-
-
 }
