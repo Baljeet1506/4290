@@ -54,7 +54,7 @@ public class HomePageRealtor extends AppCompatActivity {
         realtorPhoneNumText = findViewById(R.id.textRealtorPhone);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users");
+        reference = FirebaseDatabase.getInstance().getReference("RealtorUsers");
         userID = user.getUid();
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {

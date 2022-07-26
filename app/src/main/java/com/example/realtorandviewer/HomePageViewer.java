@@ -52,7 +52,7 @@ public class HomePageViewer extends AppCompatActivity {
         emailText = findViewById(R.id.textEmail);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
-        reference = FirebaseDatabase.getInstance().getReference("Users");
+        reference = FirebaseDatabase.getInstance().getReference("ViewerUsers");
         userID = user.getUid();
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
