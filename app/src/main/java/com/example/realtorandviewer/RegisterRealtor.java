@@ -121,12 +121,17 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
 
                             User user = new User(userFirstName, userLastName, userEmail, userPhone, userType);
 
-                            FirebaseDatabase.getInstance().getReference("Users")
+                            FirebaseDatabase.getInstance().getReference("AllUsers")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
+
+                                                FirebaseDatabase.getInstance().getReference("RealtorUsers")
+                                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                                        .setValue(user);
+
                                                 Toast.makeText(RegisterRealtor.this, "User is registered successfully", Toast.LENGTH_SHORT).show();
                                                 progressBar.setVisibility(View.GONE);
                                                 startActivity(new Intent(getApplicationContext(), Login.class));

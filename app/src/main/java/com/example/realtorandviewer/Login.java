@@ -110,7 +110,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
                         uID_ = uid;
 
                         FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-                        firebaseDatabase.getReference().child("Users").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
+                        firebaseDatabase.getReference().child("AllUsers").child(uid).child("userType").addListenerForSingleValueEvent(new ValueEventListener() {
 
                             @Override
                             public void onDataChange(@NonNull DataSnapshot snapshot) {

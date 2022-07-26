@@ -115,12 +115,16 @@ public class RegisterViewer extends AppCompatActivity implements View.OnClickLis
 
                             User user = new User(userFirstName, userLastName, userEmail, userType);
 
-                            FirebaseDatabase.getInstance().getReference("Users")
+                            FirebaseDatabase.getInstance().getReference("AllUsers")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                                         @Override
                                         public void onComplete(@NonNull Task<Void> task) {
                                             if (task.isSuccessful()) {
+
+                                                FirebaseDatabase.getInstance().getReference("ViewerUsers")
+                                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                                        .setValue(user);
                                                 Toast.makeText(RegisterViewer.this, "User is registered successfully", Toast.LENGTH_SHORT).show();
                                                 progressBar.setVisibility(View.GONE);
                                                 startActivity(new Intent(getApplicationContext(), Login.class));
