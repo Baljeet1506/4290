@@ -13,7 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RealtorPastSales extends AppCompatActivity {
-    ImageButton backBtn;
+    ImageButton backBtn, findRealtorBtn, mortgageCalBtn, findPropertiesBtn, profileBtn;
     RecyclerView recview;
     myAdapterMyPastSales adapter;
 
@@ -35,7 +35,23 @@ public class RealtorPastSales extends AppCompatActivity {
         recview.setAdapter(adapter);
 
         backBtn = findViewById(R.id.btnBack);
+        findRealtorBtn = findViewById(R.id.btnFindRealtors);
+        mortgageCalBtn = findViewById(R.id.btnMortgageCalculator);
+        findPropertiesBtn = findViewById(R.id.btnFindProperties);
+        profileBtn = findViewById(R.id.btnProfile);
+
         backBtn.setOnClickListener(view -> {
+            if (Login.uType == 1) {
+                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+            } else
+                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+        });
+
+        findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
+        findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
+        mortgageCalBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
+
+        profileBtn.setOnClickListener(view -> {
             if (Login.uType == 1) {
                 startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
             } else

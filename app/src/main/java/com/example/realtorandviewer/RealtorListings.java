@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +17,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class RealtorListings extends AppCompatActivity {
 
-   // ImageButton backBtn, findRealtorBtn, mortgageCalBtn, findPropertiesBtn, profileBtn;
+    ImageButton backBtn, findRealtorBtn, mortgageCalBtn, findPropertiesBtn, profileBtn;
     RecyclerView recview;
     myAdapterMyListings adapter;
 
@@ -25,7 +26,6 @@ public class RealtorListings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_realtor_my_listings);
         setTitle("");
-
 
 
         recview = (RecyclerView) findViewById(R.id.recViewMyListings);
@@ -39,14 +39,14 @@ public class RealtorListings extends AppCompatActivity {
         adapter = new myAdapterMyListings(options1);
         recview.setAdapter(adapter);
 
-       /* backBtn = findViewById(R.id.btnBack);
+        backBtn = findViewById(R.id.btnBack);
         findRealtorBtn = findViewById(R.id.btnFindRealtors);
         mortgageCalBtn = findViewById(R.id.btnMortgageCalculator);
         findPropertiesBtn = findViewById(R.id.btnFindProperties);
-        profileBtn = findViewById(R.id.btnProfile);*/
-          FloatingActionButton listingsBtn = findViewById(R.id.listingsBtn);
+        profileBtn = findViewById(R.id.btnProfile);
+        FloatingActionButton listingsBtn = findViewById(R.id.listingsBtn);
 
-       /* backBtn.setOnClickListener(view -> {
+        backBtn.setOnClickListener(view -> {
             if (Login.uType == 1) {
                 startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
             } else
@@ -61,9 +61,9 @@ public class RealtorListings extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
             } else
                 startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
-         });*/
+        });
 
-         listingsBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorAddListings.class)));
+        listingsBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorAddListings.class)));
     }
 
 
@@ -80,13 +80,12 @@ public class RealtorListings extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        getMenuInflater().inflate(R.menu.search,menu);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.search, menu);
 
-        MenuItem item=menu.findItem(R.id.search);
+        MenuItem item = menu.findItem(R.id.search);
 
-        SearchView searchView=(SearchView)item.getActionView();
+        SearchView searchView = (SearchView) item.getActionView();
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -105,14 +104,13 @@ public class RealtorListings extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
-    private void processsearch(String s)
-    {
+    private void processsearch(String s) {
         FirebaseRecyclerOptions<Properties> options1 =
                 new FirebaseRecyclerOptions.Builder<Properties>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("MyProperties").orderByChild("type").startAt(s).endAt(s+"\uf8ff"), Properties.class)
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("MyProperties").orderByChild("type").startAt(s).endAt(s + "\uf8ff"), Properties.class)
                         .build();
 
-        adapter=new myAdapterMyListings(options1);
+        adapter = new myAdapterMyListings(options1);
         adapter.startListening();
         recview.setAdapter(adapter);
 

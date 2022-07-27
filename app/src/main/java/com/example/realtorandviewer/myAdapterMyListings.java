@@ -139,7 +139,7 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(holder.houseNumber.getContext());
                 builder.setTitle("Delete Panel");
-                builder.setMessage("Delete...?");
+                builder.setMessage("Are you sure you want to remove this?");
 
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
@@ -172,7 +172,8 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
     class myviewholder extends RecyclerView.ViewHolder {
 
         TextView unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
-        ImageButton edit, delete;
+        ImageButton delete;
+        Button edit;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
@@ -192,7 +193,7 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
             type = (TextView) itemView.findViewById(R.id.type_Text);
             title = (TextView) itemView.findViewById(R.id.title_Text);
 
-            edit = (ImageButton) itemView.findViewById(R.id.editListingBtn);
+            edit = (Button) itemView.findViewById(R.id.editListingBtn);
             delete = (ImageButton) itemView.findViewById(R.id.deleteListingBtn);
 
 
