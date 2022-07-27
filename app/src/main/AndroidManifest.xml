@@ -67,10 +67,12 @@
             android:exported="false" />
         <activity
             android:name=".RealtorPastSales"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
         <activity
             android:name=".RealtorListings"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
         <activity
             android:name=".RecommendedRealtor"
             android:exported="false" />
@@ -82,10 +84,12 @@
             android:exported="false" />
         <activity
             android:name=".FindProperties"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
         <activity
             android:name=".FindRealtor"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
         <activity
             android:name=".HomePageRealtor"
             android:exported="false" />

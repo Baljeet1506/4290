@@ -8,14 +8,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recViewFindProperties"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="410dp"
+        android:layout_height="604dp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/navigation"
@@ -28,25 +28,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/text_input_height"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/shape_rounded_textinput"
-            android:fontFamily="@font/roboto_slab"
-            android:hint="@string/search_property"
-            android:textAlignment="center"
-            android:textSize="@dimen/h4"
-            app:layout_constraintBottom_toTopOf="@+id/btnFindRealtors"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.422" />
 
         <ImageButton
             android:id="@+id/btnProfile"

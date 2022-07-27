@@ -18,25 +18,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editText"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/text_input_height"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/shape_rounded_textinput"
-            android:fontFamily="@font/roboto_slab"
-            android:hint="@string/search_property"
-            android:textAlignment="center"
-            android:textSize="@dimen/h4"
-            app:layout_constraintBottom_toTopOf="@+id/btnFindRealtors"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.422" />
-
         <ImageButton
             android:id="@+id/btnProfile"
             android:layout_width="48dp"
@@ -92,67 +73,16 @@
             app:srcCompat="@drawable/properties" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/titleBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/shape_rounded_bottom"
-        android:elevation="@dimen/spacing_large"
-        app:layout_constraintBottom_toTopOf="@+id/recViewMyPastSales"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageButton
-            android:id="@+id/btnBack"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="#00FFFFFF"
-            android:contentDescription="@string/back"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/back" />
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto"
-            android:text="@string/past_sales"
-            android:textAllCaps="false"
-            android:textColor="@color/green"
-            android:textSize="@dimen/h1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnBack"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recViewMyPastSales"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="385dp"
+        android:layout_height="519dp"
+        android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleBar" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addPastSaleBtn"

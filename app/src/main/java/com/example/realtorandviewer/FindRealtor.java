@@ -2,7 +2,10 @@ package com.example.realtorandviewer;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageButton;
+import android.widget.SearchView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -20,6 +23,7 @@ public class FindRealtor extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_realtor);
+        setTitle("Filter by First Name");
 
         recview = (RecyclerView) findViewById(R.id.recViewFindRealtors);
         recview.setLayoutManager(new LinearLayoutManager(this));
@@ -57,5 +61,45 @@ public class FindRealtor extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         adapter.stopListening();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.searchmenu,menu);
+
+        MenuItem item=menu.findItem(R.id.search);
+
+        SearchView searchView=(SearchView)item.getActionView();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                processsearch(s);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                processsearch(s);
+                return false;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
+
+    private void processsearch(String s) {
+
+        FirebaseRecyclerOptions<User> options =
+                new FirebaseRecyclerOptions.Builder<User>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("RealtorUsers").orderByChild("firstName").startAt(s).endAt(s + "\uf8ff"), User.class)
+                        .build();
+
+        adapter = new myAdapterFindRealtors(options);
+        adapter.startListening();
+        recview.setAdapter(adapter);
+
     }
 }
