@@ -65,7 +65,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/textFirstName"
+                    android:id="@+id/dialog_first_name_r"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -73,7 +73,7 @@
                     android:fontFamily="@font/roboto_slab"
                     android:hint="@string/textbox"
                     android:importantForAutofill="no"
-                    android:inputType="number"
+                    android:inputType="textPersonName"
                     android:textAlignment="center"
                     android:textColorHint="#00FFFFFF"
                     android:textSize="@dimen/h4"
@@ -95,7 +95,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/textLastName"
+                    android:id="@+id/dialog_last_name_r"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -103,7 +103,7 @@
                     android:fontFamily="@font/roboto_slab"
                     android:hint="@string/textbox"
                     android:importantForAutofill="no"
-                    android:inputType="number"
+                    android:inputType="textPersonName"
                     android:textAlignment="center"
                     android:textColorHint="#00FFFFFF"
                     android:textSize="@dimen/h4"
@@ -125,7 +125,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/textPhoneNumber"
+                    android:id="@+id/dialog_phone_number_r"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -155,7 +155,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/textEmail"
+                    android:id="@+id/dialog_email_r"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -181,11 +181,11 @@
                     android:fontFamily="@font/roboto_slab"
                     android:paddingStart="10dp"
                     android:paddingEnd="0dp"
-                    android:text="@string/description"
+                    android:text="@string/about_me"
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/description"
+                    android:id="@+id/dialog_description_r"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -193,7 +193,7 @@
                     android:fontFamily="@font/roboto_slab"
                     android:hint="@string/textbox"
                     android:importantForAutofill="no"
-                    android:inputType="text"
+                    android:inputType="textLongMessage|text"
                     android:textAlignment="center"
                     android:textColorHint="#00FFFFFF"
                     android:textSize="@dimen/h4"
@@ -201,7 +201,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/usubmit"
+                android:id="@+id/usubmit_dialog_realtor_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/button_height"
                 android:layout_gravity="center"

@@ -19,7 +19,7 @@ import com.google.firebase.database.Query;
 
 public class RealtorListings extends AppCompatActivity {
 
-    ImageButton backBtn, findRealtorBtn, mortgageCalBtn, findPropertiesBtn, profileBtn;
+    ImageButton findRealtorBtn, mortgageCalBtn, findPropertiesBtn, profileBtn;
     RecyclerView recview;
     myAdapterMyListings adapter;
 
@@ -41,7 +41,6 @@ public class RealtorListings extends AppCompatActivity {
         adapter = new myAdapterMyListings(options1);
         recview.setAdapter(adapter);
 
-        //backBtn = findViewById(R.id.btnBack);
         findRealtorBtn = findViewById(R.id.btnFindRealtors);
         mortgageCalBtn = findViewById(R.id.btnMortgageCalculator);
         findPropertiesBtn = findViewById(R.id.btnFindProperties);
@@ -49,12 +48,6 @@ public class RealtorListings extends AppCompatActivity {
 
         FloatingActionButton listingsBtn = findViewById(R.id.listingsBtn);
 
-        /*backBtn.setOnClickListener(view -> {
-            if (Login.uType == 1) {
-                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
-            } else
-                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
-        });*/
         findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
         findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
         mortgageCalBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
@@ -67,7 +60,6 @@ public class RealtorListings extends AppCompatActivity {
 
         listingsBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorAddListings.class)));
     }
-
 
     @Override
     protected void onStart() {

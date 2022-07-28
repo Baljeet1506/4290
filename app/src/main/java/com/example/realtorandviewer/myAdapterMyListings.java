@@ -75,7 +75,7 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
                 final EditText title = myview.findViewById(R.id.title);
 
 
-                Button submit = myview.findViewById(R.id.usubmit);
+                Button submit = myview.findViewById(R.id.usubmit_dialog_listing);
 
                 unitNumber.setText(Properties.getUnitNumber());
                 houseNumber.setText(Properties.getHouseNumber());

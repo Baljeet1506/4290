@@ -412,7 +412,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/usubmit"
+                android:id="@+id/usubmit_dialog_listing"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/button_height"
                 android:layout_gravity="center"
