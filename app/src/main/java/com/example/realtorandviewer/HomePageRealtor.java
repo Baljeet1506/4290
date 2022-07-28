@@ -30,7 +30,7 @@ import java.util.Map;
 
 public class HomePageRealtor extends AppCompatActivity {
 
-    private ImageButton logoutBtn, btnEditRealtorProfile;
+    private ImageButton btnEditRealtorProfile;
     ImageButton findRealtorBtn, findPropertiesBtn, mortgageCalculatorBtn;
     TextView firstNameText, lastNameText, realtorEmailText, realtorPhoneNumText;
     CardView favouritesBtn, myListingsBtn, pastSalesBtn, resourcesBtn;
@@ -46,7 +46,7 @@ public class HomePageRealtor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_realtor);
 
-        logoutBtn = findViewById(R.id.btnLogout);
+
         btnEditRealtorProfile = findViewById(R.id.btnEditRealtorProfile);
 
         favouritesBtn = findViewById(R.id.btnFavourites);
@@ -100,32 +100,22 @@ public class HomePageRealtor extends AppCompatActivity {
         mortgageCalculatorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
         findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
 
-        logoutBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intentL = new Intent(HomePageRealtor.this, Login.class);
-                startActivity(intentL);
-                finish();
-                Toast.makeText(HomePageRealtor.this, "Successful Logout", Toast.LENGTH_SHORT).show();
-            }
-        });
-
         btnEditRealtorProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 final DialogPlus dialogPlus = DialogPlus.newDialog(HomePageRealtor.this)
                         .setContentBackgroundResource(R.color.transparent)
-                        .setContentHolder(new ViewHolder(R.layout.dialog_content_edit_profile))
+                        .setContentHolder(new ViewHolder(R.layout.dialog_content_edit_profile_realtor))
                         .setExpanded(true, 1400)
                         .create();
 
                 View myview = dialogPlus.getHolderView();
                 final EditText first_name = myview.findViewById(R.id.dialog_first_name_r);
                 final EditText last_Name = myview.findViewById(R.id.dialog_last_name_r);
-                final EditText email_ = myview.findViewById(R.id.dialog_email_r);
                 final EditText phone_Number = myview.findViewById(R.id.dialog_phone_number_r);
                 final EditText description_ = myview.findViewById(R.id.dialog_description_r);
+                ImageButton logoutBtn = myview.findViewById(R.id.btnLogout_dialog_r);
 
                 Button submit = myview.findViewById(R.id.usubmit_dialog_realtor_profile);
 
@@ -137,13 +127,11 @@ public class HomePageRealtor extends AppCompatActivity {
                         if (userProfile != null) {
                             String firstName = userProfile.firstName;
                             String lastName = userProfile.lastName;
-                            String email = userProfile.email;
                             String phone = userProfile.phNumber;
                             String description = userProfile.aboutMe;
 
                             first_name.setText(firstName);
                             last_Name.setText(lastName);
-                            email_.setText(email);
                             phone_Number.setText(phone);
                             description_.setText(description);
                         }
@@ -156,13 +144,22 @@ public class HomePageRealtor extends AppCompatActivity {
                 });
                 dialogPlus.show();
 
+                logoutBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intentL = new Intent(HomePageRealtor.this, Login.class);
+                        startActivity(intentL);
+                        finish();
+                        Toast.makeText(HomePageRealtor.this, "Successful Logout", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
                 submit.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         Map<String, Object> map = new HashMap<>();
                         map.put("firstName", first_name.getText().toString());
                         map.put("lastName", last_Name.getText().toString());
-                        map.put("email", email_.getText().toString());
                         map.put("phNumber", phone_Number.getText().toString());
                         map.put("aboutMe", description_.getText().toString());
 
@@ -189,7 +186,7 @@ public class HomePageRealtor extends AppCompatActivity {
         });
     }
 
-    private void refreshProfileInfo(){
+    private void refreshProfileInfo() {
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
