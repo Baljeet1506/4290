@@ -1,11 +1,16 @@
 package com.example.realtorandviewer;
 
+import android.Manifest;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,9 +27,16 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionDeniedResponse;
+import com.karumi.dexter.listener.PermissionGrantedResponse;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.single.PermissionListener;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
 
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -34,6 +46,7 @@ public class HomePageRealtor extends AppCompatActivity {
     ImageButton findRealtorBtn, findPropertiesBtn, mortgageCalculatorBtn;
     TextView firstNameText, lastNameText, realtorEmailText, realtorPhoneNumText;
     CardView favouritesBtn, myListingsBtn, pastSalesBtn, resourcesBtn;
+    ImageView user_picture;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -46,8 +59,8 @@ public class HomePageRealtor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_realtor);
 
-
         btnEditRealtorProfile = findViewById(R.id.btnEditRealtorProfile);
+        user_picture = findViewById(R.id.user_picture);
 
         favouritesBtn = findViewById(R.id.btnFavourites);
         myListingsBtn = findViewById(R.id.btnMyListings);
@@ -100,6 +113,15 @@ public class HomePageRealtor extends AppCompatActivity {
         mortgageCalculatorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
         findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
 
+
+        user_picture.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), UploadProfileImage.class));
+            }
+        });
+
+
         btnEditRealtorProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -114,6 +136,7 @@ public class HomePageRealtor extends AppCompatActivity {
                 final EditText last_Name = myview.findViewById(R.id.dialog_last_name_r);
                 final EditText phone_Number = myview.findViewById(R.id.dialog_phone_number_r);
                 final EditText description_ = myview.findViewById(R.id.dialog_description_r);
+
                 ImageButton logoutBtn = myview.findViewById(R.id.btnLogout_dialog_r);
 
                 Button submit = myview.findViewById(R.id.usubmit_dialog_realtor_profile);

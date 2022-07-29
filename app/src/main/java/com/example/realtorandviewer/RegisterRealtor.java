@@ -78,6 +78,7 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
         String userPass = password.getText().toString();
         String userPhone = phNumber.getText().toString();
         String aboutMe = "";
+        String pimage = "";
         Integer userType = 1;
 
         if (userFirstName.isEmpty()) {
@@ -127,7 +128,7 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
-                            User user = new User(userFirstName, userLastName, userCompany, userEmail, userPhone, aboutMe, userType);
+                            User user = new User(userFirstName, userLastName, userCompany, userEmail, userPhone, aboutMe, pimage, userType);
 
                             FirebaseDatabase.getInstance().getReference("AllUsers")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
