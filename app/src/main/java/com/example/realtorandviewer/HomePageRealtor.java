@@ -18,6 +18,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,13 +41,15 @@ import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class HomePageRealtor extends AppCompatActivity {
 
     private ImageButton btnEditRealtorProfile;
     ImageButton findRealtorBtn, findPropertiesBtn, mortgageCalculatorBtn;
     TextView firstNameText, lastNameText, realtorEmailText, realtorPhoneNumText;
     CardView favouritesBtn, myListingsBtn, pastSalesBtn, resourcesBtn;
-    ImageView user_picture;
+    CircleImageView user_picture;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -60,7 +63,6 @@ public class HomePageRealtor extends AppCompatActivity {
         setContentView(R.layout.activity_home_realtor);
 
         btnEditRealtorProfile = findViewById(R.id.btnEditRealtorProfile);
-        user_picture = findViewById(R.id.user_picture);
 
         favouritesBtn = findViewById(R.id.btnFavourites);
         myListingsBtn = findViewById(R.id.btnMyListings);
@@ -75,6 +77,7 @@ public class HomePageRealtor extends AppCompatActivity {
         lastNameText = findViewById(R.id.textLastName);
         realtorEmailText = findViewById(R.id.textRealtorEmail);
         realtorPhoneNumText = findViewById(R.id.textRealtorPhone);
+        user_picture = findViewById(R.id.user_picture);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("RealtorUsers");
@@ -95,6 +98,7 @@ public class HomePageRealtor extends AppCompatActivity {
                     lastNameText.setText(lastName);
                     realtorEmailText.setText(email);
                     realtorPhoneNumText.setText(phone);
+                    Glide.with(user_picture.getContext()).load(userProfile.getPimage()).into(user_picture);
                 }
             }
 

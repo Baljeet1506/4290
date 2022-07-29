@@ -9,11 +9,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -24,6 +26,8 @@ import com.orhanobut.dialogplus.ViewHolder;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapterFindRealtors.myviewholder> {
 
@@ -39,9 +43,7 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
         holder.company.setText(User.getCompany());
         holder.phoneNumber.setText(User.getPhNumber());
         holder.email.setText(User.getEmail());
-       // holder.uType.setText(User.getUserType());
-
-
+        Glide.with(holder.img.getContext()).load(User.getPimage()).into(holder.img);
     }
 
     @NonNull
@@ -55,6 +57,7 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
     class myviewholder extends RecyclerView.ViewHolder {
 
         TextView firsName, lastName, company, phoneNumber, email;
+        CircleImageView img;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
@@ -64,7 +67,7 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
             company = (TextView) itemView.findViewById(R.id.company_Text_FindRealtor);
             phoneNumber = (TextView) itemView.findViewById(R.id.phoneNumber_Text_FindRealtor);
             email = (TextView) itemView.findViewById(R.id.email_Text_FindRealtor);
-            //uType = (TextView) itemView.findViewById(R.id.userType_Text_FindProperties);
+            img = (CircleImageView) itemView.findViewById(R.id.user_profile_image);
 
 
         }

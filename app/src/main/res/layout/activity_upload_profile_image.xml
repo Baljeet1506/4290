@@ -107,18 +107,23 @@
             app:srcCompat="@drawable/properties" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/dialog_picture"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="252dp"
+        android:layout_height="289dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
         android:contentDescription="@string/profile_picture"
+        android:src="@mipmap/ic_launcher"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="2dp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleBar"
-        app:layout_constraintVertical_bias="0.11"
-        app:srcCompat="@drawable/placeholder_user" />
+        app:layout_constraintVertical_bias="0.074" />
 
     <Button
         android:id="@+id/btn_browse_realtor_pic"
