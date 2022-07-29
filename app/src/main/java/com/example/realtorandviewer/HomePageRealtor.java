@@ -107,6 +107,7 @@ public class HomePageRealtor extends AppCompatActivity {
                 final DialogPlus dialogPlus = DialogPlus.newDialog(HomePageRealtor.this)
                         .setContentBackgroundResource(R.color.transparent)
                         .setContentHolder(new ViewHolder(R.layout.dialog_content_edit_profile_realtor))
+                        .setExpanded(true, 1400)
                         .create();
 
                 View myview = dialogPlus.getHolderView();

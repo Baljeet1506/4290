@@ -8,9 +8,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recViewFindProperties"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:padding="@dimen/spacing_small"
+        android:layout_width="410dp"
+        android:layout_height="604dp"
         app:layout_constraintBottom_toTopOf="@+id/navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

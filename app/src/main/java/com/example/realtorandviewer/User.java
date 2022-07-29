@@ -2,7 +2,7 @@ package com.example.realtorandviewer;
 
 public class User {
 
-    public String firstName, lastName, company, email, phNumber, aboutMe;
+    public String firstName, lastName, email, phNumber, aboutMe;
     public Integer userType;
 
     public User() {
@@ -10,11 +10,10 @@ public class User {
     }
 
     //Constructor for Realtor user type
-    public User(String firstName, String lastName, String company, String email, String phNumber, String aboutMe, Integer userType) {
+    public User(String firstName, String lastName, String email, String phNumber, String aboutMe, Integer userType) {
 
         this.firstName = firstName;
         this.lastName = lastName;
-        this.company = company;
         this.email = email;
         this.phNumber = phNumber;
         this.userType = userType;
@@ -43,13 +42,9 @@ public class User {
         return lastName;
     }
 
-    public void setLastName(String lastName) { this.lastName = lastName; }
-
-    public String getCompany() {
-        return company;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
-
-    public void setCompany(String company) { this.company = company; }
 
     public String getEmail() {
         return email;

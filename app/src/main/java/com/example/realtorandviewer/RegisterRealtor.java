@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterRealtor extends AppCompatActivity implements View.OnClickListener {
 
-    EditText firstName, lastName, company, email, password, phNumber;
+    EditText firstName, lastName, email, password, phNumber;
     Button cancelBtn, registerBtn;
     ImageButton backBtn;
     private FirebaseAuth mAuth;
@@ -35,7 +35,6 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
 
         firstName = findViewById(R.id.editTxtFirstName);
         lastName = findViewById(R.id.editTxtLastName);
-        company = findViewById(R.id.editTxtCompany);
         email = findViewById(R.id.editTxtRegEmail);
         password = findViewById(R.id.editTxtRegPassword);
         phNumber = findViewById(R.id.editTextPhNumber);
@@ -73,7 +72,6 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
     private void registerUser() {
         String userFirstName = firstName.getText().toString();
         String userLastName = lastName.getText().toString();
-        String userCompany = company.getText().toString();
         String userEmail = email.getText().toString();
         String userPass = password.getText().toString();
         String userPhone = phNumber.getText().toString();
@@ -88,11 +86,6 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
         if (userLastName.isEmpty()) {
             lastName.setError("Last name is required");
             lastName.requestFocus();
-            return;
-        }
-        if (userCompany.isEmpty()) {
-            company.setError("Company is required");
-            company.requestFocus();
             return;
         }
         if (userEmail.isEmpty()) {
@@ -127,7 +120,7 @@ public class RegisterRealtor extends AppCompatActivity implements View.OnClickLi
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
 
-                            User user = new User(userFirstName, userLastName, userCompany, userEmail, userPhone, aboutMe, userType);
+                            User user = new User(userFirstName, userLastName, userEmail, userPhone, aboutMe, userType);
 
                             FirebaseDatabase.getInstance().getReference("AllUsers")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
