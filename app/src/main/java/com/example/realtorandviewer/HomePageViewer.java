@@ -32,8 +32,8 @@ public class HomePageViewer extends AppCompatActivity {
 
     private ImageButton btnEditViewerProfile;
     ImageButton findRealtorBtn, findPropertiesBtn, mortgageCalcBtn;
-    TextView firstNameText, lastNameText, emailText;
-    CardView favouritesBtn, recommendedRealtorBtn, resourcesBtn;
+    TextView firstNameText, lastNameText;
+    CardView favouritesBtn, resourcesBtn;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -52,12 +52,10 @@ public class HomePageViewer extends AppCompatActivity {
         findPropertiesBtn = findViewById(R.id.btnFindProperties);
 
         favouritesBtn = findViewById(R.id.btnFavourites);
-        recommendedRealtorBtn = findViewById(R.id.btnRecommendedRealtors);
         resourcesBtn = findViewById(R.id.btnResources);
 
         firstNameText = findViewById(R.id.textFirstName);
         lastNameText = findViewById(R.id.textLastName);
-        emailText = findViewById(R.id.textEmail);
 
         user = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("ViewerUsers");
@@ -70,11 +68,9 @@ public class HomePageViewer extends AppCompatActivity {
                 if (userProfile != null) {
                     String firstName = userProfile.firstName;
                     String lastName = userProfile.lastName;
-                    String email = userProfile.email;
 
                     firstNameText.setText(firstName);
                     lastNameText.setText(lastName);
-                    emailText.setText(email);
                 }
             }
 
@@ -85,7 +81,6 @@ public class HomePageViewer extends AppCompatActivity {
         });
 
         favouritesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Favourites.class)));
-        recommendedRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RecommendedRealtor.class)));
         resourcesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourcesPageViewer.class)));
 
         findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
@@ -99,7 +94,7 @@ public class HomePageViewer extends AppCompatActivity {
                 final DialogPlus dialogPlus = DialogPlus.newDialog(HomePageViewer.this)
                         .setContentBackgroundResource(R.color.transparent)
                         .setContentHolder(new ViewHolder(R.layout.dialog_content_edit_profile_viewer))
-                        .setExpanded(true, 1400)
+                        .setExpanded(true, 1000)
                         .create();
 
                 View myview = dialogPlus.getHolderView();
@@ -179,11 +174,9 @@ public class HomePageViewer extends AppCompatActivity {
                 if (userProfile != null) {
                     String firstName = userProfile.firstName;
                     String lastName = userProfile.lastName;
-                    String email = userProfile.email;
 
                     firstNameText.setText(firstName);
                     lastNameText.setText(lastName);
-                    emailText.setText(email);
                 }
             }
 
