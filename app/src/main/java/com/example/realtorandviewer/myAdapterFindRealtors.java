@@ -36,6 +36,7 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
 
         holder.firsName.setText(User.getFirstName());
         holder.lastName.setText(User.getLastName());
+        holder.company.setText(User.getCompany());
         holder.phoneNumber.setText(User.getPhNumber());
         holder.email.setText(User.getEmail());
        // holder.uType.setText(User.getUserType());
@@ -53,19 +54,18 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
 
     class myviewholder extends RecyclerView.ViewHolder {
 
-        TextView firsName, lastName, phoneNumber, email;
-        ImageButton edit;
+        TextView firsName, lastName, company, phoneNumber, email;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
 
             firsName = (TextView) itemView.findViewById(R.id.firstname_Text_FindRealtor);
-            lastName = (TextView) itemView.findViewById(R.id.lastname_Text_FindProperties);
-            phoneNumber = (TextView) itemView.findViewById(R.id.phoneNumber_Text_FindProperties);
-            email = (TextView) itemView.findViewById(R.id.email_Text_FindProperties);
+            lastName = (TextView) itemView.findViewById(R.id.lastname_Text_FindRealtor);
+            company = (TextView) itemView.findViewById(R.id.company_Text_FindRealtor);
+            phoneNumber = (TextView) itemView.findViewById(R.id.phoneNumber_Text_FindRealtor);
+            email = (TextView) itemView.findViewById(R.id.email_Text_FindRealtor);
             //uType = (TextView) itemView.findViewById(R.id.userType_Text_FindProperties);
 
-            edit = (ImageButton) itemView.findViewById(R.id.editListingBtn);
 
         }
     }

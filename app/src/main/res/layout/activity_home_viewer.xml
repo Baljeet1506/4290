@@ -26,6 +26,7 @@
             android:layout_height="48dp"
             android:layout_margin="8dp"
             android:backgroundTint="@color/white"
+            android:contentDescription="@string/settings"
             android:fontFamily="@font/roboto"
             android:insetTop="0dp"
             android:insetBottom="0dp"
@@ -41,36 +42,20 @@
             app:layout_constraintVertical_bias="0.671"
             app:tint="#BCBCBC" />
 
-        <ImageView
-            android:id="@+id/user_picture"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="16dp"
-            android:contentDescription="@string/profile_picture"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/placeholder_user" />
-
         <TextView
             android:id="@+id/textFirstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:fontFamily="@font/roboto"
             android:text="@string/name_first"
             android:textAlignment="viewStart"
             android:textColor="#000000"
             android:textSize="@dimen/h2"
-            app:layout_constraintBottom_toBottomOf="@+id/user_picture"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.11"
-            app:layout_constraintStart_toEndOf="@+id/user_picture"
-            app:layout_constraintTop_toTopOf="@+id/user_picture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
@@ -90,20 +75,6 @@
             app:layout_constraintTop_toTopOf="@+id/textFirstName"
             app:layout_constraintVertical_bias="0.101" />
 
-        <TextView
-            android:id="@+id/textEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_slab"
-            android:text="@string/email"
-            android:textColor="#6A6A6A"
-            android:textSize="@dimen/h4"
-            app:layout_constraintBottom_toBottomOf="@+id/user_picture"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/textFirstName"
-            app:layout_constraintTop_toBottomOf="@+id/textFirstName"
-            app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
@@ -118,7 +89,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:padding="@dimen/spacing_small"
+            android:padding="@dimen/spacing_medium"
             app:layout_constraintBottom_toTopOf="@+id/navigation"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -138,10 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@id/strut"
                 android:layout_alignParentStart="true"
-                android:layout_marginStart="@dimen/spacing_small"
-                android:layout_marginTop="@dimen/spacing_small"
-                android:layout_marginEnd="@dimen/spacing_small"
-                android:layout_marginBottom="@dimen/spacing_large"
+                android:layout_margin="@dimen/spacing_small"
                 android:backgroundTint="#FFFFFF"
                 android:fontFamily="@font/roboto_slab"
                 android:text="@string/favourites"
@@ -174,10 +142,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@id/strut"
                 android:layout_alignParentEnd="true"
-                android:layout_marginStart="@dimen/spacing_small"
-                android:layout_marginTop="@dimen/spacing_small"
-                android:layout_marginEnd="@dimen/spacing_small"
-                android:layout_marginBottom="@dimen/spacing_large"
+                android:layout_margin="@dimen/spacing_small"
                 android:layout_toEndOf="@id/btnFavourites"
                 android:backgroundTint="#FFFFFF"
                 android:fontFamily="@font/roboto_slab"
@@ -205,80 +170,7 @@
                     app:drawableTopCompat="@drawable/icon_resources" />
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btnRecommendedRealtors"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/btnFavourites"
-                android:layout_alignEnd="@id/strut"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="@dimen/spacing_small"
-                android:layout_marginTop="@dimen/spacing_small"
-                android:layout_marginEnd="@dimen/spacing_small"
-                android:layout_marginBottom="@dimen/spacing_large"
-                android:backgroundTint="#FFFFFF"
-                android:fontFamily="@font/roboto_slab"
-                android:text="@string/my_listings"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:typeface="serif"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="11dp"
-                app:cornerRadius="12dp">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:drawablePadding="@dimen/spacing_medium"
-                    android:fontFamily="@font/roboto"
-                    android:scaleX="@dimen/icon_scale"
-                    android:scaleY="@dimen/icon_scale"
-                    android:text="@string/recommended_realtors"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/h1"
-                    android:textStyle="bold"
-                    app:drawableTopCompat="@drawable/icon_recommend" />
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/other"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/btnFavourites"
-                android:layout_alignStart="@id/strut"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="@dimen/spacing_small"
-                android:layout_marginTop="@dimen/spacing_small"
-                android:layout_marginEnd="@dimen/spacing_small"
-                android:layout_marginBottom="@dimen/spacing_large"
-                android:layout_toEndOf="@id/btnRecommendedRealtors"
-                android:backgroundTint="#FFFFFF"
-                android:fontFamily="@font/roboto_slab"
-                android:text="@string/past_sales"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:typeface="serif"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="11dp"
-                app:cornerRadius="12dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:drawablePadding="@dimen/spacing_medium"
-                    android:fontFamily="@font/roboto"
-                    android:scaleX="@dimen/icon_scale"
-                    android:scaleY="@dimen/icon_scale"
-                    android:text="other"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/h1"
-                    android:textStyle="bold"
-                    app:drawableTopCompat="@drawable/icon_other" />
-            </androidx.cardview.widget.CardView>
         </RelativeLayout>
     </ScrollView>
 
