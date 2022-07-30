@@ -48,18 +48,18 @@
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_calculator_button"
-            app:layout_constraintBottom_toBottomOf="@+id/btnFindProperties"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMyFavourites"
             app:layout_constraintEnd_toStartOf="@+id/btnProfile"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnFindProperties"
-            app:layout_constraintTop_toTopOf="@+id/btnFindProperties"
+            app:layout_constraintStart_toEndOf="@+id/btnMyFavourites"
+            app:layout_constraintTop_toTopOf="@+id/btnMyFavourites"
             app:srcCompat="@drawable/calculator" />
 
         <ImageButton
             android:id="@+id/btnFindRealtors"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginBottom="6dp"
+            android:layout_marginBottom="16dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_realtors_button"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -67,7 +67,6 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/realtors_select" />
 
         <ImageButton
@@ -77,11 +76,24 @@
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_properties_button"
             app:layout_constraintBottom_toBottomOf="@+id/btnFindRealtors"
-            app:layout_constraintEnd_toStartOf="@+id/btnMortgageCalculator"
+            app:layout_constraintEnd_toStartOf="@+id/btnMyFavourites"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/btnFindRealtors"
             app:layout_constraintTop_toTopOf="@+id/btnFindRealtors"
             app:srcCompat="@drawable/properties" />
+
+        <ImageButton
+            android:id="@+id/btnMyFavourites"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/nav_my_favourites_button"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFindProperties"
+            app:layout_constraintEnd_toStartOf="@+id/btnMortgageCalculator"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnFindProperties"
+            app:layout_constraintTop_toTopOf="@+id/btnFindProperties"
+            app:srcCompat="@drawable/fav" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
 

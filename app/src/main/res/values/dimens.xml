@@ -17,7 +17,8 @@
     <dimen name="placeholder_height">100dp</dimen>
     <dimen name="placeholder_width">100dp</dimen>
     <dimen name="icon_scale">0.66</dimen>
-    <dimen name="card_elevation">10dp</dimen>
+    <dimen name="card_elevation_medium">10dp</dimen>
+    <dimen name="card_elevation_small">5dp</dimen>
 
 
 </resources>

@@ -15,7 +15,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class FindProperties extends AppCompatActivity {
-    ImageButton findRealtorBtn, mortgageCalculatorBtn, profileBtn;
+    ImageButton findRealtorBtn, favouritesBtn, mortgageCalculatorBtn, profileBtn;
     RecyclerView recview;
     myAdapterFindProperties adapter;
 
@@ -38,13 +38,15 @@ public class FindProperties extends AppCompatActivity {
         recview.setAdapter(adapter);
 
         findRealtorBtn = findViewById(R.id.btnFindRealtors);
+        favouritesBtn = findViewById(R.id.btnMyFavourites);
         mortgageCalculatorBtn = findViewById(R.id.btnMortgageCalculator);
         profileBtn = findViewById(R.id.btnProfile);
 
         findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
+        favouritesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Favourites.class)));
         mortgageCalculatorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
         profileBtn.setOnClickListener(view -> {
-            if (Login.uType == 1) {
+            if(Login.uType == 1){
                 startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
             } else
                 startActivity(new Intent(getApplicationContext(), HomePageViewer.class));

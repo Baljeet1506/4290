@@ -160,77 +160,9 @@
                 android:layout_centerHorizontal="true" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/btnFavourites"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_alignEnd="@id/strut"
-                android:layout_alignParentStart="true"
-                android:layout_margin="@dimen/spacing_small"
-                android:backgroundTint="#FFFFFF"
-                android:fontFamily="@font/roboto_slab"
-                android:text="@string/favourites"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:typeface="serif"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp"
-                app:cornerRadius="12dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:drawablePadding="@dimen/spacing_medium"
-                    android:fontFamily="@font/roboto"
-                    android:scaleX="@dimen/icon_scale"
-                    android:scaleY="@dimen/icon_scale"
-                    android:text="@string/favourites"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/h1"
-                    android:textStyle="bold"
-                    app:drawableTopCompat="@drawable/icon_heart" />
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btnResources"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_alignStart="@id/strut"
-                android:layout_alignParentEnd="true"
-                android:layout_margin="@dimen/spacing_small"
-                android:layout_toEndOf="@id/btnFavourites"
-                android:backgroundTint="#FFFFFF"
-                android:fontFamily="@font/roboto_slab"
-                android:text="@string/resources"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:typeface="serif"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="5dp"
-                app:cornerRadius="12dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:drawablePadding="@dimen/spacing_medium"
-                    android:fontFamily="@font/roboto"
-                    android:scaleX="@dimen/icon_scale"
-                    android:scaleY="@dimen/icon_scale"
-                    android:text="@string/resources"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/h1"
-                    android:textStyle="bold"
-                    app:drawableTopCompat="@drawable/icon_resources" />
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
                 android:id="@+id/btnMyListings"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/btnFavourites"
                 android:layout_alignEnd="@id/strut"
                 android:layout_alignParentStart="true"
                 android:layout_margin="@dimen/spacing_small"
@@ -242,7 +174,7 @@
                 android:textColor="#000000"
                 android:typeface="serif"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="5dp"
+                app:cardElevation="@dimen/card_elevation_small"
                 app:cornerRadius="12dp">
 
                 <TextView
@@ -255,7 +187,7 @@
                     android:scaleY="@dimen/icon_scale"
                     android:text="@string/my_listings"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h1"
+                    android:textSize="@dimen/h2"
                     android:textStyle="bold"
                     app:drawableTopCompat="@drawable/icon_listing" />
             </androidx.cardview.widget.CardView>
@@ -264,7 +196,6 @@
                 android:id="@+id/btnPastSales"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/btnFavourites"
                 android:layout_alignStart="@id/strut"
                 android:layout_alignParentEnd="true"
                 android:layout_margin="@dimen/spacing_small"
@@ -276,7 +207,7 @@
                 android:textColor="#000000"
                 android:typeface="serif"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="5dp"
+                app:cardElevation="@dimen/card_elevation_small"
                 app:cornerRadius="12dp">
 
                 <TextView
@@ -289,9 +220,155 @@
                     android:scaleY="@dimen/icon_scale"
                     android:text="@string/past_sales"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h1"
+                    android:textSize="@dimen/h2"
                     android:textStyle="bold"
                     app:drawableTopCompat="@drawable/icon_past" />
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:id="@+id/separator"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/btnMyListings"
+                android:layout_margin="@dimen/spacing_small"
+                android:background="@color/gray" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnPreparingToSell"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/strut"
+                android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/spacing_small"
+                android:layout_below="@id/separator"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/favourites"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="@dimen/card_elevation_small"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="@string/prepare_to_sell"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h2"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/resource_preparing_to_sell" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnListing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@id/strut"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/spacing_small"
+                android:layout_below="@id/separator"
+                android:layout_toEndOf="@id/btnPreparingToSell"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/resources"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="@dimen/card_elevation_small"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="@string/listing_homes"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h2"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/resource_listing" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnMarketing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnPreparingToSell"
+                android:layout_alignEnd="@id/strut"
+                android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/spacing_small"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/my_listings"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="@dimen/card_elevation_small"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="@string/marketing_the_property"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h2"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/resource_marketing" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnTheOffer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnPreparingToSell"
+                android:layout_alignStart="@id/strut"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/spacing_small"
+                android:layout_toEndOf="@id/btnMarketing"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/past_sales"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="@dimen/card_elevation_small"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="@string/the_offer"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h2"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/resource_offer" />
             </androidx.cardview.widget.CardView>
         </RelativeLayout>
     </ScrollView>
@@ -314,12 +391,11 @@
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_profile_button"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMortgageCalculator"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/btnMortgageCalculator"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toTopOf="@+id/btnMortgageCalculator"
             app:srcCompat="@drawable/profile_select" />
 
         <ImageButton
@@ -328,26 +404,25 @@
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_calculator_button"
-            app:layout_constraintBottom_toBottomOf="@+id/btnProfile"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMyFavourites"
             app:layout_constraintEnd_toStartOf="@+id/btnProfile"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnFindProperties"
-            app:layout_constraintTop_toTopOf="@+id/btnProfile"
+            app:layout_constraintStart_toEndOf="@+id/btnMyFavourites"
+            app:layout_constraintTop_toTopOf="@+id/btnMyFavourites"
             app:srcCompat="@drawable/calculator" />
 
         <ImageButton
             android:id="@+id/btnFindRealtors"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_realtors_button"
-            app:layout_constraintBottom_toBottomOf="@+id/btnFindProperties"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnFindProperties"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/btnFindProperties"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/realtors" />
 
         <ImageButton
@@ -356,12 +431,24 @@
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_properties_button"
-            app:layout_constraintBottom_toBottomOf="@+id/btnMortgageCalculator"
-            app:layout_constraintEnd_toStartOf="@+id/btnMortgageCalculator"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFindRealtors"
+            app:layout_constraintEnd_toStartOf="@+id/btnMyFavourites"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/btnFindRealtors"
-            app:layout_constraintTop_toTopOf="@+id/btnMortgageCalculator"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toTopOf="@+id/btnFindRealtors"
             app:srcCompat="@drawable/properties" />
+
+        <ImageButton
+            android:id="@+id/btnMyFavourites"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/nav_my_favourites_button"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFindProperties"
+            app:layout_constraintEnd_toStartOf="@+id/btnMortgageCalculator"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnFindProperties"
+            app:layout_constraintTop_toTopOf="@+id/btnFindProperties"
+            app:srcCompat="@drawable/fav" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

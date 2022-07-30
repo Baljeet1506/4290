@@ -35,6 +35,7 @@
     <string name="nav_profile_button">Profile Button</string>
     <string name="nav_calculator_button">Mortgage calculator Button</string>
     <string name="nav_find_properties_button">Find Properties Button</string>
+    <string name="nav_my_favourites_button">Find Properties Button</string>
     <string name="nav_find_realtors_button">Find Realtors Button</string>
 
     <!-- Logo -->
@@ -108,10 +109,10 @@
     <string name="listing_homes">Listing</string>
     <string name="marketing_the_property">Marketing</string>
     <string name="the_offer">The Offer</string>
-    <string name="prepare_to_sell">Preparing to Sell</string>
-    <string name="make_an_offer">Making an Offer</string>
-    <string name="finance_planning">Finance Planning</string>
-    <string name="prepare_to_buy">Preparing to Buy</string>
+    <string name="prepare_to_sell">Prep to Sell</string>
+    <string name="make_an_offer">Make an Offer</string>
+    <string name="finance_planning">Finances</string>
+    <string name="prepare_to_buy">Prep to Buy</string>
     <string name="property_purchased">Closing the Purchase</string>
     <string name="view_properties">View Properties</string>
 

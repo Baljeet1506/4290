@@ -43,6 +43,7 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
         holder.company.setText(User.getCompany());
         holder.phoneNumber.setText(User.getPhNumber());
         holder.email.setText(User.getEmail());
+        holder.aboutMe.setText(User.getAboutMe());
         Glide.with(holder.img.getContext()).load(User.getPimage()).into(holder.img);
     }
 
@@ -56,7 +57,7 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
 
     class myviewholder extends RecyclerView.ViewHolder {
 
-        TextView firsName, lastName, company, phoneNumber, email;
+        TextView firsName, lastName, company, phoneNumber, email, aboutMe;
         CircleImageView img;
 
         public myviewholder(@NonNull View itemView) {
@@ -67,6 +68,7 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
             company = (TextView) itemView.findViewById(R.id.company_Text_FindRealtor);
             phoneNumber = (TextView) itemView.findViewById(R.id.phoneNumber_Text_FindRealtor);
             email = (TextView) itemView.findViewById(R.id.email_Text_FindRealtor);
+            aboutMe = (TextView) itemView.findViewById(R.id.aboutMe_Text_FindRealtor);
             img = (CircleImageView) itemView.findViewById(R.id.user_profile_image);
 
 

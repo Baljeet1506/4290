@@ -31,9 +31,10 @@ import java.util.Map;
 public class HomePageViewer extends AppCompatActivity {
 
     private ImageButton btnEditViewerProfile;
-    ImageButton findRealtorBtn, findPropertiesBtn, mortgageCalcBtn;
+    CardView preparingToBuyBtn, financePlanningBtn, viewPropertiesBtn, makeAnOfferBtn, closingPurchaseBtn;
+    ImageButton findRealtorBtn, findPropertiesBtn, favouritesBtn, mortgageCalculatorBtn;
     TextView firstNameText, lastNameText;
-    CardView favouritesBtn, resourcesBtn;
+    CardView resourcesBtn;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -48,11 +49,15 @@ public class HomePageViewer extends AppCompatActivity {
         btnEditViewerProfile = findViewById(R.id.btnEditViewerProfile);
 
         findRealtorBtn = findViewById(R.id.btnFindRealtors);
-        mortgageCalcBtn = findViewById(R.id.btnMortgageCalculator);
         findPropertiesBtn = findViewById(R.id.btnFindProperties);
+        favouritesBtn = findViewById(R.id.btnMyFavourites);
+        mortgageCalculatorBtn = findViewById(R.id.btnMortgageCalculator);
 
-        favouritesBtn = findViewById(R.id.btnFavourites);
-        resourcesBtn = findViewById(R.id.btnResources);
+        preparingToBuyBtn = findViewById(R.id.btnPreparingToBuy);
+        financePlanningBtn = findViewById(R.id.btnFinancePlanning);
+        viewPropertiesBtn = findViewById(R.id.btnViewProperties);
+        makeAnOfferBtn = findViewById(R.id.btnMakeAnOffer);
+        closingPurchaseBtn = findViewById(R.id.btnClosingPurchase);
 
         firstNameText = findViewById(R.id.textFirstName);
         lastNameText = findViewById(R.id.textLastName);
@@ -80,12 +85,16 @@ public class HomePageViewer extends AppCompatActivity {
             }
         });
 
-        favouritesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Favourites.class)));
-        resourcesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourcesPageViewer.class)));
-
         findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
         findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
-        mortgageCalcBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
+        favouritesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Favourites.class)));
+        mortgageCalculatorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
+
+        preparingToBuyBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerPrepareToBuy.class)));
+        financePlanningBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerPlanFinance.class)));
+        viewPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerViewProperties.class)));
+        makeAnOfferBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerMakeAnOffer.class)));
+        closingPurchaseBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerPurchased.class)));
 
         btnEditViewerProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,7 +173,7 @@ public class HomePageViewer extends AppCompatActivity {
         });
     }
 
-    private void refreshProfileInfo(){
+    private void refreshProfileInfo() {
 
         reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

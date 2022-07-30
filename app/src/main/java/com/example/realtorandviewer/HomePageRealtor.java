@@ -54,9 +54,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class HomePageRealtor extends AppCompatActivity {
 
     private ImageButton btnEditRealtorProfile;
-    ImageButton findRealtorBtn, findPropertiesBtn, mortgageCalculatorBtn;
+    ImageButton findRealtorBtn, findPropertiesBtn, favouritesBtn, mortgageCalculatorBtn;
+    CardView preparingToSellBtn, listingBtn, marketingBtn, theOfferBtn;
     TextView firstNameText, lastNameText, companyText, realtorEmailText, realtorPhoneNumText;
-    CardView favouritesBtn, myListingsBtn, pastSalesBtn, resourcesBtn;
+    CardView myListingsBtn, pastSalesBtn;
     CircleImageView user_picture;
     Uri filepath;
     ImageView img;
@@ -76,14 +77,18 @@ public class HomePageRealtor extends AppCompatActivity {
 
         btnEditRealtorProfile = findViewById(R.id.btnEditRealtorProfile);
 
-        favouritesBtn = findViewById(R.id.btnFavourites);
         myListingsBtn = findViewById(R.id.btnMyListings);
         pastSalesBtn = findViewById(R.id.btnPastSales);
-        resourcesBtn = findViewById(R.id.btnResources);
 
         findRealtorBtn = findViewById(R.id.btnFindRealtors);
         findPropertiesBtn = findViewById(R.id.btnFindProperties);
+        favouritesBtn = findViewById(R.id.btnMyFavourites);
         mortgageCalculatorBtn = findViewById(R.id.btnMortgageCalculator);
+
+        preparingToSellBtn = findViewById(R.id.btnPreparingToSell);
+        listingBtn = findViewById(R.id.btnListing);
+        marketingBtn = findViewById(R.id.btnMarketing);
+        theOfferBtn = findViewById(R.id.btnTheOffer);
 
         firstNameText = findViewById(R.id.textFirstName);
         lastNameText = findViewById(R.id.textLastName);
@@ -123,14 +128,18 @@ public class HomePageRealtor extends AppCompatActivity {
             }
         });
 
-        favouritesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Favourites.class)));
         myListingsBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorListings.class)));
         pastSalesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorPastSales.class)));
-        resourcesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourcesPageRealtor.class)));
 
         findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
-        mortgageCalculatorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
         findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
+        favouritesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Favourites.class)));
+        mortgageCalculatorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
+
+        preparingToSellBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceRealtorPrepareToSell.class)));
+        listingBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceRealtorListing.class)));
+        marketingBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceRealtorMarketing.class)));
+        theOfferBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceRealtorOffer.class)));
 
 
         user_picture.setOnClickListener(new View.OnClickListener() {

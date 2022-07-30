@@ -17,7 +17,7 @@ import com.google.android.material.snackbar.Snackbar;
 public class MortgageCalculator extends AppCompatActivity {
 
     Button btnCalculate;
-    ImageButton findRealtorBtn, findPropertiesBtn, profileBtn;
+    ImageButton findRealtorBtn, findPropertiesBtn, favouritesBtn, profileBtn;
     EditText purchasePrice, downPayment, amortPeriod, interestRate;
     TextView monthlyPayment;
 
@@ -28,15 +28,17 @@ public class MortgageCalculator extends AppCompatActivity {
 
         findRealtorBtn = findViewById(R.id.btnFindRealtors);
         findPropertiesBtn = findViewById(R.id.btnFindProperties);
+        favouritesBtn = findViewById(R.id.btnMyFavourites);
         profileBtn = findViewById(R.id.btnProfile);
 
         findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
         findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
+        favouritesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Favourites.class)));
         profileBtn.setOnClickListener(view -> {
             if(Login.uType == 1){
                 startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
             } else
-            startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
         });
 
         purchasePrice = findViewById(R.id.editTextPurchasePrice);

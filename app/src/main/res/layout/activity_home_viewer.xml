@@ -36,27 +36,27 @@
             android:src="@drawable/settings"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.955"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.671"
             app:tint="#BCBCBC" />
 
         <TextView
             android:id="@+id/textFirstName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="@dimen/spacing_medium"
             android:fontFamily="@font/roboto"
             android:text="@string/name_first"
             android:textAlignment="viewStart"
             android:textColor="#000000"
             android:textSize="@dimen/h2"
+            app:flow_firstVerticalBias="0.5"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.11"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textLastName"
@@ -87,15 +87,9 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:gravity="center"
-            android:padding="@dimen/spacing_medium"
-            app:layout_constraintBottom_toTopOf="@+id/navigation"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_section"
-            app:layout_constraintVertical_bias="0.0">
+            android:padding="@dimen/spacing_small">
 
             <View
                 android:id="@+id/strut"
@@ -104,7 +98,7 @@
                 android:layout_centerHorizontal="true" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/btnFavourites"
+                android:id="@+id/btnPreparingToBuy"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@id/strut"
@@ -118,32 +112,72 @@
                 android:textColor="#000000"
                 android:typeface="serif"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="8dp"
+                app:cardElevation="@dimen/card_elevation_small"
                 app:cornerRadius="12dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:drawablePadding="@dimen/spacing_medium"
-                    android:fontFamily="@font/roboto"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
                     android:scaleX="@dimen/icon_scale"
                     android:scaleY="@dimen/icon_scale"
-                    android:text="@string/favourites"
+                    android:text="@string/prepare_to_buy"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h1"
+                    android:textSize="@dimen/h2"
                     android:textStyle="bold"
-                    app:drawableTopCompat="@drawable/icon_heart" />
+                    app:drawableTopCompat="@drawable/resource_preparing_to_buy" />
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/btnResources"
-                android:layout_width="wrap_content"
+                android:id="@+id/btnViewProperties"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@id/strut"
                 android:layout_alignParentEnd="true"
                 android:layout_margin="@dimen/spacing_small"
-                android:layout_toEndOf="@id/btnFavourites"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/view_properties"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="@dimen/card_elevation_small"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="@string/view_properties"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h2"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/resource_view_properties" />
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:id="@+id/separator1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnPreparingToBuy"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnFinancePlanning"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@id/strut"
+                android:layout_alignParentStart="true"
+                android:layout_below="@id/separator1"
+                android:layout_margin="@dimen/spacing_small"
                 android:backgroundTint="#FFFFFF"
                 android:fontFamily="@font/roboto_slab"
                 android:text="@string/resources"
@@ -152,25 +186,99 @@
                 android:textColor="#000000"
                 android:typeface="serif"
                 app:cardCornerRadius="15dp"
-                app:cardElevation="11dp"
+                app:cardElevation="@dimen/card_elevation_small"
                 app:cornerRadius="12dp">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:drawablePadding="@dimen/spacing_medium"
-                    android:fontFamily="@font/roboto"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
                     android:scaleX="@dimen/icon_scale"
                     android:scaleY="@dimen/icon_scale"
-                    android:text="@string/resources"
+                    android:text="@string/finance_planning"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h1"
+                    android:textSize="@dimen/h2"
                     android:textStyle="bold"
-                    app:drawableTopCompat="@drawable/icon_resources" />
+                    app:drawableTopCompat="@drawable/resource_finance_planning" />
             </androidx.cardview.widget.CardView>
 
 
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnMakeAnOffer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnViewProperties"
+                android:layout_alignStart="@id/strut"
+                android:layout_alignParentEnd="true"
+                android:layout_margin="@dimen/spacing_small"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/past_sales"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="@dimen/card_elevation_small"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="@string/make_an_offer"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h2"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/resource_make_an_offer" />
+            </androidx.cardview.widget.CardView>
+
+            <View
+                android:id="@+id/separator2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnFinancePlanning"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnClosingPurchase"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/separator2"
+                android:layout_alignEnd="@id/strut"
+                android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/spacing_small"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/past_sales"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#000000"
+                android:typeface="serif"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="@dimen/card_elevation_small"
+                app:cornerRadius="12dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawablePadding="@dimen/spacing_small"
+                    android:fontFamily="@font/roboto_slab"
+                    android:scaleX="@dimen/icon_scale"
+                    android:scaleY="@dimen/icon_scale"
+                    android:text="@string/property_purchased"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h2"
+                    android:textStyle="bold"
+                    app:drawableTopCompat="@drawable/resource_close_purchase" />
+            </androidx.cardview.widget.CardView>
         </RelativeLayout>
     </ScrollView>
 
@@ -192,12 +300,11 @@
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_profile_button"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMortgageCalculator"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/btnMortgageCalculator"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toTopOf="@+id/btnMortgageCalculator"
             app:srcCompat="@drawable/profile_select" />
 
         <ImageButton
@@ -206,26 +313,25 @@
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_calculator_button"
-            app:layout_constraintBottom_toBottomOf="@+id/btnProfile"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMyFavourites"
             app:layout_constraintEnd_toStartOf="@+id/btnProfile"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnFindProperties"
-            app:layout_constraintTop_toTopOf="@+id/btnProfile"
+            app:layout_constraintStart_toEndOf="@+id/btnMyFavourites"
+            app:layout_constraintTop_toTopOf="@+id/btnMyFavourites"
             app:srcCompat="@drawable/calculator" />
 
         <ImageButton
             android:id="@+id/btnFindRealtors"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_realtors_button"
-            app:layout_constraintBottom_toBottomOf="@+id/btnFindProperties"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnFindProperties"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/btnFindProperties"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/realtors" />
 
         <ImageButton
@@ -234,12 +340,24 @@
             android:layout_height="48dp"
             android:backgroundTint="#00FFFFFF"
             android:contentDescription="@string/nav_find_properties_button"
-            app:layout_constraintBottom_toBottomOf="@+id/btnMortgageCalculator"
-            app:layout_constraintEnd_toStartOf="@+id/btnMortgageCalculator"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFindRealtors"
+            app:layout_constraintEnd_toStartOf="@+id/btnMyFavourites"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/btnFindRealtors"
-            app:layout_constraintTop_toTopOf="@+id/btnMortgageCalculator"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintTop_toTopOf="@+id/btnFindRealtors"
             app:srcCompat="@drawable/properties" />
+
+        <ImageButton
+            android:id="@+id/btnMyFavourites"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:backgroundTint="#00FFFFFF"
+            android:contentDescription="@string/nav_my_favourites_button"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFindProperties"
+            app:layout_constraintEnd_toStartOf="@+id/btnMortgageCalculator"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnFindProperties"
+            app:layout_constraintTop_toTopOf="@+id/btnFindProperties"
+            app:srcCompat="@drawable/fav" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
