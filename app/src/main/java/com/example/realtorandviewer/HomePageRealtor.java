@@ -1,6 +1,7 @@
 package com.example.realtorandviewer;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -28,6 +29,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
 import com.karumi.dexter.listener.PermissionDeniedResponse;
@@ -37,9 +42,12 @@ import com.karumi.dexter.listener.single.PermissionListener;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -47,9 +55,13 @@ public class HomePageRealtor extends AppCompatActivity {
 
     private ImageButton btnEditRealtorProfile;
     ImageButton findRealtorBtn, findPropertiesBtn, mortgageCalculatorBtn;
-    TextView firstNameText, lastNameText, realtorEmailText, realtorPhoneNumText;
+    TextView firstNameText, lastNameText, companyText, realtorEmailText, realtorPhoneNumText;
     CardView favouritesBtn, myListingsBtn, pastSalesBtn, resourcesBtn;
     CircleImageView user_picture;
+    Uri filepath;
+    ImageView img;
+    Button browse, upload;
+    Bitmap bitmap;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -75,6 +87,7 @@ public class HomePageRealtor extends AppCompatActivity {
 
         firstNameText = findViewById(R.id.textFirstName);
         lastNameText = findViewById(R.id.textLastName);
+        companyText = findViewById(R.id.textCompany);
         realtorEmailText = findViewById(R.id.textRealtorEmail);
         realtorPhoneNumText = findViewById(R.id.textRealtorPhone);
         user_picture = findViewById(R.id.user_picture);
@@ -91,11 +104,13 @@ public class HomePageRealtor extends AppCompatActivity {
                 if (userProfile != null) {
                     String firstName = userProfile.firstName;
                     String lastName = userProfile.lastName;
+                    String company = userProfile.company;
                     String email = userProfile.email;
                     String phone = userProfile.phNumber;
 
                     firstNameText.setText(firstName);
                     lastNameText.setText(lastName);
+                    companyText.setText(company);
                     realtorEmailText.setText(email);
                     realtorPhoneNumText.setText(phone);
                     Glide.with(user_picture.getContext()).load(userProfile.getPimage()).into(user_picture);
@@ -121,7 +136,50 @@ public class HomePageRealtor extends AppCompatActivity {
         user_picture.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), UploadProfileImage.class));
+
+                final DialogPlus dialogPlus = DialogPlus.newDialog(HomePageRealtor.this)
+                        .setContentBackgroundResource(R.color.transparent)
+                        .setContentHolder(new ViewHolder(R.layout.dialog_upload_profile_image))
+                        .create();
+
+                View picview = dialogPlus.getHolderView();
+                Button browseBtn = picview.findViewById(R.id.btn_browse_realtor_pic);
+                Button uploadBtn = picview.findViewById(R.id.btn_upload_realtor_pic);
+                dialogPlus.show();
+
+                browseBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        Dexter.withActivity(HomePageRealtor.this)
+                                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                                .withListener(new PermissionListener() {
+                                    @Override
+                                    public void onPermissionGranted(PermissionGrantedResponse response) {
+                                        Intent intent = new Intent(Intent.ACTION_PICK);
+                                        intent.setType("image/*");
+                                        startActivityForResult(Intent.createChooser(intent, "Select Image File"), 1);
+                                    }
+
+                                    @Override
+                                    public void onPermissionDenied(PermissionDeniedResponse response) {
+
+                                    }
+
+                                    @Override
+                                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+                                        token.continuePermissionRequest();
+                                    }
+                                }).check();
+                    }
+                });
+
+                uploadBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        uploadtofirebase();
+                    }
+                });
             }
         });
 
@@ -137,9 +195,10 @@ public class HomePageRealtor extends AppCompatActivity {
 
                 View myview = dialogPlus.getHolderView();
                 final EditText first_name = myview.findViewById(R.id.dialog_first_name_r);
-                final EditText last_Name = myview.findViewById(R.id.dialog_last_name_r);
-                final EditText phone_Number = myview.findViewById(R.id.dialog_phone_number_r);
-                final EditText description_ = myview.findViewById(R.id.dialog_description_r);
+                final EditText last_name = myview.findViewById(R.id.dialog_last_name_r);
+                final EditText company_name = myview.findViewById(R.id.dialog_company_r);
+                final EditText phone_number = myview.findViewById(R.id.dialog_phone_number_r);
+                final EditText about_me = myview.findViewById(R.id.dialog_description_r);
 
                 ImageButton logoutBtn = myview.findViewById(R.id.btnLogout_dialog_r);
 
@@ -153,13 +212,15 @@ public class HomePageRealtor extends AppCompatActivity {
                         if (userProfile != null) {
                             String firstName = userProfile.firstName;
                             String lastName = userProfile.lastName;
+                            String company = userProfile.company;
                             String phone = userProfile.phNumber;
                             String description = userProfile.aboutMe;
 
                             first_name.setText(firstName);
-                            last_Name.setText(lastName);
-                            phone_Number.setText(phone);
-                            description_.setText(description);
+                            last_name.setText(lastName);
+                            company_name.setText(company);
+                            phone_number.setText(phone);
+                            about_me.setText(description);
                         }
                     }
 
@@ -185,9 +246,10 @@ public class HomePageRealtor extends AppCompatActivity {
                     public void onClick(View view) {
                         Map<String, Object> map = new HashMap<>();
                         map.put("firstName", first_name.getText().toString());
-                        map.put("lastName", last_Name.getText().toString());
-                        map.put("phNumber", phone_Number.getText().toString());
-                        map.put("aboutMe", description_.getText().toString());
+                        map.put("lastName", last_name.getText().toString());
+                        map.put("company", company_name.getText().toString());
+                        map.put("phNumber", phone_number.getText().toString());
+                        map.put("aboutMe", about_me.getText().toString());
 
                         FirebaseDatabase.getInstance().getReference().child("RealtorUsers").child(Login.uID_)
                                 .updateChildren(map)
@@ -222,11 +284,13 @@ public class HomePageRealtor extends AppCompatActivity {
                 if (userProfile != null) {
                     String firstName = userProfile.firstName;
                     String lastName = userProfile.lastName;
+                    String company = userProfile.company;
                     String email = userProfile.email;
                     String phone = userProfile.phNumber;
 
                     firstNameText.setText(firstName);
                     lastNameText.setText(lastName);
+                    companyText.setText(company);
                     realtorEmailText.setText(email);
                     realtorPhoneNumText.setText(phone);
                 }
@@ -239,5 +303,54 @@ public class HomePageRealtor extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        if (requestCode == 1 && resultCode == RESULT_OK) {
+            filepath = data.getData();
+            try {
+                InputStream inputStream = getContentResolver().openInputStream(filepath);
+                bitmap = BitmapFactory.decodeStream(inputStream);
+                img.setImageBitmap(bitmap);
+            } catch (Exception ex) {
 
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void uploadtofirebase() {
+        final ProgressDialog dialog = new ProgressDialog(this);
+        dialog.setTitle("File Uploader");
+        dialog.show();
+
+        FirebaseStorage storage = FirebaseStorage.getInstance();
+        final StorageReference uploader = storage.getReference("Image1" + new Random().nextInt(50));
+
+        uploader.putFile(filepath)
+                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                        uploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                            @Override
+                            public void onSuccess(Uri uri) {
+
+                                dialog.dismiss();
+                                DatabaseReference db = FirebaseDatabase.getInstance().getReference();
+                                db.child("RealtorUsers").child(Login.uID_).child("pimage").setValue(uri.toString());
+
+                                Toast.makeText(getApplicationContext(), "Uploaded", Toast.LENGTH_LONG).show();
+
+                                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+                            }
+                        });
+                    }
+                })
+                .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                    @Override
+                    public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                        float percent = (100 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
+                        dialog.setMessage("Uploaded :" + (int) percent + " %");
+                    }
+                });
+    }
 }

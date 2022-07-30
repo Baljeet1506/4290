@@ -28,15 +28,15 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="@string/profile_picture"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:civ_border_color="#FF000000"
-            app:civ_border_width="2dp"
-            android:src="@mipmap/ic_launcher" />
+            app:layout_constraintVertical_bias="0.5" />
 
         <TextView
             android:id="@+id/textFirstName"
@@ -49,10 +49,10 @@
             android:textSize="@dimen/h2"
             app:layout_constraintBottom_toBottomOf="@+id/user_picture"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.11"
+            app:layout_constraintHorizontal_bias="0.112"
             app:layout_constraintStart_toEndOf="@+id/user_picture"
-            app:layout_constraintTop_toTopOf="@+id/user_picture"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.238" />
 
         <TextView
             android:id="@+id/textLastName"
@@ -81,12 +81,28 @@
             android:textAlignment="viewStart"
             android:textColor="#6A6A6A"
             android:textSize="@dimen/h4"
-            app:layout_constraintBottom_toBottomOf="@+id/user_picture"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/textFirstName"
-            app:layout_constraintTop_toTopOf="@+id/user_picture"
-            app:layout_constraintVertical_bias="0.803" />
+            app:layout_constraintTop_toBottomOf="@+id/textRealtorPhone"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textCompany"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_slab"
+            android:text="@string/company"
+            android:textAlignment="viewStart"
+            android:textSize="@dimen/h4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/textFirstName"
+            app:layout_constraintTop_toBottomOf="@+id/textFirstName"
+            app:layout_constraintVertical_bias="0.0" />
+
 
         <TextView
             android:id="@+id/textRealtorPhone"
@@ -96,19 +112,17 @@
             android:text="@string/phone_number"
             android:textAlignment="viewStart"
             android:textSize="@dimen/h4"
-            app:layout_constraintBottom_toTopOf="@+id/textRealtorEmail"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/textFirstName"
-            app:layout_constraintTop_toTopOf="@+id/user_picture"
-            app:layout_constraintVertical_bias="1.0" />
-
+            app:layout_constraintTop_toBottomOf="@+id/textCompany"
+            app:layout_constraintVertical_bias="0.0" />
 
         <ImageButton
             android:id="@+id/btnEditRealtorProfile"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_margin="8dp"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
             android:backgroundTint="@color/white"
             android:fontFamily="@font/roboto"
             android:minWidth="48dp"
@@ -151,9 +165,9 @@
                 android:layout_height="wrap_content"
                 android:layout_alignEnd="@id/strut"
                 android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/spacing_small"
                 android:backgroundTint="#FFFFFF"
                 android:fontFamily="@font/roboto_slab"
-                android:layout_margin="@dimen/spacing_small"
                 android:text="@string/favourites"
                 android:textAlignment="center"
                 android:textAllCaps="false"
@@ -219,11 +233,11 @@
                 android:layout_below="@id/btnFavourites"
                 android:layout_alignEnd="@id/strut"
                 android:layout_alignParentStart="true"
+                android:layout_margin="@dimen/spacing_small"
                 android:backgroundTint="#FFFFFF"
                 android:fontFamily="@font/roboto_slab"
                 android:text="@string/my_listings"
                 android:textAlignment="center"
-                android:layout_margin="@dimen/spacing_small"
                 android:textAllCaps="false"
                 android:textColor="#000000"
                 android:typeface="serif"

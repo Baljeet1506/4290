@@ -61,7 +61,8 @@
     <ScrollView
         android:id="@+id/content_scrolling"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:elevation="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,6 +71,7 @@
             android:orientation="vertical"
             android:padding="@dimen/spacing_small"
             android:showDividers="middle">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -164,6 +166,37 @@
                     tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
             </LinearLayout>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/d"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:fontFamily="@font/roboto_slab"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/company"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/dialog_company_r"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/textbox"
+                    android:importantForAutofill="no"
+                    android:inputType="phone"
+                    android:textAlignment="center"
+                    android:textColorHint="#00FFFFFF"
+                    android:textSize="@dimen/h4"
+                    tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
+            </LinearLayout>
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
@@ -195,7 +228,7 @@
                     android:hint="@string/textbox"
                     android:importantForAutofill="no"
                     android:inputType="textLongMessage|textMultiLine|text"
-                    android:minHeight="@dimen/text_input_height"
+                    android:minHeight="@dimen/paragraph_input_height"
                     android:padding="@dimen/spacing_small"
                     android:textAlignment="center"
                     android:textColorHint="#00FFFFFF"
