@@ -15,6 +15,6 @@ public class ResourceViewerPurchased extends AppCompatActivity {
         setContentView(R.layout.activity_resource_viewer_purchased);
 
         btnBack = findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourcesPageViewer.class)));
+        btnBack.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageViewer.class)));
     }
 }

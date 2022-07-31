@@ -15,6 +15,6 @@ public class ResourceRealtorOffer extends AppCompatActivity {
         setContentView(R.layout.activity_resource_realtor_offer);
 
         backBtn = findViewById(R.id.btnBack);
-        backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourcesPageRealtor.class)));
+        backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageRealtor.class)));
     }
 }

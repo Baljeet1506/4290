@@ -15,6 +15,6 @@ public class ResourceViewerMakeAnOffer extends AppCompatActivity {
         setContentView(R.layout.activity_resource_viewer_make_an_offer);
 
         btnBack = findViewById(R.id.btnBack);
-        btnBack.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorListings.class)));
+        btnBack.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), HomePageViewer.class)));
     }
 }

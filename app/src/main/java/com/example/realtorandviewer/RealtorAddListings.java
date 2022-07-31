@@ -27,8 +27,6 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_listings);
 
-        backBtn = findViewById(R.id.btnBack);
-
         unitNumber = findViewById(R.id.editTextUnitNum);
         houseNumber = findViewById(R.id.editTextHouseNum);
         street = findViewById(R.id.editTextStreet);
@@ -47,6 +45,7 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         addListingBtn = findViewById(R.id.btnAddListing);
         addListingBtn.setOnClickListener(this);
 
+        backBtn = findViewById(R.id.btnBack);
         backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorListings.class)));
 
         listing = new Properties();

@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +23,8 @@ import androidx.cardview.widget.CardView;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -54,14 +57,12 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class HomePageRealtor extends AppCompatActivity {
 
     private ImageButton btnEditRealtorProfile;
-    ImageButton findRealtorBtn, findPropertiesBtn, favouritesBtn, mortgageCalculatorBtn;
     CardView preparingToSellBtn, listingBtn, marketingBtn, theOfferBtn;
     TextView firstNameText, lastNameText, companyText, realtorEmailText, realtorPhoneNumText;
     CardView myListingsBtn, pastSalesBtn;
     CircleImageView user_picture;
     Uri filepath;
     ImageView img;
-    Button browse, upload;
     Bitmap bitmap;
 
     private FirebaseUser user;
@@ -79,11 +80,6 @@ public class HomePageRealtor extends AppCompatActivity {
 
         myListingsBtn = findViewById(R.id.btnMyListings);
         pastSalesBtn = findViewById(R.id.btnPastSales);
-
-        findRealtorBtn = findViewById(R.id.btnFindRealtors);
-        findPropertiesBtn = findViewById(R.id.btnFindProperties);
-        favouritesBtn = findViewById(R.id.btnMyFavourites);
-        mortgageCalculatorBtn = findViewById(R.id.btnMortgageCalculator);
 
         preparingToSellBtn = findViewById(R.id.btnPreparingToSell);
         listingBtn = findViewById(R.id.btnListing);
@@ -131,10 +127,48 @@ public class HomePageRealtor extends AppCompatActivity {
         myListingsBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorListings.class)));
         pastSalesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorPastSales.class)));
 
-        findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
-        findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
-        favouritesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Favourites.class)));
-        mortgageCalculatorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
+        // Initialize and assign variable
+        NavigationBarView navigationBarView = findViewById(R.id.bottom_navigation);
+
+        // Set Home selected
+        navigationBarView.setSelectedItemId(R.id.profilePage);
+
+        // Perform item selected listener
+        navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+                    case R.id.realtorsPage:
+                        startActivity(new Intent(getApplicationContext(), FindRealtor.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.propertiesPage:
+                        startActivity(new Intent(getApplicationContext(), FindProperties.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.favouritesPage:
+                        startActivity(new Intent(getApplicationContext(), Favourites.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.calculatorPage:
+                        startActivity(new Intent(getApplicationContext(), MortgageCalculator.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.profilePage:
+                        if (Login.uType == 1) {
+                            startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        } else {
+                            startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        }
+                        return true;
+                }
+                return false;
+            }
+        });
 
         preparingToSellBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceRealtorPrepareToSell.class)));
         listingBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceRealtorListing.class)));

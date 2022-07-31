@@ -8,10 +8,12 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.SearchView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.FirebaseDatabase;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -19,7 +21,6 @@ import com.google.firebase.database.Query;
 
 public class RealtorListings extends AppCompatActivity {
 
-    ImageButton findRealtorBtn, mortgageCalBtn, findPropertiesBtn, profileBtn;
     RecyclerView recview;
     myAdapterMyListings adapter;
 
@@ -28,7 +29,6 @@ public class RealtorListings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_realtor_my_listings);
         setTitle("Filter by City");
-
 
         recview = (RecyclerView) findViewById(R.id.recViewMyListings);
         recview.setLayoutManager(new LinearLayoutManager(this));
@@ -41,24 +41,52 @@ public class RealtorListings extends AppCompatActivity {
         adapter = new myAdapterMyListings(options1);
         recview.setAdapter(adapter);
 
-        findRealtorBtn = findViewById(R.id.btnFindRealtors);
-        mortgageCalBtn = findViewById(R.id.btnMortgageCalculator);
-        findPropertiesBtn = findViewById(R.id.btnFindProperties);
-        profileBtn = findViewById(R.id.btnProfile);
-
         FloatingActionButton listingsBtn = findViewById(R.id.listingsBtn);
 
-        findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
-        findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
-        mortgageCalBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
-        profileBtn.setOnClickListener(view -> {
-            if (Login.uType == 1) {
-                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
-            } else
-                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
-        });
-
         listingsBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorAddListings.class)));
+
+        // Initialize and assign variable
+        NavigationBarView navigationBarView = findViewById(R.id.bottom_navigation);
+
+        // Set Home selected
+        navigationBarView.setSelectedItemId(R.id.profilePage);
+
+        // Perform item selected listener
+        navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+                    case R.id.realtorsPage:
+                        startActivity(new Intent(getApplicationContext(), FindRealtor.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.propertiesPage:
+                        startActivity(new Intent(getApplicationContext(), FindProperties.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.favouritesPage:
+                        startActivity(new Intent(getApplicationContext(), Favourites.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.calculatorPage:
+                        startActivity(new Intent(getApplicationContext(), MortgageCalculator.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.profilePage:
+                        if (Login.uType == 1) {
+                            startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        } else {
+                            startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        }
+                        return true;
+                }
+                return false;
+            }
+        });
     }
 
     @Override

@@ -1,23 +1,26 @@
 package com.example.realtorandviewer;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.snackbar.Snackbar;
 
 public class MortgageCalculator extends AppCompatActivity {
 
     Button btnCalculate;
-    ImageButton findRealtorBtn, findPropertiesBtn, favouritesBtn, profileBtn;
     EditText purchasePrice, downPayment, amortPeriod, interestRate;
     TextView monthlyPayment;
 
@@ -26,19 +29,47 @@ public class MortgageCalculator extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mortgage_calculator);
 
-        findRealtorBtn = findViewById(R.id.btnFindRealtors);
-        findPropertiesBtn = findViewById(R.id.btnFindProperties);
-        favouritesBtn = findViewById(R.id.btnMyFavourites);
-        profileBtn = findViewById(R.id.btnProfile);
+        // Initialize and assign variable
+        NavigationBarView navigationBarView = findViewById(R.id.bottom_navigation);
 
-        findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
-        findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
-        favouritesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Favourites.class)));
-        profileBtn.setOnClickListener(view -> {
-            if(Login.uType == 1){
-                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
-            } else
-                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+        // Set Home selected
+        navigationBarView.setSelectedItemId(R.id.calculatorPage);
+
+        // Perform item selected listener
+        navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+                    case R.id.realtorsPage:
+                        startActivity(new Intent(getApplicationContext(), FindRealtor.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.propertiesPage:
+                        startActivity(new Intent(getApplicationContext(), FindProperties.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.favouritesPage:
+                        startActivity(new Intent(getApplicationContext(), Favourites.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.calculatorPage:
+                        startActivity(new Intent(getApplicationContext(), MortgageCalculator.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.profilePage:
+                        if (Login.uType == 1) {
+                            startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        } else {
+                            startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        }
+                        return true;
+                }
+                return false;
+            }
         });
 
         purchasePrice = findViewById(R.id.editTextPurchasePrice);

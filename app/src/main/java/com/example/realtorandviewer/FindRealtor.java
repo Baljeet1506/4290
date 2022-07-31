@@ -7,15 +7,16 @@ import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.SearchView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class FindRealtor extends AppCompatActivity {
-    ImageButton findPropertiesBtn, favouritesBtn, mortgageCalculatorBtn, profileBtn;
     RecyclerView recview;
     myAdapterFindRealtors adapter;
 
@@ -36,21 +37,49 @@ public class FindRealtor extends AppCompatActivity {
         adapter = new myAdapterFindRealtors(options);
         recview.setAdapter(adapter);
 
+        // Initialize and assign variable
+        NavigationBarView navigationBarView = findViewById(R.id.bottom_navigation);
 
-        findPropertiesBtn = findViewById(R.id.btnFindProperties);
-        favouritesBtn = findViewById(R.id.btnMyFavourites);
-        mortgageCalculatorBtn = findViewById(R.id.btnMortgageCalculator);
-        profileBtn = findViewById(R.id.btnProfile);
+        // Set Home selected
+        navigationBarView.setSelectedItemId(R.id.realtorsPage);
 
-        findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
-        favouritesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Favourites.class)));
-        mortgageCalculatorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
-        profileBtn.setOnClickListener(view -> {
-            if(Login.uType == 1){
-                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
-            } else
-                startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+        // Perform item selected listener
+        navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch (item.getItemId()) {
+                    case R.id.realtorsPage:
+                        startActivity(new Intent(getApplicationContext(), FindRealtor.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+
+                        return true;
+                    case R.id.propertiesPage:
+                        startActivity(new Intent(getApplicationContext(), FindProperties.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.favouritesPage:
+                        startActivity(new Intent(getApplicationContext(), Favourites.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.calculatorPage:
+                        startActivity(new Intent(getApplicationContext(), MortgageCalculator.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.profilePage:
+                        if (Login.uType == 1) {
+                            startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        } else {
+                            startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        }
+                        return true;
+                }
+                return false;
+            }
         });
+
     }
 
     @Override
@@ -66,13 +95,12 @@ public class FindRealtor extends AppCompatActivity {
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu)
-    {
-        getMenuInflater().inflate(R.menu.searchmenu,menu);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.searchmenu, menu);
 
-        MenuItem item=menu.findItem(R.id.search);
+        MenuItem item = menu.findItem(R.id.search);
 
-        SearchView searchView=(SearchView)item.getActionView();
+        SearchView searchView = (SearchView) item.getActionView();
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override

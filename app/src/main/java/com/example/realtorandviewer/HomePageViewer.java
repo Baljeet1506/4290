@@ -2,6 +2,7 @@ package com.example.realtorandviewer;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,6 +16,8 @@ import androidx.cardview.widget.CardView;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -32,9 +35,7 @@ public class HomePageViewer extends AppCompatActivity {
 
     private ImageButton btnEditViewerProfile;
     CardView preparingToBuyBtn, financePlanningBtn, viewPropertiesBtn, makeAnOfferBtn, closingPurchaseBtn;
-    ImageButton findRealtorBtn, findPropertiesBtn, favouritesBtn, mortgageCalculatorBtn;
     TextView firstNameText, lastNameText;
-    CardView resourcesBtn;
 
     private FirebaseUser user;
     private DatabaseReference reference;
@@ -47,11 +48,6 @@ public class HomePageViewer extends AppCompatActivity {
         setContentView(R.layout.activity_home_viewer);
 
         btnEditViewerProfile = findViewById(R.id.btnEditViewerProfile);
-
-        findRealtorBtn = findViewById(R.id.btnFindRealtors);
-        findPropertiesBtn = findViewById(R.id.btnFindProperties);
-        favouritesBtn = findViewById(R.id.btnMyFavourites);
-        mortgageCalculatorBtn = findViewById(R.id.btnMortgageCalculator);
 
         preparingToBuyBtn = findViewById(R.id.btnPreparingToBuy);
         financePlanningBtn = findViewById(R.id.btnFinancePlanning);
@@ -85,10 +81,48 @@ public class HomePageViewer extends AppCompatActivity {
             }
         });
 
-        findRealtorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindRealtor.class)));
-        findPropertiesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
-        favouritesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Favourites.class)));
-        mortgageCalculatorBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), MortgageCalculator.class)));
+        // Initialize and assign variable
+        NavigationBarView navigationBarView = findViewById(R.id.bottom_navigation);
+
+        // Set Home selected
+        navigationBarView.setSelectedItemId(R.id.profilePage);
+
+        // Perform item selected listener
+        navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                switch(item.getItemId())
+                {
+                    case R.id.realtorsPage:
+                        startActivity(new Intent(getApplicationContext(), FindRealtor.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.propertiesPage:
+                        startActivity(new Intent(getApplicationContext(), FindProperties.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.favouritesPage:
+                        startActivity(new Intent(getApplicationContext(), Favourites.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.calculatorPage:
+                        startActivity(new Intent(getApplicationContext(), MortgageCalculator.class));
+                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        return true;
+                    case R.id.profilePage:
+                        if (Login.uType == 1) {
+                            startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        } else {
+                            startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
+                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                        }
+                        return true;
+                }
+                return false;
+            }
+        });
 
         preparingToBuyBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerPrepareToBuy.class)));
         financePlanningBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceViewerPlanFinance.class)));
@@ -103,7 +137,6 @@ public class HomePageViewer extends AppCompatActivity {
                 final DialogPlus dialogPlus = DialogPlus.newDialog(HomePageViewer.this)
                         .setContentBackgroundResource(R.color.transparent)
                         .setContentHolder(new ViewHolder(R.layout.dialog_content_edit_profile_viewer))
-                        .setExpanded(true, 1000)
                         .create();
 
                 View myview = dialogPlus.getHolderView();
