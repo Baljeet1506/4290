@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/realtorsPage"
+        android:icon="@drawable/realtors"
+        android:title="Realtors" />
+    <item
+        android:id="@+id/propertiesPage"
+        android:icon="@drawable/properties"
+        android:title="Properties" />
+    <item
+        android:id="@+id/favouritesPage"
+        android:icon="@drawable/fav"
+        android:title="Favourites" />
+    <item
+        android:id="@+id/calculatorPage"
+        android:icon="@drawable/calculator"
+        android:title="Calculator" />
+    <item
+        android:id="@+id/profilePage"
+        android:icon="@drawable/profile"
+        android:title="Profile" />
+
+</menu>
