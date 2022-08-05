@@ -3,17 +3,20 @@ package com.example.realtorandviewer;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -48,6 +51,19 @@ public class myAdapterMyPastSales extends FirebaseRecyclerAdapter<Properties, my
         holder.age.setText(Properties.getAge());
         holder.type.setText(Properties.getType());
         holder.title.setText(Properties.getTitle());
+        Glide.with(holder.my_listing_image_slider.getContext()).load(Properties.getListingImage()).into(holder.my_listing_image_slider);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Login.MY_PAST_SALE_POSITION = getSnapshots().getSnapshot(position).getKey();
+
+                Intent intent = new Intent(holder.houseNumber.getContext(), RealtorPastSaleDetailView.class);
+                holder.houseNumber.getContext().startActivity(intent);
+
+            }
+        });
 
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,18 +116,18 @@ public class myAdapterMyPastSales extends FirebaseRecyclerAdapter<Properties, my
                         Map<String, Object> map = new HashMap<>();
                         map.put("unitNumber", unitNumber.getText().toString());
                         map.put("houseNumber", houseNumber.getText().toString());
-                        map.put("Street", street.getText().toString());
-                        map.put("City", city.getText().toString());
-                        map.put("Province", province.getText().toString());
-                        map.put("Postal", postal.getText().toString());
-                        map.put("Price", price.getText().toString());
-                        map.put("Beds", beds.getText().toString());
-                        map.put("Baths", baths.getText().toString());
-                        map.put("LandSize", landSize.getText().toString());
-                        map.put("Floor", floorSize.getText().toString());
-                        map.put("Type", type.getText().toString());
-                        map.put("Age", age.getText().toString());
-                        map.put("Title", title.getText().toString());
+                        map.put("street", street.getText().toString());
+                        map.put("city", city.getText().toString());
+                        map.put("province", province.getText().toString());
+                        map.put("postal", postal.getText().toString());
+                        map.put("price", price.getText().toString());
+                        map.put("beds", beds.getText().toString());
+                        map.put("baths", baths.getText().toString());
+                        map.put("landSize", landSize.getText().toString());
+                        map.put("floor", floorSize.getText().toString());
+                        map.put("type", type.getText().toString());
+                        map.put("age", age.getText().toString());
+                        map.put("title", title.getText().toString());
 
                         FirebaseDatabase.getInstance().getReference().child("PastSales").child(Login.uID_)
                                 .child(getRef(position).getKey()).updateChildren(map)
@@ -172,6 +188,7 @@ public class myAdapterMyPastSales extends FirebaseRecyclerAdapter<Properties, my
         TextView unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
         ImageButton delete;
         Button edit;
+        ImageView my_listing_image_slider;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
@@ -193,6 +210,7 @@ public class myAdapterMyPastSales extends FirebaseRecyclerAdapter<Properties, my
 
             edit = (Button) itemView.findViewById(R.id.editListingBtn);
             delete = (ImageButton) itemView.findViewById(R.id.deleteListingBtn);
+            my_listing_image_slider = (ImageView) itemView.findViewById(R.id.my_listing_image_slider);
 
         }
     }

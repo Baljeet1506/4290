@@ -1,15 +1,18 @@
 package com.example.realtorandviewer;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
@@ -36,6 +39,21 @@ public class myAdapterFindProperties extends FirebaseRecyclerAdapter<Properties,
         holder.age.setText(Properties.getAge());
         holder.type.setText(Properties.getType());
         holder.title.setText(Properties.getTitle());
+        Glide.with(holder.find_listing_single_image.getContext()).load(Properties.getListingImage()).into(holder.find_listing_single_image);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Login.MY_LISTING_POSITION = getSnapshots().getSnapshot(position).getKey();
+
+                Intent intent = new Intent(holder.houseNumber.getContext(), ViewerListingDetailView.class);
+                holder.houseNumber.getContext().startActivity(intent);
+
+                //Toast.makeText(holder.houseNumber.getContext(), "Position is " + Login.MY_LISTING_POSITION, Toast.LENGTH_LONG).show();
+
+            }
+        });
 
     }
 
@@ -51,6 +69,7 @@ public class myAdapterFindProperties extends FirebaseRecyclerAdapter<Properties,
 
         TextView unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
         ImageButton edit;
+        ImageView find_listing_single_image;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
@@ -69,6 +88,7 @@ public class myAdapterFindProperties extends FirebaseRecyclerAdapter<Properties,
             age = (TextView) itemView.findViewById(R.id.age_Text_FindProperties);
             type = (TextView) itemView.findViewById(R.id.type_Text_FindProperties);
             title = (TextView) itemView.findViewById(R.id.title_Text_FindProperties);
+            find_listing_single_image = (ImageView) itemView.findViewById(R.id.find_listing_single_image);
 
         }
     }

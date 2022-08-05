@@ -18,7 +18,6 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RealtorPastSales extends AppCompatActivity {
-    ImageButton backBtn;
     RecyclerView recview;
     myAdapterMyPastSales adapter;
 

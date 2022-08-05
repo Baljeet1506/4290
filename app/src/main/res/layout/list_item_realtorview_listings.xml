@@ -3,310 +3,326 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="11dp"
+    android:elevation="12dp"
     app:cardCornerRadius="12dp"
     app:cardUseCompatPadding="true">
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
+        <ImageView
+            android:id="@+id/my_listing_image_slider"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center_vertical"
+            android:clickable="true"
+            android:contentDescription="@string/property_image"
+            android:focusable="true"
+            android:maxHeight="150dp"
+            android:scaleType="centerCrop"
+            app:iss_auto_cycle="true"
+            app:iss_period="1000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/placeholder_image" />
 
-        <TextView
-            android:id="@+id/price_Text"
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="@dimen/spacing_small"
+            android:layout_below="@id/my_listing_image_slider"
+            android:layout_marginStart="@dimen/spacing_small"
             android:layout_marginTop="@dimen/spacing_small"
-            android:layout_toStartOf="@id/deleteListingBtn"
-            android:fontFamily="@font/roboto_slab"
-            android:text="Price"
-            android:textColor="#000"
-            android:textSize="@dimen/h1" />
-
-        <TextView
-            android:id="@+id/beds_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/price_Text"
-            android:layout_marginLeft="@dimen/spacing_small"
-            android:fontFamily="@font/roboto_slab"
-            android:text="#"
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <ImageView
-            android:id="@+id/bedNumber_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/h2"
-            android:layout_below="@id/price_Text"
-            android:layout_marginTop="2dp"
-            android:layout_toEndOf="@id/beds_Text"
-            android:background="#00FFFFFF"
-            android:paddingStart="0dp"
-            android:paddingTop="2dp"
-            android:paddingEnd="10dp"
-            app:srcCompat="@drawable/bed" />
-
-        <TextView
-            android:id="@+id/baths_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/price_Text"
-            android:layout_toEndOf="@id/bedNumber_Text"
-            android:fontFamily="@font/roboto_slab"
-            android:text="#"
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <ImageView
-            android:id="@+id/bathNumber_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/h2"
-            android:layout_below="@id/price_Text"
-            android:layout_marginTop="2dp"
-            android:layout_toEndOf="@id/baths_Text"
-            android:background="#00FFFFFF"
-            android:paddingStart="0dp"
-            android:paddingTop="2dp"
-            android:paddingEnd="10dp"
-            app:srcCompat="@drawable/bathtub" />
-
-        <TextView
-            android:id="@+id/uNum_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/beds_Text"
-            android:layout_marginLeft="@dimen/spacing_small"
-            android:fontFamily="@font/roboto_slab"
-            android:text="Unit Number"
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <TextView
-            android:id="@+id/hyphen_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/beds_Text"
-            android:layout_toEndOf="@id/uNum_Text"
-            android:fontFamily="@font/roboto_slab"
-            android:text=" - "
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <TextView
-            android:id="@+id/houseNum_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/beds_Text"
-            android:layout_toEndOf="@id/hyphen_Text"
-            android:fontFamily="@font/roboto_slab"
-            android:paddingStart="0dp"
-            android:paddingEnd="8dp"
-            android:text="House Number"
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-
-        <TextView
-            android:id="@+id/street_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/beds_Text"
-            android:layout_toEndOf="@id/houseNum_Text"
-            android:fontFamily="@font/roboto_slab"
-            android:paddingStart="0dp"
-            android:paddingEnd="8dp"
-            android:text="Street"
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <TextView
-            android:id="@+id/city_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/uNum_Text"
-            android:layout_marginLeft="@dimen/spacing_small"
-            android:fontFamily="@font/roboto_slab"
-            android:text="City"
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <TextView
-            android:id="@+id/comma1_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/uNum_Text"
-            android:layout_toEndOf="@id/city_Text"
-            android:paddingStart="0dp"
-            android:paddingEnd="8dp"
-            android:text=","
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <TextView
-            android:id="@+id/province_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/uNum_Text"
-            android:layout_toEndOf="@id/comma1_Text"
-            android:fontFamily="@font/roboto_slab"
-            android:paddingStart="0dp"
-            android:paddingEnd="8dp"
-            android:text="Province"
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <TextView
-            android:id="@+id/postal_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/uNum_Text"
-            android:layout_toEndOf="@id/province_Text"
-            android:fontFamily="@font/roboto_slab"
-            android:paddingStart="0dp"
-            android:paddingEnd="8dp"
-            android:text="Postal"
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <TextView
-            android:id="@+id/landPrefix_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/city_Text"
-            android:layout_marginLeft="@dimen/spacing_small"
-            android:fontFamily="@font/roboto_slab"
-            android:paddingStart="0dp"
-            android:paddingEnd="8dp"
-            android:text="Land:"
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <TextView
-            android:id="@+id/land_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/city_Text"
-            android:layout_toEndOf="@id/landPrefix_Text"
-            android:fontFamily="@font/roboto_slab"
-            android:paddingStart="0dp"
-            android:paddingEnd="10dp"
-            android:text="#"
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <TextView
-            android:id="@+id/floorPrefix_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/city_Text"
-            android:layout_toEndOf="@id/land_Text"
-            android:fontFamily="@font/roboto_slab"
-            android:paddingStart="0dp"
-            android:paddingEnd="8dp"
-            android:text="Floor:"
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <TextView
-            android:id="@+id/floor_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/city_Text"
-            android:layout_toEndOf="@id/floorPrefix_Text"
-            android:fontFamily="@font/roboto_slab"
-            android:paddingStart="0dp"
-            android:paddingEnd="10dp"
-            android:text="#"
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <TextView
-            android:id="@+id/age_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/land_Text"
-            android:layout_marginLeft="@dimen/spacing_small"
-            android:layout_marginTop="0dp"
-            android:layout_marginBottom="@dimen/spacing_small"
-            android:fontFamily="@font/roboto_slab"
-            android:paddingStart="0dp"
-            android:paddingEnd="5dp"
-            android:text="Age"
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <TextView
-            android:id="@+id/ageSuffix_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/land_Text"
-            android:layout_toEndOf="@id/age_Text"
-            android:fontFamily="@font/roboto_slab"
-            android:paddingStart="0dp"
-            android:paddingEnd="10dp"
-            android:text="y.o."
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-
-        <TextView
-            android:id="@+id/type_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/land_Text"
-            android:layout_toEndOf="@id/ageSuffix_Text"
-            android:fontFamily="@font/roboto_slab"
-            android:paddingStart="0dp"
-            android:paddingEnd="8dp"
-            android:text="Type"
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <TextView
-            android:id="@+id/title_Text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/floor_Text"
-            android:layout_toEndOf="@id/type_Text"
-            android:fontFamily="@font/roboto_slab"
-            android:paddingStart="0dp"
-            android:paddingEnd="10dp"
-            android:text="Title"
-            android:textColor="#000"
-            android:textSize="@dimen/h3" />
-
-        <ImageButton
-            android:id="@+id/deleteListingBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:background="#00FFFFFF"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:src="@drawable/cancel"
-            android:text="DELETE" />
-
-        <Button
-            android:id="@+id/editListingBtn"
-            android:layout_width="60dp"
-            android:layout_height="24dp"
-            android:layout_alignBottom="@+id/title_Text"
-            android:layout_alignParentEnd="true"
             android:layout_marginEnd="@dimen/spacing_small"
-            android:backgroundTint="@color/green"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:text="Edit"
-            android:textAllCaps="false"
-            android:textSize="12sp"
-            app:cornerRadius="15dp" />
+            android:layout_marginBottom="@dimen/spacing_small">
+
+            <TextView
+                android:id="@+id/price_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@id/deleteListingBtn"
+                android:fontFamily="@font/roboto_slab"
+                android:text="@string/price"
+                android:textColor="#000"
+                android:textSize="@dimen/h2" />
+
+            <TextView
+                android:id="@+id/beds_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/price_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:text="#"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <ImageView
+                android:id="@+id/bedNumber_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/h3"
+                android:layout_below="@id/price_Text"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@id/beds_Text"
+                android:background="#00FFFFFF"
+                android:paddingStart="0dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="10dp"
+                app:srcCompat="@drawable/bed" />
+
+            <TextView
+                android:id="@+id/baths_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/price_Text"
+                android:layout_toEndOf="@id/bedNumber_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:text="#"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <ImageView
+                android:id="@+id/bathNumber_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/h3"
+                android:layout_below="@id/price_Text"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@id/baths_Text"
+                android:background="#00FFFFFF"
+                android:paddingStart="0dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="10dp"
+                app:srcCompat="@drawable/bathtub" />
+
+            <TextView
+                android:id="@+id/uNum_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/beds_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:text="Unit Number"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/hyphen_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/beds_Text"
+                android:layout_toEndOf="@id/uNum_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:text=" - "
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/houseNum_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/beds_Text"
+                android:layout_toEndOf="@id/hyphen_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text="House Number"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
 
 
+            <TextView
+                android:id="@+id/street_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/beds_Text"
+                android:layout_toEndOf="@id/houseNum_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text="Street"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/city_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/uNum_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:text="City"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/comma1_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/uNum_Text"
+                android:layout_toEndOf="@id/city_Text"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text=","
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/province_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/uNum_Text"
+                android:layout_toEndOf="@id/comma1_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text="Province"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/postal_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/uNum_Text"
+                android:layout_toEndOf="@id/province_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text="Postal"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/landPrefix_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/city_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text="Land:"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/land_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/city_Text"
+                android:layout_toEndOf="@id/landPrefix_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:paddingStart="0dp"
+                android:paddingEnd="10dp"
+                android:text="#"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/floorPrefix_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/city_Text"
+                android:layout_toEndOf="@id/land_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text="Floor:"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/floor_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/city_Text"
+                android:layout_toEndOf="@id/floorPrefix_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:paddingStart="0dp"
+                android:paddingEnd="10dp"
+                android:text="#"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/age_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/land_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:paddingStart="0dp"
+                android:paddingEnd="5dp"
+                android:text="Age"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/ageSuffix_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/land_Text"
+                android:layout_toEndOf="@id/age_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:paddingStart="0dp"
+                android:paddingEnd="10dp"
+                android:text="y.o."
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+
+            <TextView
+                android:id="@+id/type_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/land_Text"
+                android:layout_toEndOf="@id/ageSuffix_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text="Type"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/title_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/floor_Text"
+                android:layout_toEndOf="@id/type_Text"
+                android:fontFamily="@font/roboto_slab"
+                android:paddingStart="0dp"
+                android:paddingEnd="10dp"
+                android:text="Title"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <ImageButton
+                android:id="@+id/deleteListingBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:background="#00FFFFFF"
+                android:minWidth="48dp"
+                android:minHeight="48dp"
+                android:src="@drawable/cancel"
+                android:text="DELETE" />
+
+            <Button
+                android:id="@+id/editListingBtn"
+                android:layout_width="60dp"
+                android:layout_height="24dp"
+                android:layout_alignBottom="@+id/title_Text"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="@dimen/spacing_small"
+                android:backgroundTint="@color/green"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:text="Edit"
+                android:textAllCaps="false"
+                android:textSize="12sp"
+                app:cornerRadius="15dp" />
+
+        </RelativeLayout>
     </RelativeLayout>
-
 </androidx.cardview.widget.CardView>
 

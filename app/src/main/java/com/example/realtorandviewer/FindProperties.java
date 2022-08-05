@@ -29,6 +29,7 @@ public class FindProperties extends AppCompatActivity {
         setTitle("Filter by City");
 
         recview = (RecyclerView) findViewById(R.id.recViewFindProperties);
+        recview = (RecyclerView) findViewById(R.id.recViewFindProperties);
         recview.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions<Properties> options =

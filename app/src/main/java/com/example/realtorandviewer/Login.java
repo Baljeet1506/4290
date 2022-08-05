@@ -20,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
@@ -31,6 +32,11 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
 
     public static int uType = 0;
     public static String uID_ = "";
+    public static String str_NEW_Records_Key1 = "";
+    public static String str_NEW_Records_Key2 = "";
+    public static String str_NEW_Records_Key_PAST_SALE = "";
+    public static String MY_LISTING_POSITION = "";
+    public static String MY_PAST_SALE_POSITION = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

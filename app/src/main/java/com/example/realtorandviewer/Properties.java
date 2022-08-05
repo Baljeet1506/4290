@@ -2,14 +2,14 @@ package com.example.realtorandviewer;
 
 public class Properties {
 
-    String unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title, uID;
+    String unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title, uID, listingImage;
 
 
     public Properties() {
 
     }
 
-    public Properties(String unitNumber, String houseNumber, String street, String city, String province, String postal, String price, String beds, String landSize, String baths, String floorSize, String age, String type, String title) {
+    public Properties(String unitNumber, String houseNumber, String street, String city, String province, String postal, String price, String beds, String landSize, String baths, String floorSize, String age, String type, String title, String listingImage) {
         this.unitNumber = unitNumber;
         this.houseNumber = houseNumber;
         this.street = street;
@@ -24,6 +24,7 @@ public class Properties {
         this.age = age;
         this.type = type;
         this.title = title;
+        this.listingImage = listingImage;
     }
     public String getuID() {
         return uID;
@@ -145,4 +146,11 @@ public class Properties {
         this.title = title;
     }
 
+    public String getListingImage() {
+        return listingImage;
+    }
+
+    public void setListingImage(String listingImage) {
+        this.listingImage = listingImage;
+    }
 }

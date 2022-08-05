@@ -76,6 +76,7 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         String age_ = age.getText().toString();
         String type_ = type.getText().toString();
         String title_ = title.getText().toString();
+        String listingImage_ = "";
 
         if (houseNumber_.isEmpty()) {
             houseNumber.setError("House number is required");
@@ -147,6 +148,7 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
 
         //progressBar.setVisibility(View.VISIBLE);
         ref1 = FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_);
+
         listing.setUnitNumber(unitNumber_);
         listing.setHouseNumber(houseNumber_);
         listing.setStreet(street_);
@@ -161,9 +163,16 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         listing.setAge(age_);
         listing.setType(type_);
         listing.setTitle(title_);
-        ref1.push().setValue(listing);
+        listing.setListingImage(listingImage_);
+        //ref1.push().setValue(listing);
 
-        ref2 = FirebaseDatabase.getInstance().getReference().child("AllProperties");
+        DatabaseReference blankRecordReference = ref1;
+        DatabaseReference db_ref = blankRecordReference.push();
+        Login.str_NEW_Records_Key1 = db_ref.getKey();
+        db_ref.setValue(listing);
+
+
+        ref2 = FirebaseDatabase.getInstance().getReference().child("AllProperties").child(Login.str_NEW_Records_Key1);
         listing.setUnitNumber(unitNumber_);
         listing.setHouseNumber(houseNumber_);
         listing.setStreet(street_);
@@ -179,9 +188,14 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         listing.setType(type_);
         listing.setTitle(title_);
         listing.setuID(Login.uID_);
-        ref2.push().setValue(listing);
+        listing.setListingImage(listingImage_);
+
+        ref2.setValue(listing);
+
+
+
 
         Toast.makeText(RealtorAddListings.this, "Listing is added successfully", Toast.LENGTH_LONG).show();
-        startActivity(new Intent(getApplicationContext(), RealtorListings.class));
+        startActivity(new Intent(getApplicationContext(), UploadImages.class));
     }
 }

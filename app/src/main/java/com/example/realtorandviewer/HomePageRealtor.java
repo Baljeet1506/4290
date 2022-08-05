@@ -62,7 +62,6 @@ public class HomePageRealtor extends AppCompatActivity {
     CardView myListingsBtn, pastSalesBtn;
     CircleImageView user_picture;
     Uri filepath;
-    ImageView img;
     Bitmap bitmap;
 
     private FirebaseUser user;
@@ -188,6 +187,7 @@ public class HomePageRealtor extends AppCompatActivity {
                 View picview = dialogPlus.getHolderView();
                 Button browseBtn = picview.findViewById(R.id.btn_browse_realtor_pic);
                 Button uploadBtn = picview.findViewById(R.id.btn_upload_realtor_pic);
+                CircleImageView dialog_picture = picview.findViewById(R.id.dialog_picture);
                 dialogPlus.show();
 
                 browseBtn.setOnClickListener(new View.OnClickListener() {
@@ -353,7 +353,7 @@ public class HomePageRealtor extends AppCompatActivity {
             try {
                 InputStream inputStream = getContentResolver().openInputStream(filepath);
                 bitmap = BitmapFactory.decodeStream(inputStream);
-                img.setImageBitmap(bitmap);
+                //dialog_picture.setImageBitmap(bitmap);
             } catch (Exception ex) {
 
             }

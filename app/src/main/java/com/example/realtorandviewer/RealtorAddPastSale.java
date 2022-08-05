@@ -79,6 +79,7 @@ public class RealtorAddPastSale extends AppCompatActivity implements View.OnClic
         String age_ = age.getText().toString();
         String type_ = type.getText().toString();
         String title_ = title.getText().toString();
+        String listingImage_ = "";
 
         if (houseNumber_.isEmpty()) {
             houseNumber.setError("House number is required");
@@ -164,10 +165,16 @@ public class RealtorAddPastSale extends AppCompatActivity implements View.OnClic
         listing.setAge(age_);
         listing.setType(type_);
         listing.setTitle(title_);
+        listing.setListingImage(listingImage_);
+        //ref.push().setValue(listing);
 
-        ref.push().setValue(listing);
+        DatabaseReference blankRecordReference = ref;
+        DatabaseReference db_ref = blankRecordReference.push();
+        Login.str_NEW_Records_Key_PAST_SALE = db_ref.getKey();
+        db_ref.setValue(listing);
+
         Toast.makeText(RealtorAddPastSale.this, "Listing is added successfully", Toast.LENGTH_LONG).show();
-        startActivity(new Intent(getApplicationContext(), RealtorPastSales.class));
+        startActivity(new Intent(getApplicationContext(), UploadImagesPastSale.class));
 
     }
 }
