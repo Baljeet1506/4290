@@ -37,6 +37,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public static String str_NEW_Records_Key_PAST_SALE = "";
     public static String MY_LISTING_POSITION = "";
     public static String MY_PAST_SALE_POSITION = "";
+    public static String REALTOR_POSITION = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -3,6 +3,7 @@ package com.example.realtorandviewer;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -45,6 +47,19 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
         holder.email.setText(User.getEmail());
         holder.aboutMe.setText(User.getAboutMe());
         Glide.with(holder.img.getContext()).load(User.getPimage()).into(holder.img);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Login.REALTOR_POSITION = getSnapshots().getSnapshot(position).getKey();
+                //Toast.makeText(holder.firsName.getContext(), "Position is " + Login.REALTOR_POSITION, Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(holder.firsName.getContext(), RealtorProfileDetailView.class);
+                holder.firsName.getContext().startActivity(intent);
+
+            }
+        });
+
     }
 
     @NonNull

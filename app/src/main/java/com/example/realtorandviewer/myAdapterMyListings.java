@@ -223,10 +223,10 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
         public myviewholder(@NonNull View itemView) {
             super(itemView);
 
-            unitNumber = (TextView) itemView.findViewById(R.id.uNum_Text);
-            houseNumber = (TextView) itemView.findViewById(R.id.houseNum_Text);
-            street = (TextView) itemView.findViewById(R.id.street_Text);
-            city = (TextView) itemView.findViewById(R.id.city_Text);
+            unitNumber = itemView.findViewById(R.id.uNum_Text);
+            houseNumber = itemView.findViewById(R.id.houseNum_Text);
+            street = itemView.findViewById(R.id.street_Text);
+            city = itemView.findViewById(R.id.city_Text);
             province = (TextView) itemView.findViewById(R.id.province_Text);
             postal = (TextView) itemView.findViewById(R.id.postal_Text);
             price = (TextView) itemView.findViewById(R.id.price_Text);
