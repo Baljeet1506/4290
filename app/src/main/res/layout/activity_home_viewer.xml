@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEEEEE"
+    android:background="@color/bg"
     tools:context=".HomePageViewer">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:background="#FFFFFF"
         android:elevation="12dp"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,13 +33,13 @@
             android:minWidth="48dp"
             android:paddingLeft="0dp"
             android:paddingRight="0dp"
-            android:src="@drawable/ic_baseline_edit_24"
+            android:src="@drawable/settings"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:tint="#BCBCBC" />
+            app:tint="#666666" />
 
         <TextView
             android:id="@+id/textFirstName"
@@ -80,216 +80,203 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/navigation"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/profile_section">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:gravity="start"
+            android:orientation="vertical"
             android:padding="@dimen/spacing_small">
-
-            <View
-                android:id="@+id/strut"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
-                android:layout_centerHorizontal="true" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnPreparingToBuy"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignEnd="@id/strut"
-                android:layout_alignParentStart="true"
                 android:layout_margin="@dimen/spacing_small"
-                android:backgroundTint="#FFFFFF"
-                android:fontFamily="@font/roboto_slab"
-                android:text="@string/favourites"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:typeface="serif"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="@dimen/card_elevation_small"
-                app:cornerRadius="12dp">
+                android:background="@drawable/shape_rounded_square"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:orientation="horizontal"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation_small">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:drawablePadding="@dimen/spacing_small"
-                    android:fontFamily="@font/roboto_slab"
-                    android:scaleX="@dimen/icon_scale"
-                    android:scaleY="@dimen/icon_scale"
-                    android:text="@string/prepare_to_buy"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/h2"
-                    android:textStyle="bold"
-                    app:drawableTopCompat="@drawable/resource_preparing_to_buy" />
+                    android:elevation="@dimen/card_elevation_medium"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/scale_icon_medium"
+                        android:layout_height="@dimen/scale_icon_medium"
+                        android:layout_margin="@dimen/spacing_medium"
+                        android:src="@drawable/resource_preparing_to_buy" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_slab"
+                        android:text="@string/prepare_to_buy"
+                        android:textSize="@dimen/h3"
+                        app:iconSize="20dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/btnFinancePlanning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/spacing_small"
+                android:background="@drawable/shape_rounded_square"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:orientation="horizontal"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation_small">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:elevation="@dimen/card_elevation_medium"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/scale_icon_medium"
+                        android:layout_height="@dimen/scale_icon_medium"
+                        android:layout_margin="@dimen/spacing_medium"
+                        android:src="@drawable/resource_finance_planning" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_slab"
+                        android:text="@string/finance_planning"
+                        android:textSize="@dimen/h3"
+                        app:iconSize="20dp" />
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnViewProperties"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@id/strut"
-                android:layout_alignParentEnd="true"
                 android:layout_margin="@dimen/spacing_small"
-                android:backgroundTint="#FFFFFF"
-                android:fontFamily="@font/roboto_slab"
-                android:text="@string/view_properties"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:typeface="serif"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="@dimen/card_elevation_small"
-                app:cornerRadius="12dp">
+                android:background="@drawable/shape_rounded_square"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:orientation="horizontal"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation_small">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:drawablePadding="@dimen/spacing_small"
-                    android:fontFamily="@font/roboto_slab"
-                    android:scaleX="@dimen/icon_scale"
-                    android:scaleY="@dimen/icon_scale"
-                    android:text="@string/view_properties"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/h2"
-                    android:textStyle="bold"
-                    app:drawableTopCompat="@drawable/resource_view_properties" />
+                    android:elevation="@dimen/card_elevation_medium"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/scale_icon_medium"
+                        android:layout_height="@dimen/scale_icon_medium"
+                        android:layout_margin="@dimen/spacing_medium"
+                        android:src="@drawable/resource_view_properties" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_slab"
+                        android:text="@string/view_properties"
+                        android:textSize="@dimen/h3"
+                        app:iconSize="20dp" />
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
-
-            <View
-                android:id="@+id/separator1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/btnPreparingToBuy"
-                />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/btnFinancePlanning"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_alignEnd="@id/strut"
-                android:layout_alignParentStart="true"
-                android:layout_below="@id/separator1"
-                android:layout_margin="@dimen/spacing_small"
-                android:backgroundTint="#FFFFFF"
-                android:fontFamily="@font/roboto_slab"
-                android:text="@string/resources"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:typeface="serif"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="@dimen/card_elevation_small"
-                app:cornerRadius="12dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:drawablePadding="@dimen/spacing_small"
-                    android:fontFamily="@font/roboto_slab"
-                    android:scaleX="@dimen/icon_scale"
-                    android:scaleY="@dimen/icon_scale"
-                    android:text="@string/finance_planning"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/h2"
-                    android:textStyle="bold"
-                    app:drawableTopCompat="@drawable/resource_finance_planning" />
-            </androidx.cardview.widget.CardView>
-
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnMakeAnOffer"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/btnViewProperties"
-                android:layout_alignStart="@id/strut"
-                android:layout_alignParentEnd="true"
                 android:layout_margin="@dimen/spacing_small"
-                android:backgroundTint="#FFFFFF"
-                android:fontFamily="@font/roboto_slab"
-                android:text="@string/past_sales"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:typeface="serif"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="@dimen/card_elevation_small"
-                app:cornerRadius="12dp">
+                android:background="@drawable/shape_rounded_square"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:orientation="horizontal"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation_small">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:drawablePadding="@dimen/spacing_small"
-                    android:fontFamily="@font/roboto_slab"
-                    android:scaleX="@dimen/icon_scale"
-                    android:scaleY="@dimen/icon_scale"
-                    android:text="@string/make_an_offer"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/h2"
-                    android:textStyle="bold"
-                    app:drawableTopCompat="@drawable/resource_make_an_offer" />
-            </androidx.cardview.widget.CardView>
+                    android:elevation="@dimen/card_elevation_medium"
+                    android:orientation="horizontal">
 
-            <View
-                android:id="@+id/separator2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/btnFinancePlanning"
-                />
+                    <ImageView
+                        android:layout_width="@dimen/scale_icon_medium"
+                        android:layout_height="@dimen/scale_icon_medium"
+                        android:layout_margin="@dimen/spacing_medium"
+                        android:src="@drawable/resource_make_an_offer" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_slab"
+                        android:text="@string/make_an_offer"
+                        android:textSize="@dimen/h3"
+                        app:iconSize="20dp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnClosingPurchase"
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/separator2"
-                android:layout_alignEnd="@id/strut"
-                android:layout_alignParentStart="true"
                 android:layout_margin="@dimen/spacing_small"
-                android:backgroundTint="#FFFFFF"
-                android:fontFamily="@font/roboto_slab"
-                android:text="@string/past_sales"
-                android:textAlignment="center"
-                android:textAllCaps="false"
-                android:textColor="#000000"
-                android:typeface="serif"
-                app:cardCornerRadius="15dp"
-                app:cardElevation="@dimen/card_elevation_small"
-                app:cornerRadius="12dp">
+                android:background="@drawable/shape_rounded_square"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:orientation="horizontal"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation_small">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:drawablePadding="@dimen/spacing_small"
-                    android:fontFamily="@font/roboto_slab"
-                    android:scaleX="@dimen/icon_scale"
-                    android:scaleY="@dimen/icon_scale"
-                    android:text="@string/property_purchased"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/h2"
-                    android:textStyle="bold"
-                    app:drawableTopCompat="@drawable/resource_close_purchase" />
+                    android:elevation="@dimen/card_elevation_medium"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="@dimen/scale_icon_medium"
+                        android:layout_height="@dimen/scale_icon_medium"
+                        android:layout_margin="@dimen/spacing_medium"
+                        android:src="@drawable/resource_close_purchase" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/roboto_slab"
+                        android:text="@string/property_purchased"
+                        android:textSize="@dimen/h3"
+                        app:iconSize="20dp" />
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
-        </RelativeLayout>
+        </LinearLayout>
     </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/gray"
-        app:itemIconTint="@drawable/selector"
-        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector_realtor"
+        app:itemTextColor="@drawable/selector_realtor"
+        app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -53,6 +53,7 @@
     <string name="edit_profile">Edit Profile</string>
     <string name="upload_profile_picture">Upload a picture</string>
     <string name="company">Company</string>
+    <string name="name_full">Full Name</string>
     <string name="name_first">First Name</string>
     <string name="name_last">Last Name</string>
     <string name="phone_number">Phone Number</string>
@@ -120,5 +121,17 @@
     <string name="update">Update</string>
     <string name="about_me">About Me</string>
 
+    <string-array name="property_type_array">
+        <item>House</item>
+        <item>Apartment</item>
+        <item>Townhouse</item>
+        <item>Duplex</item>
+        <item>Commercial</item>
+    </string-array>
+
+    <string-array name="property_title_array">
+        <item>Freehold</item>
+        <item>Strata</item>
+    </string-array>
 
 </resources>

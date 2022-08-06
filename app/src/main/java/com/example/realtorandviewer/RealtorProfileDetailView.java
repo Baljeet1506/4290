@@ -26,7 +26,7 @@ public class RealtorProfileDetailView extends AppCompatActivity {
 
     CircleImageView img;
     ImageButton backBtn;
-    TextView firstNameText, lastNameText, companyText, realtorEmailText, realtorPhoneNumText;
+    TextView fullNameText, companyText, realtorEmailText, realtorPhoneNumText;
     private DatabaseReference reference;
     RecyclerView recviewListing, recviewPast;
     myAdapterMyListingsProfileDetail myAdapterMyListingsProfileDetail;
@@ -37,8 +37,7 @@ public class RealtorProfileDetailView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_realtor_profile_detail_view);
 
-        firstNameText = findViewById(R.id.fname_realtor_detail_view);
-        lastNameText = findViewById(R.id.lname_realtor_detail_view);
+        fullNameText = findViewById(R.id.fullname_realtor_detail_view);
         companyText = findViewById(R.id.company_realtor_detail_view);
         realtorEmailText = findViewById(R.id.email_realtor_detail_view);
         realtorPhoneNumText = findViewById(R.id.phone_realtor_detail_view);
@@ -74,14 +73,12 @@ public class RealtorProfileDetailView extends AppCompatActivity {
                 User userProfile = snapshot.getValue(User.class);
 
                 if (userProfile != null) {
-                    String firstName = userProfile.firstName;
-                    String lastName = userProfile.lastName;
+                    String fullname = userProfile.firstName + " " + userProfile.lastName;
                     String company = userProfile.company;
                     String email = userProfile.email;
                     String phone = userProfile.phNumber;
 
-                    firstNameText.setText(firstName);
-                    lastNameText.setText(lastName);
+                    fullNameText.setText(fullname);
                     companyText.setText(company);
                     realtorEmailText.setText(email);
                     realtorPhoneNumText.setText(phone);

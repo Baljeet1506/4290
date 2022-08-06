@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.FirebaseDatabase;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -46,13 +47,13 @@ public class RealtorListings extends AppCompatActivity {
         listingsBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorAddListings.class)));
 
         // Initialize and assign variable
-        NavigationBarView navigationBarView = findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         // Set Home selected
-        navigationBarView.setSelectedItemId(R.id.profilePage);
+        bottomNavigationView.setSelectedItemId(R.id.profilePage);
 
         // Perform item selected listener
-        navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -104,7 +105,7 @@ public class RealtorListings extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        getMenuInflater().inflate(R.menu.searchmenu,menu);
+        getMenuInflater().inflate(R.menu.menu_search,menu);
 
         MenuItem item=menu.findItem(R.id.search);
 

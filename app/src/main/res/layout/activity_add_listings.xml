@@ -116,7 +116,8 @@
                 app:layout_constraintHorizontal_bias="0.008"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.175" />
+                app:layout_constraintVertical_bias="0.175"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <EditText
                 android:id="@+id/editTextHouseNum"
@@ -136,7 +137,8 @@
                 app:layout_constraintHorizontal_bias="0.962"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.177" />
+                app:layout_constraintVertical_bias="0.177"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <EditText
                 android:id="@+id/editTextStreet"
@@ -156,7 +158,8 @@
                 app:layout_constraintHorizontal_bias="0.008"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.276" />
+                app:layout_constraintVertical_bias="0.276"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <EditText
                 android:id="@+id/editTextCity"
@@ -176,7 +179,8 @@
                 app:layout_constraintHorizontal_bias="0.963"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.281" />
+                app:layout_constraintVertical_bias="0.281"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <EditText
                 android:id="@+id/editTextProvince"
@@ -196,7 +200,8 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.379" />
+                app:layout_constraintVertical_bias="0.379"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <EditText
                 android:id="@+id/editTextPostal"
@@ -216,7 +221,8 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.379" />
+                app:layout_constraintVertical_bias="0.379"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <EditText
                 android:id="@+id/editTextPrice"
@@ -236,7 +242,8 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.483" />
+                app:layout_constraintVertical_bias="0.483"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -256,7 +263,8 @@
                     android:inputType="number"
                     android:textAlignment="center"
                     android:textColorHint="#616161"
-                    android:textSize="@dimen/h4" />
+                    android:textSize="@dimen/h4"
+                    tools:ignore="TouchTargetSizeCheck" />
 
                 <EditText
                     android:id="@+id/editTextBaths"
@@ -270,7 +278,8 @@
                     android:inputType="numberDecimal"
                     android:textAlignment="center"
                     android:textColorHint="#616161"
-                    android:textSize="@dimen/h4" />
+                    android:textSize="@dimen/h4"
+                    tools:ignore="TouchTargetSizeCheck" />
 
 
             </LinearLayout>
@@ -294,7 +303,8 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.6" />
+                app:layout_constraintVertical_bias="0.6"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <EditText
                 android:id="@+id/editTextFloorSize"
@@ -314,7 +324,8 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.704" />
+                app:layout_constraintVertical_bias="0.704"
+                tools:ignore="TouchTargetSizeCheck" />
 
             <EditText
                 android:id="@+id/editTextAge"
@@ -334,28 +345,15 @@
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.703" />
+                app:layout_constraintVertical_bias="0.703"
+                tools:ignore="TouchTargetSizeCheck" />
 
-            <EditText
-                android:id="@+id/editTextType"
+            <Spinner
+                android:id="@+id/spinnerType"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_input_height"
                 android:background="@drawable/shape_rounded_textinput"
-                android:ems="10"
-                android:fontFamily="@font/roboto_slab"
-                android:hint="@string/type"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textAlignment="center"
-                android:textColorHint="#616161"
-                android:textSize="@dimen/h4"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.806"
-                tools:ignore="TextContrastCheck" />
+                android:gravity="center" />
 
             <EditText
                 android:id="@+id/editTextTitle"
@@ -396,7 +394,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideBottom" />
+        app:layout_constraintTop_toTopOf="@+id/guideBottom"
+        tools:ignore="TouchTargetSizeCheck" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

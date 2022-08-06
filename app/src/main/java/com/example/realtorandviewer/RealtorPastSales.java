@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.SearchView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.FirebaseDatabase;
@@ -40,13 +41,13 @@ public class RealtorPastSales extends AppCompatActivity {
         recview.setAdapter(adapter);
 
         // Initialize and assign variable
-        NavigationBarView navigationBarView = findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         // Set Home selected
-        navigationBarView.setSelectedItemId(R.id.profilePage);
+        bottomNavigationView.setSelectedItemId(R.id.profilePage);
 
         // Perform item selected listener
-        navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -102,7 +103,7 @@ public class RealtorPastSales extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        getMenuInflater().inflate(R.menu.searchmenu,menu);
+        getMenuInflater().inflate(R.menu.menu_search,menu);
 
         MenuItem item=menu.findItem(R.id.search);
 

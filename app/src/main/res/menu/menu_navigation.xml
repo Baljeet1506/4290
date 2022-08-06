@@ -3,23 +3,23 @@
 
     <item
         android:id="@+id/realtorsPage"
-        android:icon="@drawable/realtors"
-        android:title="Realtors" />
+        android:icon="@drawable/selector_realtor"
+        android:title="Realtor" />
     <item
         android:id="@+id/propertiesPage"
-        android:icon="@drawable/properties"
+        android:icon="@drawable/selector_property"
         android:title="Properties" />
     <item
         android:id="@+id/favouritesPage"
-        android:icon="@drawable/fav"
+        android:icon="@drawable/selector_fav"
         android:title="Favourites" />
     <item
         android:id="@+id/calculatorPage"
-        android:icon="@drawable/calculator"
+        android:icon="@drawable/selector_calc"
         android:title="Calculator" />
     <item
         android:id="@+id/profilePage"
-        android:icon="@drawable/profile"
+        android:icon="@drawable/selector_profile"
         android:title="Profile" />
 
 </menu>

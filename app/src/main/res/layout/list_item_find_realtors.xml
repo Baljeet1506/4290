@@ -5,7 +5,11 @@
     android:layout_height="wrap_content"
     android:elevation="11dp"
     app:cardCornerRadius="12dp"
-    app:cardUseCompatPadding="true">
+    app:cardElevation="@dimen/card_elevation_small"
+    app:cardUseCompatPadding="true"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -33,7 +37,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="@dimen/spacing_small"
                 android:layout_toEndOf="@id/user_profile_image"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:text="@string/name_first"
                 android:textColor="#000"
                 android:textSize="@dimen/h3" />
@@ -44,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_toEndOf="@id/firstname_Text_FindRealtor"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:text="@string/name_last"
                 android:textColor="#000"
                 android:textSize="@dimen/h3" />
@@ -56,9 +60,10 @@
                 android:layout_below="@id/lastname_Text_FindRealtor"
                 android:layout_alignStart="@+id/firstname_Text_FindRealtor"
                 android:layout_marginStart="0dp"
-                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="@dimen/spacing_small"
-                android:src="@drawable/company" />
+                android:src="@drawable/company"
+                app:tint="@color/gray" />
 
             <ImageView
                 android:id="@+id/icon_phone"
@@ -66,9 +71,10 @@
                 android:layout_height="18dp"
                 android:layout_below="@id/icon_company"
                 android:layout_alignStart="@+id/firstname_Text_FindRealtor"
-                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="@dimen/spacing_small"
-                android:src="@drawable/phone" />
+                android:src="@drawable/phone"
+                app:tint="@color/gray" />
 
             <ImageView
                 android:id="@+id/icon_email"
@@ -76,9 +82,10 @@
                 android:layout_height="18dp"
                 android:layout_below="@id/icon_phone"
                 android:layout_alignStart="@+id/firstname_Text_FindRealtor"
-                android:layout_marginTop="@dimen/spacing_small"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="@dimen/spacing_small"
-                android:src="@drawable/email" />
+                android:src="@drawable/email"
+                app:tint="@color/gray" />
 
 
             <TextView
@@ -89,7 +96,7 @@
                 android:layout_alignTop="@id/icon_company"
                 android:layout_marginStart="0dp"
                 android:layout_toEndOf="@+id/icon_company"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="10dp"
                 android:text="@string/company"
@@ -103,7 +110,7 @@
                 android:layout_alignStart="@id/company_Text_FindRealtor"
                 android:layout_alignTop="@id/icon_phone"
                 android:layout_marginStart="0dp"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="10dp"
                 android:text="@string/phone_number"
@@ -131,7 +138,7 @@
                 android:layout_below="@id/phoneNumber_Text_FindRealtor"
                 android:layout_alignStart="@id/company_Text_FindRealtor"
                 android:layout_alignTop="@id/icon_email"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="10dp"
                 android:text="@string/email"
@@ -145,7 +152,7 @@
                 android:layout_below="@id/email_Text_FindRealtor"
                 android:layout_alignStart="@id/firstname_Text_FindRealtor"
                 android:layout_marginTop="@dimen/spacing_small"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="10dp"
                 android:text="@string/about_me"
@@ -164,8 +171,9 @@
             android:background="#00FFFFFF"
             android:minWidth="48dp"
             android:minHeight="48dp"
-            android:src="@drawable/heart_empty"
-            android:text="Add to Favourites" />
+            android:src="@drawable/fav_empty"
+            android:text="Add to Favourites"
+            app:tint="@color/gray" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
 

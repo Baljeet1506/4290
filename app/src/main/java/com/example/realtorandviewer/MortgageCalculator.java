@@ -30,13 +30,13 @@ public class MortgageCalculator extends AppCompatActivity {
         setContentView(R.layout.activity_mortgage_calculator);
 
         // Initialize and assign variable
-        NavigationBarView navigationBarView = findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
         // Set Home selected
-        navigationBarView.setSelectedItemId(R.id.calculatorPage);
+        bottomNavigationView.setSelectedItemId(R.id.calculatorPage);
 
         // Perform item selected listener
-        navigationBarView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 

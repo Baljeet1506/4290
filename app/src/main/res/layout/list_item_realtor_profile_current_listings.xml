@@ -5,7 +5,11 @@
     android:layout_height="wrap_content"
     android:elevation="12dp"
     app:cardCornerRadius="12dp"
-    app:cardUseCompatPadding="true">
+    app:cardElevation="@dimen/card_elevation_small"
+    app:cardUseCompatPadding="true"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -16,9 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_gravity="center_vertical"
-            android:clickable="true"
             android:contentDescription="@string/property_image"
-            android:focusable="true"
             android:maxHeight="150dp"
             android:scaleType="centerCrop"
             app:iss_auto_cycle="true"
@@ -43,7 +45,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentStart="true"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:text="@string/price"
                 android:textColor="#000"
                 android:textSize="@dimen/h2" />
@@ -53,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/price_Text"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:text="#"
                 android:textColor="#000"
                 android:textSize="@dimen/h4" />
@@ -69,7 +71,8 @@
                 android:paddingStart="0dp"
                 android:paddingTop="2dp"
                 android:paddingEnd="10dp"
-                app:srcCompat="@drawable/bed" />
+                app:srcCompat="@drawable/bed"
+                app:tint="@color/gray" />
 
             <TextView
                 android:id="@+id/baths_Text"
@@ -77,7 +80,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/price_Text"
                 android:layout_toEndOf="@id/bedNumber_Text"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:text="#"
                 android:textColor="#000"
                 android:textSize="@dimen/h4" />
@@ -93,14 +96,15 @@
                 android:paddingStart="0dp"
                 android:paddingTop="2dp"
                 android:paddingEnd="10dp"
-                app:srcCompat="@drawable/bathtub" />
+                app:srcCompat="@drawable/bath"
+                app:tint="@color/gray" />
 
             <TextView
                 android:id="@+id/uNum_Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/beds_Text"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:text="Unit Number"
                 android:textColor="#000"
                 android:textSize="@dimen/h4" />
@@ -111,7 +115,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/beds_Text"
                 android:layout_toEndOf="@id/uNum_Text"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:text=" - "
                 android:textColor="#000"
                 android:textSize="@dimen/h4" />
@@ -122,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/beds_Text"
                 android:layout_toEndOf="@id/hyphen_Text"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="8dp"
                 android:text="House Number"
@@ -136,7 +140,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/beds_Text"
                 android:layout_toEndOf="@id/houseNum_Text"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="8dp"
                 android:text="Street"
@@ -148,7 +152,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/uNum_Text"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:text="City"
                 android:textColor="#000"
                 android:textSize="@dimen/h4" />
@@ -159,6 +163,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/uNum_Text"
                 android:layout_toEndOf="@id/city_Text"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="8dp"
                 android:text=","
@@ -171,7 +176,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/uNum_Text"
                 android:layout_toEndOf="@id/comma1_Text"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="8dp"
                 android:text="Province"
@@ -184,7 +189,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/uNum_Text"
                 android:layout_toEndOf="@id/province_Text"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="8dp"
                 android:text="Postal"
@@ -196,7 +201,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/city_Text"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="8dp"
                 android:text="Land:"
@@ -209,7 +214,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/city_Text"
                 android:layout_toEndOf="@id/landPrefix_Text"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="10dp"
                 android:text="#"
@@ -222,7 +227,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/city_Text"
                 android:layout_toEndOf="@id/land_Text"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="8dp"
                 android:text="Floor:"
@@ -235,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/city_Text"
                 android:layout_toEndOf="@id/floorPrefix_Text"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="10dp"
                 android:text="#"
@@ -247,7 +252,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/land_Text"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="5dp"
                 android:text="Age"
@@ -260,24 +265,10 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/land_Text"
                 android:layout_toEndOf="@id/age_Text"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="10dp"
                 android:text="y.o."
-                android:textColor="#000"
-                android:textSize="@dimen/h4" />
-
-
-            <TextView
-                android:id="@+id/type_Text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/land_Text"
-                android:layout_toEndOf="@id/ageSuffix_Text"
-                android:fontFamily="@font/roboto_slab"
-                android:paddingStart="0dp"
-                android:paddingEnd="8dp"
-                android:text="Type"
                 android:textColor="#000"
                 android:textSize="@dimen/h4" />
 
@@ -286,11 +277,25 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/floor_Text"
-                android:layout_toEndOf="@id/type_Text"
-                android:fontFamily="@font/roboto_slab"
+
+                android:layout_toEndOf="@id/ageSuffix_Text"
+                android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="10dp"
                 android:text="Title"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/type_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/land_Text"
+                android:layout_toEndOf="@id/title_Text"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text="Type"
                 android:textColor="#000"
                 android:textSize="@dimen/h4" />
 

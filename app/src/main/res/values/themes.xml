@@ -20,6 +20,25 @@
     </style>
 
     <style name="Theme.RealtorAndViewer.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
     <style name="Theme.RealtorAndViewer.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="spinnerItemStyle" parent="android:Widget.TextView.SpinnerItem">
+        <item name="android:textColor">#616161</item>
+        <item name="android:fontFamily">@font/roboto_slab</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">@dimen/h4</item>
+    </style>
+
+    <style name="spinnerDropDownItemStyle" parent="android:TextAppearance.Widget.TextView.SpinnerItem">
+        <item name="android:textColor">#616161</item>
+        <item name="android:fontFamily">@font/roboto_slab</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textSize">@dimen/h4</item>
+    </style>
+    <style name="AppSearchView" parent="Widget.AppCompat.SearchView" >
+        <item name="android:textSize">60sp</item>
+        <item name="android:fontFamily">@font/roboto_slab</item>
+    </style>
+
+
 </resources>
