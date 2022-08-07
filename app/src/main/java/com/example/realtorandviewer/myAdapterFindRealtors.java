@@ -51,21 +51,6 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
         holder.aboutMe.setText(User.getAboutMe());
         Glide.with(holder.img.getContext()).load(User.getPimage()).into(holder.img);
 
-        holder.heart.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                addToFavorite(holder.firsName.getContext(),
-                        User.getFirstName(),
-                        User.getLastName(),
-                        User.getCompany(),
-                        User.getPhNumber(),
-                        User.getEmail(),
-                        User.getAboutMe(),
-                        User.getPimage(),
-                        User.getUserType().toString());
-            };
-        });
-
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -92,7 +77,6 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
 
         TextView firsName, lastName, company, phoneNumber, email, aboutMe;
         CircleImageView img;
-        ImageButton heart;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
@@ -104,8 +88,6 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
             email = (TextView) itemView.findViewById(R.id.email_Text_FindRealtor);
             aboutMe = (TextView) itemView.findViewById(R.id.aboutMe_Text_FindRealtor);
             img = (CircleImageView) itemView.findViewById(R.id.user_profile_image);
-            heart = itemView.findViewById(R.id.favouriteListingsBtn2);
-
 
         }
     }
@@ -130,7 +112,5 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
 
         }
     }
-
-
 }
 
