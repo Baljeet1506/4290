@@ -71,6 +71,7 @@ public class myAdapterFindProperties extends FirebaseRecyclerAdapter<Properties,
 
                 Toast.makeText(holder.houseNumber.getContext(), "Added to favourites", Toast.LENGTH_LONG).show();
                 holder.favListingBtn.setVisibility(View.GONE);
+
             }
         });
 
