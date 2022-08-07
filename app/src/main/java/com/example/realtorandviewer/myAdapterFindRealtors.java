@@ -2,6 +2,7 @@ package com.example.realtorandviewer;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -22,6 +23,8 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
@@ -47,6 +50,21 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
         holder.email.setText(User.getEmail());
         holder.aboutMe.setText(User.getAboutMe());
         Glide.with(holder.img.getContext()).load(User.getPimage()).into(holder.img);
+
+        holder.heart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                addToFavorite(holder.firsName.getContext(),
+                        User.getFirstName(),
+                        User.getLastName(),
+                        User.getCompany(),
+                        User.getPhNumber(),
+                        User.getEmail(),
+                        User.getAboutMe(),
+                        User.getPimage(),
+                        User.getUserType().toString());
+            };
+        });
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,6 +92,7 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
 
         TextView firsName, lastName, company, phoneNumber, email, aboutMe;
         CircleImageView img;
+        ImageButton heart;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
@@ -85,10 +104,33 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
             email = (TextView) itemView.findViewById(R.id.email_Text_FindRealtor);
             aboutMe = (TextView) itemView.findViewById(R.id.aboutMe_Text_FindRealtor);
             img = (CircleImageView) itemView.findViewById(R.id.user_profile_image);
+            heart = itemView.findViewById(R.id.favouriteListingsBtn2);
 
+
+        }
+    }
+    public static void addToFavorite(Context context, String firstName, String lastName, String company, String phNumber, String email, String  aboutMe, String pimage, String userType){
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+
+        if(firebaseAuth.getCurrentUser() == null){
+            Toast.makeText(context, "Not logged it", Toast.LENGTH_SHORT).show();
+        }else {
+            HashMap<String, Object> hashMap = new HashMap<>();
+            hashMap.put("firstName", firstName );
+            hashMap.put("lastName", lastName );
+            hashMap.put("company", company );
+            hashMap.put("phNumber", phNumber );
+            hashMap.put("email", email );
+            hashMap.put("aboutMe", aboutMe );
+            hashMap.put("pimage", pimage );
+            hashMap.put("userType", userType );
+
+            DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("RealtorUsers").child("Favourites");
+            ref.push().setValue(hashMap);
 
         }
     }
 
 
 }
+

@@ -31,7 +31,7 @@ public class RealtorListings extends AppCompatActivity {
         setContentView(R.layout.activity_realtor_my_listings);
         setTitle("Filter by City");
 
-        recview = (RecyclerView) findViewById(R.id.recViewMyListings);
+        recview = findViewById(R.id.recViewMyListings);
         recview.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions<Properties> options1 =

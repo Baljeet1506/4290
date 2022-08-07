@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="12dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="@dimen/card_elevation_small"
+    app:cardUseCompatPadding="true"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/find_listing_single_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center_vertical"
+            android:contentDescription="@string/property_image"
+            android:maxHeight="150dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/placeholder_image" />
+
+        <ImageButton
+            android:id="@+id/remove_fav_listing_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:background="#00FFFFFF"
+            android:contentDescription="@string/favourites"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:src="@drawable/fav_select"
+            app:tint="@color/gray" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/find_listing_single_image"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:layout_marginBottom="@dimen/spacing_small">
+
+            <TextView
+                android:id="@+id/price_Text_FindProperties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/roboto"
+                android:text="@string/price"
+                android:textColor="#000"
+                android:textSize="@dimen/h2" />
+
+            <TextView
+                android:id="@+id/beds_Text_FindProperties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/price_Text_FindProperties"
+                android:fontFamily="@font/roboto"
+                android:text="#"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <ImageView
+                android:id="@+id/bedNumber_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/h3"
+                android:layout_below="@id/price_Text_FindProperties"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="1dp"
+                android:layout_toEndOf="@id/beds_Text_FindProperties"
+                android:background="#00FFFFFF"
+                android:paddingStart="0dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="10dp"
+                app:srcCompat="@drawable/bed"
+                app:tint="@color/gray" />
+
+            <TextView
+                android:id="@+id/baths_Text_FindProperties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/price_Text_FindProperties"
+                android:layout_toEndOf="@id/bedNumber_Text"
+                android:fontFamily="@font/roboto"
+                android:text="#"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <ImageView
+                android:id="@+id/bathNumber_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/h3"
+                android:layout_below="@id/price_Text_FindProperties"
+                android:layout_marginTop="2dp"
+                android:layout_toEndOf="@id/baths_Text_FindProperties"
+                android:background="#00FFFFFF"
+                android:paddingStart="0dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="10dp"
+                app:srcCompat="@drawable/bath"
+                app:tint="@color/gray" />
+
+            <TextView
+                android:id="@+id/uNum_Text_FindProperties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/beds_Text_FindProperties"
+                android:fontFamily="@font/roboto"
+                android:text="Unit Number"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/hyphen_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/beds_Text_FindProperties"
+                android:layout_toEndOf="@id/uNum_Text_FindProperties"
+                android:fontFamily="@font/roboto_slab"
+                android:text=" - "
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/houseNum_Text_FindProperties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/beds_Text_FindProperties"
+                android:layout_toEndOf="@id/hyphen_Text"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text="House Number"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+
+            <TextView
+                android:id="@+id/street_Text_FindProperties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/beds_Text_FindProperties"
+                android:layout_toEndOf="@id/houseNum_Text_FindProperties"
+                android:fontFamily="@font/roboto_slab"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text="Street"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/city_Text_FindProperties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/uNum_Text_FindProperties"
+                android:fontFamily="@font/roboto"
+                android:text="City"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/comma1_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/uNum_Text_FindProperties"
+                android:layout_toEndOf="@id/city_Text_FindProperties"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text=","
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/province_Text_FindProperties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/uNum_Text_FindProperties"
+                android:layout_toEndOf="@id/comma1_Text"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text="Province"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/postal_Text_FindProperties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/uNum_Text_FindProperties"
+                android:layout_toEndOf="@id/province_Text_FindProperties"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text="Postal"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/landPrefix_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/city_Text_FindProperties"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text="Land:"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/land_Text_FindProperties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/city_Text_FindProperties"
+                android:layout_toEndOf="@id/landPrefix_Text"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="0dp"
+                android:paddingEnd="10dp"
+                android:text="#"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/floorPrefix_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/city_Text_FindProperties"
+                android:layout_toEndOf="@id/land_Text_FindProperties"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text="Floor:"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/floor_Text_FindProperties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/city_Text_FindProperties"
+                android:layout_toEndOf="@id/floorPrefix_Text"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="0dp"
+                android:paddingEnd="10dp"
+                android:text="#"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/age_Text_FindProperties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/land_Text_FindProperties"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="0dp"
+                android:paddingEnd="5dp"
+                android:text="Age"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/ageSuffix_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/land_Text_FindProperties"
+                android:layout_toEndOf="@id/age_Text_FindProperties"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="0dp"
+                android:paddingEnd="10dp"
+                android:text="y.o."
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/title_Text_FindProperties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/floor_Text_FindProperties"
+                android:layout_toEndOf="@id/ageSuffix_Text"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="0dp"
+                android:paddingEnd="10dp"
+                android:text="Title"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+            <TextView
+                android:id="@+id/type_Text_FindProperties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/land_Text_FindProperties"
+                android:layout_toEndOf="@id/title_Text_FindProperties"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="0dp"
+                android:paddingEnd="8dp"
+                android:text="Type"
+                android:textColor="#000"
+                android:textSize="@dimen/h4" />
+
+
+        </RelativeLayout>
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+

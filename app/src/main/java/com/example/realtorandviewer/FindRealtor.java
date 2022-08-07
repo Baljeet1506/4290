@@ -1,11 +1,16 @@
 package com.example.realtorandviewer;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.SearchView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,9 +18,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
 
 public class FindRealtor extends AppCompatActivity {
     RecyclerView recview;
@@ -27,7 +41,7 @@ public class FindRealtor extends AppCompatActivity {
         setContentView(R.layout.activity_find_realtor);
         setTitle("Filter by First Name");
 
-        recview = (RecyclerView) findViewById(R.id.recViewFindRealtors);
+        recview = findViewById(R.id.recViewFindRealtors);
         recview.setLayoutManager(new LinearLayoutManager(this));
 
         FirebaseRecyclerOptions<User> options =
@@ -81,7 +95,42 @@ public class FindRealtor extends AppCompatActivity {
             }
         });
 
+//        ImageButton favoriteListingsBtn = findViewById(R.id.favouriteListingsBtn);
+//        TextView firstname_Text_FindRealtor = findViewById(R.id.firstname_Text_FindRealtor);
+
+
     }
+
+
+
+
+/*    public static void removeFromFavorite(Context context, String id){
+
+        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser() == null){
+
+            Toast.makeText(context, "Not logged it", Toast.LENGTH_SHORT).show();
+        }else {
+
+
+
+            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("AllUsers");
+            ref.child(firebaseAuth.getUid()).child("Favorites").child(id)
+                    .removeValue()
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(context, "Removed", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(context, "Failed"+ e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        }
+    }*/
 
     @Override
     protected void onStart() {

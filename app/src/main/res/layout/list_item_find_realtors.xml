@@ -161,19 +161,6 @@
 
 
         </RelativeLayout>
-
-        <ImageButton
-            android:id="@+id/favouriteListingsBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:background="#00FFFFFF"
-            android:minWidth="48dp"
-            android:minHeight="48dp"
-            android:src="@drawable/fav_empty"
-            android:text="Add to Favourites"
-            app:tint="@color/gray" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
 
