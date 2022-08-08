@@ -88,7 +88,7 @@ public class myAdapterFindProperties extends FirebaseRecyclerAdapter<Properties,
 
                 Intent intent = new Intent(holder.houseNumber.getContext(), DetailViewerListingView.class);
                 holder.houseNumber.getContext().startActivity(intent);
-                Toast.makeText(holder.houseNumber.getContext(), "" + Login.LISTING_UID, Toast.LENGTH_LONG).show();
+                //Toast.makeText(holder.houseNumber.getContext(), "" + Login.LISTING_UID, Toast.LENGTH_LONG).show();
             }
         });
 
