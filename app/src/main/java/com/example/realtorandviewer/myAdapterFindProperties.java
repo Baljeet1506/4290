@@ -83,7 +83,7 @@ public class myAdapterFindProperties extends FirebaseRecyclerAdapter<Properties,
                 Login.MY_LISTING_POSITION = getSnapshots().getSnapshot(position).getKey();
 
                 Map<String, Object> bookmarkMap = (Map<String, Object>) getSnapshots().getSnapshot(position).getValue();
-                Login.LISTING_UID = (String) bookmarkMap.get("uID");
+                Login.REALTOR_POSITION = (String) bookmarkMap.get("uID");
 
                 Intent intent = new Intent(holder.houseNumber.getContext(), DetailViewerListingView.class);
                 holder.houseNumber.getContext().startActivity(intent);

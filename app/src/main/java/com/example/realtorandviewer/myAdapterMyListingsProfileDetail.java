@@ -15,6 +15,8 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 
+import java.util.Map;
+
 public class myAdapterMyListingsProfileDetail extends FirebaseRecyclerAdapter<Properties, myAdapterMyListingsProfileDetail.myviewholder> {
 
     public myAdapterMyListingsProfileDetail(@NonNull FirebaseRecyclerOptions<Properties> options) {
@@ -45,6 +47,7 @@ public class myAdapterMyListingsProfileDetail extends FirebaseRecyclerAdapter<Pr
             public void onClick(View v) {
 
                 Login.MY_LISTING_POSITION = getSnapshots().getSnapshot(position).getKey();
+
 
                 Intent intent = new Intent(holder.houseNumber.getContext(), DetailViewerListingView.class);
                 holder.houseNumber.getContext().startActivity(intent);

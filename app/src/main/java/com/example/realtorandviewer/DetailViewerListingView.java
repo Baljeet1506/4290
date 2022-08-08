@@ -137,7 +137,7 @@ public class DetailViewerListingView extends AppCompatActivity {
 
         DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("RealtorUsers");
 
-        reference2.child(Login.LISTING_UID).addListenerForSingleValueEvent(new ValueEventListener() {
+        reference2.child(Login.REALTOR_POSITION).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User userProfile = snapshot.getValue(User.class);

@@ -20,6 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -45,7 +46,9 @@ public class myAdapterFindRealtors extends FirebaseRecyclerAdapter<User, myAdapt
             public void onClick(View v) {
 
                 Login.REALTOR_POSITION = getSnapshots().getSnapshot(position).getKey();
-                //Toast.makeText(holder.firsName.getContext(), "Position is " + Login.REALTOR_POSITION, Toast.LENGTH_LONG).show();
+
+                //Login.LISTING_UID = getSnapshots().getSnapshot(position).getKey();
+
                 Intent intent = new Intent(holder.firsName.getContext(), DetailRealtorProfileView.class);
                 holder.firsName.getContext().startActivity(intent);
 
