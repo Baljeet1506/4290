@@ -22,6 +22,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class myAdapterFindProperties extends FirebaseRecyclerAdapter<Properties, myAdapterFindProperties.myviewholder> {
 
@@ -81,8 +82,12 @@ public class myAdapterFindProperties extends FirebaseRecyclerAdapter<Properties,
 
                 Login.MY_LISTING_POSITION = getSnapshots().getSnapshot(position).getKey();
 
+                Map<String, Object> bookmarkMap = (Map<String, Object>) getSnapshots().getSnapshot(position).getValue();
+                Login.LISTING_UID = (String) bookmarkMap.get("uID");
+
                 Intent intent = new Intent(holder.houseNumber.getContext(), DetailViewerListingView.class);
                 holder.houseNumber.getContext().startActivity(intent);
+                Toast.makeText(holder.houseNumber.getContext(), "" + Login.LISTING_UID, Toast.LENGTH_LONG).show();
             }
         });
 

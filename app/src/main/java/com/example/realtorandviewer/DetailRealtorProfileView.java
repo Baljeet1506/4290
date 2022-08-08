@@ -26,7 +26,6 @@ public class DetailRealtorProfileView extends AppCompatActivity {
     CircleImageView img;
     ImageButton backBtn;
     TextView fullNameText, companyText, realtorEmailText, realtorPhoneNumText;
-    private DatabaseReference reference;
     RecyclerView recviewListing, recviewPast;
     myAdapterMyListingsProfileDetail myAdapterMyListingsProfileDetail;
     myAdapterMyPastSalesProfileDetail myAdapterMyPastSalesProfileDetail;
@@ -42,7 +41,7 @@ public class DetailRealtorProfileView extends AppCompatActivity {
         realtorPhoneNumText = findViewById(R.id.phone_realtor_detail_view);
         img = findViewById(R.id.realtor_profile_image);
 
-        reference = FirebaseDatabase.getInstance().getReference("RealtorUsers");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("RealtorUsers");
 
         recviewListing = findViewById(R.id.rec_view_listing_profile);
         recviewListing.setLayoutManager(new LinearLayoutManager(this));
