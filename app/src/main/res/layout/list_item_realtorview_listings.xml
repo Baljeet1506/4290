@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:background="@null"
+            android:background="@drawable/shape_rounded_bottom_left"
             android:minWidth="48dp"
             android:minHeight="48dp"
             android:src="@drawable/cancel" />
@@ -315,7 +315,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/my_listing_image_slider"
             android:layout_alignParentEnd="true"
-            android:background="@null"
+            android:background="@drawable/shape_rounded_top_left"
             android:minWidth="48dp"
             android:minHeight="48dp"
             android:src="@drawable/edit"
