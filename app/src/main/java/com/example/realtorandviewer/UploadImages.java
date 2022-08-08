@@ -132,7 +132,7 @@ public class UploadImages extends AppCompatActivity {
 
         HashMap<String, String> hashMap = new HashMap<>();
         hashMap.put("url", url);
-        hashMap.put("title", "test");
+        hashMap.put("title", "");
 
         databaseReference.push().setValue(hashMap);
         databaseReference2.push().setValue(hashMap);
