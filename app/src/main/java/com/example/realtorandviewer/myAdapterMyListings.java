@@ -183,6 +183,9 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
                         FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_)
                                 .child(Objects.requireNonNull(getRef(position).getKey())).removeValue();
 
+                        FirebaseDatabase.getInstance().getReference().child("AllProperties")
+                                .child(Objects.requireNonNull(getRef(position).getKey())).removeValue();
+
                     }
                 });
 
