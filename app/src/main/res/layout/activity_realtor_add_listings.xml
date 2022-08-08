@@ -1,45 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginStart="10dp"
-    android:layout_marginTop="10dp"
-    android:layout_marginEnd="10dp"
-    android:background="@drawable/shape_rounded_top"
-    android:orientation="vertical">
+    tools:context=".RealtorAddListings">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.07" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.93" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.88" />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/titleBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/shape_rounded_square"
-        android:elevation="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_rounded_bottom"
+        android:elevation="@dimen/spacing_large"
         app:layout_constraintBottom_toTopOf="@+id/content_scrolling"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-        <TextView
-            android:id="@+id/titleBarTitle"
+        <ImageButton
+            android:id="@+id/btnBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:fontFamily="@font/roboto_slab"
-            android:text="Update"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:contentDescription="@string/back"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?actionBarItemBackground"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/back" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:text="@string/add_listing"
             android:textAllCaps="false"
             android:textColor="@color/green"
             android:textSize="@dimen/h1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnBack"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.5" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:id="@+id/content_scrolling"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/spacing_medium"
+        app:layout_constraintTop_toBottomOf="@+id/titleBar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -62,7 +112,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/uNumber"
+                    android:id="@+id/editTextUnitNumber"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -88,7 +138,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/hNumber"
+                    android:id="@+id/editTextHouseNumber"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -114,7 +164,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/street"
+                    android:id="@+id/editTextStreet"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -140,7 +190,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/city"
+                    android:id="@+id/editTextCity"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -166,7 +216,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/province"
+                    android:id="@+id/editTextProvince"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -192,7 +242,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/postal"
+                    android:id="@+id/editTextPostal"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -218,7 +268,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/price"
+                    android:id="@+id/editTextPrice"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -244,7 +294,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/beds"
+                    android:id="@+id/editTextBeds"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -269,7 +319,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/baths"
+                    android:id="@+id/editTextBaths"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -294,7 +344,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/landSize"
+                    android:id="@+id/editTextLandSize"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -320,7 +370,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/floorSize"
+                    android:id="@+id/editTextFloorSize"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -346,7 +396,7 @@
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/age"
+                    android:id="@+id/editTextAge"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -407,12 +457,12 @@
                     android:id="@+id/n"
                     android:layout_width="150dp"
                     android:layout_height="@dimen/text_input_height"
-                    android:paddingStart="10dp"
+                    android:paddingLeft="10dp"
                     android:text="@string/description"
                     android:textSize="@dimen/h3" />
 
                 <EditText
-                    android:id="@+id/description"
+                    android:id="@+id/editTextDescription"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/paragraph_input_height"
                     android:background="@drawable/shape_rounded_textinput"
@@ -426,21 +476,20 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/usubmit_dialog_listing"
+                android:id="@+id/btnAddListing"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/button_height"
                 android:layout_gravity="center"
-                android:backgroundTint="@color/green"
                 android:fontFamily="@font/roboto"
+                android:backgroundTint="@color/green"
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 android:paddingLeft="24dp"
                 android:paddingRight="24dp"
-                android:text="Update"
+                android:text="@string/add_listing"
                 android:textAllCaps="false"
                 android:textSize="@dimen/button_font_size"
-                app:cornerRadius="20dp" />
+                app:cornerRadius="20dp"/>
         </LinearLayout>
     </ScrollView>
-</LinearLayout>
-
+</androidx.constraintlayout.widget.ConstraintLayout>

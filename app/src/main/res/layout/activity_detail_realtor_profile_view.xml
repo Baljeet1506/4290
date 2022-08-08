@@ -13,8 +13,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#00FFFFFF"
+        android:background="?actionBarItemBackground"
+        android:clickable="true"
         android:contentDescription="@string/back"
+        android:focusable="true"
         android:minWidth="48dp"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -28,35 +30,36 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/realtor_profile_image"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="32dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:src="@mipmap/ic_launcher"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnCurrentListings"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_back_to_find_realtors" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/spacing_large"
+        android:layout_marginStart="32dp"
         android:gravity="center_horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/rec_view_listing_profile"
+        app:layout_constraintBottom_toBottomOf="@+id/realtor_profile_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/realtor_profile_image"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/realtor_profile_image"
+        app:layout_constraintTop_toTopOf="@+id/realtor_profile_image"
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/fullname_realtor_detail_view"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
             android:gravity="center_horizontal"
@@ -66,7 +69,7 @@
 
         <TextView
             android:id="@+id/company_realtor_detail_view"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/fullname_realtor_detail_view"
             android:fontFamily="@font/roboto_slab"
@@ -76,7 +79,7 @@
 
         <TextView
             android:id="@+id/phone_realtor_detail_view"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/company_realtor_detail_view"
             android:fontFamily="@font/roboto_slab"
@@ -86,7 +89,7 @@
 
         <TextView
             android:id="@+id/email_realtor_detail_view"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/phone_realtor_detail_view"
             android:fontFamily="@font/roboto_slab"
@@ -96,26 +99,55 @@
             android:textSize="@dimen/h4" />
     </RelativeLayout>
 
+    <Button
+        android:id="@+id/btnCurrentListings"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        app:cornerRadius="20dp"
+        android:backgroundTint="@color/light_green"
+        android:text="Current Listings"
+        app:layout_constraintBottom_toTopOf="@+id/rec_view_listing_profile"
+        app:layout_constraintEnd_toStartOf="@+id/btnPastSales"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/realtor_profile_image" />
+
+    <Button
+        android:id="@+id/btnPastSales"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:backgroundTint="@color/white"
+        android:text="Past Sales"
+        android:textColor="@color/light_green"
+        app:cornerRadius="20dp"
+        app:strokeColor="@color/light_green"
+        app:strokeWidth="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/rec_view_listing_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnCurrentListings"
+        app:layout_constraintTop_toTopOf="@+id/btnCurrentListings" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_view_listing_profile"
-        android:layout_width="202dp"
-        android:layout_height="379dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.033"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.99" />
+        app:layout_constraintTop_toBottomOf="@+id/btnCurrentListings" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rec_view_past_sale_profile"
-        android:layout_width="183dp"
-        android:layout_height="381dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.978"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPastSales"
         app:layout_constraintVertical_bias="0.99" />
 
 

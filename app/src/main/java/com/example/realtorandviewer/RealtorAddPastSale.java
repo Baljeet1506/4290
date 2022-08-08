@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
@@ -16,31 +20,33 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RealtorAddPastSale extends AppCompatActivity implements View.OnClickListener {
 
-    EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
+    EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age;
+    Spinner type, title;
     Button addPastSaleBtn;
     ImageButton backBtn;
     DatabaseReference ref;
     Properties listing;
+    Spinner spinnerType, spinnerTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_realtor_add_past_sale);
 
-        unitNumber = findViewById(R.id.etPastUnitNum);
-        houseNumber = findViewById(R.id.etPastHouseNum);
-        street = findViewById(R.id.etPastStreet);
-        city = findViewById(R.id.etPastCity);
-        province = findViewById(R.id.etPastProvince);
-        postal = findViewById(R.id.etPastPostal);
-        price = findViewById(R.id.etPastPrice);
-        beds = findViewById(R.id.etPastBeds);
-        landSize = findViewById(R.id.etPastLand);
-        baths = findViewById(R.id.etPastBaths);
-        floorSize = findViewById(R.id.etPastFloorSize);
-        age = findViewById(R.id.etPastAge);
-        type = findViewById(R.id.etPastType);
-        title = findViewById(R.id.etPastTitle);
+        unitNumber = findViewById(R.id.editTextUnitNumberPast);
+        houseNumber = findViewById(R.id.editTextHouseNumberPast);
+        street = findViewById(R.id.editTextStreetPast);
+        city = findViewById(R.id.editTextCityPast);
+        province = findViewById(R.id.editTextProvincePast);
+        postal = findViewById(R.id.editTextPostalPast);
+        price = findViewById(R.id.editTextPricePast);
+        beds = findViewById(R.id.editTextBedsPast);
+        landSize = findViewById(R.id.editTextLandSizePast);
+        baths = findViewById(R.id.editTextBathsPast);
+        floorSize = findViewById(R.id.editTextFloorSizePast);
+        age = findViewById(R.id.editTextAgePast);
+        type = findViewById(R.id.spinnerTypePast);
+        title = findViewById(R.id.spinnerTitlePast);
 
         addPastSaleBtn = findViewById(R.id.btnAddPastSale);
         addPastSaleBtn.setOnClickListener(this);
@@ -48,6 +54,16 @@ public class RealtorAddPastSale extends AppCompatActivity implements View.OnClic
         backBtn = findViewById(R.id.btnBack);
         backBtn.setOnClickListener(this);
         listing = new Properties();
+
+        String[] property_type_array = getResources().getStringArray(R.array.property_type_array);
+        ArrayAdapter<CharSequence> typeAdapter = ArrayAdapter.createFromResource(this, R.array.property_type_array, R.layout.simple_spinner_item);
+        typeAdapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+        type.setAdapter(typeAdapter);
+
+        String[] property_title_array = getResources().getStringArray(R.array.property_title_array);
+        ArrayAdapter<CharSequence> titleAdapter = ArrayAdapter.createFromResource(this, R.array.property_title_array, R.layout.simple_spinner_item);
+        titleAdapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+        title.setAdapter(titleAdapter);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -77,8 +93,8 @@ public class RealtorAddPastSale extends AppCompatActivity implements View.OnClic
         String baths_ = baths.getText().toString();
         String floorSize_ = floorSize.getText().toString();
         String age_ = age.getText().toString();
-        String type_ = type.getText().toString();
-        String title_ = title.getText().toString();
+        String type_ = type.getSelectedItem().toString();
+        String title_ = title.getSelectedItem().toString();
         String listingImage_ = "";
 
         if (houseNumber_.isEmpty()) {
@@ -139,12 +155,18 @@ public class RealtorAddPastSale extends AppCompatActivity implements View.OnClic
             return;
         }
         if (type_.isEmpty()) {
-            type.setError("Type of property is required");
+            TextView errorText = (TextView) spinnerType.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(Color.RED);
+            errorText.setText("Type of property is required");
             type.requestFocus();
             return;
         }
         if (title_.isEmpty()) {
-            title.setError("Title is required");
+            TextView errorText = (TextView) spinnerTitle.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(Color.RED);
+            errorText.setText("Title of property is required");
             title.requestFocus();
             return;
         }

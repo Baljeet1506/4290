@@ -87,7 +87,7 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
                 final EditText baths = myview.findViewById(R.id.baths);
                 final EditText landSize = myview.findViewById(R.id.landSize);
                 final EditText floorSize = myview.findViewById(R.id.floorSize);
-                final EditText type = myview.findViewById(R.id.type);
+                final EditText type = myview.findViewById(R.id.spinnerType);
                 final EditText age = myview.findViewById(R.id.age);
                 final EditText title = myview.findViewById(R.id.title);
 

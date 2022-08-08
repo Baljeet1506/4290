@@ -23,33 +23,33 @@ import java.lang.reflect.Array;
 
 public class RealtorAddListings extends AppCompatActivity implements View.OnClickListener {
 
-    EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, title;
-    Spinner type;
+    EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age;
+    Spinner type, title;
     Button addListingBtn;
     ImageButton backBtn;
     DatabaseReference ref1, ref2;
     Properties listing;
-    Spinner spinnerType;
+    Spinner spinnerType, spinnerTitle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_listings);
+        setContentView(R.layout.activity_realtor_add_listings);
 
-        unitNumber = findViewById(R.id.editTextUnitNum);
-        houseNumber = findViewById(R.id.editTextHouseNum);
+        unitNumber = findViewById(R.id.editTextUnitNumber);
+        houseNumber = findViewById(R.id.editTextHouseNumber);
         street = findViewById(R.id.editTextStreet);
         city = findViewById(R.id.editTextCity);
         province = findViewById(R.id.editTextProvince);
         postal = findViewById(R.id.editTextPostal);
         price = findViewById(R.id.editTextPrice);
         beds = findViewById(R.id.editTextBeds);
-        landSize = findViewById(R.id.editTextLand);
+        landSize = findViewById(R.id.editTextLandSize);
         baths = findViewById(R.id.editTextBaths);
         floorSize = findViewById(R.id.editTextFloorSize);
         age = findViewById(R.id.editTextAge);
         type = findViewById(R.id.spinnerType);
-        title = findViewById(R.id.editTextTitle);
+        title = findViewById(R.id.spinnerTitle);
 
         addListingBtn = findViewById(R.id.btnAddListing);
         addListingBtn.setOnClickListener(this);
@@ -60,9 +60,14 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         listing = new Properties();
 
         String[] property_type_array = getResources().getStringArray(R.array.property_type_array);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.property_type_array, R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
-        type.setAdapter(adapter);
+        ArrayAdapter<CharSequence> typeAdapter = ArrayAdapter.createFromResource(this, R.array.property_type_array, R.layout.simple_spinner_item);
+        typeAdapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+        type.setAdapter(typeAdapter);
+
+        String[] property_title_array = getResources().getStringArray(R.array.property_title_array);
+        ArrayAdapter<CharSequence> titleAdapter = ArrayAdapter.createFromResource(this, R.array.property_title_array, R.layout.simple_spinner_item);
+        titleAdapter.setDropDownViewResource(R.layout.simple_spinner_dropdown_item);
+        title.setAdapter(titleAdapter);
 
     }
 
@@ -91,7 +96,7 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         String floorSize_ = floorSize.getText().toString();
         String age_ = age.getText().toString();
         String type_ = type.getSelectedItem().toString();
-        String title_ = title.getText().toString();
+        String title_ = title.getSelectedItem().toString();
         String listingImage_ = "";
 
         if (houseNumber_.isEmpty()) {
@@ -160,7 +165,10 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
             return;
         }
         if (title_.isEmpty()) {
-            title.setError("Title is required");
+            TextView errorText = (TextView) spinnerTitle.getSelectedView();
+            errorText.setError("");
+            errorText.setTextColor(Color.RED);
+            errorText.setText("Title of property is required");
             title.requestFocus();
             return;
         }
@@ -189,7 +197,6 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         Login.str_NEW_Records_Key1 = db_ref.getKey();
         db_ref.setValue(listing);
 
-
         ref2 = FirebaseDatabase.getInstance().getReference().child("AllProperties").child(Login.str_NEW_Records_Key1);
         listing.setUnitNumber(unitNumber_);
         listing.setHouseNumber(houseNumber_);
@@ -209,9 +216,6 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         listing.setListingImage(listingImage_);
 
         ref2.setValue(listing);
-
-
-
 
         Toast.makeText(RealtorAddListings.this, "Listing is added successfully", Toast.LENGTH_LONG).show();
         startActivity(new Intent(getApplicationContext(), UploadImages.class));

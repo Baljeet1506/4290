@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +27,9 @@ public class DetailRealtorProfileView extends AppCompatActivity {
 
     CircleImageView img;
     ImageButton backBtn;
+    Button currentListingsBtn, pastSalesBtn;
     TextView fullNameText, companyText, realtorEmailText, realtorPhoneNumText;
+    private DatabaseReference reference;
     RecyclerView recviewListing, recviewPast;
     myAdapterMyListingsProfileDetail myAdapterMyListingsProfileDetail;
     myAdapterMyPastSalesProfileDetail myAdapterMyPastSalesProfileDetail;
@@ -34,14 +38,30 @@ public class DetailRealtorProfileView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_realtor_profile_view);
-
         fullNameText = findViewById(R.id.fullname_realtor_detail_view);
         companyText = findViewById(R.id.company_realtor_detail_view);
         realtorEmailText = findViewById(R.id.email_realtor_detail_view);
         realtorPhoneNumText = findViewById(R.id.phone_realtor_detail_view);
         img = findViewById(R.id.realtor_profile_image);
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("RealtorUsers");
+        reference = FirebaseDatabase.getInstance().getReference("RealtorUsers");
+
+        currentListingsBtn = findViewById(R.id.btnCurrentListings);
+        pastSalesBtn = findViewById(R.id.btnPastSales);
+        currentListingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recviewListing.setVisibility(View.VISIBLE);
+                recviewPast.setVisibility(View.INVISIBLE);
+            }
+        });
+        pastSalesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recviewPast.setVisibility(View.VISIBLE);
+                recviewListing.setVisibility(View.INVISIBLE);
+            }
+        });
 
         recviewListing = findViewById(R.id.rec_view_listing_profile);
         recviewListing.setLayoutManager(new LinearLayoutManager(this));
@@ -64,6 +84,7 @@ public class DetailRealtorProfileView extends AppCompatActivity {
 
         myAdapterMyPastSalesProfileDetail = new myAdapterMyPastSalesProfileDetail(options2);
         recviewPast.setAdapter(myAdapterMyPastSalesProfileDetail);
+        recviewPast.setVisibility(View.INVISIBLE);
 
         reference.child(Login.REALTOR_POSITION).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -110,4 +131,6 @@ public class DetailRealtorProfileView extends AppCompatActivity {
         myAdapterMyListingsProfileDetail.stopListening();
         myAdapterMyPastSalesProfileDetail.stopListening();
     }
+
+
 }

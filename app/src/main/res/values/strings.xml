@@ -76,6 +76,7 @@
     <string name="type">Type</string>
     <string name="title">Title</string>
     <string name="property_list">Property List</string>
+    <string name="description">Description</string>
     <string name="realtor">Realtor</string>
     <string name="realtor_company">Realtor\'s Company</string>
 

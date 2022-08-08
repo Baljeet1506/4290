@@ -3,13 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:elevation="11dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="@dimen/card_elevation_small"
-    app:cardUseCompatPadding="true"
+    android:layout_margin="@dimen/spacing_medium"
     android:clickable="true"
     android:focusable="true"
-    android:foreground="?android:attr/selectableItemBackground">
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="@dimen/card_elevation_small">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -272,7 +271,8 @@
                 android:id="@+id/type_Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/age_Text"
+                android:layout_below="@id/land_Text"
+                android:layout_toEndOf="@id/title_Text"
                 android:fontFamily="@font/roboto"
                 android:paddingStart="0dp"
                 android:paddingEnd="8dp"
@@ -312,7 +312,10 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/content_main"
             android:layout_alignParentEnd="true"
-            android:layout_margin="@dimen/spacing_small"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:layout_marginTop="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:layout_marginBottom="@dimen/spacing_small"
             android:backgroundTint="@color/light_green"
             android:insetTop="0dp"
             android:insetBottom="0dp"
@@ -322,7 +325,7 @@
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="@dimen/h3"
-            app:cornerRadius="8dp" />
+            app:cornerRadius="@dimen/button_radius" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
 

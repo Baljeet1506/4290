@@ -87,9 +87,9 @@ public class myAdapterMyPastSales extends FirebaseRecyclerAdapter<Properties, my
                 final EditText baths = myview.findViewById(R.id.baths_Dialog_Past);
                 final EditText landSize = myview.findViewById(R.id.landSize_Dialog_Past);
                 final EditText floorSize = myview.findViewById(R.id.floorSize_Dialog_Past);
-                final EditText type = myview.findViewById(R.id.type_Dialog_Past);
+                final EditText type = myview.findViewById(R.id.spinnerType_Dialog_Past);
                 final EditText age = myview.findViewById(R.id.age_Dialog_Past);
-                final EditText title = myview.findViewById(R.id.title_Dialog_Past);
+                final EditText title = myview.findViewById(R.id.spinnerTitle_Dialog_Past);
 
                 Button submit = myview.findViewById(R.id.usubmit_Dialog_Past);
 

@@ -35,7 +35,7 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/shape_rounded_bottom"
         android:elevation="@dimen/spacing_large"
-        app:layout_constraintBottom_toTopOf="@+id/scrollView7"
+        app:layout_constraintBottom_toTopOf="@+id/content_scrolling"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +49,9 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:background="#00FFFFFF"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="?actionBarItemBackground"
             android:contentDescription="@string/back"
             android:minWidth="48dp"
             android:minHeight="48dp"
@@ -80,15 +82,14 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
-        android:id="@+id/scrollView7"
+        android:id="@+id/content_scrolling"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideBottom"
-        app:layout_constraintEnd_toStartOf="@+id/guideRight"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideLeft"
-        app:layout_constraintTop_toBottomOf="@+id/titleBar"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="@dimen/spacing_medium"
+        app:layout_constraintTop_toBottomOf="@+id/titleBar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -98,150 +99,204 @@
             android:padding="@dimen/spacing_small"
             android:showDividers="middle">
 
-            <EditText
-                android:id="@+id/etPastUnitNum"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_input_height"
-                android:background="@drawable/shape_rounded_textinput"
-                android:ems="10"
-                android:fontFamily="@font/roboto_slab"
-                android:hint="@string/unit_number"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:textAlignment="center"
-                android:textSize="@dimen/h3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.008"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.175" />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/etPastHouseNum"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_input_height"
-                android:background="@drawable/shape_rounded_textinput"
-                android:ems="10"
-                android:fontFamily="@font/roboto_slab"
-                android:hint="@string/house_number"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:textAlignment="center"
-                android:textSize="@dimen/h3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.962"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.177" />
+                <TextView
+                    android:id="@+id/a"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:paddingLeft="10dp"
+                    android:text="@string/unit_number"
+                    android:textSize="@dimen/h3" />
 
-            <EditText
-                android:id="@+id/etPastStreet"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_input_height"
-                android:background="@drawable/shape_rounded_textinput"
-                android:ems="10"
-                android:fontFamily="@font/roboto_slab"
-                android:hint="@string/street"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textSize="@dimen/h3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.008"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.276" />
-
-            <EditText
-                android:id="@+id/etPastCity"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_input_height"
-                android:background="@drawable/shape_rounded_textinput"
-                android:ems="10"
-                android:fontFamily="@font/roboto_slab"
-                android:hint="@string/city"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textSize="@dimen/h3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.963"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.281" />
-
-            <EditText
-                android:id="@+id/etPastProvince"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_input_height"
-                android:background="@drawable/shape_rounded_textinput"
-                android:ems="10"
-                android:fontFamily="@font/roboto_slab"
-                android:hint="@string/province"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:textSize="@dimen/h3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.379" />
-
-            <EditText
-                android:id="@+id/etPastPostal"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_input_height"
-                android:background="@drawable/shape_rounded_textinput"
-                android:ems="10"
-                android:fontFamily="@font/roboto_slab"
-                android:hint="@string/postal_code"
-                android:importantForAutofill="no"
-                android:inputType="textPostalAddress"
-                android:textAlignment="center"
-                android:textSize="@dimen/h3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.379" />
-
-            <EditText
-                android:id="@+id/etPastPrice"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/text_input_height"
-                android:background="@drawable/shape_rounded_textinput"
-                android:ems="10"
-                android:fontFamily="@font/roboto_slab"
-                android:hint="@string/price"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"
-                android:textAlignment="center"
-                android:textSize="@dimen/h3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.483" />
+                <EditText
+                    android:id="@+id/editTextUnitNumberPast"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/unit_number"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h3" />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:divider="@drawable/spacing_medium"
-                android:showDividers="middle">
+                android:layout_height="wrap_content">
 
-                <EditText
-                    android:id="@+id/etPastBeds"
+                <TextView
+                    android:id="@+id/b"
                     android:layout_width="150dp"
                     android:layout_height="@dimen/text_input_height"
-                    android:layout_weight="0.5"
+                    android:paddingLeft="10dp"
+                    android:text="@string/house_number"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/editTextHouseNumberPast"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/house_number"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/c"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:paddingLeft="10dp"
+                    android:text="@string/street"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/editTextStreetPast"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/street"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/d"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:paddingLeft="10dp"
+                    android:text="@string/city"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/editTextCityPast"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/city"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/e"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:paddingLeft="10dp"
+                    android:text="@string/province"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/editTextProvincePast"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/province"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/f"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:paddingLeft="10dp"
+                    android:text="@string/postal_code"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/editTextPostalPast"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/postal_code"
+                    android:importantForAutofill="no"
+                    android:inputType="textPostalAddress"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/g"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:paddingLeft="10dp"
+                    android:text="@string/price"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/editTextPricePast"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/price"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h3" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/h"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:paddingLeft="10dp"
+                    android:text="@string/beds"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/editTextBedsPast"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
                     android:fontFamily="@font/roboto_slab"
                     android:hint="@string/beds"
@@ -249,12 +304,24 @@
                     android:inputType="number"
                     android:textAlignment="center"
                     android:textSize="@dimen/h3" />
+            </LinearLayout>
 
-                <EditText
-                    android:id="@+id/etPastBaths"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/h1"
                     android:layout_width="150dp"
                     android:layout_height="@dimen/text_input_height"
-                    android:layout_weight="0.5"
+                    android:paddingLeft="10dp"
+                    android:text="@string/baths"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/editTextBathsPast"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
                     android:fontFamily="@font/roboto_slab"
                     android:hint="@string/baths"
@@ -262,126 +329,167 @@
                     android:inputType="numberDecimal"
                     android:textAlignment="center"
                     android:textSize="@dimen/h3" />
-
-
             </LinearLayout>
 
-
-            <EditText
-                android:id="@+id/etPastLand"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_input_height"
-                android:background="@drawable/shape_rounded_textinput"
-                android:ems="10"
-                android:fontFamily="@font/roboto_slab"
-                android:hint="@string/land_size"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"
-                android:textAlignment="center"
-                android:textSize="@dimen/h3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.6" />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/etPastFloorSize"
+                <TextView
+                    android:id="@+id/i"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:paddingLeft="10dp"
+                    android:text="@string/land_size"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/editTextLandSizePast"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/land_size"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h3" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_input_height"
-                android:background="@drawable/shape_rounded_textinput"
-                android:ems="10"
-                android:fontFamily="@font/roboto_slab"
-                android:hint="@string/floor_size"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"
-                android:textAlignment="center"
-                android:textSize="@dimen/h3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.704" />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/etPastAge"
+                <TextView
+                    android:id="@+id/j"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:paddingLeft="10dp"
+                    android:text="@string/floor_size"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/editTextFloorSizePast"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/floor_size"
+                    android:importantForAutofill="no"
+                    android:inputType="numberDecimal"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h3" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_input_height"
-                android:background="@drawable/shape_rounded_textinput"
-                android:ems="10"
-                android:fontFamily="@font/roboto_slab"
-                android:hint="@string/age"
-                android:importantForAutofill="no"
-                android:inputType="number"
-                android:textAlignment="center"
-                android:textSize="@dimen/h3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.703" />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/etPastType"
+                <TextView
+                    android:id="@+id/k"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:paddingLeft="10dp"
+                    android:text="@string/age"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/editTextAgePast"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/age"
+                    android:importantForAutofill="no"
+                    android:inputType="number"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h3" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_input_height"
-                android:background="@drawable/shape_rounded_textinput"
-                android:ems="10"
-                android:fontFamily="@font/roboto_slab"
-                android:hint="@string/type"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textAlignment="center"
-                android:textSize="@dimen/h3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.806" />
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/etPastTitle"
+                <TextView
+                    android:id="@+id/l"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:paddingLeft="10dp"
+                    android:text="@string/type"
+                    android:textSize="@dimen/h3" />
+
+                <Spinner
+                    android:id="@+id/spinnerTypePast"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/text_input_height"
-                android:background="@drawable/shape_rounded_textinput"
-                android:ems="10"
-                android:fontFamily="@font/roboto_slab"
-                android:hint="@string/title"
-                android:importantForAutofill="no"
-                android:inputType="textPersonName"
-                android:textAlignment="center"
-                android:textSize="@dimen/h3"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.805" />
+                android:layout_height="wrap_content">
 
+                <TextView
+                    android:id="@+id/m"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:paddingLeft="10dp"
+                    android:text="@string/title"
+                    android:textSize="@dimen/h3" />
 
+                <Spinner
+                    android:id="@+id/spinnerTitlePast"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/text_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/n"
+                    android:layout_width="150dp"
+                    android:layout_height="@dimen/text_input_height"
+                    android:paddingLeft="10dp"
+                    android:text="@string/description"
+                    android:textSize="@dimen/h3" />
+
+                <EditText
+                    android:id="@+id/editTextDescriptionPast"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/paragraph_input_height"
+                    android:background="@drawable/shape_rounded_textinput"
+                    android:ems="10"
+                    android:fontFamily="@font/roboto_slab"
+                    android:hint="@string/description"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/h3" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnAddPastSale"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_height"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/green"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:paddingLeft="24dp"
+                android:paddingRight="24dp"
+                android:fontFamily="@font/roboto"
+                android:text="Add Past Sale"
+                android:textAllCaps="false"
+                android:textSize="@dimen/button_font_size"
+                app:cornerRadius="20dp"/>
         </LinearLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/btnAddPastSale"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/button_height"
-        android:backgroundTint="@color/green"
-        android:fontFamily="@font/roboto"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:text="Add Past Sale"
-        android:textAllCaps="false"
-        android:textSize="@dimen/button_font_size"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideBottom" />
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

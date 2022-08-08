@@ -197,13 +197,15 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="wrap_content"
             android:backgroundTint="@color/gray"
             android:gravity="center"
             android:orientation="vertical"
-            android:padding="@dimen/spacing_medium">
+            android:paddingHorizontal="@dimen/spacing_small"
+            android:paddingTop="@dimen/spacing_medium">
 
             <LinearLayout
+                android:id="@+id/topSection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
@@ -280,7 +282,7 @@
                 android:id="@+id/separator"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:layout_below="@id/btnMyListings"
+                android:layout_below="@id/topSection"
                 android:layout_margin="@dimen/spacing_small"
                 android:background="@color/light_gray" />
 
@@ -288,19 +290,19 @@
                 android:id="@+id/btnPreparingToSell"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/spacing_small"
+                android:layout_marginHorizontal="@dimen/spacing_small"
+                android:layout_marginVertical="@dimen/spacing_tiny"
                 android:background="@drawable/shape_rounded_square"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardElevation="@dimen/card_elevation_small"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:orientation="horizontal"
-                app:cardCornerRadius="@dimen/card_corner_radius">
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation_small">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="@dimen/card_elevation_medium"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -318,26 +320,25 @@
                         android:text="@string/prepare_to_sell"
                         android:textSize="@dimen/h3" />
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/btnListing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/spacing_small"
+                android:layout_marginHorizontal="@dimen/spacing_small"
+                android:layout_marginVertical="@dimen/spacing_tiny"
                 android:background="@drawable/shape_rounded_square"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardElevation="@dimen/card_elevation_small"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:orientation="horizontal"
-                app:cardCornerRadius="@dimen/card_corner_radius">
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation_small">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="@dimen/card_elevation_medium"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -362,19 +363,19 @@
                 android:id="@+id/btnMarketing"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/spacing_small"
+                android:layout_marginHorizontal="@dimen/spacing_small"
+                android:layout_marginVertical="@dimen/spacing_tiny"
                 android:background="@drawable/shape_rounded_square"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardElevation="@dimen/card_elevation_small"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:orientation="horizontal"
-                app:cardCornerRadius="@dimen/card_corner_radius">
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation_small">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="@dimen/card_elevation_medium"
                     android:orientation="horizontal">
 
                     <ImageView
@@ -398,19 +399,20 @@
                 android:id="@+id/btnTheOffer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/spacing_small"
+                android:layout_marginHorizontal="@dimen/spacing_small"
+                android:layout_marginTop="@dimen/spacing_tiny"
+                android:layout_marginBottom="@dimen/spacing_small"
                 android:background="@drawable/shape_rounded_square"
                 android:clickable="true"
                 android:focusable="true"
-                app:cardElevation="@dimen/card_elevation_small"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:orientation="horizontal"
-                app:cardCornerRadius="@dimen/card_corner_radius">
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation_small">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:elevation="@dimen/card_elevation_medium"
                     android:orientation="horizontal">
 
                     <ImageView
