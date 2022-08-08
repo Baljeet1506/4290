@@ -1,15 +1,16 @@
 package com.example.realtorandviewer;
 
+import android.widget.Spinner;
+
 public class Properties {
 
     String unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title, uID, listingImage;
-
 
     public Properties() {
 
     }
 
-    public Properties(String unitNumber, String houseNumber, String street, String city, String province, String postal, String price, String beds, String landSize, String baths, String floorSize, String age, String type, String title, String listingImage) {
+    public Properties(String unitNumber, String houseNumber, String street, String city, String province, String postal, String price, String beds, String landSize, String baths, String floorSize, String age, Spinner type, Spinner title, String listingImage) {
         this.unitNumber = unitNumber;
         this.houseNumber = houseNumber;
         this.street = street;
@@ -22,8 +23,8 @@ public class Properties {
         this.baths = baths;
         this.floorSize = floorSize;
         this.age = age;
-        this.type = type;
-        this.title = title;
+        this.type= type.toString();
+        this.title = title.toString();
         this.listingImage = listingImage;
     }
     public String getuID() {
@@ -130,9 +131,7 @@ public class Properties {
         this.age = age;
     }
 
-    public String getType() {
-        return type;
-    }
+    public String getType() { return type; }
 
     public void setType(String type) {
         this.type = type;
@@ -153,4 +152,5 @@ public class Properties {
     public void setListingImage(String listingImage) {
         this.listingImage = listingImage;
     }
+
 }

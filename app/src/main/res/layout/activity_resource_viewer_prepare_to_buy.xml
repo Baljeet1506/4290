@@ -56,28 +56,14 @@
             app:layout_constraintVertical_bias="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.93" />
-
     <ScrollView
         android:id="@+id/content_scrolling"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideLeft"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleBar"
         app:layout_constraintVertical_bias="1.0">
 
@@ -86,14 +72,14 @@
             android:layout_height="match_parent"
             android:divider="@drawable/spacing_small"
             android:orientation="vertical"
-            android:padding="10dp"
+            android:padding="@dimen/spacing_large"
             android:showDividers="middle">
 
             <TextView
                 android:id="@+id/textView39"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:text="Decide what type of home you want"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="@dimen/h3"
@@ -109,7 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="Single family home"
                 android:textSize="@dimen/normal_text"
@@ -125,7 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="Condo"
                 android:textSize="@dimen/normal_text"
@@ -141,7 +127,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="Semi-detached"
                 android:textSize="@dimen/normal_text"
@@ -157,7 +143,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="Townhouse"
                 android:textSize="@dimen/normal_text"
@@ -173,7 +159,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="Duplex"
                 android:textSize="@dimen/normal_text"
@@ -188,7 +174,7 @@
                 android:id="@+id/textView40"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:text="Sell your current Home"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="@dimen/h3"
@@ -203,7 +189,7 @@
                 android:id="@+id/textView51"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="If you’re not planning to own two homes at the same time, you’ll need to sell the one you have now. So, do you buy or sell first? Many people are able to time their sale and purchase to happen on the same “closing date,” making their purchase offer “conditional” on the sale of their current home or by extending the “closing period” to give more time to find the perfect home. A REALTOR® can help you decide the best time to enter the market, analyze local market trends to set an agreeable and appropriate price and help promote your home to potential buyers."
                 android:textSize="@dimen/normal_text"

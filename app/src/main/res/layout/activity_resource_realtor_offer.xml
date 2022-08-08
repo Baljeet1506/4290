@@ -58,28 +58,14 @@
             app:layout_constraintVertical_bias="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.93" />
-
     <ScrollView
         android:id="@+id/content_scrolling"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideLeft"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleBar"
         app:layout_constraintVertical_bias="1.0">
 
@@ -88,14 +74,14 @@
             android:layout_height="match_parent"
             android:divider="@drawable/spacing_small"
             android:orientation="vertical"
-            android:padding="10dp"
+            android:padding="@dimen/spacing_large"
             android:showDividers="middle">
 
             <TextView
                 android:id="@+id/textView88"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:text="Receive an offer"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="@dimen/h3"
@@ -110,7 +96,7 @@
                 android:id="@+id/textView89"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:text="Give advice to your client"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="@dimen/h3"
@@ -125,7 +111,7 @@
                 android:id="@+id/textView92"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="You can advice your client if the received offer is good or not. What is going to happen once the accepted or if they don't like the price they can reject the offer. whatever best for them just explain it to them."
                 android:textSize="@dimen/normal_text"
@@ -140,7 +126,7 @@
                 android:id="@+id/textView90"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:text="Negotiation"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="@dimen/h3"
@@ -155,7 +141,7 @@
                 android:id="@+id/textView91"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="Negotiating a property sale is considered one of the most intimidating aspects of the home buying process. "
                 android:textSize="@dimen/normal_text"
@@ -170,7 +156,7 @@
                 android:id="@+id/textView87"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:text="Close Sale"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="@dimen/h3"
@@ -185,7 +171,7 @@
                 android:id="@+id/textView93"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="By the time your client accept an offer, you will  advise your client for reporting requirements by  the federal agency responsible for administering Canada’s Money Laundering and Terrorist Financing legislation and regulations. Before closing the sale, you are required by federal law to complete a client identification form and must ask the client  for verified ID such as a driver’s license or passport. "
                 android:textSize="@dimen/normal_text"

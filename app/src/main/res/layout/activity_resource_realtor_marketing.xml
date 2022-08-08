@@ -13,7 +13,7 @@
         android:layout_marginBottom="10dp"
         android:background="@drawable/shape_rounded_bottom"
         android:elevation="@dimen/spacing_large"
-        app:layout_constraintBottom_toTopOf="@+id/content_scrolling"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,10 +27,10 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:clickable="true"
-            android:focusable="true"
             android:background="?actionBarItemBackground"
+            android:clickable="true"
             android:contentDescription="@string/back"
+            android:focusable="true"
             android:minWidth="48dp"
             android:minHeight="48dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -59,56 +59,28 @@
             app:layout_constraintVertical_bias="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.93" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideTop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.95" />
-
     <ScrollView
         android:id="@+id/content_scrolling"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideBottom"
-        app:layout_constraintEnd_toStartOf="@+id/guideRight"
-        app:layout_constraintStart_toStartOf="@+id/guideLeft"
-        app:layout_constraintTop_toTopOf="@+id/guideTop">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleBar">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:divider="@drawable/spacing_small"
             android:orientation="vertical"
-            android:padding="10dp"
+            android:padding="@dimen/spacing_large"
             android:showDividers="middle">
 
             <TextView
                 android:id="@+id/textView98"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:text="Ways to advertise:"
                 android:textColor="@color/light_green"
                 android:textSize="@dimen/h2"
@@ -123,7 +95,7 @@
                 android:id="@+id/textView82"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:text="Internet"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="@dimen/h3"
@@ -138,7 +110,7 @@
                 android:id="@+id/textView102"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="You can add your listings to the internet like realtor and viewer app."
                 android:textSize="@dimen/normal_text"
@@ -153,7 +125,7 @@
                 android:id="@+id/textView83"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:text="Media"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="@dimen/h3"
@@ -168,7 +140,7 @@
                 android:id="@+id/textView101"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="Choose any media like newspaper, radio, TV, Flyers to advertise your listings. "
                 android:textSize="@dimen/normal_text"
@@ -183,7 +155,7 @@
                 android:id="@+id/textView84"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:text="Open houses"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="@dimen/h3"
@@ -198,7 +170,7 @@
                 android:id="@+id/textView100"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="Your open house is an efficient way to attract buyers to see your home with their own eyes. "
                 android:textSize="@dimen/normal_text"
@@ -213,7 +185,7 @@
                 android:id="@+id/textView85"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:text="Sale sign"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="@dimen/h3"
@@ -228,7 +200,7 @@
                 android:id="@+id/textView99"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="the for sale sign continues to be an effective way to advertise."
                 android:textSize="@dimen/normal_text"
@@ -243,7 +215,7 @@
                 android:id="@+id/textView94"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="You can highlight your properties best qualities, include professional photos, video tours and more."
                 android:textSize="@dimen/normal_text"

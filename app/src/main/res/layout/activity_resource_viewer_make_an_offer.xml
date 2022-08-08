@@ -56,28 +56,14 @@
             app:layout_constraintVertical_bias="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.93" />
-
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideRight"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideLeft"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleBar"
         app:layout_constraintVertical_bias="1.0">
 
@@ -86,14 +72,14 @@
             android:layout_height="wrap_content"
             android:divider="@drawable/spacing_small"
             android:orientation="vertical"
-            android:padding="10dp"
+            android:padding="@dimen/spacing_large"
             android:showDividers="middle">
 
             <TextView
                 android:id="@+id/textView67"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="You’ve found the perfect home? Congratulations! Now, if you actually want to make it yours, you have to make a successful offer, one the seller will accept. REALTORS® can prepare the offer for you. Here are some terms you’ll see:"
                 android:textSize="@dimen/normal_text"
@@ -108,7 +94,7 @@
                 android:id="@+id/textView68"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="12sp"
                 android:text="Find inspection officer"
                 android:textColor="@android:color/holo_green_dark"
@@ -124,7 +110,7 @@
                 android:id="@+id/textView66"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="When you’re buying a home, you’ll want to scrutinize every last detail. Hiring a professional to visually inspect your home for defects and overall condition – or, a home inspection – typically costs a few hundred dollars and can save you from unpleasant surprises and long-lasting regrets.  Many home buyers arrange a home inspection as a condition of their purchase. That way, should the inspector uncover any issues, you have the option to back out of or renegotiate the offer accordingly."
                 android:textSize="@dimen/normal_text"

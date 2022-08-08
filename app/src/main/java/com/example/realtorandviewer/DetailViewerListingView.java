@@ -37,8 +37,6 @@ public class DetailViewerListingView extends AppCompatActivity {
         backBtn = findViewById(R.id.btn_back_to_find_prop);
         backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
 
-
-
         image_slider_viewer=(ImageSlider)findViewById(R.id.image_slider_viewer);
         final List<SlideModel> remoteimages=new ArrayList<>();
 

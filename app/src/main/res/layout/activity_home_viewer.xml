@@ -120,7 +120,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:fontFamily="@font/roboto_slab"
+                        android:fontFamily="@font/roboto"
                         android:text="@string/prepare_to_buy"
                         android:textSize="@dimen/h3"
                         app:iconSize="20dp" />
@@ -155,7 +155,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:fontFamily="@font/roboto_slab"
+                        android:fontFamily="@font/roboto"
                         android:text="@string/finance_planning"
                         android:textSize="@dimen/h3"
                         app:iconSize="20dp" />
@@ -190,7 +190,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:fontFamily="@font/roboto_slab"
+                        android:fontFamily="@font/roboto"
                         android:text="@string/view_properties"
                         android:textSize="@dimen/h3"
                         app:iconSize="20dp" />
@@ -225,7 +225,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:fontFamily="@font/roboto_slab"
+                        android:fontFamily="@font/roboto"
                         android:text="@string/make_an_offer"
                         android:textSize="@dimen/h3"
                         app:iconSize="20dp" />
@@ -260,7 +260,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:fontFamily="@font/roboto_slab"
+                        android:fontFamily="@font/roboto"
                         android:text="@string/property_purchased"
                         android:textSize="@dimen/h3"
                         app:iconSize="20dp" />

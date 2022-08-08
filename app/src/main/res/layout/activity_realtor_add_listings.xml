@@ -117,12 +117,13 @@
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
                     android:ems="10"
-                    android:fontFamily="@font/roboto_slab"
+                    android:fontFamily="@font/roboto"
                     android:hint="@string/unit_number"
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h3" />
+                    android:textColorHint="@color/text_dark"
+                    android:textSize="@dimen/h4" />
             </LinearLayout>
 
             <LinearLayout
@@ -143,12 +144,13 @@
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
                     android:ems="10"
-                    android:fontFamily="@font/roboto_slab"
+                    android:fontFamily="@font/roboto"
                     android:hint="@string/house_number"
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h3" />
+                    android:textColorHint="@color/text_dark"
+                    android:textSize="@dimen/h4" />
             </LinearLayout>
 
             <LinearLayout
@@ -169,12 +171,13 @@
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
                     android:ems="10"
-                    android:fontFamily="@font/roboto_slab"
+                    android:fontFamily="@font/roboto"
                     android:hint="@string/street"
                     android:importantForAutofill="no"
                     android:inputType="text"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h3" />
+                    android:textColorHint="@color/text_dark"
+                    android:textSize="@dimen/h4" />
             </LinearLayout>
 
             <LinearLayout
@@ -195,12 +198,13 @@
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
                     android:ems="10"
-                    android:fontFamily="@font/roboto_slab"
+                    android:fontFamily="@font/roboto"
                     android:hint="@string/city"
                     android:importantForAutofill="no"
                     android:inputType="text"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h3" />
+                    android:textColorHint="@color/text_dark"
+                    android:textSize="@dimen/h4" />
             </LinearLayout>
 
             <LinearLayout
@@ -221,12 +225,13 @@
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
                     android:ems="10"
-                    android:fontFamily="@font/roboto_slab"
+                    android:fontFamily="@font/roboto"
                     android:hint="@string/province"
                     android:importantForAutofill="no"
                     android:inputType="text"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h3" />
+                    android:textColorHint="@color/text_dark"
+                    android:textSize="@dimen/h4" />
             </LinearLayout>
 
             <LinearLayout
@@ -247,12 +252,13 @@
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
                     android:ems="10"
-                    android:fontFamily="@font/roboto_slab"
+                    android:fontFamily="@font/roboto"
                     android:hint="@string/postal_code"
                     android:importantForAutofill="no"
                     android:inputType="textPostalAddress"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h3" />
+                    android:textColorHint="@color/text_dark"
+                    android:textSize="@dimen/h4" />
             </LinearLayout>
 
             <LinearLayout
@@ -273,12 +279,13 @@
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
                     android:ems="10"
-                    android:fontFamily="@font/roboto_slab"
+                    android:fontFamily="@font/roboto"
                     android:hint="@string/price"
                     android:importantForAutofill="no"
                     android:inputType="numberDecimal"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h3" />
+                    android:textColorHint="@color/text_dark"
+                    android:textSize="@dimen/h4" />
             </LinearLayout>
 
             <LinearLayout
@@ -298,12 +305,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
-                    android:fontFamily="@font/roboto_slab"
+                    android:fontFamily="@font/roboto"
                     android:hint="@string/beds"
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h3" />
+                    android:textColorHint="@color/text_dark"
+                    android:textSize="@dimen/h4" />
             </LinearLayout>
 
             <LinearLayout
@@ -323,12 +331,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
-                    android:fontFamily="@font/roboto_slab"
+                    android:fontFamily="@font/roboto"
                     android:hint="@string/baths"
                     android:importantForAutofill="no"
                     android:inputType="numberDecimal"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h3" />
+                    android:textColorHint="@color/text_dark"
+                    android:textSize="@dimen/h4" />
             </LinearLayout>
 
             <LinearLayout
@@ -349,12 +358,13 @@
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
                     android:ems="10"
-                    android:fontFamily="@font/roboto_slab"
+                    android:fontFamily="@font/roboto"
                     android:hint="@string/land_size"
                     android:importantForAutofill="no"
                     android:inputType="numberDecimal"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h3" />
+                    android:textColorHint="@color/text_dark"
+                    android:textSize="@dimen/h4" />
             </LinearLayout>
 
             <LinearLayout
@@ -375,12 +385,13 @@
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
                     android:ems="10"
-                    android:fontFamily="@font/roboto_slab"
+                    android:fontFamily="@font/roboto"
                     android:hint="@string/floor_size"
                     android:importantForAutofill="no"
                     android:inputType="numberDecimal"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h3" />
+                    android:textColorHint="@color/text_dark"
+                    android:textSize="@dimen/h4" />
             </LinearLayout>
 
             <LinearLayout
@@ -401,12 +412,13 @@
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
                     android:ems="10"
-                    android:fontFamily="@font/roboto_slab"
+                    android:fontFamily="@font/roboto"
                     android:hint="@string/age"
                     android:importantForAutofill="no"
                     android:inputType="number"
                     android:textAlignment="center"
-                    android:textSize="@dimen/h3" />
+                    android:textColorHint="@color/text_dark"
+                    android:textSize="@dimen/h4" />
             </LinearLayout>
 
             <LinearLayout
@@ -467,12 +479,14 @@
                     android:layout_height="@dimen/paragraph_input_height"
                     android:background="@drawable/shape_rounded_textinput"
                     android:ems="10"
-                    android:fontFamily="@font/roboto_slab"
+                    android:fontFamily="@font/roboto"
                     android:hint="@string/description"
                     android:importantForAutofill="no"
                     android:inputType="textMultiLine"
-                    android:textAlignment="center"
-                    android:textSize="@dimen/h3" />
+                    android:gravity="top|center"
+                    android:padding="@dimen/spacing_tiny"
+                    android:textColorHint="@color/text_dark"
+                    android:textSize="@dimen/h4" />
             </LinearLayout>
 
             <Button

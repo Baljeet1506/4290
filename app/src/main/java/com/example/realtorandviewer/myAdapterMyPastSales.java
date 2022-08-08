@@ -87,8 +87,8 @@ public class myAdapterMyPastSales extends FirebaseRecyclerAdapter<Properties, my
                 final EditText baths = myview.findViewById(R.id.baths_Dialog_Past);
                 final EditText landSize = myview.findViewById(R.id.landSize_Dialog_Past);
                 final EditText floorSize = myview.findViewById(R.id.floorSize_Dialog_Past);
-                final EditText type = myview.findViewById(R.id.spinnerType_Dialog_Past);
                 final EditText age = myview.findViewById(R.id.age_Dialog_Past);
+                final EditText type = myview.findViewById(R.id.spinnerType_Dialog_Past);
                 final EditText title = myview.findViewById(R.id.spinnerTitle_Dialog_Past);
 
                 Button submit = myview.findViewById(R.id.usubmit_Dialog_Past);
@@ -104,8 +104,8 @@ public class myAdapterMyPastSales extends FirebaseRecyclerAdapter<Properties, my
                 baths.setText(Properties.getBaths());
                 landSize.setText(Properties.getLandSize());
                 floorSize.setText(Properties.getFloorSize());
-                type.setText(Properties.getType());
                 age.setText(Properties.getAge());
+                type.setText(Properties.getType());
                 title.setText(Properties.getTitle());
 
                 dialogPlus.show();
@@ -125,8 +125,8 @@ public class myAdapterMyPastSales extends FirebaseRecyclerAdapter<Properties, my
                         map.put("baths", baths.getText().toString());
                         map.put("landSize", landSize.getText().toString());
                         map.put("floor", floorSize.getText().toString());
-                        map.put("type", type.getText().toString());
                         map.put("age", age.getText().toString());
+                        map.put("type", type.getText().toString());
                         map.put("title", title.getText().toString());
 
                         FirebaseDatabase.getInstance().getReference().child("PastSales").child(Login.uID_)
@@ -186,8 +186,7 @@ public class myAdapterMyPastSales extends FirebaseRecyclerAdapter<Properties, my
     class myviewholder extends RecyclerView.ViewHolder {
 
         TextView unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
-        ImageButton delete;
-        Button edit;
+        ImageButton delete, edit;
         ImageView my_listing_image_slider;
 
         public myviewholder(@NonNull View itemView) {
@@ -207,8 +206,7 @@ public class myAdapterMyPastSales extends FirebaseRecyclerAdapter<Properties, my
             age = (TextView) itemView.findViewById(R.id.age_Text);
             type = (TextView) itemView.findViewById(R.id.type_Text);
             title = (TextView) itemView.findViewById(R.id.title_Text);
-
-            edit = (Button) itemView.findViewById(R.id.editListingBtn);
+            edit = (ImageButton) itemView.findViewById(R.id.editListingBtn);
             delete = (ImageButton) itemView.findViewById(R.id.deleteListingBtn);
             my_listing_image_slider = (ImageView) itemView.findViewById(R.id.my_listing_image_slider);
 

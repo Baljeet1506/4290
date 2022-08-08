@@ -72,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/fullname_realtor_detail_view"
-            android:fontFamily="@font/roboto_slab"
+            android:fontFamily="@font/roboto"
             android:gravity="center_horizontal"
             android:text="@string/company"
             android:textSize="@dimen/h4" />
@@ -82,7 +82,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/company_realtor_detail_view"
-            android:fontFamily="@font/roboto_slab"
+            android:fontFamily="@font/roboto"
             android:gravity="center_horizontal"
             android:text="@string/phone_number"
             android:textSize="@dimen/h4" />
@@ -92,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/phone_realtor_detail_view"
-            android:fontFamily="@font/roboto_slab"
+            android:fontFamily="@font/roboto"
             android:gravity="center_horizontal"
             android:text="@string/email"
             android:textColor="#6A6A6A"

@@ -12,7 +12,8 @@
     <color name="transparent">#00000000</color>
     <color name="gray">#FF777777</color>
     <color name="light_gray">#DDDDDD</color>
-    <color name="text_dark">#606060</color>
     <color name="red">#FF881111</color>
+    <color name="light_red">#873838</color>
+    <color name="text_dark">#606060</color>
     <color name="bg">#EEEEEE</color>
 </resources>

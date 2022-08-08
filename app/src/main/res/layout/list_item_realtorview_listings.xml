@@ -28,11 +28,24 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/placeholder_image" />
 
+        <ImageButton
+            android:id="@+id/deleteListingBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:background="@null"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            android:src="@drawable/cancel" />
+
         <RelativeLayout
             android:id="@+id/content_main"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/my_listing_image_slider"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
             android:padding="@dimen/spacing_small">
 
             <TextView
@@ -268,6 +281,19 @@
                 android:textSize="@dimen/h3" />
 
             <TextView
+                android:id="@+id/title_Text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/floor_Text"
+                android:layout_toEndOf="@id/ageSuffix_Text"
+                android:fontFamily="@font/roboto"
+                android:paddingStart="0dp"
+                android:paddingEnd="10dp"
+                android:text="Title"
+                android:textColor="#000"
+                android:textSize="@dimen/h3" />
+
+            <TextView
                 android:id="@+id/type_Text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -280,52 +306,22 @@
                 android:textColor="#000"
                 android:textSize="@dimen/h3" />
 
-            <TextView
-                android:id="@+id/title_Text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/floor_Text"
-                android:layout_toEndOf="@id/ageSuffix_Text"
-                android:fontFamily="@font/roboto"
-                android:paddingStart="0dp"
-                android:paddingEnd="10dp"
-                android:text="Title"
-                android:textColor="#000"
-                android:textSize="@dimen/h3" />
         </RelativeLayout>
 
 
         <ImageButton
-            android:id="@+id/deleteListingBtn"
+            android:id="@+id/editListingBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+            android:layout_alignBottom="@+id/my_listing_image_slider"
             android:layout_alignParentEnd="true"
             android:background="@null"
             android:minWidth="48dp"
             android:minHeight="48dp"
-            android:src="@drawable/cancel" />
+            android:src="@drawable/edit"
+            app:cornerRadius="12dp" />
 
-        <Button
-            android:id="@+id/editListingBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/content_main"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="@dimen/spacing_small"
-            android:layout_marginTop="@dimen/spacing_small"
-            android:layout_marginEnd="@dimen/spacing_small"
-            android:layout_marginBottom="@dimen/spacing_small"
-            android:backgroundTint="@color/light_green"
-            android:insetTop="0dp"
-            android:insetBottom="0dp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:text="Edit"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="@dimen/h3"
-            app:cornerRadius="@dimen/button_radius" />
+
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
 

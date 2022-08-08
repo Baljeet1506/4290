@@ -58,27 +58,13 @@
             app:layout_constraintVertical_bias="0.5" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.07" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.93" />
-
     <ScrollView
         android:id="@+id/content_scrolling"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideRight"
-        app:layout_constraintStart_toStartOf="@+id/guideLeft"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleBar">
 
         <LinearLayout
@@ -86,14 +72,14 @@
             android:layout_height="match_parent"
             android:divider="@drawable/spacing_small"
             android:orientation="vertical"
-            android:padding="10dp"
+            android:padding="@dimen/spacing_large"
             android:showDividers="middle">
 
             <TextView
                 android:id="@+id/textView59"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:text="Look for properties"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="@dimen/h3"
@@ -108,7 +94,7 @@
                 android:id="@+id/textView62"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="CheckOut Find Properties in our app"
                 android:textSize="@dimen/normal_text"
@@ -123,7 +109,7 @@
                 android:id="@+id/textView63"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="Check real-estate ads"
                 android:textSize="@dimen/normal_text"
@@ -138,7 +124,7 @@
                 android:id="@+id/textView64"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="Go to open houses"
                 android:textSize="@dimen/normal_text"
@@ -153,7 +139,7 @@
                 android:id="@+id/textView60"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:text="Good Realtor"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="@dimen/h3"
@@ -168,7 +154,7 @@
                 android:id="@+id/textView61"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="serif"
                 android:lineSpacingExtra="@dimen/line_spacing_small"
                 android:text="A REALTOR® can review your wants and needs to help you determine your price range, as well as answer questions about the markets you’re interested in and help you compare homes and neighbourhoods. Your REALTOR® can also provide access to exclusive listing information, preview properties to ensure you’re only shown homes that meet your needs and budget and make appointments and walk you through homes that interest you."
                 android:textSize="@dimen/normal_text"

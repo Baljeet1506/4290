@@ -7,10 +7,12 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -50,8 +52,8 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
         holder.baths.setText(Properties.getBaths());
         holder.floorSize.setText(Properties.getFloorSize());
         holder.age.setText(Properties.getAge());
-        holder.type.setText(Properties.getType());
-        holder.title.setText(Properties.getTitle());
+        holder.type.setText(Properties.getType().toString());
+        holder.title.setText(Properties.getTitle().toString());
         Glide.with(holder.my_listing_image_slider.getContext()).load(Properties.getListingImage()).into(holder.my_listing_image_slider);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -87,10 +89,9 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
                 final EditText baths = myview.findViewById(R.id.baths);
                 final EditText landSize = myview.findViewById(R.id.landSize);
                 final EditText floorSize = myview.findViewById(R.id.floorSize);
-                final EditText type = myview.findViewById(R.id.spinnerType);
                 final EditText age = myview.findViewById(R.id.age);
-                final EditText title = myview.findViewById(R.id.title);
-
+                final EditText type = myview.findViewById(R.id.spinnerType);
+                final EditText title = myview.findViewById(R.id.spinnerTitle);
 
                 Button submit = myview.findViewById(R.id.usubmit_dialog_listing);
 
@@ -105,8 +106,8 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
                 baths.setText(Properties.getBaths());
                 landSize.setText(Properties.getLandSize());
                 floorSize.setText(Properties.getFloorSize());
-                type.setText(Properties.getType());
                 age.setText(Properties.getAge());
+                type.setText(Properties.getType());
                 title.setText(Properties.getTitle());
 
                 dialogPlus.show();
@@ -126,8 +127,8 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
                         map.put("baths", baths.getText().toString());
                         map.put("landSize", landSize.getText().toString());
                         map.put("floor", floorSize.getText().toString());
-                        map.put("type", type.getText().toString());
                         map.put("age", age.getText().toString());
+                        map.put("type", type.getText().toString());
                         map.put("title", title.getText().toString());
 
                         FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_)
@@ -205,8 +206,7 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
     class myviewholder extends RecyclerView.ViewHolder {
 
         TextView unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
-        ImageButton delete;
-        Button edit;
+        ImageButton delete, edit;
         ImageView my_listing_image_slider;
 
         public myviewholder(@NonNull View itemView) {
@@ -227,7 +227,7 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
             type = (TextView) itemView.findViewById(R.id.type_Text);
             title = (TextView) itemView.findViewById(R.id.title_Text);
 
-            edit = (Button) itemView.findViewById(R.id.editListingBtn);
+            edit = (ImageButton) itemView.findViewById(R.id.editListingBtn);
             delete = (ImageButton) itemView.findViewById(R.id.deleteListingBtn);
             my_listing_image_slider = (ImageView) itemView.findViewById(R.id.my_listing_image_slider);
 
