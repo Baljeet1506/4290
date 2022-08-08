@@ -23,7 +23,7 @@ import java.lang.reflect.Array;
 
 public class RealtorAddListings extends AppCompatActivity implements View.OnClickListener {
 
-    EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age;
+    EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, description;
     Spinner type, title;
     Button addListingBtn;
     ImageButton backBtn;
@@ -50,6 +50,7 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         age = findViewById(R.id.editTextAge);
         type = findViewById(R.id.spinnerType);
         title = findViewById(R.id.spinnerTitle);
+        description = findViewById(R.id.editTextDescription);
 
         addListingBtn = findViewById(R.id.btnAddListing);
         addListingBtn.setOnClickListener(this);
@@ -97,6 +98,7 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         String age_ = age.getText().toString();
         String type_ = type.getSelectedItem().toString();
         String title_ = title.getSelectedItem().toString();
+        String description_ = description.getText().toString();
         String listingImage_ = "";
 
         if (houseNumber_.isEmpty()) {
@@ -173,6 +175,12 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
             return;
         }
 
+        if (description_.isEmpty()) {
+            description.setError("Please enter a description");
+            description.requestFocus();
+            return;
+        }
+
         //progressBar.setVisibility(View.VISIBLE);
         ref1 = FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_);
         listing.setUnitNumber(unitNumber_);
@@ -189,6 +197,7 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         listing.setAge(age_);
         listing.setType(type_);
         listing.setTitle(title_);
+        listing.setdescription(description_);
         listing.setListingImage(listingImage_);
         //ref1.push().setValue(listing);
 
@@ -212,6 +221,7 @@ public class RealtorAddListings extends AppCompatActivity implements View.OnClic
         listing.setAge(age_);
         listing.setType(type_);
         listing.setTitle(title_);
+        listing.setdescription(description_);
         listing.setuID(Login.uID_);
         listing.setListingImage(listingImage_);
 

@@ -37,23 +37,22 @@ public class DetailViewerListingView extends AppCompatActivity {
         backBtn = findViewById(R.id.btn_back_to_find_prop);
         backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
 
-        image_slider_viewer=(ImageSlider)findViewById(R.id.image_slider_viewer);
-        final List<SlideModel> remoteimages=new ArrayList<>();
+        image_slider_viewer = (ImageSlider) findViewById(R.id.image_slider_viewer);
+        final List<SlideModel> remoteimages = new ArrayList<>();
 
         FirebaseDatabase.getInstance().getReference().child("AllProperties").child(Login.MY_LISTING_POSITION.toString()).child("Images")
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot)
-                    {
-                        for(DataSnapshot data:dataSnapshot.getChildren())
-                            remoteimages.add(new SlideModel(data.child("url").getValue().toString(),data.child("title").getValue().toString(), ScaleTypes.FIT));
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot data : dataSnapshot.getChildren())
+                            remoteimages.add(new SlideModel(data.child("url").getValue().toString(), data.child("title").getValue().toString(), ScaleTypes.FIT));
 
                         image_slider_viewer.setImageList(remoteimages, ScaleTypes.FIT);
 
                         image_slider_viewer.setItemClickListener(new ItemClickListener() {
                             @Override
                             public void onItemSelected(int i) {
-                                Toast.makeText(getApplicationContext(),remoteimages.get(i).getTitle().toString(),Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), remoteimages.get(i).getTitle().toString(), Toast.LENGTH_SHORT).show();
                             }
                         });
 
@@ -82,7 +81,7 @@ public class DetailViewerListingView extends AppCompatActivity {
         age_Text = findViewById(R.id.age_Text);
         title_Text = findViewById(R.id.title_Text);
         type_Text = findViewById(R.id.type_Text);
-        //description_Text = findViewById(R.id.description_Text);
+        description_Text = findViewById(R.id.description_Text);
 
         reference.child(Login.MY_LISTING_POSITION).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -104,7 +103,7 @@ public class DetailViewerListingView extends AppCompatActivity {
                     String age_Text_ = prop.age;
                     String title_Text_ = prop.title;
                     String type_Text_ = prop.type;
-                    //String description_Text_ = prop.;
+                    String description_Text_ = prop.description;
 
                     price_Text.setText(price_Text_);
                     beds_Text.setText(beds_Text_);
@@ -120,7 +119,7 @@ public class DetailViewerListingView extends AppCompatActivity {
                     age_Text.setText(age_Text_);
                     title_Text.setText(title_Text_);
                     type_Text.setText(type_Text_);
-                    //description_Text.setText(description_Text_);
+                    description_Text.setText(description_Text_);
                 }
             }
 
@@ -154,7 +153,5 @@ public class DetailViewerListingView extends AppCompatActivity {
                 Toast.makeText(DetailViewerListingView.this, "The User info did not load", Toast.LENGTH_SHORT).show();
             }
         });
-
-
     }
 }

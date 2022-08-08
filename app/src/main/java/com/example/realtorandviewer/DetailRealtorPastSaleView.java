@@ -36,23 +36,22 @@ public class DetailRealtorPastSaleView extends AppCompatActivity {
         backBtn = findViewById(R.id.btn_back_to_past_sale);
         backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorPastSales.class)));
 
-        mainslider=(ImageSlider)findViewById(R.id.image_slider_past_sale);
-        final List<SlideModel> remoteimages=new ArrayList<>();
+        mainslider = (ImageSlider) findViewById(R.id.image_slider_past_sale);
+        final List<SlideModel> remoteimages = new ArrayList<>();
 
         FirebaseDatabase.getInstance().getReference().child("PastSales").child(Login.uID_).child(Login.MY_PAST_SALE_POSITION.toString()).child("Images")
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot)
-                    {
-                        for(DataSnapshot data:dataSnapshot.getChildren())
-                            remoteimages.add(new SlideModel(data.child("url").getValue().toString(),data.child("title").getValue().toString(), ScaleTypes.FIT));
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot data : dataSnapshot.getChildren())
+                            remoteimages.add(new SlideModel(data.child("url").getValue().toString(), data.child("title").getValue().toString(), ScaleTypes.FIT));
 
                         mainslider.setImageList(remoteimages, ScaleTypes.FIT);
 
                         mainslider.setItemClickListener(new ItemClickListener() {
                             @Override
                             public void onItemSelected(int i) {
-                                Toast.makeText(getApplicationContext(),remoteimages.get(i).getTitle().toString(),Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), remoteimages.get(i).getTitle().toString(), Toast.LENGTH_SHORT).show();
                             }
                         });
 
@@ -81,7 +80,7 @@ public class DetailRealtorPastSaleView extends AppCompatActivity {
         age_Text = findViewById(R.id.age_Text);
         title_Text = findViewById(R.id.title_Text);
         type_Text = findViewById(R.id.type_Text);
-        //description_Text = findViewById(R.id.description_Text);
+        description_Text = findViewById(R.id.description_Text);
 
         reference.child(Login.MY_PAST_SALE_POSITION).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -103,7 +102,7 @@ public class DetailRealtorPastSaleView extends AppCompatActivity {
                     String age_Text_ = prop.age;
                     String title_Text_ = prop.title;
                     String type_Text_ = prop.type;
-                    //String description_Text_ = prop.;
+                    String description_Text_ = prop.description;
 
                     price_Text.setText(price_Text_);
                     beds_Text.setText(beds_Text_);
@@ -119,7 +118,7 @@ public class DetailRealtorPastSaleView extends AppCompatActivity {
                     age_Text.setText(age_Text_);
                     title_Text.setText(title_Text_);
                     type_Text.setText(type_Text_);
-                    //description_Text.setText(description_Text_);
+                    description_Text.setText(description_Text_);
                 }
             }
 

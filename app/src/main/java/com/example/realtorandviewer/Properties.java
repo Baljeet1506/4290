@@ -4,13 +4,13 @@ import android.widget.Spinner;
 
 public class Properties {
 
-    String unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title, uID, listingImage;
+    String unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title, description, uID, listingImage;
 
     public Properties() {
 
     }
 
-    public Properties(String unitNumber, String houseNumber, String street, String city, String province, String postal, String price, String beds, String landSize, String baths, String floorSize, String age, Spinner type, Spinner title, String listingImage) {
+    public Properties(String unitNumber, String houseNumber, String street, String city, String province, String postal, String price, String beds, String landSize, String baths, String floorSize, String age, String description, Spinner type, Spinner title, String listingImage) {
         this.unitNumber = unitNumber;
         this.houseNumber = houseNumber;
         this.street = street;
@@ -25,6 +25,7 @@ public class Properties {
         this.age = age;
         this.type= type.toString();
         this.title = title.toString();
+        this.description = description.toString();
         this.listingImage = listingImage;
     }
     public String getuID() {
@@ -153,4 +154,11 @@ public class Properties {
         this.listingImage = listingImage;
     }
 
+    public String getdescription() {
+        return description;
+    }
+
+    public void setdescription(String editTextDescription) {
+        this.description = editTextDescription;
+    }
 }

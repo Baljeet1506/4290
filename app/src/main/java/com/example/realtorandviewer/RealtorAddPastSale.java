@@ -20,7 +20,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RealtorAddPastSale extends AppCompatActivity implements View.OnClickListener {
 
-    EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age;
+    EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, description;
     Spinner type, title;
     Button addPastSaleBtn;
     ImageButton backBtn;
@@ -47,6 +47,7 @@ public class RealtorAddPastSale extends AppCompatActivity implements View.OnClic
         age = findViewById(R.id.editTextAgePast);
         type = findViewById(R.id.spinnerTypePast);
         title = findViewById(R.id.spinnerTitlePast);
+        description = findViewById(R.id.editTextDescriptionPast);
 
         addPastSaleBtn = findViewById(R.id.btnAddPastSale);
         addPastSaleBtn.setOnClickListener(this);
@@ -95,6 +96,7 @@ public class RealtorAddPastSale extends AppCompatActivity implements View.OnClic
         String age_ = age.getText().toString();
         String type_ = type.getSelectedItem().toString();
         String title_ = title.getSelectedItem().toString();
+        String description_ = description.getText().toString();
         String listingImage_ = "";
 
         if (houseNumber_.isEmpty()) {
@@ -171,6 +173,12 @@ public class RealtorAddPastSale extends AppCompatActivity implements View.OnClic
             return;
         }
 
+        if (description_.isEmpty()) {
+            description.setError("Please enter a description");
+            description.requestFocus();
+            return;
+        }
+
         ref = FirebaseDatabase.getInstance().getReference().child("PastSales").child(Login.uID_);
 
         listing.setUnitNumber(unitNumber_);
@@ -187,6 +195,7 @@ public class RealtorAddPastSale extends AppCompatActivity implements View.OnClic
         listing.setAge(age_);
         listing.setType(type_);
         listing.setTitle(title_);
+        listing.setdescription(description_);
         listing.setListingImage(listingImage_);
         //ref.push().setValue(listing);
 

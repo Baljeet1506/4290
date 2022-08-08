@@ -81,7 +81,7 @@ public class DetailRealtorListingView extends AppCompatActivity {
         age_Text = findViewById(R.id.age_Text);
         title_Text = findViewById(R.id.title_Text);
         type_Text = findViewById(R.id.type_Text);
-        //description_Text = findViewById(R.id.description_Text);
+        description_Text = findViewById(R.id.description_Text);
 
         reference.child(Login.MY_LISTING_POSITION).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -103,7 +103,7 @@ public class DetailRealtorListingView extends AppCompatActivity {
                     String age_Text_ = prop.age;
                     String title_Text_ = prop.title;
                     String type_Text_ = prop.type;
-                    //String description_Text_ = prop.;
+                    String description_Text_ = prop.description;
 
                     price_Text.setText(price_Text_);
                     beds_Text.setText(beds_Text_);
@@ -119,7 +119,7 @@ public class DetailRealtorListingView extends AppCompatActivity {
                     age_Text.setText(age_Text_);
                     title_Text.setText(title_Text_);
                     type_Text.setText(type_Text_);
-                    //description_Text.setText(description_Text_);
+                    description_Text.setText(description_Text_);
                 }
             }
 
