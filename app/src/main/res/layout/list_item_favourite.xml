@@ -39,8 +39,8 @@
             android:contentDescription="@string/favourites"
             android:minWidth="48dp"
             android:minHeight="48dp"
-            android:src="@drawable/fav_select"
-            app:tint="@color/gray" />
+            android:src="@drawable/fav"
+            app:tint="@color/red" />
 
         <RelativeLayout
             android:layout_width="match_parent"

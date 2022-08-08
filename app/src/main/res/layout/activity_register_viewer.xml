@@ -95,7 +95,7 @@
         app:layout_constraintEnd_toStartOf="@+id/guideRight"
         app:layout_constraintStart_toStartOf="@+id/guideLeft"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rev_logo_medium" />
+        app:srcCompat="@drawable/logo_medium" />
 
     <ScrollView
         android:id="@+id/scrollView4"

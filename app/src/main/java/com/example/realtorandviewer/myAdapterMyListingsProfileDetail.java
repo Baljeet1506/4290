@@ -46,7 +46,7 @@ public class myAdapterMyListingsProfileDetail extends FirebaseRecyclerAdapter<Pr
 
                 Login.MY_LISTING_POSITION = getSnapshots().getSnapshot(position).getKey();
 
-                Intent intent = new Intent(holder.houseNumber.getContext(), ViewerListingDetailView.class);
+                Intent intent = new Intent(holder.houseNumber.getContext(), DetailViewerListingView.class);
                 holder.houseNumber.getContext().startActivity(intent);
 
             }

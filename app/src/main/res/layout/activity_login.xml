@@ -45,7 +45,7 @@
         app:layout_constraintStart_toStartOf="@+id/guideLeft"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5"
-        app:srcCompat="@drawable/rev_logo_medium" />
+        app:srcCompat="@drawable/logo_medium" />
 
     <ScrollView
         android:id="@+id/content_scrolling"
@@ -72,7 +72,7 @@
                 android:layout_height="40dp"
                 android:background="@drawable/shape_rounded_textinput"
                 android:ems="10"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:textAlignment="center"
@@ -91,7 +91,7 @@
                 android:layout_marginTop="8dp"
                 android:background="@drawable/shape_rounded_textinput"
                 android:ems="10"
-                android:fontFamily="@font/roboto_slab"
+                android:fontFamily="@font/roboto"
                 android:hint="@string/password"
                 android:inputType="textPassword"
                 android:textAlignment="center"
@@ -115,10 +115,9 @@
         android:insetBottom="0dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
-        android:stateListAnimator="@null"
         android:text="@string/register"
         android:textAllCaps="false"
-        android:textColor="#A6135519"
+        android:textColor="@color/light_green"
         android:textSize="@dimen/button_font_size"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toTopOf="@+id/btnForgotPassword"
@@ -126,20 +125,19 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideLeft"
         app:layout_constraintTop_toBottomOf="@+id/guideBottom"
-        app:strokeColor="#A6135519"
+        app:strokeColor="@color/light_green"
         app:strokeWidth="2dp" />
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
-        android:layout_height="40sp"
+        android:layout_height="@dimen/button_height"
         android:backgroundTint="@color/green"
         android:fontFamily="@font/roboto"
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:paddingLeft="24dp"
         android:paddingRight="24dp"
-        android:stateListAnimator="@null"
         android:text="@string/login"
         android:textAllCaps="false"
         android:textSize="@dimen/button_font_size"

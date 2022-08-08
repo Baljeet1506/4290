@@ -77,7 +77,7 @@ public class myAdapterFavouriteProperty extends FirebaseRecyclerAdapter<Properti
 
                 Login.FAVOURITE_LISTING_POSITION = getSnapshots().getSnapshot(position).getKey();
 
-                Intent intent = new Intent(holder.houseNumber.getContext(), FavouriteListingDetailView.class);
+                Intent intent = new Intent(holder.houseNumber.getContext(), DetailFavouriteListingView.class);
                 holder.houseNumber.getContext().startActivity(intent);
             }
         });

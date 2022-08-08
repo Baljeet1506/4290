@@ -59,7 +59,7 @@ public class myAdapterMyPastSales extends FirebaseRecyclerAdapter<Properties, my
 
                 Login.MY_PAST_SALE_POSITION = getSnapshots().getSnapshot(position).getKey();
 
-                Intent intent = new Intent(holder.houseNumber.getContext(), RealtorPastSaleDetailView.class);
+                Intent intent = new Intent(holder.houseNumber.getContext(), DetailRealtorPastSaleView.class);
                 holder.houseNumber.getContext().startActivity(intent);
 
             }

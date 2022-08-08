@@ -13,7 +13,6 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class RealtorProfileDetailView extends AppCompatActivity {
+public class DetailRealtorProfileView extends AppCompatActivity {
 
     CircleImageView img;
     ImageButton backBtn;
@@ -35,7 +34,7 @@ public class RealtorProfileDetailView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_realtor_profile_detail_view);
+        setContentView(R.layout.activity_detail_realtor_profile_view);
 
         fullNameText = findViewById(R.id.fullname_realtor_detail_view);
         companyText = findViewById(R.id.company_realtor_detail_view);
@@ -88,7 +87,7 @@ public class RealtorProfileDetailView extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(RealtorProfileDetailView.this, "The User info did not load", Toast.LENGTH_SHORT).show();
+                Toast.makeText(DetailRealtorProfileView.this, "The User info did not load", Toast.LENGTH_SHORT).show();
             }
         });
 

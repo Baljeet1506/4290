@@ -20,23 +20,23 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RealtorPastSaleDetailView extends AppCompatActivity {
+public class DetailViewerListingView extends AppCompatActivity {
 
-    ImageSlider mainslider;
+    ImageSlider image_slider_viewer;
     ImageButton backBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_realtor_past_sale_detail_view);
+        setContentView(R.layout.activity_detail_viewer_listing_view);
 
-        backBtn = findViewById(R.id.btn_back_to_past_sale);
-        backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorPastSales.class)));
+        backBtn = findViewById(R.id.btn_back_to_find_prop);
+        backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), FindProperties.class)));
 
-        mainslider=(ImageSlider)findViewById(R.id.image_slider_past_sale);
+        image_slider_viewer=(ImageSlider)findViewById(R.id.image_slider_viewer);
         final List<SlideModel> remoteimages=new ArrayList<>();
 
-        FirebaseDatabase.getInstance().getReference().child("PastSales").child(Login.uID_).child(Login.MY_PAST_SALE_POSITION.toString()).child("Images")
+        FirebaseDatabase.getInstance().getReference().child("AllProperties").child(Login.MY_LISTING_POSITION.toString()).child("Images")
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot)
@@ -44,9 +44,9 @@ public class RealtorPastSaleDetailView extends AppCompatActivity {
                         for(DataSnapshot data:dataSnapshot.getChildren())
                             remoteimages.add(new SlideModel(data.child("url").getValue().toString(),data.child("title").getValue().toString(), ScaleTypes.FIT));
 
-                        mainslider.setImageList(remoteimages, ScaleTypes.FIT);
+                        image_slider_viewer.setImageList(remoteimages, ScaleTypes.FIT);
 
-                        mainslider.setItemClickListener(new ItemClickListener() {
+                        image_slider_viewer.setItemClickListener(new ItemClickListener() {
                             @Override
                             public void onItemSelected(int i) {
                                 Toast.makeText(getApplicationContext(),remoteimages.get(i).getTitle().toString(),Toast.LENGTH_SHORT).show();
@@ -60,5 +60,6 @@ public class RealtorPastSaleDetailView extends AppCompatActivity {
 
                     }
                 });
+
     }
 }

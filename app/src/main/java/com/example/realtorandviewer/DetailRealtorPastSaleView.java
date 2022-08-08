@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RealtorListingDetailView extends AppCompatActivity {
+public class DetailRealtorPastSaleView extends AppCompatActivity {
 
     ImageSlider mainslider;
     ImageButton backBtn;
@@ -28,15 +28,15 @@ public class RealtorListingDetailView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_realtor_listing_detail_view);
+        setContentView(R.layout.activity_detail_realtor_past_sale_view);
 
-        backBtn = findViewById(R.id.btn_back_to_my_listing);
-        backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorListings.class)));
+        backBtn = findViewById(R.id.btn_back_to_past_sale);
+        backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorPastSales.class)));
 
-        mainslider=(ImageSlider)findViewById(R.id.image_slider_realtor);
+        mainslider=(ImageSlider)findViewById(R.id.image_slider_past_sale);
         final List<SlideModel> remoteimages=new ArrayList<>();
 
-        FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_).child(Login.MY_LISTING_POSITION.toString()).child("Images")
+        FirebaseDatabase.getInstance().getReference().child("PastSales").child(Login.uID_).child(Login.MY_PAST_SALE_POSITION.toString()).child("Images")
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot)
@@ -60,6 +60,5 @@ public class RealtorListingDetailView extends AppCompatActivity {
 
                     }
                 });
-
     }
 }

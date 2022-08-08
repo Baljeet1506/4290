@@ -15,22 +15,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RealtorAndViewer">
         <activity
-            android:name=".FavouriteListingDetailView"
+            android:name=".DetailFavouriteListingView"
             android:exported="false" />
         <activity
-            android:name=".RealtorProfileDetailView"
+            android:name=".DetailRealtorProfileView"
             android:exported="false" />
         <activity
-            android:name=".RealtorPastSaleDetailView"
+            android:name=".DetailRealtorPastSaleView"
             android:exported="false" />
         <activity
             android:name=".UploadImagesPastSale"
             android:exported="false" />
         <activity
-            android:name=".ViewerListingDetailView"
+            android:name=".DetailViewerListingView"
             android:exported="false" />
         <activity
-            android:name=".RealtorListingDetailView"
+            android:name=".DetailRealtorListingView"
             android:exported="false" />
         <activity
             android:name=".UploadImages"

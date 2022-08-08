@@ -125,8 +125,14 @@ public class HomePageRealtor extends AppCompatActivity {
             }
         });
 
-        myListingsBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorListings.class)));
-        pastSalesBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), RealtorPastSales.class)));
+        myListingsBtn.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(), RealtorListings.class));
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        });
+        pastSalesBtn.setOnClickListener(view -> {
+            startActivity(new Intent(getApplicationContext(), RealtorPastSales.class));
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        });
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
