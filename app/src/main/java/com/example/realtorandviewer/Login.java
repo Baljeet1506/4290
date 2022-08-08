@@ -39,6 +39,9 @@ public class Login extends AppCompatActivity implements View.OnClickListener {
     public static String FAVOURITE_LISTING_POSITION = "";
     public static String MY_PAST_SALE_POSITION = "";
     public static String REALTOR_POSITION = "";
+    public static String TITLE_ = "Title: ";
+    public static String TYPE_ = "Type: ";
+    public static String SQFT_ = "Sqft";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

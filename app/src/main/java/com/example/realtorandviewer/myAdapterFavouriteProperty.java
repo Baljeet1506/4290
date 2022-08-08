@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,6 +28,7 @@ public class myAdapterFavouriteProperty extends FirebaseRecyclerAdapter<Properti
         super(options);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onBindViewHolder(@NonNull final myAdapterFavouriteProperty.myviewholder holder, @SuppressLint("RecyclerView") final int position, @NonNull final Properties Properties) {
 
@@ -36,14 +38,14 @@ public class myAdapterFavouriteProperty extends FirebaseRecyclerAdapter<Properti
         holder.city.setText(Properties.getCity());
         holder.province.setText(Properties.getProvince());
         holder.postal.setText(Properties.getPostal());
-        holder.price.setText(Properties.getPrice());
+        holder.price.setText(holder.dollar + Properties.getPrice());
         holder.beds.setText(Properties.getBeds());
-        holder.landSize.setText(Properties.getLandSize());
+        holder.landSize.setText(Properties.getLandSize() + Login.SQFT_);
         holder.baths.setText(Properties.getBaths());
-        holder.floorSize.setText(Properties.getFloorSize());
+        holder.floorSize.setText(Properties.getFloorSize() + Login.SQFT_);
         holder.age.setText(Properties.getAge());
-        holder.type.setText(Properties.getType());
-        holder.title.setText(Properties.getTitle());
+        holder.type.setText(Login.TYPE_ + Properties.getType());
+        holder.title.setText(Login.TITLE_ + Properties.getTitle());
         Glide.with(holder.find_listing_single_image.getContext()).load(Properties.getListingImage()).into(holder.find_listing_single_image);
 
         holder.remove_fav_listing_btn.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +99,7 @@ public class myAdapterFavouriteProperty extends FirebaseRecyclerAdapter<Properti
                 baths, floorSize, age, type, title;
         ImageButton remove_fav_listing_btn;
         ImageView find_listing_single_image;
+        String dollar = "$";
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);

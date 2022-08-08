@@ -30,6 +30,7 @@ public class myAdapterFindProperties extends FirebaseRecyclerAdapter<Properties,
         super(options);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
     protected void onBindViewHolder(@NonNull final myviewholder holder, @SuppressLint("RecyclerView") final int position, @NonNull final Properties Properties) {
 
@@ -39,14 +40,14 @@ public class myAdapterFindProperties extends FirebaseRecyclerAdapter<Properties,
         holder.city.setText(Properties.getCity());
         holder.province.setText(Properties.getProvince());
         holder.postal.setText(Properties.getPostal());
-        holder.price.setText(Properties.getPrice());
+        holder.price.setText(holder.dollar + Properties.getPrice());
         holder.beds.setText(Properties.getBeds());
-        holder.landSize.setText(Properties.getLandSize());
+        holder.landSize.setText(Properties.getLandSize() + Login.SQFT_);
         holder.baths.setText(Properties.getBaths());
-        holder.floorSize.setText(Properties.getFloorSize());
+        holder.floorSize.setText(Properties.getFloorSize() + Login.SQFT_);
         holder.age.setText(Properties.getAge());
-        holder.type.setText(Properties.getType());
-        holder.title.setText(Properties.getTitle());
+        holder.type.setText(Login.TYPE_ + Properties.getType());
+        holder.title.setText(Login.TITLE_ + Properties.getTitle());
         Glide.with(holder.find_listing_single_image.getContext()).load(Properties.getListingImage()).into(holder.find_listing_single_image);
 
         holder.favListingBtn.setOnClickListener(new View.OnClickListener() {
@@ -107,6 +108,7 @@ public class myAdapterFindProperties extends FirebaseRecyclerAdapter<Properties,
                 landSize, baths, floorSize, age, type, title;
         ImageButton favListingBtn;
         ImageView find_listing_single_image;
+        String dollar = "$";
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);

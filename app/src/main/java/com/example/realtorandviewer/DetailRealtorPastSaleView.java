@@ -3,6 +3,7 @@ package com.example.realtorandviewer;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
@@ -29,6 +30,7 @@ public class DetailRealtorPastSaleView extends AppCompatActivity {
     TextView price_Text, beds_Text, baths_Text, uNum_Text, houseNum_Text, street_Text, city_Text,
             province_Text, postal_Text, land_Text, floor_Text, age_Text, title_Text, type_Text,
             description_Text, fullNameText, companyText;
+    String dollar = "$";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +87,7 @@ public class DetailRealtorPastSaleView extends AppCompatActivity {
         description_Text = findViewById(R.id.description_Text);
 
         reference.child(Login.MY_PAST_SALE_POSITION).addListenerForSingleValueEvent(new ValueEventListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Properties prop = snapshot.getValue(Properties.class);
@@ -106,7 +109,7 @@ public class DetailRealtorPastSaleView extends AppCompatActivity {
                     String type_Text_ = prop.type;
                     String description_Text_ = prop.description;
 
-                    price_Text.setText(price_Text_);
+                    price_Text.setText(dollar + price_Text_);
                     beds_Text.setText(beds_Text_);
                     baths_Text.setText(baths_Text_);
                     uNum_Text.setText(uNum_Text_);
@@ -115,11 +118,11 @@ public class DetailRealtorPastSaleView extends AppCompatActivity {
                     city_Text.setText(city_Text_);
                     province_Text.setText(province_Text_);
                     postal_Text.setText(postal_Text_);
-                    land_Text.setText(land_Text_);
-                    floor_Text.setText(floor_Text_);
+                    land_Text.setText(land_Text_ + Login.SQFT_);
+                    floor_Text.setText(floor_Text_ + Login.SQFT_);
                     age_Text.setText(age_Text_);
-                    title_Text.setText(title_Text_);
-                    type_Text.setText(type_Text_);
+                    title_Text.setText(Login.TITLE_ + title_Text_);
+                    type_Text.setText(Login.TYPE_ + type_Text_);
                     description_Text.setText(description_Text_);
                 }
             }
