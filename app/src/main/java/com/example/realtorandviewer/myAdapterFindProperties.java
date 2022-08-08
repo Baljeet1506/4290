@@ -103,28 +103,29 @@ public class myAdapterFindProperties extends FirebaseRecyclerAdapter<Properties,
 
     class myviewholder extends RecyclerView.ViewHolder {
 
-        TextView unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
+        TextView unitNumber, houseNumber, street, city, province, postal, price, beds,
+                landSize, baths, floorSize, age, type, title;
         ImageButton favListingBtn;
         ImageView find_listing_single_image;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
 
-            unitNumber = (TextView) itemView.findViewById(R.id.uNum_Text_FindProperties);
-            houseNumber = (TextView) itemView.findViewById(R.id.houseNum_Text_FindProperties);
-            street = (TextView) itemView.findViewById(R.id.street_Text_FindProperties);
-            city = (TextView) itemView.findViewById(R.id.city_Text_FindProperties);
-            province = (TextView) itemView.findViewById(R.id.province_Text_FindProperties);
-            postal = (TextView) itemView.findViewById(R.id.postal_Text_FindProperties);
-            price = (TextView) itemView.findViewById(R.id.price_Text_FindProperties);
-            beds = (TextView) itemView.findViewById(R.id.beds_Text_FindProperties);
-            landSize = (TextView) itemView.findViewById(R.id.land_Text_FindProperties);
-            baths = (TextView) itemView.findViewById(R.id.baths_Text_FindProperties);
-            floorSize = (TextView) itemView.findViewById(R.id.floor_Text_FindProperties);
-            age = (TextView) itemView.findViewById(R.id.age_Text_FindProperties);
-            type = (TextView) itemView.findViewById(R.id.type_Text_FindProperties);
-            title = (TextView) itemView.findViewById(R.id.title_Text_FindProperties);
-            find_listing_single_image = (ImageView) itemView.findViewById(R.id.find_listing_single_image);
+            unitNumber = itemView.findViewById(R.id.uNum_Text_FindProperties);
+            houseNumber = itemView.findViewById(R.id.houseNum_Text_FindProperties);
+            street = itemView.findViewById(R.id.street_Text_FindProperties);
+            city = itemView.findViewById(R.id.city_Text_FindProperties);
+            province = itemView.findViewById(R.id.province_Text_FindProperties);
+            postal = itemView.findViewById(R.id.postal_Text_FindProperties);
+            price = itemView.findViewById(R.id.price_Text_FindProperties);
+            beds = itemView.findViewById(R.id.beds_Text_FindProperties);
+            landSize = itemView.findViewById(R.id.land_Text_FindProperties);
+            baths = itemView.findViewById(R.id.baths_Text_FindProperties);
+            floorSize = itemView.findViewById(R.id.floor_Text_FindProperties);
+            age = itemView.findViewById(R.id.age_Text_FindProperties);
+            type = itemView.findViewById(R.id.type_Text_FindProperties);
+            title = itemView.findViewById(R.id.title_Text_FindProperties);
+            find_listing_single_image = itemView.findViewById(R.id.find_listing_single_image);
             favListingBtn = itemView.findViewById(R.id.favListingBtn);
 
         }

@@ -10,7 +10,8 @@ public class User {
     }
 
     //Constructor for Realtor user type
-    public User(String firstName, String lastName, String company, String email, String phNumber, String aboutMe, String pimage, Integer userType) {
+    public User(String firstName, String lastName, String company, String email, String phNumber,
+                String aboutMe, String pimage, Integer userType) {
 
         this.firstName = firstName;
         this.lastName = lastName;

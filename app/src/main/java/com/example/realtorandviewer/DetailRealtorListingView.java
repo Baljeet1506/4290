@@ -27,7 +27,9 @@ public class DetailRealtorListingView extends AppCompatActivity {
 
     ImageSlider mainslider;
     ImageButton backBtn;
-    TextView price_Text, beds_Text, baths_Text, uNum_Text, houseNum_Text, street_Text, city_Text, province_Text, postal_Text, land_Text, floor_Text, age_Text, title_Text, type_Text, description_Text, fullNameText, companyText;
+    TextView price_Text, beds_Text, baths_Text, uNum_Text, houseNum_Text, street_Text, city_Text,
+            province_Text, postal_Text, land_Text, floor_Text, age_Text, title_Text, type_Text,
+            description_Text, fullNameText, companyText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

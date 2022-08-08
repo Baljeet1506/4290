@@ -145,8 +145,7 @@ public class HomePageRealtor extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                switch(item.getItemId())
-                {
+                switch (item.getItemId()) {
                     case R.id.realtorsPage:
                         startActivity(new Intent(getApplicationContext(), FindRealtor.class));
                         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);

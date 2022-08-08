@@ -94,43 +94,7 @@ public class FindRealtor extends AppCompatActivity {
                 return false;
             }
         });
-
-//        ImageButton favoriteListingsBtn = findViewById(R.id.favouriteListingsBtn);
-//        TextView firstname_Text_FindRealtor = findViewById(R.id.firstname_Text_FindRealtor);
-
-
     }
-
-
-
-
-/*    public static void removeFromFavorite(Context context, String id){
-
-        FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
-        if(firebaseAuth.getCurrentUser() == null){
-
-            Toast.makeText(context, "Not logged it", Toast.LENGTH_SHORT).show();
-        }else {
-
-
-
-            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("AllUsers");
-            ref.child(firebaseAuth.getUid()).child("Favorites").child(id)
-                    .removeValue()
-                    .addOnSuccessListener(new OnSuccessListener<Void>() {
-                        @Override
-                        public void onSuccess(Void unused) {
-                            Toast.makeText(context, "Removed", Toast.LENGTH_SHORT).show();
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(context, "Failed"+ e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    });
-        }
-    }*/
 
     @Override
     protected void onStart() {

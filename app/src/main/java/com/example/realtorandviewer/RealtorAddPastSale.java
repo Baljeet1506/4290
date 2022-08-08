@@ -20,7 +20,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RealtorAddPastSale extends AppCompatActivity implements View.OnClickListener {
 
-    EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, description;
+    EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize,
+            baths, floorSize, age, description;
     Spinner type, title;
     Button addPastSaleBtn;
     ImageButton backBtn;

@@ -27,7 +27,9 @@ public class DetailFavouriteListingView extends AppCompatActivity {
 
     ImageSlider image_slider_favourite;
     ImageButton backBtn;
-    TextView price_Text, beds_Text, baths_Text, uNum_Text, houseNum_Text, street_Text, city_Text, province_Text, postal_Text, land_Text, floor_Text, age_Text, title_Text, type_Text, description_Text, fullNameText, companyText;
+    TextView price_Text, beds_Text, baths_Text, uNum_Text, houseNum_Text, street_Text,
+            city_Text, province_Text, postal_Text, land_Text, floor_Text, age_Text, title_Text,
+            type_Text, description_Text, fullNameText, companyText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,23 +39,22 @@ public class DetailFavouriteListingView extends AppCompatActivity {
         backBtn = findViewById(R.id.btn_back_to_find_prop);
         backBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), Favourites.class)));
 
-        image_slider_favourite=(ImageSlider)findViewById(R.id.image_slider_viewer);
-        final List<SlideModel> remoteimages=new ArrayList<>();
+        image_slider_favourite = (ImageSlider) findViewById(R.id.image_slider_viewer);
+        final List<SlideModel> remoteimages = new ArrayList<>();
 
-       FirebaseDatabase.getInstance().getReference().child("AllProperties").child(Login.FAVOURITE_LISTING_POSITION.toString()).child("Images")
+        FirebaseDatabase.getInstance().getReference().child("AllProperties").child(Login.FAVOURITE_LISTING_POSITION.toString()).child("Images")
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot)
-                    {
-                        for(DataSnapshot data:dataSnapshot.getChildren())
-                            remoteimages.add(new SlideModel(data.child("url").getValue().toString(),data.child("title").getValue().toString(), ScaleTypes.FIT));
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        for (DataSnapshot data : dataSnapshot.getChildren())
+                            remoteimages.add(new SlideModel(data.child("url").getValue().toString(), data.child("title").getValue().toString(), ScaleTypes.FIT));
 
                         image_slider_favourite.setImageList(remoteimages, ScaleTypes.FIT);
 
                         image_slider_favourite.setItemClickListener(new ItemClickListener() {
                             @Override
                             public void onItemSelected(int i) {
-                                Toast.makeText(getApplicationContext(),remoteimages.get(i).getTitle().toString(),Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), remoteimages.get(i).getTitle().toString(), Toast.LENGTH_SHORT).show();
                             }
                         });
 

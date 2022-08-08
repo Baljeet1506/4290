@@ -383,12 +383,13 @@
                     android:text="@string/type"
                     android:textSize="@dimen/h3" />
 
-                <Spinner
+                <EditText
                     android:id="@+id/spinnerType_Dialog_Past"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:inputType="textAutoComplete" />
             </LinearLayout>
 
             <LinearLayout
@@ -403,12 +404,13 @@
                     android:text="@string/title"
                     android:textSize="@dimen/h3" />
 
-                <Spinner
+                <EditText
                     android:id="@+id/spinnerTitle_Dialog_Past"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/text_input_height"
                     android:background="@drawable/shape_rounded_textinput"
-                    android:gravity="center" />
+                    android:gravity="center"
+                    android:inputType="textAutoComplete" />
             </LinearLayout>
 
 

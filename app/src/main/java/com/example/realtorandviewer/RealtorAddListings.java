@@ -23,7 +23,8 @@ import java.lang.reflect.Array;
 
 public class RealtorAddListings extends AppCompatActivity implements View.OnClickListener {
 
-    EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, description;
+    EditText unitNumber, houseNumber, street, city, province, postal, price, beds, landSize,
+            baths, floorSize, age, description;
     Spinner type, title;
     Button addListingBtn;
     ImageButton backBtn;

@@ -35,7 +35,8 @@ import java.util.Map;
 public class HomePageViewer extends AppCompatActivity {
 
     private ImageButton btnEditViewerProfile;
-    CardView preparingToBuyBtn, financePlanningBtn, viewPropertiesBtn, makeAnOfferBtn, closingPurchaseBtn;
+    CardView preparingToBuyBtn, financePlanningBtn, viewPropertiesBtn, makeAnOfferBtn,
+            closingPurchaseBtn;
     TextView firstNameText, lastNameText;
 
     private FirebaseUser user;
@@ -93,8 +94,7 @@ public class HomePageViewer extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                switch(item.getItemId())
-                {
+                switch (item.getItemId()) {
                     case R.id.realtorsPage:
                         startActivity(new Intent(getApplicationContext(), FindRealtor.class));
                         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);

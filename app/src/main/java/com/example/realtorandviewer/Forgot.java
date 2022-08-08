@@ -69,7 +69,7 @@ public class Forgot extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 if (task.isSuccessful()) {
-                   // Toast.makeText(ForgotActivity.this, "Check your email to reset your password", Toast.LENGTH_SHORT).show();
+                    // Toast.makeText(ForgotActivity.this, "Check your email to reset your password", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), Login.class));
                 } else {
                     Toast.makeText(Forgot.this, "Try Again", Toast.LENGTH_LONG).show();

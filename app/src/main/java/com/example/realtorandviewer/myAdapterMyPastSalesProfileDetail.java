@@ -67,28 +67,29 @@ public class myAdapterMyPastSalesProfileDetail extends FirebaseRecyclerAdapter<P
 
     class myviewholder extends RecyclerView.ViewHolder {
 
-        TextView unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
+        TextView unitNumber, houseNumber, street, city, province, postal, price,
+                beds, landSize, baths, floorSize, age, type, title;
         ImageView my_listing_image_slider;
 
         public myviewholder(@NonNull View itemView) {
             super(itemView);
 
-            unitNumber = (TextView) itemView.findViewById(R.id.uNum_Text);
-            houseNumber = (TextView) itemView.findViewById(R.id.houseNum_Text);
-            street = (TextView) itemView.findViewById(R.id.street_Text);
-            city = (TextView) itemView.findViewById(R.id.city_Text);
-            province = (TextView) itemView.findViewById(R.id.province_Text);
-            postal = (TextView) itemView.findViewById(R.id.postal_Text);
-            price = (TextView) itemView.findViewById(R.id.price_Text);
-            beds = (TextView) itemView.findViewById(R.id.beds_Text);
-            landSize = (TextView) itemView.findViewById(R.id.land_Text);
-            baths = (TextView) itemView.findViewById(R.id.baths_Text);
-            floorSize = (TextView) itemView.findViewById(R.id.floor_Text);
-            age = (TextView) itemView.findViewById(R.id.age_Text);
-            type = (TextView) itemView.findViewById(R.id.type_Text);
-            title = (TextView) itemView.findViewById(R.id.title_Text);
+            unitNumber = itemView.findViewById(R.id.uNum_Text);
+            houseNumber = itemView.findViewById(R.id.houseNum_Text);
+            street = itemView.findViewById(R.id.street_Text);
+            city = itemView.findViewById(R.id.city_Text);
+            province = itemView.findViewById(R.id.province_Text);
+            postal = itemView.findViewById(R.id.postal_Text);
+            price = itemView.findViewById(R.id.price_Text);
+            beds = itemView.findViewById(R.id.beds_Text);
+            landSize = itemView.findViewById(R.id.land_Text);
+            baths = itemView.findViewById(R.id.baths_Text);
+            floorSize = itemView.findViewById(R.id.floor_Text);
+            age = itemView.findViewById(R.id.age_Text);
+            type = itemView.findViewById(R.id.type_Text);
+            title = itemView.findViewById(R.id.title_Text);
 
-            my_listing_image_slider = (ImageView) itemView.findViewById(R.id.my_listing_image_slider);
+            my_listing_image_slider = itemView.findViewById(R.id.my_listing_image_slider);
 
         }
     }

@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myAdapterMyListings.myviewholder>  {
+public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myAdapterMyListings.myviewholder> {
 
     public myAdapterMyListings(@NonNull FirebaseRecyclerOptions<Properties> options) {
         super(options);
@@ -52,8 +52,8 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
         holder.baths.setText(Properties.getBaths());
         holder.floorSize.setText(Properties.getFloorSize());
         holder.age.setText(Properties.getAge());
-        holder.type.setText(Properties.getType().toString());
-        holder.title.setText(Properties.getTitle().toString());
+        holder.type.setText(Properties.getType());
+        holder.title.setText(Properties.getTitle());
         Glide.with(holder.my_listing_image_slider.getContext()).load(Properties.getListingImage()).into(holder.my_listing_image_slider);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -92,6 +92,7 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
                 final EditText age = myview.findViewById(R.id.age);
                 final EditText type = myview.findViewById(R.id.spinnerType);
                 final EditText title = myview.findViewById(R.id.spinnerTitle);
+                final EditText description = myview.findViewById(R.id.description);
 
                 Button submit = myview.findViewById(R.id.usubmit_dialog_listing);
 
@@ -109,6 +110,7 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
                 age.setText(Properties.getAge());
                 type.setText(Properties.getType());
                 title.setText(Properties.getTitle());
+                description.setText(Properties.getdescription());
 
                 dialogPlus.show();
 
@@ -130,6 +132,7 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
                         map.put("age", age.getText().toString());
                         map.put("type", type.getText().toString());
                         map.put("title", title.getText().toString());
+                        map.put("description", description.getText().toString());
 
                         FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_)
                                 .child(Objects.requireNonNull(getRef(position).getKey())).updateChildren(map)
@@ -205,7 +208,8 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
 
     class myviewholder extends RecyclerView.ViewHolder {
 
-        TextView unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title;
+        TextView unitNumber, houseNumber, street, city, province, postal, price, beds, landSize,
+                baths, floorSize, age, type, title;
         ImageButton delete, edit;
         ImageView my_listing_image_slider;
 
@@ -216,20 +220,20 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
             houseNumber = itemView.findViewById(R.id.houseNum_Text);
             street = itemView.findViewById(R.id.street_Text);
             city = itemView.findViewById(R.id.city_Text);
-            province = (TextView) itemView.findViewById(R.id.province_Text);
-            postal = (TextView) itemView.findViewById(R.id.postal_Text);
-            price = (TextView) itemView.findViewById(R.id.price_Text);
-            beds = (TextView) itemView.findViewById(R.id.beds_Text);
-            landSize = (TextView) itemView.findViewById(R.id.land_Text);
-            baths = (TextView) itemView.findViewById(R.id.baths_Text);
-            floorSize = (TextView) itemView.findViewById(R.id.floor_Text);
-            age = (TextView) itemView.findViewById(R.id.age_Text);
-            type = (TextView) itemView.findViewById(R.id.type_Text);
-            title = (TextView) itemView.findViewById(R.id.title_Text);
+            province = itemView.findViewById(R.id.province_Text);
+            postal = itemView.findViewById(R.id.postal_Text);
+            price = itemView.findViewById(R.id.price_Text);
+            beds = itemView.findViewById(R.id.beds_Text);
+            landSize = itemView.findViewById(R.id.land_Text);
+            baths = itemView.findViewById(R.id.baths_Text);
+            floorSize = itemView.findViewById(R.id.floor_Text);
+            age = itemView.findViewById(R.id.age_Text);
+            type = itemView.findViewById(R.id.type_Text);
+            title = itemView.findViewById(R.id.title_Text);
 
-            edit = (ImageButton) itemView.findViewById(R.id.editListingBtn);
-            delete = (ImageButton) itemView.findViewById(R.id.deleteListingBtn);
-            my_listing_image_slider = (ImageView) itemView.findViewById(R.id.my_listing_image_slider);
+            edit = itemView.findViewById(R.id.editListingBtn);
+            delete = itemView.findViewById(R.id.deleteListingBtn);
+            my_listing_image_slider = itemView.findViewById(R.id.my_listing_image_slider);
 
 
         }

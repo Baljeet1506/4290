@@ -4,13 +4,17 @@ import android.widget.Spinner;
 
 public class Properties {
 
-    String unitNumber, houseNumber, street, city, province, postal, price, beds, landSize, baths, floorSize, age, type, title, description, uID, listingImage;
+    String unitNumber, houseNumber, street, city, province, postal, price, beds, landSize,
+            baths, floorSize, age, type, title, description, uID, listingImage;
 
     public Properties() {
 
     }
 
-    public Properties(String unitNumber, String houseNumber, String street, String city, String province, String postal, String price, String beds, String landSize, String baths, String floorSize, String age, String description, Spinner type, Spinner title, String listingImage) {
+    public Properties(String unitNumber, String houseNumber, String street, String city,
+                      String province, String postal, String price, String beds, String landSize,
+                      String baths, String floorSize, String age, String description, Spinner type,
+                      Spinner title, String listingImage) {
         this.unitNumber = unitNumber;
         this.houseNumber = houseNumber;
         this.street = street;
