@@ -190,7 +190,7 @@
                     android:fontFamily="@font/roboto_slab"
                     android:hint="@string/textbox"
                     android:importantForAutofill="no"
-                    android:inputType="textAutoComplete"
+                    android:inputType="text"
                     android:textAlignment="center"
                     android:textColorHint="#00FFFFFF"
                     android:textSize="@dimen/h4"
