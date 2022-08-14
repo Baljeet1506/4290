@@ -7,7 +7,7 @@
     app:cardElevation="@dimen/card_elevation_small"
     android:clickable="true"
     android:focusable="true"
-    android:layout_margin="@dimen/spacing_medium"
+    android:layout_margin="@dimen/spacing_small"
     android:foreground="?android:attr/selectableItemBackground">
 
     <RelativeLayout
@@ -94,6 +94,7 @@
                 android:background="#00FFFFFF"
                 android:paddingTop="2dp"
                 android:paddingEnd="0dp"
+                android:paddingStart="0dp"
                 app:srcCompat="@drawable/bath"
                 app:tint="@color/gray" />
 

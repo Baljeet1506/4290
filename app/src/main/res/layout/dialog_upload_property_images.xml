@@ -57,7 +57,8 @@
 
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/titleBar"
-        app:layout_constraintVertical_bias="0.195" />
+        app:layout_constraintVertical_bias="0.195"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -70,9 +71,9 @@
         app:layout_constraintVertical_bias="0.0">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recview"
+            android:id="@+id/recView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="wrap_content" />
 
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

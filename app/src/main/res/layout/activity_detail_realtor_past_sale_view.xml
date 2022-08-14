@@ -56,20 +56,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/realtor_profile_image"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginEnd="@dimen/spacing_small"
-                    android:src="@mipmap/ic_launcher_round"
-                    app:civ_border_color="@color/light_green"
-                    app:civ_border_width="2dp" />
-
                 <TextView
                     android:id="@+id/realtorTitle_Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_toEndOf="@id/realtor_profile_image"
                     android:fontFamily="@font/roboto"
                     android:text="Realtor: "
                     android:textColor="#000"
@@ -90,7 +80,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/realtor_Text"
-                    android:layout_toEndOf="@id/realtor_profile_image"
                     android:fontFamily="@font/roboto"
                     android:text="@string/realtor_company"
                     android:textColor="#000"
@@ -100,7 +89,7 @@
                     android:id="@+id/separator"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:layout_below="@id/realtor_profile_image"
+                    android:layout_below="@id/realtor_company_Text"
                     android:layout_marginTop="@dimen/spacing_small"
                     android:layout_marginBottom="@dimen/spacing_small"
                     android:background="@color/light_gray" />
@@ -138,7 +127,6 @@
                     android:background="#00FFFFFF"
                     android:paddingStart="0dp"
                     android:paddingTop="2dp"
-                    android:paddingEnd="10dp"
                     app:srcCompat="@drawable/bed"
                     app:tint="@color/gray" />
 
@@ -158,12 +146,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/h3"
                     android:layout_below="@id/price_Text"
-                    android:layout_marginTop="2dp"
                     android:layout_alignParentEnd="true"
+                    android:layout_marginTop="2dp"
                     android:background="#00FFFFFF"
                     android:paddingStart="0dp"
                     android:paddingTop="2dp"
-                    android:paddingEnd="10dp"
                     app:srcCompat="@drawable/bath"
                     app:tint="@color/gray" />
 
@@ -249,7 +236,7 @@
                     android:paddingEnd="8dp"
                     android:text="Province"
                     android:textColor="#000"
-                    android:textSize="@dimen/h4" />
+                    android:textSize="@dimen/h3" />
 
                 <TextView
                     android:id="@+id/postal_Text"
@@ -344,8 +331,7 @@
                     android:id="@+id/title_Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/floor_Text"
-                    android:layout_toEndOf="@id/ageSuffix_Text"
+                    android:layout_below="@id/age_Text"
                     android:fontFamily="@font/roboto"
                     android:paddingStart="0dp"
                     android:paddingEnd="10dp"
@@ -357,8 +343,7 @@
                     android:id="@+id/type_Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/land_Text"
-                    android:layout_toEndOf="@id/title_Text"
+                    android:layout_below="@id/title_Text"
                     android:fontFamily="@font/roboto"
                     android:paddingStart="0dp"
                     android:paddingEnd="8dp"
@@ -370,7 +355,7 @@
                     android:id="@+id/description_Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/age_Text"
+                    android:layout_below="@id/type_Text"
                     android:layout_marginTop="@dimen/spacing_small"
                     android:fontFamily="@font/roboto"
                     android:paddingStart="0dp"

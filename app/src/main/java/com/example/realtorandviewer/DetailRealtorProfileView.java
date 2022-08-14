@@ -38,7 +38,7 @@ public class DetailRealtorProfileView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_realtor_profile_view);
-        fullNameText = findViewById(R.id.fullname_realtor_detail_view);
+        fullNameText = findViewById(R.id.full_name_realtor_detail_view);
         companyText = findViewById(R.id.company_realtor_detail_view);
         realtorEmailText = findViewById(R.id.email_realtor_detail_view);
         realtorPhoneNumText = findViewById(R.id.phone_realtor_detail_view);
@@ -48,19 +48,13 @@ public class DetailRealtorProfileView extends AppCompatActivity {
 
         currentListingsBtn = findViewById(R.id.btnCurrentListings);
         pastSalesBtn = findViewById(R.id.btnPastSales);
-        currentListingsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                recviewListing.setVisibility(View.VISIBLE);
-                recviewPast.setVisibility(View.INVISIBLE);
-            }
+        currentListingsBtn.setOnClickListener(view -> {
+            recviewListing.setVisibility(View.VISIBLE);
+            recviewPast.setVisibility(View.INVISIBLE);
         });
-        pastSalesBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                recviewPast.setVisibility(View.VISIBLE);
-                recviewListing.setVisibility(View.INVISIBLE);
-            }
+        pastSalesBtn.setOnClickListener(view -> {
+            recviewPast.setVisibility(View.VISIBLE);
+            recviewListing.setVisibility(View.INVISIBLE);
         });
 
         recviewListing = findViewById(R.id.rec_view_listing_profile);

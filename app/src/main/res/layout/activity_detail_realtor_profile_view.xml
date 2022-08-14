@@ -58,7 +58,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
-            android:id="@+id/fullname_realtor_detail_view"
+            android:id="@+id/full_name_realtor_detail_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
@@ -71,7 +71,7 @@
             android:id="@+id/company_realtor_detail_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/fullname_realtor_detail_view"
+            android:layout_below="@id/full_name_realtor_detail_view"
             android:fontFamily="@font/roboto"
             android:gravity="center_horizontal"
             android:text="@string/company"

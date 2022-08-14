@@ -57,147 +57,111 @@ public class myAdapterMyListings extends FirebaseRecyclerAdapter<Properties, myA
         holder.title.setText(Login.TITLE_ + Properties.getTitle());
         Glide.with(holder.my_listing_image_slider.getContext()).load(Properties.getListingImage()).into(holder.my_listing_image_slider);
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        holder.itemView.setOnClickListener(v -> {
 
-                Login.MY_LISTING_POSITION = getSnapshots().getSnapshot(position).getKey();
+            Login.MY_LISTING_POSITION = getSnapshots().getSnapshot(position).getKey();
 
-                Intent intent = new Intent(holder.houseNumber.getContext(), DetailRealtorListingView.class);
-                holder.houseNumber.getContext().startActivity(intent);
+            Intent intent = new Intent(holder.houseNumber.getContext(), DetailRealtorListingView.class);
+            holder.houseNumber.getContext().startActivity(intent);
 
-            }
         });
 
-        holder.edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                final DialogPlus dialogPlus = DialogPlus.newDialog(holder.houseNumber.getContext())
-                        .setContentBackgroundResource(R.color.transparent)
-                        .setContentHolder(new ViewHolder(R.layout.dialog_content_my_listings))
-                        .setExpanded(true, 1400)
-                        .create();
+        holder.edit.setOnClickListener(view -> {
+            final DialogPlus dialogPlus = DialogPlus.newDialog(holder.houseNumber.getContext())
+                    .setContentBackgroundResource(R.color.transparent)
+                    .setContentHolder(new ViewHolder(R.layout.dialog_content_my_listings))
+                    .setExpanded(true, 1400)
+                    .create();
 
-                View myview = dialogPlus.getHolderView();
-                final EditText unitNumber = myview.findViewById(R.id.uNumber);
-                final EditText houseNumber = myview.findViewById(R.id.hNumber);
-                final EditText street = myview.findViewById(R.id.street);
-                final EditText city = myview.findViewById(R.id.city);
-                final EditText province = myview.findViewById(R.id.province);
-                final EditText postal = myview.findViewById(R.id.postal);
-                final EditText price = myview.findViewById(R.id.price);
-                final EditText beds = myview.findViewById(R.id.beds);
-                final EditText baths = myview.findViewById(R.id.baths);
-                final EditText landSize = myview.findViewById(R.id.landSize);
-                final EditText floorSize = myview.findViewById(R.id.floorSize);
-                final EditText age = myview.findViewById(R.id.age);
-                final EditText type = myview.findViewById(R.id.spinnerType);
-                final EditText title = myview.findViewById(R.id.spinnerTitle);
-                final EditText description = myview.findViewById(R.id.description);
+            View myview = dialogPlus.getHolderView();
+            final EditText unitNumber = myview.findViewById(R.id.uNumber);
+            final EditText houseNumber = myview.findViewById(R.id.hNumber);
+            final EditText street = myview.findViewById(R.id.street);
+            final EditText city = myview.findViewById(R.id.city);
+            final EditText province = myview.findViewById(R.id.province);
+            final EditText postal = myview.findViewById(R.id.postal);
+            final EditText price = myview.findViewById(R.id.price);
+            final EditText beds = myview.findViewById(R.id.beds);
+            final EditText baths = myview.findViewById(R.id.baths);
+            final EditText landSize = myview.findViewById(R.id.landSize);
+            final EditText floorSize = myview.findViewById(R.id.floorSize);
+            final EditText age = myview.findViewById(R.id.age);
+            final EditText type = myview.findViewById(R.id.spinnerType);
+            final EditText title = myview.findViewById(R.id.spinnerTitle);
+            final EditText description = myview.findViewById(R.id.description);
 
-                Button submit = myview.findViewById(R.id.usubmit_dialog_listing);
+            Button submit = myview.findViewById(R.id.user_submit_dialog_listing);
 
-                unitNumber.setText(Properties.getUnitNumber());
-                houseNumber.setText(Properties.getHouseNumber());
-                street.setText(Properties.getStreet());
-                city.setText(Properties.getCity());
-                province.setText(Properties.getProvince());
-                postal.setText(Properties.getPostal());
-                price.setText(Properties.getPrice());
-                beds.setText(Properties.getBeds());
-                baths.setText(Properties.getBaths());
-                landSize.setText(Properties.getLandSize());
-                floorSize.setText(Properties.getFloorSize());
-                age.setText(Properties.getAge());
-                type.setText(Properties.getType());
-                title.setText(Properties.getTitle());
-                description.setText(Properties.getdescription());
+            unitNumber.setText(Properties.getUnitNumber());
+            houseNumber.setText(Properties.getHouseNumber());
+            street.setText(Properties.getStreet());
+            city.setText(Properties.getCity());
+            province.setText(Properties.getProvince());
+            postal.setText(Properties.getPostal());
+            price.setText(Properties.getPrice());
+            beds.setText(Properties.getBeds());
+            baths.setText(Properties.getBaths());
+            landSize.setText(Properties.getLandSize());
+            floorSize.setText(Properties.getFloorSize());
+            age.setText(Properties.getAge());
+            type.setText(Properties.getType());
+            title.setText(Properties.getTitle());
+            description.setText(Properties.getdescription());
 
-                dialogPlus.show();
+            dialogPlus.show();
 
-                submit.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Map<String, Object> map = new HashMap<>();
-                        map.put("unitNumber", unitNumber.getText().toString());
-                        map.put("houseNumber", houseNumber.getText().toString());
-                        map.put("street", street.getText().toString());
-                        map.put("city", city.getText().toString());
-                        map.put("province", province.getText().toString());
-                        map.put("postal", postal.getText().toString());
-                        map.put("price", price.getText().toString());
-                        map.put("beds", beds.getText().toString());
-                        map.put("baths", baths.getText().toString());
-                        map.put("landSize", landSize.getText().toString());
-                        map.put("floor", floorSize.getText().toString());
-                        map.put("age", age.getText().toString());
-                        map.put("type", type.getText().toString());
-                        map.put("title", title.getText().toString());
-                        map.put("description", description.getText().toString());
+            submit.setOnClickListener(view1 -> {
+                Map<String, Object> map = new HashMap<>();
+                map.put("unitNumber", unitNumber.getText().toString());
+                map.put("houseNumber", houseNumber.getText().toString());
+                map.put("street", street.getText().toString());
+                map.put("city", city.getText().toString());
+                map.put("province", province.getText().toString());
+                map.put("postal", postal.getText().toString());
+                map.put("price", price.getText().toString());
+                map.put("beds", beds.getText().toString());
+                map.put("baths", baths.getText().toString());
+                map.put("landSize", landSize.getText().toString());
+                map.put("floor", floorSize.getText().toString());
+                map.put("age", age.getText().toString());
+                map.put("type", type.getText().toString());
+                map.put("title", title.getText().toString());
+                map.put("description", description.getText().toString());
 
-                        FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_)
-                                .child(Objects.requireNonNull(getRef(position).getKey())).updateChildren(map)
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
+                FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_)
+                        .child(Objects.requireNonNull(getRef(position).getKey())).updateChildren(map)
+                        .addOnSuccessListener(aVoid -> {
 
-                                        FirebaseDatabase.getInstance().getReference().child("AllProperties")
-                                                .child(Objects.requireNonNull(getRef(position).getKey())).updateChildren(map)
-                                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                                    @Override
-                                                    public void onSuccess(Void aVoid) {
-                                                        dialogPlus.dismiss();
-                                                    }
-                                                })
-                                                .addOnFailureListener(new OnFailureListener() {
-                                                    @Override
-                                                    public void onFailure(@NonNull Exception e) {
-                                                        dialogPlus.dismiss();
-                                                    }
-                                                });
+                            FirebaseDatabase.getInstance().getReference().child("AllProperties")
+                                    .child(Objects.requireNonNull(getRef(position).getKey())).updateChildren(map)
+                                    .addOnSuccessListener(aVoid1 -> dialogPlus.dismiss())
+                                    .addOnFailureListener(e -> dialogPlus.dismiss());
 
-                                        dialogPlus.dismiss();
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        dialogPlus.dismiss();
-                                    }
-                                });
-                    }
-                });
-            }
+                            dialogPlus.dismiss();
+                        })
+                        .addOnFailureListener(e -> dialogPlus.dismiss());
+            });
         });
 
-        holder.delete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(holder.houseNumber.getContext());
-                builder.setTitle("Delete Panel");
-                builder.setMessage("Are you sure you want to remove this?");
+        holder.delete.setOnClickListener(view -> {
+            AlertDialog.Builder builder = new AlertDialog.Builder(holder.houseNumber.getContext());
+            builder.setTitle("Delete Panel");
+            builder.setMessage("Are you sure you want to remove this?");
 
-                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_)
-                                .child(Objects.requireNonNull(getRef(position).getKey())).removeValue();
+            builder.setPositiveButton("Yes", (dialogInterface, i) -> {
+                FirebaseDatabase.getInstance().getReference().child("MyProperties").child(Login.uID_)
+                        .child(Objects.requireNonNull(getRef(position).getKey())).removeValue();
 
-                        FirebaseDatabase.getInstance().getReference().child("AllProperties")
-                                .child(Objects.requireNonNull(getRef(position).getKey())).removeValue();
+                FirebaseDatabase.getInstance().getReference().child("AllProperties")
+                        .child(Objects.requireNonNull(getRef(position).getKey())).removeValue();
 
-                    }
-                });
+            });
 
-                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
+            builder.setNegativeButton("No", (dialogInterface, i) -> {
 
-                    }
-                });
+            });
 
-                builder.show();
-            }
+            builder.show();
         });
 
     }

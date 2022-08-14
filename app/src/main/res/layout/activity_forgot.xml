@@ -95,12 +95,11 @@
         app:layout_constraintStart_toStartOf="@+id/guideLeft"
         app:layout_constraintTop_toBottomOf="@+id/logo"
         app:layout_constraintVertical_bias="0.0">
-        app:layout_constraintBottom_toTopOf="resetBtn"
 
         <LinearLayout
             android:layout_gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="@dimen/spacing_small">
 
@@ -109,7 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/text_input_height"
                 android:autofillHints="emailAddress"
-                android:background="@drawable/shape_rounded_textinput"
+                android:background="@drawable/shape_rounded_text_input"
                 android:fontFamily="@font/roboto"
                 android:hint="@string/enter_email"
                 android:inputType="textEmailAddress"

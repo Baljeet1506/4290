@@ -141,39 +141,36 @@ public class HomePageRealtor extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.profilePage);
 
         // Perform item selected listener
-        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        bottomNavigationView.setOnItemSelectedListener(item -> {
 
-                switch (item.getItemId()) {
-                    case R.id.realtorsPage:
-                        startActivity(new Intent(getApplicationContext(), FindRealtor.class));
+            switch (item.getItemId()) {
+                case R.id.realtorsPage:
+                    startActivity(new Intent(getApplicationContext(), FindRealtor.class));
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                    return true;
+                case R.id.propertiesPage:
+                    startActivity(new Intent(getApplicationContext(), FindProperties.class));
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                    return true;
+                case R.id.favouritesPage:
+                    startActivity(new Intent(getApplicationContext(), Favourites.class));
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                    return true;
+                case R.id.calculatorPage:
+                    startActivity(new Intent(getApplicationContext(), MortgageCalculator.class));
+                    overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+                    return true;
+                case R.id.profilePage:
+                    if (Login.uType == 1) {
+                        startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
                         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                        return true;
-                    case R.id.propertiesPage:
-                        startActivity(new Intent(getApplicationContext(), FindProperties.class));
+                    } else {
+                        startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
                         overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                        return true;
-                    case R.id.favouritesPage:
-                        startActivity(new Intent(getApplicationContext(), Favourites.class));
-                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                        return true;
-                    case R.id.calculatorPage:
-                        startActivity(new Intent(getApplicationContext(), MortgageCalculator.class));
-                        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                        return true;
-                    case R.id.profilePage:
-                        if (Login.uType == 1) {
-                            startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
-                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                        } else {
-                            startActivity(new Intent(getApplicationContext(), HomePageViewer.class));
-                            overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
-                        }
-                        return true;
-                }
-                return false;
+                    }
+                    return true;
             }
+            return false;
         });
 
         preparingToSellBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceRealtorPrepareToSell.class)));
@@ -182,145 +179,114 @@ public class HomePageRealtor extends AppCompatActivity {
         theOfferBtn.setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), ResourceRealtorOffer.class)));
 
 
-        user_picture.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        user_picture.setOnClickListener(v -> {
 
-                final DialogPlus dialogPlus = DialogPlus.newDialog(HomePageRealtor.this)
-                        .setContentBackgroundResource(R.color.transparent)
-                        .setContentHolder(new ViewHolder(R.layout.dialog_upload_profile_image))
-                        .create();
+            final DialogPlus dialogPlus = DialogPlus.newDialog(HomePageRealtor.this)
+                    .setContentBackgroundResource(R.color.transparent)
+                    .setContentHolder(new ViewHolder(R.layout.dialog_upload_profile_image))
+                    .create();
 
-                View picview = dialogPlus.getHolderView();
-                Button browseBtn = picview.findViewById(R.id.btn_browse_realtor_pic);
-                Button uploadBtn = picview.findViewById(R.id.btn_upload_realtor_pic);
-                CircleImageView dialog_picture = picview.findViewById(R.id.dialog_picture);
-                dialogPlus.show();
+            View picview = dialogPlus.getHolderView();
+            Button browseBtn = picview.findViewById(R.id.btn_browse_realtor_pic);
+            Button uploadBtn = picview.findViewById(R.id.btn_upload_realtor_pic);
+            CircleImageView dialog_picture = picview.findViewById(R.id.dialog_picture);
+            dialogPlus.show();
 
-                browseBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
+            browseBtn.setOnClickListener(view -> Dexter.withActivity(HomePageRealtor.this)
+                    .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
+                    .withListener(new PermissionListener() {
+                        @Override
+                        public void onPermissionGranted(PermissionGrantedResponse response) {
+                            Intent intent = new Intent(Intent.ACTION_PICK);
+                            intent.setType("image/*");
+                            startActivityForResult(Intent.createChooser(intent, "Select Image File"), 1);
+                        }
 
-                        Dexter.withActivity(HomePageRealtor.this)
-                                .withPermission(Manifest.permission.READ_EXTERNAL_STORAGE)
-                                .withListener(new PermissionListener() {
-                                    @Override
-                                    public void onPermissionGranted(PermissionGrantedResponse response) {
-                                        Intent intent = new Intent(Intent.ACTION_PICK);
-                                        intent.setType("image/*");
-                                        startActivityForResult(Intent.createChooser(intent, "Select Image File"), 1);
-                                    }
+                        @Override
+                        public void onPermissionDenied(PermissionDeniedResponse response) {
 
-                                    @Override
-                                    public void onPermissionDenied(PermissionDeniedResponse response) {
+                        }
 
-                                    }
+                        @Override
+                        public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+                            token.continuePermissionRequest();
+                        }
+                    }).check());
 
-                                    @Override
-                                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
-                                        token.continuePermissionRequest();
-                                    }
-                                }).check();
-                    }
-                });
-
-                uploadBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        uploadtofirebase();
-                    }
-                });
-            }
+            uploadBtn.setOnClickListener(view -> uploadtofirebase());
         });
 
 
-        btnEditRealtorProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        btnEditRealtorProfile.setOnClickListener(v -> {
 
-                final DialogPlus dialogPlus = DialogPlus.newDialog(HomePageRealtor.this)
-                        .setContentBackgroundResource(R.color.transparent)
-                        .setContentHolder(new ViewHolder(R.layout.dialog_content_edit_profile_realtor))
-                        .create();
+            final DialogPlus dialogPlus = DialogPlus.newDialog(HomePageRealtor.this)
+                    .setContentBackgroundResource(R.color.transparent)
+                    .setContentHolder(new ViewHolder(R.layout.dialog_content_edit_profile_realtor))
+                    .create();
 
-                View myview = dialogPlus.getHolderView();
-                final EditText first_name = myview.findViewById(R.id.dialog_first_name_r);
-                final EditText last_name = myview.findViewById(R.id.dialog_last_name_r);
-                final EditText company_name = myview.findViewById(R.id.dialog_company_r);
-                final EditText phone_number = myview.findViewById(R.id.dialog_phone_number_r);
-                final EditText about_me = myview.findViewById(R.id.dialog_description_r);
+            View myview = dialogPlus.getHolderView();
+            final EditText first_name = myview.findViewById(R.id.dialog_first_name_r);
+            final EditText last_name = myview.findViewById(R.id.dialog_last_name_r);
+            final EditText company_name = myview.findViewById(R.id.dialog_company_r);
+            final EditText phone_number = myview.findViewById(R.id.dialog_phone_number_r);
+            final EditText about_me = myview.findViewById(R.id.dialog_description_r);
 
-                ImageButton logoutBtn = myview.findViewById(R.id.btnLogout_dialog_r);
+            ImageButton logoutBtn = myview.findViewById(R.id.btnLogout_dialog_r);
 
-                Button submit = myview.findViewById(R.id.usubmit_dialog_realtor_profile);
+            Button submit = myview.findViewById(R.id.user_submit_dialog_realtor_profile);
 
-                reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        User userProfile = snapshot.getValue(User.class);
+            reference.child(userID).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    User userProfile = snapshot.getValue(User.class);
 
-                        if (userProfile != null) {
-                            String firstName = userProfile.firstName;
-                            String lastName = userProfile.lastName;
-                            String company = userProfile.company;
-                            String phone = userProfile.phNumber;
-                            String description = userProfile.aboutMe;
+                    if (userProfile != null) {
+                        String firstName = userProfile.firstName;
+                        String lastName = userProfile.lastName;
+                        String company = userProfile.company;
+                        String phone = userProfile.phNumber;
+                        String description = userProfile.aboutMe;
 
-                            first_name.setText(firstName);
-                            last_name.setText(lastName);
-                            company_name.setText(company);
-                            phone_number.setText(phone);
-                            about_me.setText(description);
-                        }
+                        first_name.setText(firstName);
+                        last_name.setText(lastName);
+                        company_name.setText(company);
+                        phone_number.setText(phone);
+                        about_me.setText(description);
                     }
+                }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(HomePageRealtor.this, "The User info did not load", Toast.LENGTH_SHORT).show();
-                    }
-                });
-                dialogPlus.show();
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+                    Toast.makeText(HomePageRealtor.this, "The User info did not load", Toast.LENGTH_SHORT).show();
+                }
+            });
+            dialogPlus.show();
 
-                logoutBtn.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intentL = new Intent(HomePageRealtor.this, Login.class);
-                        startActivity(intentL);
-                        finish();
-                        Toast.makeText(HomePageRealtor.this, "Successful Logout", Toast.LENGTH_SHORT).show();
-                    }
-                });
+            logoutBtn.setOnClickListener(view -> {
+                Intent intentL = new Intent(HomePageRealtor.this, Login.class);
+                startActivity(intentL);
+                finish();
+                Toast.makeText(HomePageRealtor.this, "Successful Logout", Toast.LENGTH_SHORT).show();
+            });
 
-                submit.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Map<String, Object> map = new HashMap<>();
-                        map.put("firstName", first_name.getText().toString());
-                        map.put("lastName", last_name.getText().toString());
-                        map.put("company", company_name.getText().toString());
-                        map.put("phNumber", phone_number.getText().toString());
-                        map.put("aboutMe", about_me.getText().toString());
+            submit.setOnClickListener(view -> {
+                Map<String, Object> map = new HashMap<>();
+                map.put("firstName", first_name.getText().toString());
+                map.put("lastName", last_name.getText().toString());
+                map.put("company", company_name.getText().toString());
+                map.put("phNumber", phone_number.getText().toString());
+                map.put("aboutMe", about_me.getText().toString());
 
-                        FirebaseDatabase.getInstance().getReference().child("RealtorUsers").child(Login.uID_)
-                                .updateChildren(map)
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        FirebaseDatabase.getInstance().getReference().child("AllUsers").child(Login.uID_)
-                                                .updateChildren(map);
-                                        refreshProfileInfo();
-                                        dialogPlus.dismiss();
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        dialogPlus.dismiss();
-                                    }
-                                });
-                    }
-                });
-            }
+                FirebaseDatabase.getInstance().getReference().child("RealtorUsers").child(Login.uID_)
+                        .updateChildren(map)
+                        .addOnSuccessListener(aVoid -> {
+                            FirebaseDatabase.getInstance().getReference().child("AllUsers").child(Login.uID_)
+                                    .updateChildren(map);
+                            refreshProfileInfo();
+                            dialogPlus.dismiss();
+                        })
+                        .addOnFailureListener(e -> dialogPlus.dismiss());
+            });
         });
     }
 
@@ -377,30 +343,22 @@ public class HomePageRealtor extends AppCompatActivity {
         final StorageReference uploader = storage.getReference("Image1" + new Random().nextInt(50));
 
         uploader.putFile(filepath)
-                .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                .addOnSuccessListener(taskSnapshot -> uploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                     @Override
-                    public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                        uploader.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                            @Override
-                            public void onSuccess(Uri uri) {
+                    public void onSuccess(Uri uri) {
 
-                                dialog.dismiss();
-                                DatabaseReference db = FirebaseDatabase.getInstance().getReference();
-                                db.child("RealtorUsers").child(Login.uID_).child("pimage").setValue(uri.toString());
+                        dialog.dismiss();
+                        DatabaseReference db = FirebaseDatabase.getInstance().getReference();
+                        db.child("RealtorUsers").child(Login.uID_).child("pimage").setValue(uri.toString());
 
-                                Toast.makeText(getApplicationContext(), "Uploaded", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(), "Uploaded", Toast.LENGTH_LONG).show();
 
-                                startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
-                            }
-                        });
+                        startActivity(new Intent(getApplicationContext(), HomePageRealtor.class));
                     }
-                })
-                .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
-                    @Override
-                    public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
-                        float percent = (100 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
-                        dialog.setMessage("Uploaded :" + (int) percent + " %");
-                    }
+                }))
+                .addOnProgressListener(taskSnapshot -> {
+                    float percent = (100 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
+                    dialog.setMessage("Uploaded :" + (int) percent + " %");
                 });
     }
 }

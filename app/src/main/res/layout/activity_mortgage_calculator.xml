@@ -62,7 +62,7 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/text_input_height"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_rounded_textinput"
+                    android:background="@drawable/shape_rounded_text_input"
                     android:ems="10"
                     android:gravity="center"
                     android:inputType="numberDecimal" />
@@ -90,7 +90,7 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/text_input_height"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_rounded_textinput"
+                    android:background="@drawable/shape_rounded_text_input"
                     android:ems="10"
                     android:gravity="center"
                     android:inputType="numberDecimal" />
@@ -114,11 +114,11 @@
                     android:textSize="16sp" />
 
                 <EditText
-                    android:id="@+id/editTextAmortPeriod"
+                    android:id="@+id/editTextAmortizationPeriod"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/text_input_height"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_rounded_textinput"
+                    android:background="@drawable/shape_rounded_text_input"
                     android:ems="10"
                     android:gravity="center"
                     android:inputType="numberDecimal" />
@@ -146,7 +146,7 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/text_input_height"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_rounded_textinput"
+                    android:background="@drawable/shape_rounded_text_input"
                     android:ems="10"
                     android:gravity="center"
                     android:inputType="numberDecimal" />
@@ -174,7 +174,7 @@
                     android:layout_width="0dp"
                     android:layout_height="@dimen/text_input_height"
                     android:layout_weight="1"
-                    android:background="@drawable/shape_rounded_textinput"
+                    android:background="@drawable/shape_rounded_text_input"
                     android:ems="10"
                     android:gravity="center"
                     android:textSize="20sp" />

@@ -5,14 +5,10 @@
     android:layout_height="wrap_content"
     app:cardCornerRadius="12dp"
     app:cardElevation="@dimen/card_elevation_small"
-    android:layout_margin="@dimen/spacing_medium"
+    android:layout_margin="@dimen/spacing_small"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?android:attr/selectableItemBackground">
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -25,7 +21,7 @@
                 android:layout_height="100dp"
                 android:layout_centerVertical="true"
                 android:layout_marginEnd="@dimen/spacing_small"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/ic_launcher_round"
                 app:civ_border_color="#FF000000"
                 app:civ_border_width="2dp" />
 
@@ -157,9 +153,6 @@
                 android:text="@string/about_me"
                 android:textColor="#000"
                 android:textSize="@dimen/h5" />
-
-
         </RelativeLayout>
-    </RelativeLayout>
 </androidx.cardview.widget.CardView>
 
